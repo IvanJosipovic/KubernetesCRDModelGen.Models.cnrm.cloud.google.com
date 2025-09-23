@@ -2,5 +2,6 @@
   <PropertyGroup>
     <PackageId>KubernetesCRDModelGen.Models.cnrm.cloud.google.com</PackageId>
     <RepositoryUrl>https://github.com/IvanJosipovic/KubernetesCRDModelGen.Models.cnrm.cloud.google.com</RepositoryUrl>
+    <Description>C# models for Kubernetes CRDs in group cnrm.cloud.google.com</Description>
   </PropertyGroup>
 </Project>
