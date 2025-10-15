@@ -5,21 +5,20 @@ metadata:
     cnrm.cloud.google.com/version: 1.137.0
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
-    cnrm.cloud.google.com/stability-level: alpha
     cnrm.cloud.google.com/system: "true"
-    cnrm.cloud.google.com/tf2crd: "true"
-  name: computeinstancegroupnamedports.compute.cnrm.cloud.google.com
+  name: bigtablematerializedviews.bigtable.cnrm.cloud.google.com
 spec:
-  group: compute.cnrm.cloud.google.com
+  group: bigtable.cnrm.cloud.google.com
   names:
     categories:
     - gcp
-    kind: ComputeInstanceGroupNamedPort
-    plural: computeinstancegroupnamedports
+    kind: BigtableMaterializedView
+    listKind: BigtableMaterializedViewList
+    plural: bigtablematerializedviews
     shortNames:
-    - gcpcomputeinstancegroupnamedport
-    - gcpcomputeinstancegroupnamedports
-    singular: computeinstancegroupnamedport
+    - gcpbigtablematerializedview
+    - gcpbigtablematerializedviews
+    singular: bigtablematerializedview
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -41,18 +40,24 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: BigtableMaterializedView is the Schema for the BigtableMaterializedView API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: BigtableMaterializedViewSpec defines the desired state of BigtableMaterializedView
             properties:
-              groupRef:
+              deletionProtection:
+                description: Optional. Set to true to make the MaterializedView protected against deletion.
+                type: boolean
+              instanceRef:
+                description: InstanceRef defines the resource reference to BigtableInstance, which "External" field holds the GCP identifier for the KRM object.
                 oneOf:
                 - not:
                     required:
@@ -69,61 +74,27 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `name` field of a `ComputeInstanceGroup` resource.'
+                    description: A reference to an externally managed BigtableInstance resource.
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a BigtableInstance resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace of a BigtableInstance resource.
                     type: string
                 type: object
-              port:
-                description: Immutable. The port number, which can be a value between 1 and 65535.
-                type: integer
-              projectRef:
-                description: The project that this resource belongs to.
-                oneOf:
-                - not:
-                    required:
-                    - external
-                  required:
-                  - name
-                - not:
-                    anyOf:
-                    - required:
-                      - name
-                    - required:
-                      - namespace
-                  required:
-                  - external
-                properties:
-                  external:
-                    description: 'Allowed value: The `name` field of a `Project` resource.'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                type: object
+              query:
+                description: Immutable. MaterializedView's select query.
+                type: string
               resourceID:
-                description: Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.
+                description: The BigtableMaterializedView name. If not given, the metadata.name will be used.
                 type: string
-              zone:
-                description: Immutable. The zone of the instance group.
-                type: string
-            required:
-            - groupRef
-            - port
-            - projectRef
-            - zone
             type: object
           status:
+            description: BigtableMaterializedViewStatus defines the config connector machine state of BigtableMaterializedView
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the object's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -143,9 +114,19 @@ spec:
                       type: string
                   type: object
                 type: array
+              externalRef:
+                description: A unique specifier for the BigtableMaterializedView resource in GCP.
+                type: string
+              name:
+                description: The unique name of the BigtableMaterializedView. Values are of the form `projects/{project}/instances/{instance}/materializedViews/{materializedViewID}`.
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
+              observedState:
+                description: ObservedState is the state of the resource as most recently observed in GCP.
+                type: object
             type: object
         required:
         - spec
@@ -158,5 +139,3 @@ status:
   acceptedNames:
     kind: ""
     plural: ""
-  conditions: []
-  storedVersions: []
