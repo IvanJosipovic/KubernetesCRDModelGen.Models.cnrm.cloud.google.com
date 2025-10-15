@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.136.0
+    cnrm.cloud.google.com/version: 1.137.0
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/system: "true"
@@ -54,10 +54,9 @@ spec:
             description: BigLakeCatalogSpec defines the desired state of BigLakeCatalog
             properties:
               location:
-                description: Required. The location of the application.
                 type: string
               projectRef:
-                description: Required. The host project of the application.
+                description: The Project that this resource belongs to.
                 oneOf:
                 - not:
                     required:
@@ -89,6 +88,9 @@ spec:
               resourceID:
                 description: The BigLakeCatalog name. If not given, the metadata.name will be used.
                 type: string
+            required:
+            - location
+            - projectRef
             type: object
           status:
             description: BigLakeCatalogStatus defines the config connector machine state of BigLakeCatalog
