@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.137.0
+    cnrm.cloud.google.com/version: 1.138.0
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/system: "true"
@@ -195,7 +195,7 @@ spec:
                 format: int64
                 type: integer
               observedState:
-                description: ObservedState is the state of the resource as most recently observed in Google Cloud .
+                description: ObservedState is the state of the resource as most recently observed in {{gcp_name_short}}.
                 properties:
                   createTime:
                     description: Output only. Create time.
@@ -392,7 +392,7 @@ spec:
                 format: int64
                 type: integer
               observedState:
-                description: ObservedState is the state of the resource as most recently observed in Google Cloud .
+                description: ObservedState is the state of the resource as most recently observed in {{gcp_name_short}}.
                 properties:
                   createTime:
                     description: Output only. Create time.
