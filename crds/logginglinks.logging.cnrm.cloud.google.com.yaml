@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.138.0
+    cnrm.cloud.google.com/version: 1.139.0
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/system: "true"
@@ -54,10 +54,13 @@ spec:
             description: LoggingLinkSpec defines the desired state of LoggingLink
             properties:
               description:
-                description: Describes this link. The maximum length of the description is 8000 characters.
+                description: |-
+                  Describes this link.
+
+                   The maximum length of the description is 8000 characters.
                 type: string
               loggingLogBucketRef:
-                description: The LoggingLogBucket that this Link is associated with
+                description: Required. The LoggingLogBucket that this Link is associated with.
                 oneOf:
                 - not:
                     required:
