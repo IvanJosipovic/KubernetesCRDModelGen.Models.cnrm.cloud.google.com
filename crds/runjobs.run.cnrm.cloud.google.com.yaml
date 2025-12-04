@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.139.0
+    cnrm.cloud.google.com/version: 1.140.0
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/stability-level: stable
@@ -156,6 +156,11 @@ spec:
                               type: array
                             command:
                               description: Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided.
+                              items:
+                                type: string
+                              type: array
+                            dependsOn:
+                              description: Names of the containers that must start before this container.
                               items:
                                 type: string
                               type: array

@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.139.0
+    cnrm.cloud.google.com/version: 1.140.0
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/system: "true"
@@ -168,6 +168,13 @@ spec:
               resourceID:
                 description: The FirestoreField name. If not given, the metadata.name will be used.
                 type: string
+              ttlConfig:
+                description: The TTL configuration for this `Field`.
+                properties:
+                  enabled:
+                    description: Whether to enable TTL for documents based on this field.
+                    type: boolean
+                type: object
             required:
             - collectionGroup
             - databaseRef
