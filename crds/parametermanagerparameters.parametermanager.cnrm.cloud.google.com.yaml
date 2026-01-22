@@ -6,20 +6,19 @@ metadata:
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/system: "true"
-    cnrm.cloud.google.com/tf2crd: "true"
-  name: datacatalogpolicytags.datacatalog.cnrm.cloud.google.com
+  name: parametermanagerparameters.parametermanager.cnrm.cloud.google.com
 spec:
-  group: datacatalog.cnrm.cloud.google.com
+  group: parametermanager.cnrm.cloud.google.com
   names:
     categories:
     - gcp
-    kind: DataCatalogPolicyTag
-    listKind: DataCatalogPolicyTagList
-    plural: datacatalogpolicytags
+    kind: ParameterManagerParameter
+    listKind: ParameterManagerParameterList
+    plural: parametermanagerparameters
     shortNames:
-    - gcpdatacatalogpolicytag
-    - gcpdatacatalogpolicytags
-    singular: datacatalogpolicytag
+    - gcpparametermanagerparameter
+    - gcpparametermanagerparameters
+    singular: parametermanagerparameter
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -38,10 +37,10 @@ spec:
       jsonPath: .status.conditions[?(@.type=='Ready')].lastTransitionTime
       name: Status Age
       type: date
-    name: v1beta1
+    name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DataCatalogPolicyTag is the Schema for the DataCatalogPolicyTag API
+        description: ParameterManagerParameter is the Schema for the ParameterManagerParameter API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
@@ -52,16 +51,13 @@ spec:
           metadata:
             type: object
           spec:
-            description: DataCatalogPolicyTagSpec defines the desired state of DataCatalogPolicyTag
+            description: ParameterManagerParameterSpec defines the desired state of ParameterManagerParameter
             properties:
-              description:
-                description: 'Description of this policy tag. It must: contain only unicode characters, tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes long when encoded in UTF-8. If not set, defaults to an empty description. If not set, defaults to an empty description.'
+              format:
+                description: Optional. Specifies the format of a Parameter.
                 type: string
-              displayName:
-                description: 'User defined name of this policy tag. It must: be unique within the parent taxonomy; contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8.'
-                type: string
-              parentPolicyTagRef:
-                description: PolicyTagRef defines the resource reference to DataCatalogPolicyTag, which "External" field holds the GCP identifier for the KRM object.
+              kmsKeyRef:
+                description: Optional. Customer managed encryption key (CMEK) to use for encrypting the Parameter Versions. If not set, the default Google-managed encryption key will be used. Cloud KMS CryptoKeys must reside in the same location as the Parameter. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
                 oneOf:
                 - not:
                     required:
@@ -78,57 +74,57 @@ spec:
                   - external
                 properties:
                   external:
-                    description: A reference to an externally managed DataCatalogPolicyTag resource. Should be in the format "projects/{{projectID}}/locations/{{location}}/taxonomies/{{taxonomyID}}/policyTags/{{policytagID}}".
+                    description: A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.
                     type: string
                   name:
-                    description: The name of a DataCatalogPolicyTag resource.
+                    description: The `name` of a `KMSCryptoKey` resource.
                     type: string
                   namespace:
-                    description: The namespace of a DataCatalogPolicyTag resource.
+                    description: The `namespace` of a `KMSCryptoKey` resource.
+                    type: string
+                type: object
+              location:
+                type: string
+              projectRef:
+                description: The Project that this resource belongs to.
+                oneOf:
+                - not:
+                    required:
+                    - external
+                  required:
+                  - name
+                - not:
+                    anyOf:
+                    - required:
+                      - name
+                    - required:
+                      - namespace
+                  required:
+                  - external
+                properties:
+                  external:
+                    description: The `projectID` field of a project, when not managed by Config Connector.
+                    type: string
+                  kind:
+                    description: The kind of the Project resource; optional but must be `Project` if provided.
+                    type: string
+                  name:
+                    description: The `name` field of a `Project` resource.
+                    type: string
+                  namespace:
+                    description: The `namespace` field of a `Project` resource.
                     type: string
                 type: object
               resourceID:
-                description: Immutable. Optional. The service-generated name of the resource. Used for acquisition only. Leave unset to create a new resource.
+                description: The ParameterManagerParameter name. If not given, the metadata.name will be used.
                 type: string
-              taxonomyRef:
-                description: TaxonomyRef defines the resource reference to DataCatalogTaxonomy, which "External" field holds the GCP identifier for the KRM object.
-                oneOf:
-                - not:
-                    required:
-                    - external
-                  required:
-                  - name
-                - not:
-                    anyOf:
-                    - required:
-                      - name
-                    - required:
-                      - namespace
-                  required:
-                  - external
-                properties:
-                  external:
-                    description: A reference to an externally managed DataCatalogTaxonomy resource. Should be in the format "projects/{{projectID}}/locations/{{location}}/taxonomies/{{taxonomyID}}".
-                    type: string
-                  name:
-                    description: The name of a DataCatalogTaxonomy resource.
-                    type: string
-                  namespace:
-                    description: The namespace of a DataCatalogTaxonomy resource.
-                    type: string
-                type: object
             required:
-            - displayName
-            - taxonomyRef
+            - location
+            - projectRef
             type: object
           status:
-            description: DataCatalogPolicyTagStatus defines the config connector machine state of DataCatalogPolicyTag
+            description: ParameterManagerParameterStatus defines the config connector machine state of ParameterManagerParameter
             properties:
-              childPolicyTags:
-                description: Resource names of child policy tags of this policy tag.
-                items:
-                  type: string
-                type: array
               conditions:
                 description: Conditions represent the latest available observations of the object's current state.
                 items:
@@ -151,10 +147,7 @@ spec:
                   type: object
                 type: array
               externalRef:
-                description: A unique specifier for the DataCatalogPolicyTag resource in GCP.
-                type: string
-              name:
-                description: 'Resource name of this policy tag, whose format is: "projects/{project}/locations/{region}/taxonomies/{taxonomy}/policyTags/{policytag}".'
+                description: A unique specifier for the ParameterManagerParameter resource in GCP.
                 type: string
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
@@ -162,6 +155,40 @@ spec:
                 type: integer
               observedState:
                 description: ObservedState is the state of the resource as most recently observed in GCP.
+                properties:
+                  createTime:
+                    description: Output only. [Output only] Create time stamp
+                    type: string
+                  name:
+                    description: Identifier. [Output only] The resource name of the Parameter in the format `projects/*/locations/*/parameters/*`
+                    type: string
+                  policyMember:
+                    description: Output only. [Output-only] policy member strings of a Google Cloud resource.
+                    properties:
+                      iamPolicyNamePrincipal:
+                        description: |-
+                          IAM policy binding member referring to a Google Cloud resource by
+                           user-assigned name (https://google.aip.dev/122). If a resource is deleted
+                           and recreated with the same name, the binding will be applicable to the new
+                           resource.
+
+                           Example:
+                           `principal://parametermanager.googleapis.com/projects/12345/name/locations/us-central1-a/parameters/my-parameter`
+                        type: string
+                      iamPolicyUidPrincipal:
+                        description: |-
+                          IAM policy binding member referring to a Google Cloud resource by
+                           system-assigned unique identifier (https://google.aip.dev/148#uid). If a
+                           resource is deleted and recreated with the same name, the binding will not
+                           be applicable to the new resource
+
+                           Example:
+                           `principal://parametermanager.googleapis.com/projects/12345/uid/locations/us-central1-a/parameters/a918fed5`
+                        type: string
+                    type: object
+                  updateTime:
+                    description: Output only. [Output only] Update time stamp
+                    type: string
                 type: object
             type: object
         required:
