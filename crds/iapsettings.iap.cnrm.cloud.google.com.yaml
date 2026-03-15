@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.143.0
+    cnrm.cloud.google.com/version: 0.0.0-dev
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/system: "true"
@@ -10,14 +10,15 @@ metadata:
 spec:
   group: iap.cnrm.cloud.google.com
   names:
+    kind: IAPSettings
     categories:
     - gcp
-    kind: IAPSettings
     listKind: IAPSettingsList
     plural: iapsettings
     shortNames:
     - gcpiapsettings
     singular: iapsettings
+  preserveUnknownFields: false
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -886,7 +887,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""

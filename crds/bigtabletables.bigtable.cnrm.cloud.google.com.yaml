@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.143.0
+    cnrm.cloud.google.com/version: 0.0.0-dev
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/stability-level: stable
@@ -12,15 +12,16 @@ metadata:
 spec:
   group: bigtable.cnrm.cloud.google.com
   names:
+    kind: BigtableTable
     categories:
     - gcp
-    kind: BigtableTable
     listKind: BigtableTableList
     plural: bigtabletables
     shortNames:
     - gcpbigtabletable
     - gcpbigtabletables
     singular: bigtabletable
+  preserveUnknownFields: false
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -158,7 +159,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
