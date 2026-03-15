@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.143.0
+    cnrm.cloud.google.com/version: 0.0.0-dev
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/stability-level: alpha
@@ -12,14 +12,15 @@ metadata:
 spec:
   group: healthcare.cnrm.cloud.google.com
   names:
+    kind: HealthcareHL7V2Store
     categories:
     - gcp
-    kind: HealthcareHL7V2Store
     plural: healthcarehl7v2stores
     shortNames:
     - gcphealthcarehl7v2store
     - gcphealthcarehl7v2stores
     singular: healthcarehl7v2store
+  preserveUnknownFields: false
   scope: Namespaced
   versions:
   - additionalPrinterColumns:

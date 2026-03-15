@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.143.0
+    cnrm.cloud.google.com/version: 0.0.0-dev
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/stability-level: beta
@@ -11,15 +11,16 @@ metadata:
 spec:
   group: redis.cnrm.cloud.google.com
   names:
+    kind: RedisCluster
     categories:
     - gcp
-    kind: RedisCluster
     listKind: RedisClusterList
     plural: redisclusters
     shortNames:
     - gcprediscluster
     - gcpredisclusters
     singular: rediscluster
+  preserveUnknownFields: false
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -582,7 +583,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""

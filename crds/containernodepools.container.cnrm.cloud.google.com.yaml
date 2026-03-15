@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.143.0
+    cnrm.cloud.google.com/version: 0.0.0-dev
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/stability-level: stable
@@ -12,14 +12,15 @@ metadata:
 spec:
   group: container.cnrm.cloud.google.com
   names:
+    kind: ContainerNodePool
     categories:
     - gcp
-    kind: ContainerNodePool
     plural: containernodepools
     shortNames:
     - gcpcontainernodepool
     - gcpcontainernodepools
     singular: containernodepool
+  preserveUnknownFields: false
   scope: Namespaced
   versions:
   - additionalPrinterColumns:

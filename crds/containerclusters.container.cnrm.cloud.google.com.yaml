@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cnrm.cloud.google.com/version: 1.143.0
+    cnrm.cloud.google.com/version: 0.0.0-dev
   labels:
     cnrm.cloud.google.com/managed-by-kcc: "true"
     cnrm.cloud.google.com/stability-level: stable
@@ -12,14 +12,15 @@ metadata:
 spec:
   group: container.cnrm.cloud.google.com
   names:
+    kind: ContainerCluster
     categories:
     - gcp
-    kind: ContainerCluster
     plural: containerclusters
     shortNames:
     - gcpcontainercluster
     - gcpcontainerclusters
     singular: containercluster
+  preserveUnknownFields: false
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -188,7 +189,7 @@ spec:
                     properties:
                       bootDiskKMSKeyRef:
                         description: |-
-                          Immutable. The Customer Managed Encryption Key used to encrypt the
+                          The Customer Managed Encryption Key used to encrypt the
                           boot disk attached to each node in the node pool.
                         oneOf:
                         - not:
@@ -330,6 +331,15 @@ spec:
                   autoscalingProfile:
                     description: Configuration options for the Autoscaling profile feature, which lets you choose whether the cluster autoscaler should optimize for resource utilization or resource availability when deciding to remove nodes from a cluster. Can be BALANCED or OPTIMIZE_UTILIZATION. Defaults to BALANCED.
                     type: string
+                  defaultComputeClassConfig:
+                    description: Default compute class is a configuration for default compute class.
+                    properties:
+                      enabled:
+                        description: Enables default compute class.
+                        type: boolean
+                    required:
+                    - enabled
+                    type: object
                   enabled:
                     description: Whether node auto-provisioning is enabled. Resource limits for cpu and memory must be defined to enable node auto-provisioning.
                     type: boolean
@@ -380,6 +390,9 @@ spec:
                     properties:
                       allowExternalTraffic:
                         description: Controls whether user traffic is allowed over this endpoint. Note that GCP-managed services may still use the endpoint even if this is false.
+                        type: boolean
+                      enableK8sTokensViaDns:
+                        description: Controls whether the k8s token auth is allowed via DNS.
                         type: boolean
                     type: object
                   ipEndpointsConfig:
