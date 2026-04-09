@@ -88,9 +88,11 @@ spec:
                 description: Required. Immutable. Payload content of a ParameterVersion resource.  This is only returned when the request provides the View value of FULL (default for GET request).
                 properties:
                   data:
-                    description: Required. bytes data for storing payload.
+                    description: Required. bytes data for storing payload. Provide base64-encoded value
                     format: byte
                     type: string
+                required:
+                - data
                 type: object
               resourceID:
                 description: The ParameterManagerParameterVersion name. If not given, the metadata.name will be used.
