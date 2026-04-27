@@ -9,7 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupList : IKubernetesObject<V1ListMeta>, IItems<V1beta1ComputeRegionNetworkEndpointGroup>
@@ -32,7 +32,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupList : IKubernetesO
 
     /// <summary>List of V1beta1ComputeRegionNetworkEndpointGroup objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1ComputeRegionNetworkEndpointGroup>? Items { get; set; }
+    public required IList<V1beta1ComputeRegionNetworkEndpointGroup> Items { get; set; }
 }
 
 /// <summary>
@@ -40,7 +40,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupList : IKubernetesO
 /// The function name is case-sensitive and must be 1-63 characters long.
 /// Example value: &quot;func1&quot;.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudFunctionFunctionRef
 {
@@ -61,7 +61,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudFunctionFu
 /// Immutable. Only valid when networkEndpointType is &quot;SERVERLESS&quot;.
 /// Only one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudFunction
 {
@@ -91,7 +91,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudFunction
 /// The service must be 1-63 characters long, and comply with RFC1035.
 /// Example value: &quot;run-service&quot;.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudRunServiceRef
 {
@@ -112,7 +112,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudRunService
 /// Immutable. Only valid when networkEndpointType is &quot;SERVERLESS&quot;.
 /// Only one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudRun
 {
@@ -152,7 +152,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecCloudRun
 /// The URL of the network to which all network endpoints in the NEG belong. Uses
 /// &quot;default&quot; project network if unspecified.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecNetworkRef
 {
@@ -173,7 +173,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecNetworkRef
 /// Immutable. This field is only used for PSC.
 /// Optional URL of the subnetwork to which all network endpoints in the NEG belong.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecSubnetworkRef
 {
@@ -190,7 +190,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupSpecSubnetworkRef
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupSpec
 {
@@ -250,7 +250,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupSpec
     public V1beta1ComputeRegionNetworkEndpointGroupSpecSubnetworkRef? SubnetworkRef { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupStatusConditions
 {
@@ -275,7 +275,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRegionNetworkEndpointGroupStatus
 {
@@ -291,7 +291,7 @@ public partial class V1beta1ComputeRegionNetworkEndpointGroupStatus
     public string? SelfLink { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ComputeRegionNetworkEndpointGroup : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1ComputeRegionNetworkEndpointGroupSpec>, IStatus<V1beta1ComputeRegionNetworkEndpointGroupStatus?>

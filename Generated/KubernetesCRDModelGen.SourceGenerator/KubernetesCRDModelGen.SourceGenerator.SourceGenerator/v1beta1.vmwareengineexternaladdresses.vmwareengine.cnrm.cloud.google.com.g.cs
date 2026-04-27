@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.vmwareengine.cnrm.cloud.google.com;
 /// <summary>VMwareEngineExternalAddress is the Schema for the VMwareEngineExternalAddress API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1VMwareEngineExternalAddressList : IKubernetesObject<V1ListMeta>, IItems<V1beta1VMwareEngineExternalAddress>
@@ -33,11 +33,11 @@ public partial class V1beta1VMwareEngineExternalAddressList : IKubernetesObject<
 
     /// <summary>List of V1beta1VMwareEngineExternalAddress objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1VMwareEngineExternalAddress>? Items { get; set; }
+    public required IList<V1beta1VMwareEngineExternalAddress> Items { get; set; }
 }
 
 /// <summary>Required. The resource name of the private cloud to create a new external IP address in.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VMwareEngineExternalAddressSpecPrivateCloudRef
 {
@@ -55,7 +55,7 @@ public partial class V1beta1VMwareEngineExternalAddressSpecPrivateCloudRef
 }
 
 /// <summary>VMwareEngineExternalAddressSpec defines the desired state of VMwareEngineExternalAddress</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VMwareEngineExternalAddressSpec
 {
@@ -76,7 +76,7 @@ public partial class V1beta1VMwareEngineExternalAddressSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VMwareEngineExternalAddressStatusConditions
 {
@@ -102,7 +102,7 @@ public partial class V1beta1VMwareEngineExternalAddressStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VMwareEngineExternalAddressStatusObservedState
 {
@@ -128,7 +128,7 @@ public partial class V1beta1VMwareEngineExternalAddressStatusObservedState
 }
 
 /// <summary>VMwareEngineExternalAddressStatus defines the config connector machine state of VMwareEngineExternalAddress</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VMwareEngineExternalAddressStatus
 {
@@ -150,7 +150,7 @@ public partial class V1beta1VMwareEngineExternalAddressStatus
 }
 
 /// <summary>VMwareEngineExternalAddress is the Schema for the VMwareEngineExternalAddress API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1VMwareEngineExternalAddress : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1VMwareEngineExternalAddressSpec>, IStatus<V1beta1VMwareEngineExternalAddressStatus?>

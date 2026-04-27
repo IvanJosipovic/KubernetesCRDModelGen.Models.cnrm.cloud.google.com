@@ -9,7 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.vpcaccess.cnrm.cloud.google.com;
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1VPCAccessConnectorList : IKubernetesObject<V1ListMeta>, IItems<V1beta1VPCAccessConnector>
@@ -32,11 +32,11 @@ public partial class V1beta1VPCAccessConnectorList : IKubernetesObject<V1ListMet
 
     /// <summary>List of V1beta1VPCAccessConnector objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1VPCAccessConnector>? Items { get; set; }
+    public required IList<V1beta1VPCAccessConnector> Items { get; set; }
 }
 
 /// <summary>Immutable. Name or self_link of the VPC network. Required if &apos;ip_cidr_range&apos; is set.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorSpecNetworkRef
 {
@@ -54,7 +54,7 @@ public partial class V1beta1VPCAccessConnectorSpecNetworkRef
 }
 
 /// <summary>Immutable. The project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorSpecProjectRef
 {
@@ -75,7 +75,7 @@ public partial class V1beta1VPCAccessConnectorSpecProjectRef
 /// Immutable. Subnet name (relative, not fully qualified). E.g. if the full subnet selfLink is
 /// https://compute.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetName} the correct input for this field would be {subnetName}&quot;
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorSpecSubnetNameRef
 {
@@ -93,7 +93,7 @@ public partial class V1beta1VPCAccessConnectorSpecSubnetNameRef
 }
 
 /// <summary>Immutable. Project in which the subnet exists. If not set, this project is assumed to be the project for which the connector create request was issued.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorSpecSubnetProjectRef
 {
@@ -111,7 +111,7 @@ public partial class V1beta1VPCAccessConnectorSpecSubnetProjectRef
 }
 
 /// <summary>Immutable. The subnet in which to house the connector.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorSpecSubnet
 {
@@ -127,7 +127,7 @@ public partial class V1beta1VPCAccessConnectorSpecSubnet
     public V1beta1VPCAccessConnectorSpecSubnetProjectRef? ProjectRef { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorSpec
 {
@@ -176,7 +176,7 @@ public partial class V1beta1VPCAccessConnectorSpec
     public V1beta1VPCAccessConnectorSpecSubnet? Subnet { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorStatusConditions
 {
@@ -201,7 +201,7 @@ public partial class V1beta1VPCAccessConnectorStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VPCAccessConnectorStatus
 {
@@ -226,7 +226,7 @@ public partial class V1beta1VPCAccessConnectorStatus
     public string? State { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1VPCAccessConnector : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1VPCAccessConnectorSpec>, IStatus<V1beta1VPCAccessConnectorStatus?>

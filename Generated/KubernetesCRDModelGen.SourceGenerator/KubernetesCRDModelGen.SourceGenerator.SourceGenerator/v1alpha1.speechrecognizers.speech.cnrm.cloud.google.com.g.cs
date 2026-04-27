@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.speech.cnrm.cloud.google.com;
 /// <summary>SpeechRecognizer is the Schema for the SpeechRecognizer API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1SpeechRecognizerList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1SpeechRecognizer>
@@ -33,11 +33,11 @@ public partial class V1alpha1SpeechRecognizerList : IKubernetesObject<V1ListMeta
 
     /// <summary>List of V1alpha1SpeechRecognizer objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1SpeechRecognizer>? Items { get; set; }
+    public required IList<V1alpha1SpeechRecognizer> Items { get; set; }
 }
 
 /// <summary>Default configuration to use for requests with this Recognizer. This can be overwritten by inline configuration in the [RecognizeRequest.config][google.cloud.speech.v2.RecognizeRequest.config] field.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerSpecDefaultRecognitionConfig
 {
@@ -73,7 +73,7 @@ public partial class V1alpha1SpeechRecognizerSpecDefaultRecognitionConfig
 }
 
 /// <summary>The Project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerSpecProjectRef
 {
@@ -95,7 +95,7 @@ public partial class V1alpha1SpeechRecognizerSpecProjectRef
 }
 
 /// <summary>SpeechRecognizerSpec defines the desired state of SpeechRecognizer</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerSpec
 {
@@ -124,7 +124,7 @@ public partial class V1alpha1SpeechRecognizerSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatusConditions
 {
@@ -149,7 +149,7 @@ public partial class V1alpha1SpeechRecognizerStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecognitionConfigAdaptationCustomClasses
 {
@@ -199,7 +199,7 @@ public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecogniti
 }
 
 /// <summary>An inline defined PhraseSet.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecognitionConfigAdaptationPhraseSetsInlinePhraseSet
 {
@@ -248,7 +248,7 @@ public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecogniti
     public string? UpdateTime { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecognitionConfigAdaptationPhraseSets
 {
@@ -258,7 +258,7 @@ public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecogniti
 }
 
 /// <summary>Speech adaptation context that weights recognizer predictions for specific words and phrases.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecognitionConfigAdaptation
 {
@@ -272,7 +272,7 @@ public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecogniti
 }
 
 /// <summary>Default configuration to use for requests with this Recognizer. This can be overwritten by inline configuration in the [RecognizeRequest.config][google.cloud.speech.v2.RecognizeRequest.config] field.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecognitionConfig
 {
@@ -282,7 +282,7 @@ public partial class V1alpha1SpeechRecognizerStatusObservedStateDefaultRecogniti
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatusObservedState
 {
@@ -332,7 +332,7 @@ public partial class V1alpha1SpeechRecognizerStatusObservedState
 }
 
 /// <summary>SpeechRecognizerStatus defines the config connector machine state of SpeechRecognizer</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SpeechRecognizerStatus
 {
@@ -354,7 +354,7 @@ public partial class V1alpha1SpeechRecognizerStatus
 }
 
 /// <summary>SpeechRecognizer is the Schema for the SpeechRecognizer API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1SpeechRecognizer : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1SpeechRecognizerSpec>, IStatus<V1alpha1SpeechRecognizerStatus?>

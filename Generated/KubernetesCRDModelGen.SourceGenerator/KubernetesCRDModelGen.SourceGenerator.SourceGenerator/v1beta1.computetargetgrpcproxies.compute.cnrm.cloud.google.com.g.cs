@@ -9,7 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ComputeTargetGRPCProxyList : IKubernetesObject<V1ListMeta>, IItems<V1beta1ComputeTargetGRPCProxy>
@@ -32,14 +32,14 @@ public partial class V1beta1ComputeTargetGRPCProxyList : IKubernetesObject<V1Lis
 
     /// <summary>List of V1beta1ComputeTargetGRPCProxy objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1ComputeTargetGRPCProxy>? Items { get; set; }
+    public required IList<V1beta1ComputeTargetGRPCProxy> Items { get; set; }
 }
 
 /// <summary>
 /// The UrlMap resource that defines the mapping from URL to the BackendService.
 /// The protocol field in the BackendService must be set to GRPC.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetGRPCProxySpecUrlMapRef
 {
@@ -56,7 +56,7 @@ public partial class V1beta1ComputeTargetGRPCProxySpecUrlMapRef
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetGRPCProxySpec
 {
@@ -91,7 +91,7 @@ public partial class V1beta1ComputeTargetGRPCProxySpec
     public bool? ValidateForProxyless { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetGRPCProxyStatusConditions
 {
@@ -116,7 +116,7 @@ public partial class V1beta1ComputeTargetGRPCProxyStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetGRPCProxyStatus
 {
@@ -152,7 +152,7 @@ public partial class V1beta1ComputeTargetGRPCProxyStatus
     public string? SelfLinkWithId { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ComputeTargetGRPCProxy : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1ComputeTargetGRPCProxySpec?>, IStatus<V1beta1ComputeTargetGRPCProxyStatus?>

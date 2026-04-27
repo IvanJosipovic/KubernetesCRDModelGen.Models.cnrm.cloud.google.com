@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.storage.cnrm.cloud.google.com;
 /// <summary>StorageManagedFolder is the Schema for the StorageManagedFolder API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1StorageManagedFolderList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1StorageManagedFolder>
@@ -33,11 +33,11 @@ public partial class V1alpha1StorageManagedFolderList : IKubernetesObject<V1List
 
     /// <summary>List of V1alpha1StorageManagedFolder objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1StorageManagedFolder>? Items { get; set; }
+    public required IList<V1alpha1StorageManagedFolder> Items { get; set; }
 }
 
 /// <summary>Required. The host project of the application.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1StorageManagedFolderSpecProjectRef
 {
@@ -59,7 +59,7 @@ public partial class V1alpha1StorageManagedFolderSpecProjectRef
 }
 
 /// <summary>Required. The storage bucket where the folder will be created in.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1StorageManagedFolderSpecStoragebucketRef
 {
@@ -77,7 +77,7 @@ public partial class V1alpha1StorageManagedFolderSpecStoragebucketRef
 }
 
 /// <summary>StorageManagedFolderSpec defines the desired state of StorageManagedFolder</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1StorageManagedFolderSpec
 {
@@ -94,7 +94,7 @@ public partial class V1alpha1StorageManagedFolderSpec
     public V1alpha1StorageManagedFolderSpecStoragebucketRef? StoragebucketRef { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1StorageManagedFolderStatusConditions
 {
@@ -120,7 +120,7 @@ public partial class V1alpha1StorageManagedFolderStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1StorageManagedFolderStatusObservedState
 {
@@ -138,7 +138,7 @@ public partial class V1alpha1StorageManagedFolderStatusObservedState
 }
 
 /// <summary>StorageManagedFolderStatus defines the config connector machine state of StorageManagedFolder</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1StorageManagedFolderStatus
 {
@@ -160,7 +160,7 @@ public partial class V1alpha1StorageManagedFolderStatus
 }
 
 /// <summary>StorageManagedFolder is the Schema for the StorageManagedFolder API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1StorageManagedFolder : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1StorageManagedFolderSpec>, IStatus<V1alpha1StorageManagedFolderStatus?>

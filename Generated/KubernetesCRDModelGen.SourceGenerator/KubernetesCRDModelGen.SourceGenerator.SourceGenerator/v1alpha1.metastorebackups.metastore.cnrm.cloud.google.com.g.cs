@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.metastore.cnrm.cloud.google.com;
 /// <summary>MetastoreBackup is the Schema for the MetastoreBackup API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1MetastoreBackupList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1MetastoreBackup>
@@ -33,11 +33,11 @@ public partial class V1alpha1MetastoreBackupList : IKubernetesObject<V1ListMeta>
 
     /// <summary>List of V1alpha1MetastoreBackup objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1MetastoreBackup>? Items { get; set; }
+    public required IList<V1alpha1MetastoreBackup> Items { get; set; }
 }
 
 /// <summary>The MetastoreService that the backup belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1MetastoreBackupSpecServiceRef
 {
@@ -55,7 +55,7 @@ public partial class V1alpha1MetastoreBackupSpecServiceRef
 }
 
 /// <summary>MetastoreBackupSpec defines the desired state of MetastoreBackup</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1MetastoreBackupSpec
 {
@@ -72,7 +72,7 @@ public partial class V1alpha1MetastoreBackupSpec
     public required V1alpha1MetastoreBackupSpecServiceRef ServiceRef { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1MetastoreBackupStatusConditions
 {
@@ -98,7 +98,7 @@ public partial class V1alpha1MetastoreBackupStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1MetastoreBackupStatusObservedState
 {
@@ -124,7 +124,7 @@ public partial class V1alpha1MetastoreBackupStatusObservedState
 }
 
 /// <summary>MetastoreBackupStatus defines the config connector machine state of MetastoreBackup</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1MetastoreBackupStatus
 {
@@ -146,7 +146,7 @@ public partial class V1alpha1MetastoreBackupStatus
 }
 
 /// <summary>MetastoreBackup is the Schema for the MetastoreBackup API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1MetastoreBackup : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1MetastoreBackupSpec>, IStatus<V1alpha1MetastoreBackupStatus?>

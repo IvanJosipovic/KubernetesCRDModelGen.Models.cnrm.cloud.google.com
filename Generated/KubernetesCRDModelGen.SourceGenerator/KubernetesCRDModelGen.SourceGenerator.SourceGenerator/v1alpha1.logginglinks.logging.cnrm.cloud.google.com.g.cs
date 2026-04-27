@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.logging.cnrm.cloud.google.com;
 /// <summary>LoggingLink is the Schema for the LoggingLink API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1LoggingLinkList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1LoggingLink>
@@ -33,11 +33,11 @@ public partial class V1alpha1LoggingLinkList : IKubernetesObject<V1ListMeta>, II
 
     /// <summary>List of V1alpha1LoggingLink objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1LoggingLink>? Items { get; set; }
+    public required IList<V1alpha1LoggingLink> Items { get; set; }
 }
 
 /// <summary>Required. The LoggingLogBucket that this Link is associated with.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1LoggingLinkSpecLoggingLogBucketRef
 {
@@ -55,7 +55,7 @@ public partial class V1alpha1LoggingLinkSpecLoggingLogBucketRef
 }
 
 /// <summary>LoggingLinkSpec defines the desired state of LoggingLink</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1LoggingLinkSpec
 {
@@ -76,7 +76,7 @@ public partial class V1alpha1LoggingLinkSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1LoggingLinkStatusConditions
 {
@@ -102,7 +102,7 @@ public partial class V1alpha1LoggingLinkStatusConditions
 }
 
 /// <summary>The information of a BigQuery Dataset. When a link is created, a BigQuery dataset is created along with it, in the same project as the LogBucket it&apos;s linked to. This dataset will also have BigQuery Views corresponding to the LogViews in the bucket.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1LoggingLinkStatusObservedStateBigQueryDataset
 {
@@ -120,7 +120,7 @@ public partial class V1alpha1LoggingLinkStatusObservedStateBigQueryDataset
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1LoggingLinkStatusObservedState
 {
@@ -138,7 +138,7 @@ public partial class V1alpha1LoggingLinkStatusObservedState
 }
 
 /// <summary>LoggingLinkStatus defines the config connector machine state of LoggingLink</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1LoggingLinkStatus
 {
@@ -160,7 +160,7 @@ public partial class V1alpha1LoggingLinkStatus
 }
 
 /// <summary>LoggingLink is the Schema for the LoggingLink API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1LoggingLink : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1LoggingLinkSpec>, IStatus<V1alpha1LoggingLinkStatus?>

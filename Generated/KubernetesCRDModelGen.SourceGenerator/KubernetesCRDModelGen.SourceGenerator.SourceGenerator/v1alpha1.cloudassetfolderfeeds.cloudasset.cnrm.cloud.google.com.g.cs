@@ -9,7 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.cloudasset.cnrm.cloud.google.com;
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1CloudAssetFolderFeedList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1CloudAssetFolderFeed>
@@ -32,7 +32,7 @@ public partial class V1alpha1CloudAssetFolderFeedList : IKubernetesObject<V1List
 
     /// <summary>List of V1alpha1CloudAssetFolderFeed objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1CloudAssetFolderFeed>? Items { get; set; }
+    public required IList<V1alpha1CloudAssetFolderFeed> Items { get; set; }
 }
 
 /// <summary>
@@ -42,7 +42,7 @@ public partial class V1alpha1CloudAssetFolderFeedList : IKubernetesObject<V1List
 /// expression &quot;temporal_asset.deleted == true&quot; will only publish Asset deletions. Other fields of
 /// condition are optional.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudAssetFolderFeedSpecCondition
 {
@@ -73,7 +73,7 @@ public partial class V1alpha1CloudAssetFolderFeedSpecCondition
 }
 
 /// <summary>Destination on Cloud Pubsub.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudAssetFolderFeedSpecFeedOutputConfigPubsubDestination
 {
@@ -83,7 +83,7 @@ public partial class V1alpha1CloudAssetFolderFeedSpecFeedOutputConfigPubsubDesti
 }
 
 /// <summary>Output configuration for asset feed destination.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudAssetFolderFeedSpecFeedOutputConfig
 {
@@ -93,7 +93,7 @@ public partial class V1alpha1CloudAssetFolderFeedSpecFeedOutputConfig
 }
 
 /// <summary>The folder that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudAssetFolderFeedSpecFolderRef
 {
@@ -110,7 +110,7 @@ public partial class V1alpha1CloudAssetFolderFeedSpecFolderRef
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudAssetFolderFeedSpec
 {
@@ -176,7 +176,7 @@ public partial class V1alpha1CloudAssetFolderFeedSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudAssetFolderFeedStatusConditions
 {
@@ -201,7 +201,7 @@ public partial class V1alpha1CloudAssetFolderFeedStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudAssetFolderFeedStatus
 {
@@ -225,7 +225,7 @@ public partial class V1alpha1CloudAssetFolderFeedStatus
     public int? ObservedGeneration { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1CloudAssetFolderFeed : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1CloudAssetFolderFeedSpec>, IStatus<V1alpha1CloudAssetFolderFeedStatus?>

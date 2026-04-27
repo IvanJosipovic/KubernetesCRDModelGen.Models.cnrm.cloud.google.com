@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.vmwareengine.cnrm.cloud.google.com;
 /// <summary>VMwareEngineNetwork is the Schema for the VMwareEngineNetwork API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1VMwareEngineNetworkList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1VMwareEngineNetwork>
@@ -33,11 +33,11 @@ public partial class V1alpha1VMwareEngineNetworkList : IKubernetesObject<V1ListM
 
     /// <summary>List of V1alpha1VMwareEngineNetwork objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1VMwareEngineNetwork>? Items { get; set; }
+    public required IList<V1alpha1VMwareEngineNetwork> Items { get; set; }
 }
 
 /// <summary>The Project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineNetworkSpecProjectRef
 {
@@ -59,7 +59,7 @@ public partial class V1alpha1VMwareEngineNetworkSpecProjectRef
 }
 
 /// <summary>VMwareEngineNetworkSpec defines the desired state of VMwareEngineNetwork</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineNetworkSpec
 {
@@ -84,7 +84,7 @@ public partial class V1alpha1VMwareEngineNetworkSpec
     public required string Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineNetworkStatusConditions
 {
@@ -109,7 +109,7 @@ public partial class V1alpha1VMwareEngineNetworkStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineNetworkStatusObservedStateVpcNetworks
 {
@@ -123,7 +123,7 @@ public partial class V1alpha1VMwareEngineNetworkStatusObservedStateVpcNetworks
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineNetworkStatusObservedState
 {
@@ -149,7 +149,7 @@ public partial class V1alpha1VMwareEngineNetworkStatusObservedState
 }
 
 /// <summary>VMwareEngineNetworkStatus defines the config connector machine state of VMwareEngineNetwork</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineNetworkStatus
 {
@@ -171,7 +171,7 @@ public partial class V1alpha1VMwareEngineNetworkStatus
 }
 
 /// <summary>VMwareEngineNetwork is the Schema for the VMwareEngineNetwork API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1VMwareEngineNetwork : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1VMwareEngineNetworkSpec>, IStatus<V1alpha1VMwareEngineNetworkStatus?>

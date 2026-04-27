@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.serviceusage.cnrm.cloud.google.com;
 /// <summary>ServiceIdentity is the Schema for the ServiceIdentity API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ServiceIdentityList : IKubernetesObject<V1ListMeta>, IItems<V1beta1ServiceIdentity>
@@ -33,11 +33,11 @@ public partial class V1beta1ServiceIdentityList : IKubernetesObject<V1ListMeta>,
 
     /// <summary>List of V1beta1ServiceIdentity objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1ServiceIdentity>? Items { get; set; }
+    public required IList<V1beta1ServiceIdentity> Items { get; set; }
 }
 
 /// <summary>The project that this service identity belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceIdentitySpecProjectRef
 {
@@ -59,7 +59,7 @@ public partial class V1beta1ServiceIdentitySpecProjectRef
 }
 
 /// <summary>ServiceIdentitySpec defines the desired state of ServiceIdentity</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceIdentitySpec
 {
@@ -72,7 +72,7 @@ public partial class V1beta1ServiceIdentitySpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceIdentityStatusConditions
 {
@@ -98,7 +98,7 @@ public partial class V1beta1ServiceIdentityStatusConditions
 }
 
 /// <summary>ServiceIdentityStatus defines the config connector machine state of ServiceIdentity</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceIdentityStatus
 {
@@ -116,7 +116,7 @@ public partial class V1beta1ServiceIdentityStatus
 }
 
 /// <summary>ServiceIdentity is the Schema for the ServiceIdentity API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ServiceIdentity : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1ServiceIdentitySpec>, IStatus<V1beta1ServiceIdentityStatus?>

@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.bigquery.cnrm.cloud.google.com;
 /// <summary>BigQueryDatasetAccess is the Schema for the BigQueryDatasetAccess API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1BigQueryDatasetAccessList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1BigQueryDatasetAccess>
@@ -33,11 +33,11 @@ public partial class V1alpha1BigQueryDatasetAccessList : IKubernetesObject<V1Lis
 
     /// <summary>List of V1alpha1BigQueryDatasetAccess objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1BigQueryDatasetAccess>? Items { get; set; }
+    public required IList<V1alpha1BigQueryDatasetAccess> Items { get; set; }
 }
 
 /// <summary>Immutable. The dataset this entry applies to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDatasetAccessSpecDatasetDataset
 {
@@ -51,7 +51,7 @@ public partial class V1alpha1BigQueryDatasetAccessSpecDatasetDataset
 }
 
 /// <summary>Immutable. Grants all resources of particular types in a particular dataset read access to the current dataset.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDatasetAccessSpecDataset
 {
@@ -65,7 +65,7 @@ public partial class V1alpha1BigQueryDatasetAccessSpecDataset
 }
 
 /// <summary>The project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDatasetAccessSpecProjectRef
 {
@@ -83,7 +83,7 @@ public partial class V1alpha1BigQueryDatasetAccessSpecProjectRef
 }
 
 /// <summary>Immutable. A view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDatasetAccessSpecView
 {
@@ -101,7 +101,7 @@ public partial class V1alpha1BigQueryDatasetAccessSpecView
 }
 
 /// <summary>BigQueryDatasetAccessSpec defines the desired state of BigQueryDatasetAccess</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDatasetAccessSpec
 {
@@ -160,7 +160,7 @@ public partial class V1alpha1BigQueryDatasetAccessSpec
     public V1alpha1BigQueryDatasetAccessSpecView? View { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDatasetAccessStatusConditions
 {
@@ -186,7 +186,7 @@ public partial class V1alpha1BigQueryDatasetAccessStatusConditions
 }
 
 /// <summary>BigQueryDatasetAccessStatus defines the config connector machine state of BigQueryDatasetAccess</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDatasetAccessStatus
 {
@@ -204,7 +204,7 @@ public partial class V1alpha1BigQueryDatasetAccessStatus
 }
 
 /// <summary>BigQueryDatasetAccess is the Schema for the BigQueryDatasetAccess API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1BigQueryDatasetAccess : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1BigQueryDatasetAccessSpec>, IStatus<V1alpha1BigQueryDatasetAccessStatus?>

@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.dataplex.cnrm.cloud.google.com;
 /// <summary>DataplexEntryGroup is the Schema for the DataplexEntryGroup API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1DataplexEntryGroupList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1DataplexEntryGroup>
@@ -33,11 +33,11 @@ public partial class V1alpha1DataplexEntryGroupList : IKubernetesObject<V1ListMe
 
     /// <summary>List of V1alpha1DataplexEntryGroup objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1DataplexEntryGroup>? Items { get; set; }
+    public required IList<V1alpha1DataplexEntryGroup> Items { get; set; }
 }
 
 /// <summary>The Project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryGroupSpecProjectRef
 {
@@ -59,7 +59,7 @@ public partial class V1alpha1DataplexEntryGroupSpecProjectRef
 }
 
 /// <summary>DataplexEntryGroupSpec defines the desired state of DataplexEntryGroup</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryGroupSpec
 {
@@ -84,7 +84,7 @@ public partial class V1alpha1DataplexEntryGroupSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryGroupStatusConditions
 {
@@ -110,7 +110,7 @@ public partial class V1alpha1DataplexEntryGroupStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryGroupStatusObservedState
 {
@@ -132,7 +132,7 @@ public partial class V1alpha1DataplexEntryGroupStatusObservedState
 }
 
 /// <summary>DataplexEntryGroupStatus defines the config connector machine state of DataplexEntryGroup</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryGroupStatus
 {
@@ -154,7 +154,7 @@ public partial class V1alpha1DataplexEntryGroupStatus
 }
 
 /// <summary>DataplexEntryGroup is the Schema for the DataplexEntryGroup API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1DataplexEntryGroup : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1DataplexEntryGroupSpec>, IStatus<V1alpha1DataplexEntryGroupStatus?>
