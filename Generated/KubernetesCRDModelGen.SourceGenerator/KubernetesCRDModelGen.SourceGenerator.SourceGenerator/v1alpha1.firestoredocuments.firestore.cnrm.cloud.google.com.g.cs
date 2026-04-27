@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.firestore.cnrm.cloud.google.com;
 /// <summary>FirestoreDocument is the Schema for the FirestoreDocument API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1FirestoreDocumentList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1FirestoreDocument>
@@ -33,11 +33,11 @@ public partial class V1alpha1FirestoreDocumentList : IKubernetesObject<V1ListMet
 
     /// <summary>List of V1alpha1FirestoreDocument objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1FirestoreDocument>? Items { get; set; }
+    public required IList<V1alpha1FirestoreDocument> Items { get; set; }
 }
 
 /// <summary>DatabaseRef references the FirestoreDatabase in which to create the document.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1FirestoreDocumentSpecDatabaseRef
 {
@@ -55,7 +55,7 @@ public partial class V1alpha1FirestoreDocumentSpecDatabaseRef
 }
 
 /// <summary>FirestoreDocumentSpec defines the desired state of FirestoreDocument</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1FirestoreDocumentSpec
 {
@@ -76,7 +76,7 @@ public partial class V1alpha1FirestoreDocumentSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1FirestoreDocumentStatusConditions
 {
@@ -102,7 +102,7 @@ public partial class V1alpha1FirestoreDocumentStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1FirestoreDocumentStatusObservedState
 {
@@ -128,7 +128,7 @@ public partial class V1alpha1FirestoreDocumentStatusObservedState
 }
 
 /// <summary>FirestoreDocumentStatus defines the config connector machine state of FirestoreDocument</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1FirestoreDocumentStatus
 {
@@ -150,7 +150,7 @@ public partial class V1alpha1FirestoreDocumentStatus
 }
 
 /// <summary>FirestoreDocument is the Schema for the FirestoreDocument API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1FirestoreDocument : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1FirestoreDocumentSpec>, IStatus<V1alpha1FirestoreDocumentStatus?>

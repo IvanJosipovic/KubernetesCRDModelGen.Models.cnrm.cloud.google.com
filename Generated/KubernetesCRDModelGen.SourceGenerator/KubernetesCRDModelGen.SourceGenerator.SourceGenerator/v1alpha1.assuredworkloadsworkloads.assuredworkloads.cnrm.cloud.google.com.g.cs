@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.assuredworkloads.cnrm.cloud.google.com;
 /// <summary>AssuredWorkloadsWorkload is the Schema for the AssuredWorkloadsWorkload API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1AssuredWorkloadsWorkloadList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1AssuredWorkloadsWorkload>
@@ -33,11 +33,11 @@ public partial class V1alpha1AssuredWorkloadsWorkloadList : IKubernetesObject<V1
 
     /// <summary>List of V1alpha1AssuredWorkloadsWorkload objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1AssuredWorkloadsWorkload>? Items { get; set; }
+    public required IList<V1alpha1AssuredWorkloadsWorkload> Items { get; set; }
 }
 
 /// <summary>Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadSpecBillingAccountRef
 {
@@ -54,7 +54,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadSpecBillingAccountRef
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadSpecResourceSettings
 {
@@ -72,7 +72,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadSpecResourceSettings
 }
 
 /// <summary>AssuredWorkloadsWorkloadSpec defines the desired state of AssuredWorkloadsWorkload</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadSpec
 {
@@ -112,7 +112,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadSpec
     public IList<V1alpha1AssuredWorkloadsWorkloadSpecResourceSettings>? ResourceSettings { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadStatusConditions
 {
@@ -137,7 +137,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadStatusObservedStateResources
 {
@@ -151,7 +151,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadStatusObservedStateResource
 }
 
 /// <summary>Output only. Represents the SAA enrollment response of the given workload. SAA enrollment response is queried during GetWorkload call. In failure cases, user friendly error message is shown in SAA details page.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadStatusObservedStateSaaEnrollmentResponse
 {
@@ -165,7 +165,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadStatusObservedStateSaaEnrol
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadStatusObservedState
 {
@@ -191,7 +191,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadStatusObservedState
 }
 
 /// <summary>AssuredWorkloadsWorkloadStatus defines the config connector machine state of AssuredWorkloadsWorkload</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AssuredWorkloadsWorkloadStatus
 {
@@ -213,7 +213,7 @@ public partial class V1alpha1AssuredWorkloadsWorkloadStatus
 }
 
 /// <summary>AssuredWorkloadsWorkload is the Schema for the AssuredWorkloadsWorkload API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1AssuredWorkloadsWorkload : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1AssuredWorkloadsWorkloadSpec>, IStatus<V1alpha1AssuredWorkloadsWorkloadStatus?>

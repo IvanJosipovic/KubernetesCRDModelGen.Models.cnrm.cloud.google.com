@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.bigquerydatapolicy.cnrm.cloud.google.com;
 /// <summary>BigQueryDataPolicy is the Schema for the BigQueryDataPolicy API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1BigQueryDataPolicyList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1BigQueryDataPolicy>
@@ -33,11 +33,11 @@ public partial class V1alpha1BigQueryDataPolicyList : IKubernetesObject<V1ListMe
 
     /// <summary>List of V1alpha1BigQueryDataPolicy objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1BigQueryDataPolicy>? Items { get; set; }
+    public required IList<V1alpha1BigQueryDataPolicy> Items { get; set; }
 }
 
 /// <summary>The data masking policy that specifies the data masking rule to use.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDataPolicySpecDataMaskingPolicy
 {
@@ -47,7 +47,7 @@ public partial class V1alpha1BigQueryDataPolicySpecDataMaskingPolicy
 }
 
 /// <summary>Reference to a Data Catalog Policy Tag resource.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDataPolicySpecPolicyTagRef
 {
@@ -65,7 +65,7 @@ public partial class V1alpha1BigQueryDataPolicySpecPolicyTagRef
 }
 
 /// <summary>Required. The host project of the application.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDataPolicySpecProjectRef
 {
@@ -87,7 +87,7 @@ public partial class V1alpha1BigQueryDataPolicySpecProjectRef
 }
 
 /// <summary>BigQueryDataPolicySpec defines the desired state of BigQueryDataPolicy</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDataPolicySpec
 {
@@ -120,7 +120,7 @@ public partial class V1alpha1BigQueryDataPolicySpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDataPolicyStatusConditions
 {
@@ -146,14 +146,14 @@ public partial class V1alpha1BigQueryDataPolicyStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDataPolicyStatusObservedState
 {
 }
 
 /// <summary>BigQueryDataPolicyStatus defines the config connector machine state of BigQueryDataPolicy</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryDataPolicyStatus
 {
@@ -175,7 +175,7 @@ public partial class V1alpha1BigQueryDataPolicyStatus
 }
 
 /// <summary>BigQueryDataPolicy is the Schema for the BigQueryDataPolicy API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1BigQueryDataPolicy : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1BigQueryDataPolicySpec>, IStatus<V1alpha1BigQueryDataPolicyStatus?>

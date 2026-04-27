@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.datastream.cnrm.cloud.google.com;
 /// <summary>DatastreamPrivateConnection is the Schema for the DatastreamPrivateConnection API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1DatastreamPrivateConnectionList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1DatastreamPrivateConnection>
@@ -33,11 +33,11 @@ public partial class V1alpha1DatastreamPrivateConnectionList : IKubernetesObject
 
     /// <summary>List of V1alpha1DatastreamPrivateConnection objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1DatastreamPrivateConnection>? Items { get; set; }
+    public required IList<V1alpha1DatastreamPrivateConnection> Items { get; set; }
 }
 
 /// <summary>The Project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionSpecProjectRef
 {
@@ -59,7 +59,7 @@ public partial class V1alpha1DatastreamPrivateConnectionSpecProjectRef
 }
 
 /// <summary>Required. Fully qualified name of the VPC that Datastream will peer to. Format: `projects/{project}/global/{networks}/{name}`</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionSpecVpcPeeringConfigNetworkRef
 {
@@ -77,7 +77,7 @@ public partial class V1alpha1DatastreamPrivateConnectionSpecVpcPeeringConfigNetw
 }
 
 /// <summary>VPC Peering Config.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionSpecVpcPeeringConfig
 {
@@ -91,7 +91,7 @@ public partial class V1alpha1DatastreamPrivateConnectionSpecVpcPeeringConfig
 }
 
 /// <summary>DatastreamPrivateConnectionSpec defines the desired state of DatastreamPrivateConnection</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionSpec
 {
@@ -120,7 +120,7 @@ public partial class V1alpha1DatastreamPrivateConnectionSpec
     public V1alpha1DatastreamPrivateConnectionSpecVpcPeeringConfig? VpcPeeringConfig { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionStatusConditions
 {
@@ -146,7 +146,7 @@ public partial class V1alpha1DatastreamPrivateConnectionStatusConditions
 }
 
 /// <summary>Output only. In case of error, the details of the error in a user-friendly format.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionStatusObservedStateError
 {
@@ -172,7 +172,7 @@ public partial class V1alpha1DatastreamPrivateConnectionStatusObservedStateError
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionStatusObservedState
 {
@@ -194,7 +194,7 @@ public partial class V1alpha1DatastreamPrivateConnectionStatusObservedState
 }
 
 /// <summary>DatastreamPrivateConnectionStatus defines the config connector machine state of DatastreamPrivateConnection</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DatastreamPrivateConnectionStatus
 {
@@ -216,7 +216,7 @@ public partial class V1alpha1DatastreamPrivateConnectionStatus
 }
 
 /// <summary>DatastreamPrivateConnection is the Schema for the DatastreamPrivateConnection API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1DatastreamPrivateConnection : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1DatastreamPrivateConnectionSpec>, IStatus<V1alpha1DatastreamPrivateConnectionStatus?>

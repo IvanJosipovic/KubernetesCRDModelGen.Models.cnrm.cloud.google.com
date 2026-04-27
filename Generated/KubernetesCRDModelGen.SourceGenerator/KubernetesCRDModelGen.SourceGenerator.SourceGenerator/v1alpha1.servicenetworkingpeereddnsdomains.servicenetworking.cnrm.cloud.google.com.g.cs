@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.servicenetworking.cnrm.cloud.google.com;
 /// <summary>ServiceNetworkingPeeredDNSDomain is the Schema for the ServiceNetworkingPeeredDNSDomain API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1ServiceNetworkingPeeredDNSDomainList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1ServiceNetworkingPeeredDNSDomain>
@@ -33,11 +33,11 @@ public partial class V1alpha1ServiceNetworkingPeeredDNSDomainList : IKubernetesO
 
     /// <summary>List of V1alpha1ServiceNetworkingPeeredDNSDomain objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1ServiceNetworkingPeeredDNSDomain>? Items { get; set; }
+    public required IList<V1alpha1ServiceNetworkingPeeredDNSDomain> Items { get; set; }
 }
 
 /// <summary>The network that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ServiceNetworkingPeeredDNSDomainSpecNetworkRef
 {
@@ -55,7 +55,7 @@ public partial class V1alpha1ServiceNetworkingPeeredDNSDomainSpecNetworkRef
 }
 
 /// <summary>ServiceNetworkingPeeredDNSDomainSpec defines the desired state of ServiceNetworkingPeeredDNSDomain</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ServiceNetworkingPeeredDNSDomainSpec
 {
@@ -72,7 +72,7 @@ public partial class V1alpha1ServiceNetworkingPeeredDNSDomainSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ServiceNetworkingPeeredDNSDomainStatusConditions
 {
@@ -98,14 +98,14 @@ public partial class V1alpha1ServiceNetworkingPeeredDNSDomainStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ServiceNetworkingPeeredDNSDomainStatusObservedState
 {
 }
 
 /// <summary>ServiceNetworkingPeeredDNSDomainStatus defines the config connector machine state of ServiceNetworkingPeeredDNSDomain</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ServiceNetworkingPeeredDNSDomainStatus
 {
@@ -127,7 +127,7 @@ public partial class V1alpha1ServiceNetworkingPeeredDNSDomainStatus
 }
 
 /// <summary>ServiceNetworkingPeeredDNSDomain is the Schema for the ServiceNetworkingPeeredDNSDomain API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1ServiceNetworkingPeeredDNSDomain : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1ServiceNetworkingPeeredDNSDomainSpec>, IStatus<V1alpha1ServiceNetworkingPeeredDNSDomainStatus?>

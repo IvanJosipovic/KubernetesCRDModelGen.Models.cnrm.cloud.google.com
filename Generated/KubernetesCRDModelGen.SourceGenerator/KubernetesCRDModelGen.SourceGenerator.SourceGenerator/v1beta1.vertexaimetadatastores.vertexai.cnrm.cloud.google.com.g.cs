@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.vertexai.cnrm.cloud.google.com;
 /// <summary>VertexAIMetadataStore is the Schema for the VertexAIMetadataStore API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1VertexAIMetadataStoreList : IKubernetesObject<V1ListMeta>, IItems<V1beta1VertexAIMetadataStore>
@@ -33,11 +33,11 @@ public partial class V1beta1VertexAIMetadataStoreList : IKubernetesObject<V1List
 
     /// <summary>List of V1beta1VertexAIMetadataStore objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1VertexAIMetadataStore>? Items { get; set; }
+    public required IList<V1beta1VertexAIMetadataStore> Items { get; set; }
 }
 
 /// <summary>Optional. Dataplex integration settings.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreSpecDataplexConfig
 {
@@ -47,7 +47,7 @@ public partial class V1beta1VertexAIMetadataStoreSpecDataplexConfig
 }
 
 /// <summary>Required. The Cloud KMS resource identifier of the customer managed encryption key used to protect a resource. The key needs to be in the same region as where the compute resource is created.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreSpecEncryptionSpecKmsKeyRef
 {
@@ -65,7 +65,7 @@ public partial class V1beta1VertexAIMetadataStoreSpecEncryptionSpecKmsKeyRef
 }
 
 /// <summary>Customer-managed encryption key spec for a Metadata Store. If set, this Metadata Store and all sub-resources of this Metadata Store are secured using this key.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreSpecEncryptionSpec
 {
@@ -75,7 +75,7 @@ public partial class V1beta1VertexAIMetadataStoreSpecEncryptionSpec
 }
 
 /// <summary>The project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreSpecProjectRef
 {
@@ -97,7 +97,7 @@ public partial class V1beta1VertexAIMetadataStoreSpecProjectRef
 }
 
 /// <summary>VertexAIMetadataStoreSpec defines the desired state of VertexAIMetadataStore</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreSpec
 {
@@ -126,7 +126,7 @@ public partial class V1beta1VertexAIMetadataStoreSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreStatusConditions
 {
@@ -152,7 +152,7 @@ public partial class V1beta1VertexAIMetadataStoreStatusConditions
 }
 
 /// <summary>Output only. State information of the MetadataStore.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreStatusObservedStateState
 {
@@ -162,7 +162,7 @@ public partial class V1beta1VertexAIMetadataStoreStatusObservedStateState
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreStatusObservedState
 {
@@ -184,7 +184,7 @@ public partial class V1beta1VertexAIMetadataStoreStatusObservedState
 }
 
 /// <summary>VertexAIMetadataStoreStatus defines the config connector machine state of VertexAIMetadataStore</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1VertexAIMetadataStoreStatus
 {
@@ -206,7 +206,7 @@ public partial class V1beta1VertexAIMetadataStoreStatus
 }
 
 /// <summary>VertexAIMetadataStore is the Schema for the VertexAIMetadataStore API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1VertexAIMetadataStore : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1VertexAIMetadataStoreSpec>, IStatus<V1beta1VertexAIMetadataStoreStatus?>

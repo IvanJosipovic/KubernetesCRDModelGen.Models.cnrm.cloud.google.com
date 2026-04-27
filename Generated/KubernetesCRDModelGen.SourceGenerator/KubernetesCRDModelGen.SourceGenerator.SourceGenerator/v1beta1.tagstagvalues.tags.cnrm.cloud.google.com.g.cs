@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.tags.cnrm.cloud.google.com;
 /// <summary>TagsTagValue is the Schema for the TagsTagValue API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1TagsTagValueList : IKubernetesObject<V1ListMeta>, IItems<V1beta1TagsTagValue>
@@ -33,11 +33,11 @@ public partial class V1beta1TagsTagValueList : IKubernetesObject<V1ListMeta>, II
 
     /// <summary>List of V1beta1TagsTagValue objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1TagsTagValue>? Items { get; set; }
+    public required IList<V1beta1TagsTagValue> Items { get; set; }
 }
 
 /// <summary>Immutable. The TagValue&apos;s parent TagKey.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1TagsTagValueSpecParentRef
 {
@@ -55,7 +55,7 @@ public partial class V1beta1TagsTagValueSpecParentRef
 }
 
 /// <summary>TagsTagValueSpec defines the desired state of TagsTagValue</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1TagsTagValueSpec
 {
@@ -88,7 +88,7 @@ public partial class V1beta1TagsTagValueSpec
     public required string ShortName { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1TagsTagValueStatusConditions
 {
@@ -114,7 +114,7 @@ public partial class V1beta1TagsTagValueStatusConditions
 }
 
 /// <summary>TagsTagValueStatus defines the config connector machine state of TagsTagValue</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1TagsTagValueStatus
 {
@@ -148,7 +148,7 @@ public partial class V1beta1TagsTagValueStatus
 }
 
 /// <summary>TagsTagValue is the Schema for the TagsTagValue API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1TagsTagValue : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1TagsTagValueSpec>, IStatus<V1beta1TagsTagValueStatus?>

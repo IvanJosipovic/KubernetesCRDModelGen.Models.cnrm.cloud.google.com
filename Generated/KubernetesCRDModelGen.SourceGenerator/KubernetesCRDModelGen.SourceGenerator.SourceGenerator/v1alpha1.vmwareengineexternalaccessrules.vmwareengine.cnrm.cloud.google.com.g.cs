@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.vmwareengine.cnrm.cloud.google.com;
 /// <summary>VMwareEngineExternalAccessRule is the Schema for the VMwareEngineExternalAccessRule API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1VMwareEngineExternalAccessRuleList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1VMwareEngineExternalAccessRule>
@@ -33,11 +33,11 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleList : IKubernetesObj
 
     /// <summary>List of V1alpha1VMwareEngineExternalAccessRule objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1VMwareEngineExternalAccessRule>? Items { get; set; }
+    public required IList<V1alpha1VMwareEngineExternalAccessRule> Items { get; set; }
 }
 
 /// <summary>The name of an `ExternalAddress` resource. The external address must have been reserved in the scope of this external access rule&apos;s parent network policy.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleSpecDestinationIPRangesExternalAddressRef
 {
@@ -54,7 +54,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleSpecDestinationIPRang
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleSpecDestinationIPRanges
 {
@@ -72,7 +72,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleSpecDestinationIPRang
 }
 
 /// <summary>Required. The resource name of the network policy to create a new external access firewall rule in.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleSpecNetworkPolicyRef
 {
@@ -90,7 +90,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleSpecNetworkPolicyRef
 }
 
 /// <summary>The name of an `ExternalAddress` resource. The external address must have been reserved in the scope of this external access rule&apos;s parent network policy.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleSpecSourceIPRangesExternalAddressRef
 {
@@ -107,7 +107,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleSpecSourceIPRangesExt
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleSpecSourceIPRanges
 {
@@ -125,7 +125,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleSpecSourceIPRanges
 }
 
 /// <summary>VMwareEngineExternalAccessRuleSpec defines the desired state of VMwareEngineExternalAccessRule</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleSpec
 {
@@ -170,7 +170,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleSpec
     public IList<string>? SourcePorts { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleStatusConditions
 {
@@ -196,7 +196,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleStatusObservedState
 {
@@ -218,7 +218,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleStatusObservedState
 }
 
 /// <summary>VMwareEngineExternalAccessRuleStatus defines the config connector machine state of VMwareEngineExternalAccessRule</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VMwareEngineExternalAccessRuleStatus
 {
@@ -240,7 +240,7 @@ public partial class V1alpha1VMwareEngineExternalAccessRuleStatus
 }
 
 /// <summary>VMwareEngineExternalAccessRule is the Schema for the VMwareEngineExternalAccessRule API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1VMwareEngineExternalAccessRule : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1VMwareEngineExternalAccessRuleSpec>, IStatus<V1alpha1VMwareEngineExternalAccessRuleStatus?>

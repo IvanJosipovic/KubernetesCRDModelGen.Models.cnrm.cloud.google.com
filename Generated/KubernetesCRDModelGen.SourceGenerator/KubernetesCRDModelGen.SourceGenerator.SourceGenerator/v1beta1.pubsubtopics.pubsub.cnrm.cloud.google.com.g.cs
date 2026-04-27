@@ -9,7 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.pubsub.cnrm.cloud.google.com;
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1PubSubTopicList : IKubernetesObject<V1ListMeta>, IItems<V1beta1PubSubTopic>
@@ -32,7 +32,7 @@ public partial class V1beta1PubSubTopicList : IKubernetesObject<V1ListMeta>, IIt
 
     /// <summary>List of V1beta1PubSubTopic objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1PubSubTopic>? Items { get; set; }
+    public required IList<V1beta1PubSubTopic> Items { get; set; }
 }
 
 /// <summary>
@@ -42,7 +42,7 @@ public partial class V1beta1PubSubTopicList : IKubernetesObject<V1ListMeta>, IIt
 /// must have &apos;roles/cloudkms.cryptoKeyEncrypterDecrypter&apos; to use this
 /// feature.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpecKmsKeyRef
 {
@@ -64,7 +64,7 @@ public partial class V1beta1PubSubTopicSpecKmsKeyRef
 /// messages published to the topic may be stored. If not present, then no
 /// constraints are in effect.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpecMessageStoragePolicy
 {
@@ -80,7 +80,7 @@ public partial class V1beta1PubSubTopicSpecMessageStoragePolicy
     public required IList<string> AllowedPersistenceRegions { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpecSchemaSettingsSchemaRef
 {
@@ -98,7 +98,7 @@ public partial class V1beta1PubSubTopicSpecSchemaSettingsSchemaRef
 }
 
 /// <summary>Settings for validating messages published against a schema.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpecSchemaSettings
 {
@@ -110,7 +110,7 @@ public partial class V1beta1PubSubTopicSpecSchemaSettings
     public required V1beta1PubSubTopicSpecSchemaSettingsSchemaRef SchemaRef { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpec
 {
@@ -153,7 +153,7 @@ public partial class V1beta1PubSubTopicSpec
     public V1beta1PubSubTopicSpecSchemaSettings? SchemaSettings { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicStatusConditions
 {
@@ -178,7 +178,7 @@ public partial class V1beta1PubSubTopicStatusConditions
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicStatus
 {
@@ -191,7 +191,7 @@ public partial class V1beta1PubSubTopicStatus
     public int? ObservedGeneration { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1PubSubTopic : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1PubSubTopicSpec?>, IStatus<V1beta1PubSubTopicStatus?>

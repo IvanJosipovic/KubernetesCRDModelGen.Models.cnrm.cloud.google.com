@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.documentai.cnrm.cloud.google.com;
 /// <summary>DocumentAIProcessorVersion is the Schema for the DocumentAIProcessorVersion API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1DocumentAIProcessorVersionList : IKubernetesObject<V1ListMeta>, IItems<V1beta1DocumentAIProcessorVersion>
@@ -33,11 +33,11 @@ public partial class V1beta1DocumentAIProcessorVersionList : IKubernetesObject<V
 
     /// <summary>List of V1beta1DocumentAIProcessorVersion objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1DocumentAIProcessorVersion>? Items { get; set; }
+    public required IList<V1beta1DocumentAIProcessorVersion> Items { get; set; }
 }
 
 /// <summary>If set, information about the eventual deprecation of this version.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionSpecDeprecationInfo
 {
@@ -51,7 +51,7 @@ public partial class V1beta1DocumentAIProcessorVersionSpecDeprecationInfo
 }
 
 /// <summary>The KMS key name used for encryption.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionSpecKmsKeyNameRef
 {
@@ -69,7 +69,7 @@ public partial class V1beta1DocumentAIProcessorVersionSpecKmsKeyNameRef
 }
 
 /// <summary>The KMS key version with which data is encrypted.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionSpecKmsKeyVersionNameRef
 {
@@ -79,7 +79,7 @@ public partial class V1beta1DocumentAIProcessorVersionSpecKmsKeyVersionNameRef
 }
 
 /// <summary>ProcessorRef defines the resource reference to DocumentAIProcessor, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionSpecProcessorRef
 {
@@ -97,7 +97,7 @@ public partial class V1beta1DocumentAIProcessorVersionSpecProcessorRef
 }
 
 /// <summary>DocumentAIProcessorVersionSpec defines the desired state of DocumentAIProcessorVersion</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionSpec
 {
@@ -126,7 +126,7 @@ public partial class V1beta1DocumentAIProcessorVersionSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusConditions
 {
@@ -152,7 +152,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusConditions
 }
 
 /// <summary>If specified, lists all the possible values for this entity.  This should not be more than a handful of values.  If the number of values is &gt;10 or could change frequently use the `EntityType.value_ontology` field and specify a list of all possible values in a value ontology file.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumentSchemaEntityTypesEnumValues
 {
@@ -161,7 +161,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumen
     public IList<string>? Values { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumentSchemaEntityTypesProperties
 {
@@ -186,7 +186,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumen
     public string? ValueType { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumentSchemaEntityTypes
 {
@@ -226,7 +226,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumen
 }
 
 /// <summary>Metadata of the schema.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumentSchemaMetadata
 {
@@ -248,7 +248,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumen
 }
 
 /// <summary>The schema of the processor version. Describes the output.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumentSchema
 {
@@ -270,7 +270,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateDocumen
 }
 
 /// <summary>Information for a custom Generative AI model created by the user.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateGenAiModelInfoCustomGenAiModelInfo
 {
@@ -284,7 +284,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateGenAiMo
 }
 
 /// <summary>Information for a pretrained Google-managed foundation model.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateGenAiModelInfoFoundationGenAiModelInfo
 {
@@ -298,7 +298,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateGenAiMo
 }
 
 /// <summary>Output only. Information about Generative AI model-based processor versions.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateGenAiModelInfo
 {
@@ -312,7 +312,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateGenAiMo
 }
 
 /// <summary>An aggregate of the statistics for the evaluation with fuzzy matching on.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateLatestEvaluationAggregateMetrics
 {
@@ -362,7 +362,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateLatestE
 }
 
 /// <summary>An aggregate of the statistics for the evaluation with fuzzy matching off.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateLatestEvaluationAggregateMetricsExact
 {
@@ -412,7 +412,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateLatestE
 }
 
 /// <summary>The most recently invoked evaluation for the processor version.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateLatestEvaluation
 {
@@ -434,7 +434,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedStateLatestE
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatusObservedState
 {
@@ -476,7 +476,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatusObservedState
 }
 
 /// <summary>DocumentAIProcessorVersionStatus defines the config connector machine state of DocumentAIProcessorVersion</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DocumentAIProcessorVersionStatus
 {
@@ -498,7 +498,7 @@ public partial class V1beta1DocumentAIProcessorVersionStatus
 }
 
 /// <summary>DocumentAIProcessorVersion is the Schema for the DocumentAIProcessorVersion API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1DocumentAIProcessorVersion : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1DocumentAIProcessorVersionSpec>, IStatus<V1beta1DocumentAIProcessorVersionStatus?>

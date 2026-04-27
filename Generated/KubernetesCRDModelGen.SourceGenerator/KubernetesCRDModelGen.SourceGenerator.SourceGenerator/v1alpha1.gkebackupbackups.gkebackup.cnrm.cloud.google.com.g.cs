@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.gkebackup.cnrm.cloud.google.com;
 /// <summary>GKEBackupBackup is the Schema for the GKEBackupBackup API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1GKEBackupBackupList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1GKEBackupBackup>
@@ -33,11 +33,11 @@ public partial class V1alpha1GKEBackupBackupList : IKubernetesObject<V1ListMeta>
 
     /// <summary>List of V1alpha1GKEBackupBackup objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1GKEBackupBackup>? Items { get; set; }
+    public required IList<V1alpha1GKEBackupBackup> Items { get; set; }
 }
 
 /// <summary>Required. The BackupPlan from which this Backup is created.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupSpecBackupPlanRef
 {
@@ -55,7 +55,7 @@ public partial class V1alpha1GKEBackupBackupSpecBackupPlanRef
 }
 
 /// <summary>GKEBackupBackupSpec defines the desired state of GKEBackupBackup</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupSpec
 {
@@ -109,7 +109,7 @@ public partial class V1alpha1GKEBackupBackupSpec
     public int? RetainDays { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatusConditions
 {
@@ -135,7 +135,7 @@ public partial class V1alpha1GKEBackupBackupStatusConditions
 }
 
 /// <summary>Output only. Information about the GKE cluster from which this Backup was created.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatusObservedStateClusterMetadata
 {
@@ -170,7 +170,7 @@ public partial class V1alpha1GKEBackupBackupStatusObservedStateClusterMetadata
 }
 
 /// <summary>Output only. The customer managed encryption key that was used to encrypt the Backup&apos;s artifacts.  Inherited from the parent BackupPlan&apos;s [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatusObservedStateEncryptionKey
 {
@@ -179,7 +179,7 @@ public partial class V1alpha1GKEBackupBackupStatusObservedStateEncryptionKey
     public string? GcpKMSEncryptionKey { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatusObservedStateSelectedApplicationsNamespacedNames
 {
@@ -193,7 +193,7 @@ public partial class V1alpha1GKEBackupBackupStatusObservedStateSelectedApplicati
 }
 
 /// <summary>Output only. If set, the list of ProtectedApplications whose resources were included in the Backup.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatusObservedStateSelectedApplications
 {
@@ -203,7 +203,7 @@ public partial class V1alpha1GKEBackupBackupStatusObservedStateSelectedApplicati
 }
 
 /// <summary>Output only. If set, the list of namespaces that were included in the Backup.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatusObservedStateSelectedNamespaces
 {
@@ -213,7 +213,7 @@ public partial class V1alpha1GKEBackupBackupStatusObservedStateSelectedNamespace
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatusObservedState
 {
@@ -319,7 +319,7 @@ public partial class V1alpha1GKEBackupBackupStatusObservedState
 }
 
 /// <summary>GKEBackupBackupStatus defines the config connector machine state of GKEBackupBackup</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEBackupBackupStatus
 {
@@ -341,7 +341,7 @@ public partial class V1alpha1GKEBackupBackupStatus
 }
 
 /// <summary>GKEBackupBackup is the Schema for the GKEBackupBackup API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1GKEBackupBackup : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1GKEBackupBackupSpec>, IStatus<V1alpha1GKEBackupBackupStatus?>

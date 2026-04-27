@@ -9,7 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.identityplatform.cnrm.cloud.google.com;
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfig>
@@ -32,11 +32,11 @@ public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigList
 
     /// <summary>List of V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfig objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfig>? Items { get; set; }
+    public required IList<V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfig> Items { get; set; }
 }
 
 /// <summary>The project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigSpecProjectRef
 {
@@ -53,7 +53,7 @@ public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigSpec
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigSpec
 {
@@ -82,7 +82,7 @@ public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigSpec
     public required string Tenant { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigStatusConditions
 {
@@ -107,7 +107,7 @@ public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigStat
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigStatus
 {
@@ -124,7 +124,7 @@ public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigStat
     public int? ObservedGeneration { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfig : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigSpec>, IStatus<V1alpha1IdentityPlatformTenantDefaultSupportedIDPConfigStatus?>

@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.apigee.cnrm.cloud.google.com;
 /// <summary>ApigeeEnvgroupAttachment is the Schema for the ApigeeEnvgroupAttachment API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ApigeeEnvgroupAttachmentList : IKubernetesObject<V1ListMeta>, IItems<V1beta1ApigeeEnvgroupAttachment>
@@ -33,11 +33,11 @@ public partial class V1beta1ApigeeEnvgroupAttachmentList : IKubernetesObject<V1L
 
     /// <summary>List of V1beta1ApigeeEnvgroupAttachment objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1ApigeeEnvgroupAttachment>? Items { get; set; }
+    public required IList<V1beta1ApigeeEnvgroupAttachment> Items { get; set; }
 }
 
 /// <summary>Reference to parent Environment Group</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ApigeeEnvgroupAttachmentSpecEnvgroupRef
 {
@@ -55,7 +55,7 @@ public partial class V1beta1ApigeeEnvgroupAttachmentSpecEnvgroupRef
 }
 
 /// <summary>Required. ID of the attached environment.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ApigeeEnvgroupAttachmentSpecEnvironmentRef
 {
@@ -73,7 +73,7 @@ public partial class V1beta1ApigeeEnvgroupAttachmentSpecEnvironmentRef
 }
 
 /// <summary>ApigeeEnvgroupAttachmentSpec defines the desired state of ApigeeEnvgroupAttachment</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ApigeeEnvgroupAttachmentSpec
 {
@@ -90,7 +90,7 @@ public partial class V1beta1ApigeeEnvgroupAttachmentSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ApigeeEnvgroupAttachmentStatusConditions
 {
@@ -116,7 +116,7 @@ public partial class V1beta1ApigeeEnvgroupAttachmentStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ApigeeEnvgroupAttachmentStatusObservedState
 {
@@ -126,7 +126,7 @@ public partial class V1beta1ApigeeEnvgroupAttachmentStatusObservedState
 }
 
 /// <summary>ApigeeEnvgroupAttachmentStatus defines the config connector machine state of ApigeeEnvgroupAttachment</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ApigeeEnvgroupAttachmentStatus
 {
@@ -148,7 +148,7 @@ public partial class V1beta1ApigeeEnvgroupAttachmentStatus
 }
 
 /// <summary>ApigeeEnvgroupAttachment is the Schema for the ApigeeEnvgroupAttachment API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1ApigeeEnvgroupAttachment : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1ApigeeEnvgroupAttachmentSpec>, IStatus<V1beta1ApigeeEnvgroupAttachmentStatus?>

@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.dataplex.cnrm.cloud.google.com;
 /// <summary>DataplexEntryType is the Schema for the DataplexEntryType API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1DataplexEntryTypeList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1DataplexEntryType>
@@ -33,11 +33,11 @@ public partial class V1alpha1DataplexEntryTypeList : IKubernetesObject<V1ListMet
 
     /// <summary>List of V1alpha1DataplexEntryType objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1DataplexEntryType>? Items { get; set; }
+    public required IList<V1alpha1DataplexEntryType> Items { get; set; }
 }
 
 /// <summary>Authorization contains constraints on the visibility of Entries that conform to the EntryType.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeSpecAuthorization
 {
@@ -47,7 +47,7 @@ public partial class V1alpha1DataplexEntryTypeSpecAuthorization
 }
 
 /// <summary>The Project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeSpecProjectRef
 {
@@ -69,7 +69,7 @@ public partial class V1alpha1DataplexEntryTypeSpecProjectRef
 }
 
 /// <summary>A reference to an externally managed DataplexAspectType resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/aspectTypes/{{aspecttypeID}}&quot;.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeSpecRequiredAspectsTypeRef
 {
@@ -78,7 +78,7 @@ public partial class V1alpha1DataplexEntryTypeSpecRequiredAspectsTypeRef
     public string? External { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeSpecRequiredAspects
 {
@@ -88,7 +88,7 @@ public partial class V1alpha1DataplexEntryTypeSpecRequiredAspects
 }
 
 /// <summary>DataplexEntryTypeSpec defines the desired state of DataplexEntryType</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeSpec
 {
@@ -133,7 +133,7 @@ public partial class V1alpha1DataplexEntryTypeSpec
     public IList<string>? TypeAliases { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeStatusConditions
 {
@@ -159,7 +159,7 @@ public partial class V1alpha1DataplexEntryTypeStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeStatusObservedState
 {
@@ -181,7 +181,7 @@ public partial class V1alpha1DataplexEntryTypeStatusObservedState
 }
 
 /// <summary>DataplexEntryTypeStatus defines the config connector machine state of DataplexEntryType</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexEntryTypeStatus
 {
@@ -203,7 +203,7 @@ public partial class V1alpha1DataplexEntryTypeStatus
 }
 
 /// <summary>DataplexEntryType is the Schema for the DataplexEntryType API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1DataplexEntryType : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1DataplexEntryTypeSpec>, IStatus<V1alpha1DataplexEntryTypeStatus?>

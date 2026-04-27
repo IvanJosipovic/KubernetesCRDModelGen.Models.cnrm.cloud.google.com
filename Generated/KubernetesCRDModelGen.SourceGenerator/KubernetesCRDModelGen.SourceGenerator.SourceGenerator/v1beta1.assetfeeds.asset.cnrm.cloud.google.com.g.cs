@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.asset.cnrm.cloud.google.com;
 /// <summary>AssetFeed is the Schema for the AssetFeed API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1AssetFeedList : IKubernetesObject<V1ListMeta>, IItems<V1beta1AssetFeed>
@@ -33,7 +33,7 @@ public partial class V1beta1AssetFeedList : IKubernetesObject<V1ListMeta>, IItem
 
     /// <summary>List of V1beta1AssetFeed objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1beta1AssetFeed>? Items { get; set; }
+    public required IList<V1beta1AssetFeed> Items { get; set; }
 }
 
 /// <summary>
@@ -50,7 +50,7 @@ public partial class V1beta1AssetFeedList : IKubernetesObject<V1ListMeta>, IItem
 ///  guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
 ///  for detailed instructions.
 /// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpecCondition
 {
@@ -72,7 +72,7 @@ public partial class V1beta1AssetFeedSpecCondition
 }
 
 /// <summary>The name of the Pub/Sub topic to publish to. Example: `projects/PROJECT_ID/topics/TOPIC_ID`.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpecFeedOutputConfigPubsubDestinationTopicRef
 {
@@ -90,7 +90,7 @@ public partial class V1beta1AssetFeedSpecFeedOutputConfigPubsubDestinationTopicR
 }
 
 /// <summary>Destination on Pub/Sub.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpecFeedOutputConfigPubsubDestination
 {
@@ -100,7 +100,7 @@ public partial class V1beta1AssetFeedSpecFeedOutputConfigPubsubDestination
 }
 
 /// <summary>Required. Feed output configuration defining where the asset updates are published to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpecFeedOutputConfig
 {
@@ -110,7 +110,7 @@ public partial class V1beta1AssetFeedSpecFeedOutputConfig
 }
 
 /// <summary>FolderRef represents the Folder that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpecFolderRef
 {
@@ -128,7 +128,7 @@ public partial class V1beta1AssetFeedSpecFolderRef
 }
 
 /// <summary>OrganizationRef represents the Organization that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpecOrganizationRef
 {
@@ -138,7 +138,7 @@ public partial class V1beta1AssetFeedSpecOrganizationRef
 }
 
 /// <summary>The Project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpecProjectRef
 {
@@ -160,7 +160,7 @@ public partial class V1beta1AssetFeedSpecProjectRef
 }
 
 /// <summary>AssetFeedSpec defines the desired state of AssetFeed</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedSpec
 {
@@ -226,7 +226,7 @@ public partial class V1beta1AssetFeedSpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedStatusConditions
 {
@@ -252,7 +252,7 @@ public partial class V1beta1AssetFeedStatusConditions
 }
 
 /// <summary>AssetFeedStatus defines the config connector machine state of AssetFeed</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AssetFeedStatus
 {
@@ -270,7 +270,7 @@ public partial class V1beta1AssetFeedStatus
 }
 
 /// <summary>AssetFeed is the Schema for the AssetFeed API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1beta1AssetFeed : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1AssetFeedSpec>, IStatus<V1beta1AssetFeedStatus?>

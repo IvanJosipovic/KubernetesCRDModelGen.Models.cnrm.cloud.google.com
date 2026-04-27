@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.securesourcemanager.cnrm.cloud.google.com;
 /// <summary>SecureSourceManagerRepository is the Schema for the SecureSourceManagerRepository API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1SecureSourceManagerRepositoryList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1SecureSourceManagerRepository>
@@ -33,11 +33,11 @@ public partial class V1alpha1SecureSourceManagerRepositoryList : IKubernetesObje
 
     /// <summary>List of V1alpha1SecureSourceManagerRepository objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1SecureSourceManagerRepository>? Items { get; set; }
+    public required IList<V1alpha1SecureSourceManagerRepository> Items { get; set; }
 }
 
 /// <summary>Input only. Initial configurations for the repository.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositorySpecInitialConfig
 {
@@ -59,7 +59,7 @@ public partial class V1alpha1SecureSourceManagerRepositorySpecInitialConfig
 }
 
 /// <summary>The name of the instance in which the repository is hosted, formatted as `projects/{project_number}/locations/{location_id}/instances/{instance_id}`</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositorySpecInstanceRef
 {
@@ -77,7 +77,7 @@ public partial class V1alpha1SecureSourceManagerRepositorySpecInstanceRef
 }
 
 /// <summary>Immutable. The Project that this resource belongs to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositorySpecProjectRef
 {
@@ -99,7 +99,7 @@ public partial class V1alpha1SecureSourceManagerRepositorySpecProjectRef
 }
 
 /// <summary>SecureSourceManagerRepositorySpec defines the desired state of SecureSourceManagerRepository</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositorySpec
 {
@@ -124,7 +124,7 @@ public partial class V1alpha1SecureSourceManagerRepositorySpec
     public string? ResourceID { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositoryStatusConditions
 {
@@ -150,7 +150,7 @@ public partial class V1alpha1SecureSourceManagerRepositoryStatusConditions
 }
 
 /// <summary>Output only. URIs for the repository.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositoryStatusObservedStateUris
 {
@@ -168,7 +168,7 @@ public partial class V1alpha1SecureSourceManagerRepositoryStatusObservedStateUri
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositoryStatusObservedState
 {
@@ -194,7 +194,7 @@ public partial class V1alpha1SecureSourceManagerRepositoryStatusObservedState
 }
 
 /// <summary>SecureSourceManagerRepositoryStatus defines the config connector machine state of SecureSourceManagerRepository</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerRepositoryStatus
 {
@@ -216,7 +216,7 @@ public partial class V1alpha1SecureSourceManagerRepositoryStatus
 }
 
 /// <summary>SecureSourceManagerRepository is the Schema for the SecureSourceManagerRepository API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1SecureSourceManagerRepository : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1SecureSourceManagerRepositorySpec>, IStatus<V1alpha1SecureSourceManagerRepositoryStatus?>

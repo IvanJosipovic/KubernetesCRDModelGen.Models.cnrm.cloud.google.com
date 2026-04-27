@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.bigquerybiglake.cnrm.cloud.google.com;
 /// <summary>BigLakeDatabase is the Schema for the BigLakeDatabase API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1BigLakeDatabaseList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1BigLakeDatabase>
@@ -33,11 +33,11 @@ public partial class V1alpha1BigLakeDatabaseList : IKubernetesObject<V1ListMeta>
 
     /// <summary>List of V1alpha1BigLakeDatabase objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1BigLakeDatabase>? Items { get; set; }
+    public required IList<V1alpha1BigLakeDatabase> Items { get; set; }
 }
 
 /// <summary>Options of a Hive database.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigLakeDatabaseSpecHiveOptions
 {
@@ -51,7 +51,7 @@ public partial class V1alpha1BigLakeDatabaseSpecHiveOptions
 }
 
 /// <summary>Required. Defines the parent path of the resource.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigLakeDatabaseSpecParentCatalogRef
 {
@@ -69,7 +69,7 @@ public partial class V1alpha1BigLakeDatabaseSpecParentCatalogRef
 }
 
 /// <summary>BigLakeDatabaseSpec defines the desired state of BigLakeDatabase</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigLakeDatabaseSpec
 {
@@ -90,7 +90,7 @@ public partial class V1alpha1BigLakeDatabaseSpec
     public string? Type { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigLakeDatabaseStatusConditions
 {
@@ -116,7 +116,7 @@ public partial class V1alpha1BigLakeDatabaseStatusConditions
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigLakeDatabaseStatusObservedState
 {
@@ -138,7 +138,7 @@ public partial class V1alpha1BigLakeDatabaseStatusObservedState
 }
 
 /// <summary>BigLakeDatabaseStatus defines the config connector machine state of BigLakeDatabase</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigLakeDatabaseStatus
 {
@@ -160,7 +160,7 @@ public partial class V1alpha1BigLakeDatabaseStatus
 }
 
 /// <summary>BigLakeDatabase is the Schema for the BigLakeDatabase API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1BigLakeDatabase : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1BigLakeDatabaseSpec>, IStatus<V1alpha1BigLakeDatabaseStatus?>

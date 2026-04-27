@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.clouddms.cnrm.cloud.google.com;
 /// <summary>CloudDMSPrivateConnection is the Schema for the CloudDMSPrivateConnection API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1CloudDMSPrivateConnectionList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1CloudDMSPrivateConnection>
@@ -33,11 +33,11 @@ public partial class V1alpha1CloudDMSPrivateConnectionList : IKubernetesObject<V
 
     /// <summary>List of V1alpha1CloudDMSPrivateConnection objects.</summary>
     [JsonPropertyName("items")]
-    public IList<V1alpha1CloudDMSPrivateConnection>? Items { get; set; }
+    public required IList<V1alpha1CloudDMSPrivateConnection> Items { get; set; }
 }
 
 /// <summary>Required. The host project of the application.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionSpecProjectRef
 {
@@ -59,7 +59,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionSpecProjectRef
 }
 
 /// <summary>Required. Fully qualified name of the VPC that Database Migration Service will peer to.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionSpecVpcPeeringConfigVpcNameRef
 {
@@ -77,7 +77,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionSpecVpcPeeringConfigVpcNam
 }
 
 /// <summary>VPC peering configuration.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionSpecVpcPeeringConfig
 {
@@ -91,7 +91,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionSpecVpcPeeringConfig
 }
 
 /// <summary>CloudDMSPrivateConnectionSpec defines the desired state of CloudDMSPrivateConnection</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionSpec
 {
@@ -126,7 +126,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionSpec
     public V1alpha1CloudDMSPrivateConnectionSpecVpcPeeringConfig? VpcPeeringConfig { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionStatusConditions
 {
@@ -152,7 +152,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionStatusConditions
 }
 
 /// <summary>Output only. The error details in case of state FAILED.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionStatusObservedStateError
 {
@@ -166,7 +166,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionStatusObservedStateError
 }
 
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionStatusObservedState
 {
@@ -188,7 +188,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionStatusObservedState
 }
 
 /// <summary>CloudDMSPrivateConnectionStatus defines the config connector machine state of CloudDMSPrivateConnection</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDMSPrivateConnectionStatus
 {
@@ -210,7 +210,7 @@ public partial class V1alpha1CloudDMSPrivateConnectionStatus
 }
 
 /// <summary>CloudDMSPrivateConnection is the Schema for the CloudDMSPrivateConnection API</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.2+8c7b4a3647c1e77cd3e3152af5701ec2357dafe9")]
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.5.3+0316f97acf12de380316633df08e7f13a064978d")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
 public partial class V1alpha1CloudDMSPrivateConnection : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1CloudDMSPrivateConnectionSpec>, IStatus<V1alpha1CloudDMSPrivateConnectionStatus?>
