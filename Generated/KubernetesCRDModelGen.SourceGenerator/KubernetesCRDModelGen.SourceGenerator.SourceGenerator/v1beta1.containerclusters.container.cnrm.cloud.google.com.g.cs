@@ -539,7 +539,7 @@ public partial class V1beta1ContainerClusterSpecCostManagementConfig
     public required bool Enabled { get; set; }
 }
 
-/// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
+/// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;ALL_OBJECTS_ENCRYPTION_ENABLED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecDatabaseEncryption
@@ -548,7 +548,7 @@ public partial class V1beta1ContainerClusterSpecDatabaseEncryption
     [JsonPropertyName("keyName")]
     public string? KeyName { get; set; }
 
-    /// <summary>ENCRYPTED or DECRYPTED.</summary>
+    /// <summary>ENCRYPTED, ALL_OBJECTS_ENCRYPTION_ENABLED or DECRYPTED.</summary>
     [JsonPropertyName("state")]
     public required string State { get; set; }
 }
@@ -1832,7 +1832,7 @@ public partial class V1beta1ContainerClusterSpec
     [JsonPropertyName("costManagementConfig")]
     public V1beta1ContainerClusterSpecCostManagementConfig? CostManagementConfig { get; set; }
 
-    /// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
+    /// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;ALL_OBJECTS_ENCRYPTION_ENABLED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
     [JsonPropertyName("databaseEncryption")]
     public V1beta1ContainerClusterSpecDatabaseEncryption? DatabaseEncryption { get; set; }
 
