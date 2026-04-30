@@ -302,7 +302,7 @@ public partial class V1beta1BigQueryDataTransferConfigSpec
     [JsonPropertyName("pubSubTopicRef")]
     public V1beta1BigQueryDataTransferConfigSpecPubSubTopicRef? PubSubTopicRef { get; set; }
 
-    /// <summary>The BigQueryDataTransferConfig name. If not given, the metadata.name will be used.</summary>
+    /// <summary>Immutable. Optional. The service-generated name of the resource. Used for acquisition only. Leave unset to create a new resource.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
