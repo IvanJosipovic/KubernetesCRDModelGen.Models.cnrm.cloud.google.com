@@ -255,25 +255,29 @@ public partial class V1beta1RedisClusterStatusObservedStateDiscoveryEndpoints
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1RedisClusterStatusObservedStatePscConnections
 {
-    /// <summary>Output only. The IP allocated on the consumer network for the PSC forwarding rule.</summary>
+    /// <summary>Required. The IP allocated on the consumer network for the PSC forwarding rule.</summary>
     [JsonPropertyName("address")]
     public string? Address { get; set; }
 
-    /// <summary>Output only. The URI of the consumer side forwarding rule. Example: projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.</summary>
+    /// <summary>Required. The URI of the consumer side forwarding rule. Example: projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.</summary>
     [JsonPropertyName("forwardingRule")]
     public string? ForwardingRule { get; set; }
 
-    /// <summary>The consumer network where the IP address resides, in the form of projects/{project_id}/global/networks/{network_id}.</summary>
+    /// <summary>Required. The consumer network where the IP address resides, in the form of projects/{project_id}/global/networks/{network_id}.</summary>
     [JsonPropertyName("network")]
     public string? Network { get; set; }
 
-    /// <summary>Output only. The consumer project_id where the forwarding rule is created from.</summary>
+    /// <summary>Optional. Project ID of the consumer project where the forwarding rule is created in.</summary>
     [JsonPropertyName("projectID")]
     public string? ProjectID { get; set; }
 
-    /// <summary>Output only. The PSC connection id of the forwarding rule connected to the service attachment.</summary>
+    /// <summary>Required. The PSC connection id of the forwarding rule connected to the service attachment.</summary>
     [JsonPropertyName("pscConnectionID")]
     public string? PscConnectionID { get; set; }
+
+    /// <summary>Required. The service attachment which is the target of the PSC connection, in the form of projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.</summary>
+    [JsonPropertyName("serviceAttachment")]
+    public string? ServiceAttachment { get; set; }
 }
 
 /// <summary>Describes ongoing update on the cluster when cluster state is UPDATING.</summary>
