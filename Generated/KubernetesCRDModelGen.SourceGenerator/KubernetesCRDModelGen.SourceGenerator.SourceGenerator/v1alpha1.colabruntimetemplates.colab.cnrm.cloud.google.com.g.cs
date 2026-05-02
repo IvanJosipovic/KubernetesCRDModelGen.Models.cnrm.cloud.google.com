@@ -134,6 +134,25 @@ public partial class V1alpha1ColabRuntimeTemplateSpecMachineSpec
     public string? AcceleratorType { get; set; }
 
     /// <summary>
+    /// Optional. Immutable. The Nvidia GPU partition size.
+    /// 
+    ///  When specified, the requested accelerators will be partitioned into
+    ///  smaller GPU partitions. For example, if the request is for 8 units of
+    ///  NVIDIA A100 GPUs, and gpu_partition_size=&quot;1g.10gb&quot;, the service will
+    ///  create 8 * 7 = 56 partitioned MIG instances.
+    /// 
+    ///  The partition size must be a value supported by the requested accelerator.
+    ///  Refer to
+    ///  [Nvidia GPU
+    ///  Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+    ///  for the available partition sizes.
+    /// 
+    ///  If set, the accelerator_count should be set to 1.
+    /// </summary>
+    [JsonPropertyName("gpuPartitionSize")]
+    public string? GpuPartitionSize { get; set; }
+
+    /// <summary>
     /// Immutable. The type of the machine.
     /// 
     ///  See the [list of machine types supported for
@@ -150,6 +169,10 @@ public partial class V1alpha1ColabRuntimeTemplateSpecMachineSpec
     /// </summary>
     [JsonPropertyName("machineType")]
     public string? MachineType { get; set; }
+
+    /// <summary>Optional. Immutable. The number of nodes per replica for multihost GPU deployments.</summary>
+    [JsonPropertyName("multihostGpuNodeCount")]
+    public int? MultihostGpuNodeCount { get; set; }
 
     /// <summary>Optional. Immutable. Configuration controlling how this resource pool consumes reservation.</summary>
     [JsonPropertyName("reservationAffinity")]
