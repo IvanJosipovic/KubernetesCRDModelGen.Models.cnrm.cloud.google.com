@@ -45,7 +45,7 @@ public partial class V1alpha1NetworkConnectivityInternalRangeSpecMigration
     [JsonPropertyName("source")]
     public string? Source { get; set; }
 
-    /// <summary>Immutable. Resource path of the target resource. The target project can be different, as in the cases when migrating to peer networks. The resource For example: /projects/{project}/regions/{region}/subnetworks/{subnet}</summary>
+    /// <summary>Immutable. Resource path of the target resource. The target project can be different, as in the cases when migrating to peer networks. For example: /projects/{project}/regions/{region}/subnetworks/{subnet}</summary>
     [JsonPropertyName("target")]
     public string? Target { get; set; }
 }

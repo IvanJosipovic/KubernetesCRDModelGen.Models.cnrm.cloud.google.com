@@ -170,7 +170,7 @@ public partial class V1alpha1NetworkConnectivityServiceConnectionPolicyStatusCon
     public string? Type { get; set; }
 }
 
-/// <summary>The most recent error during operating this connection.</summary>
+/// <summary>The most recent error during operating this connection. Deprecated, please use error_info instead.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1NetworkConnectivityServiceConnectionPolicyStatusObservedStatePscConnectionsError
@@ -193,7 +193,7 @@ public partial class V1alpha1NetworkConnectivityServiceConnectionPolicyStatusObs
     [JsonPropertyName("domain")]
     public string? Domain { get; set; }
 
-    /// <summary>Additional structured details about this error. Keys must match /a-z+/ but should ideally be lowerCamelCase. Also they must be limited to 64 characters in length. When identifying the current value of an exceeded limit, the units should be contained in the key, not the value. For example, rather than {&quot;instanceLimit&quot;: &quot;100/request&quot;}, should be returned as, {&quot;instanceLimitPerRequest&quot;: &quot;100&quot;}, if the client exceeds the number of instances that can be created in a single (batch) request.</summary>
+    /// <summary>Additional structured details about this error. Keys must match a regular expression of `a-z+` but should ideally be lowerCamelCase. Also, they must be limited to 64 characters in length. When identifying the current value of an exceeded limit, the units should be contained in the key, not the value. For example, rather than `{&quot;instanceLimit&quot;: &quot;100/request&quot;}`, should be returned as, `{&quot;instanceLimitPerRequest&quot;: &quot;100&quot;}`, if the client exceeds the number of instances that can be created in a single (batch) request.</summary>
     [JsonPropertyName("metadata")]
     public IDictionary<string, string>? Metadata { get; set; }
 
@@ -218,7 +218,7 @@ public partial class V1alpha1NetworkConnectivityServiceConnectionPolicyStatusObs
     [JsonPropertyName("consumerTargetProject")]
     public string? ConsumerTargetProject { get; set; }
 
-    /// <summary>The most recent error during operating this connection.</summary>
+    /// <summary>The most recent error during operating this connection. Deprecated, please use error_info instead.</summary>
     [JsonPropertyName("error")]
     public V1alpha1NetworkConnectivityServiceConnectionPolicyStatusObservedStatePscConnectionsError? Error { get; set; }
 
@@ -234,7 +234,7 @@ public partial class V1alpha1NetworkConnectivityServiceConnectionPolicyStatusObs
     [JsonPropertyName("gceOperation")]
     public string? GceOperation { get; set; }
 
-    /// <summary>Immutable. An immutable identifier for the producer instance.</summary>
+    /// <summary>Immutable. Deprecated. Use producer_instance_metadata instead. An immutable identifier for the producer instance.</summary>
     [JsonPropertyName("producerInstanceID")]
     public string? ProducerInstanceID { get; set; }
 
