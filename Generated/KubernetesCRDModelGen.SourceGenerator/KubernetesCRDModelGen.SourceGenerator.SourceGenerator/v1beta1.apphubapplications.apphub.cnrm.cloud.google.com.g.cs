@@ -121,7 +121,7 @@ public partial class V1beta1AppHubApplicationSpecAttributes
     public IList<V1beta1AppHubApplicationSpecAttributesOperatorOwners>? OperatorOwners { get; set; }
 }
 
-/// <summary>Required. The host project of the application.</summary>
+/// <summary>Required. The host project of the resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AppHubApplicationSpecProjectRef
@@ -170,11 +170,11 @@ public partial class V1beta1AppHubApplicationSpec
     [JsonPropertyName("displayName")]
     public string? DisplayName { get; set; }
 
-    /// <summary>Required. The location of the application.</summary>
+    /// <summary>Required. Defines the parent path of the resource.</summary>
     [JsonPropertyName("location")]
     public string? Location { get; set; }
 
-    /// <summary>Required. The host project of the application.</summary>
+    /// <summary>Required. The host project of the resource.</summary>
     [JsonPropertyName("projectRef")]
     public V1beta1AppHubApplicationSpecProjectRef? ProjectRef { get; set; }
 

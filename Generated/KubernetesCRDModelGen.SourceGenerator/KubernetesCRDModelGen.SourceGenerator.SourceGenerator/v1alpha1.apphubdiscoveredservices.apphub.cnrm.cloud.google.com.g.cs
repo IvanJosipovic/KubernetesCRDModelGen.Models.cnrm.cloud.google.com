@@ -36,7 +36,7 @@ public partial class V1alpha1AppHubDiscoveredServiceList : IKubernetesObject<V1L
     public required IList<V1alpha1AppHubDiscoveredService> Items { get; set; }
 }
 
-/// <summary>Required. The host project of the application.</summary>
+/// <summary>Required. The host project of the resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AppHubDiscoveredServiceSpecProjectRef
@@ -63,11 +63,11 @@ public partial class V1alpha1AppHubDiscoveredServiceSpecProjectRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AppHubDiscoveredServiceSpec
 {
-    /// <summary>Required. The location of the application.</summary>
+    /// <summary>Required. The location of the resource.</summary>
     [JsonPropertyName("location")]
     public string? Location { get; set; }
 
-    /// <summary>Required. The host project of the application.</summary>
+    /// <summary>Required. The host project of the resource.</summary>
     [JsonPropertyName("projectRef")]
     public V1alpha1AppHubDiscoveredServiceSpecProjectRef? ProjectRef { get; set; }
 
