@@ -587,10 +587,6 @@ public partial class V1alpha1NotebookInstanceStatusObservedState
     [JsonPropertyName("disks")]
     public IList<V1alpha1NotebookInstanceStatusObservedStateDisks>? Disks { get; set; }
 
-    /// <summary>Output only. The name of this notebook instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`</summary>
-    [JsonPropertyName("name")]
-    public string? Name { get; set; }
-
     /// <summary>Output only. The proxy endpoint that is used to access the Jupyter notebook.</summary>
     [JsonPropertyName("proxyURI")]
     public string? ProxyURI { get; set; }
