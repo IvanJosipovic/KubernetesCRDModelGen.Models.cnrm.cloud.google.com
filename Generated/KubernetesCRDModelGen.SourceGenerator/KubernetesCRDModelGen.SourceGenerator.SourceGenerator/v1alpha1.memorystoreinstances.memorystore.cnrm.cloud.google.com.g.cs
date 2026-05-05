@@ -36,6 +36,58 @@ public partial class V1alpha1MemorystoreInstanceList : IKubernetesObject<V1ListM
     public required IList<V1alpha1MemorystoreInstance> Items { get; set; }
 }
 
+/// <summary>Optional. The full resource path of the remote instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceSpecCrossInstanceReplicationConfigPrimaryInstanceInstanceRef
+{
+    /// <summary>A reference to an externally managed MemorystoreInstance resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/instances/{{instanceID}}&quot;.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The name of a MemorystoreInstance resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a MemorystoreInstance resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+/// <summary>
+/// Optional. Details of the primary instance that is used as the replication
+///  source for this secondary instance.
+/// 
+///  This field is only set for a secondary instance.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceSpecCrossInstanceReplicationConfigPrimaryInstance
+{
+    /// <summary>Optional. The full resource path of the remote instance.</summary>
+    [JsonPropertyName("instanceRef")]
+    public V1alpha1MemorystoreInstanceSpecCrossInstanceReplicationConfigPrimaryInstanceInstanceRef? InstanceRef { get; set; }
+}
+
+/// <summary>Optional. The cross instance replication config for the instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceSpecCrossInstanceReplicationConfig
+{
+    /// <summary>Required. The role of the instance in cross instance replication.</summary>
+    [JsonPropertyName("instanceRole")]
+    public string? InstanceRole { get; set; }
+
+    /// <summary>
+    /// Optional. Details of the primary instance that is used as the replication
+    ///  source for this secondary instance.
+    /// 
+    ///  This field is only set for a secondary instance.
+    /// </summary>
+    [JsonPropertyName("primaryInstance")]
+    public V1alpha1MemorystoreInstanceSpecCrossInstanceReplicationConfigPrimaryInstance? PrimaryInstance { get; set; }
+}
+
 /// <summary>Required. The network where the PSC endpoints are created, in the form of projects/{project_id}/global/networks/{network_id}.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -195,6 +247,10 @@ public partial class V1alpha1MemorystoreInstanceSpec
     [JsonPropertyName("authorizationMode")]
     public string? AuthorizationMode { get; set; }
 
+    /// <summary>Optional. The cross instance replication config for the instance.</summary>
+    [JsonPropertyName("crossInstanceReplicationConfig")]
+    public V1alpha1MemorystoreInstanceSpecCrossInstanceReplicationConfig? CrossInstanceReplicationConfig { get; set; }
+
     /// <summary>Optional. If set to true deletion of the instance will fail.</summary>
     [JsonPropertyName("deletionProtectionEnabled")]
     public bool? DeletionProtectionEnabled { get; set; }
@@ -279,6 +335,107 @@ public partial class V1alpha1MemorystoreInstanceStatusConditions
     /// <summary>Type is the type of the condition.</summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
+}
+
+/// <summary>Output only. The primary instance that acts as the source of replication for the secondary instances.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigMembershipPrimaryInstance
+{
+    /// <summary>Optional. The full resource path of the remote instance.</summary>
+    [JsonPropertyName("instance")]
+    public string? Instance { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote instance.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigMembershipSecondaryInstances
+{
+    /// <summary>Optional. The full resource path of the remote instance.</summary>
+    [JsonPropertyName("instance")]
+    public string? Instance { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote instance.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+/// <summary>Output only. An output only view of all the member instances participating in the cross instance replication. This view will be provided by every member instance irrespective of its instance role(primary or secondary).</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigMembership
+{
+    /// <summary>Output only. The primary instance that acts as the source of replication for the secondary instances.</summary>
+    [JsonPropertyName("primaryInstance")]
+    public V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigMembershipPrimaryInstance? PrimaryInstance { get; set; }
+
+    /// <summary>Output only. The list of secondary instances replicating from the primary instance.</summary>
+    [JsonPropertyName("secondaryInstances")]
+    public IList<V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigMembershipSecondaryInstances>? SecondaryInstances { get; set; }
+}
+
+/// <summary>
+/// Optional. Details of the primary instance that is used as the replication
+///  source for this secondary instance.
+/// 
+///  This field is only set for a secondary instance.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigPrimaryInstance
+{
+    /// <summary>Optional. The full resource path of the remote instance.</summary>
+    [JsonPropertyName("instance")]
+    public string? Instance { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote instance.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigSecondaryInstances
+{
+    /// <summary>Optional. The full resource path of the remote instance.</summary>
+    [JsonPropertyName("instance")]
+    public string? Instance { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote instance.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+/// <summary>Optional. The cross instance replication config for the instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfig
+{
+    /// <summary>Output only. An output only view of all the member instances participating in the cross instance replication. This view will be provided by every member instance irrespective of its instance role(primary or secondary).</summary>
+    [JsonPropertyName("membership")]
+    public V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigMembership? Membership { get; set; }
+
+    /// <summary>
+    /// Optional. Details of the primary instance that is used as the replication
+    ///  source for this secondary instance.
+    /// 
+    ///  This field is only set for a secondary instance.
+    /// </summary>
+    [JsonPropertyName("primaryInstance")]
+    public V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigPrimaryInstance? PrimaryInstance { get; set; }
+
+    /// <summary>
+    /// Optional. List of secondary instances that are replicating from this
+    ///  primary instance.
+    /// 
+    ///  This field is only set for a primary instance.
+    /// </summary>
+    [JsonPropertyName("secondaryInstances")]
+    public IList<V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigSecondaryInstances>? SecondaryInstances { get; set; }
 }
 
 /// <summary>Detailed information of a PSC connection that is created through service connectivity automation.</summary>
@@ -388,6 +545,10 @@ public partial class V1alpha1MemorystoreInstanceStatusObservedState
     /// <summary>Output only. Creation timestamp of the instance.</summary>
     [JsonPropertyName("createTime")]
     public string? CreateTime { get; set; }
+
+    /// <summary>Optional. The cross instance replication config for the instance.</summary>
+    [JsonPropertyName("crossInstanceReplicationConfig")]
+    public V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfig? CrossInstanceReplicationConfig { get; set; }
 
     /// <summary>Optional. Endpoints for the instance.</summary>
     [JsonPropertyName("endpoints")]
