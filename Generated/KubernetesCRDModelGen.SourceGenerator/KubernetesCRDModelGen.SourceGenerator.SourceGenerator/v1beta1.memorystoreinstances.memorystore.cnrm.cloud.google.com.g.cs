@@ -36,6 +36,56 @@ public partial class V1beta1MemorystoreInstanceList : IKubernetesObject<V1ListMe
     public required IList<V1beta1MemorystoreInstance> Items { get; set; }
 }
 
+/// <summary>Required. The start time of every automated backup in UTC. It must be set to the start of an hour. This field is required.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MemorystoreInstanceSpecAutomatedBackupConfigFixedFrequencyScheduleStartTime
+{
+    /// <summary>Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value &quot;24:00:00&quot; for scenarios like business closing time.</summary>
+    [JsonPropertyName("hours")]
+    public int? Hours { get; set; }
+
+    /// <summary>Minutes of hour of day. Must be from 0 to 59.</summary>
+    [JsonPropertyName("minutes")]
+    public int? Minutes { get; set; }
+
+    /// <summary>Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.</summary>
+    [JsonPropertyName("nanos")]
+    public int? Nanos { get; set; }
+
+    /// <summary>Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.</summary>
+    [JsonPropertyName("seconds")]
+    public int? Seconds { get; set; }
+}
+
+/// <summary>Optional. Trigger automated backups at a fixed frequency.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MemorystoreInstanceSpecAutomatedBackupConfigFixedFrequencySchedule
+{
+    /// <summary>Required. The start time of every automated backup in UTC. It must be set to the start of an hour. This field is required.</summary>
+    [JsonPropertyName("startTime")]
+    public V1beta1MemorystoreInstanceSpecAutomatedBackupConfigFixedFrequencyScheduleStartTime? StartTime { get; set; }
+}
+
+/// <summary>Optional. The automated backup config for the instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MemorystoreInstanceSpecAutomatedBackupConfig
+{
+    /// <summary>Optional. The automated backup mode. If the mode is disabled, the other fields will be ignored.</summary>
+    [JsonPropertyName("automatedBackupMode")]
+    public string? AutomatedBackupMode { get; set; }
+
+    /// <summary>Optional. Trigger automated backups at a fixed frequency.</summary>
+    [JsonPropertyName("fixedFrequencySchedule")]
+    public V1beta1MemorystoreInstanceSpecAutomatedBackupConfigFixedFrequencySchedule? FixedFrequencySchedule { get; set; }
+
+    /// <summary>Optional. How long to keep automated backups before the backups are deleted. The value should be between 1 day and 365 days. If not specified, the default value is 35 days.</summary>
+    [JsonPropertyName("retention")]
+    public string? Retention { get; set; }
+}
+
 /// <summary>Optional. The full resource path of the remote instance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -246,6 +296,10 @@ public partial class V1beta1MemorystoreInstanceSpec
     /// <summary>Optional. Immutable. Authorization mode of the instance.</summary>
     [JsonPropertyName("authorizationMode")]
     public string? AuthorizationMode { get; set; }
+
+    /// <summary>Optional. The automated backup config for the instance.</summary>
+    [JsonPropertyName("automatedBackupConfig")]
+    public V1beta1MemorystoreInstanceSpecAutomatedBackupConfig? AutomatedBackupConfig { get; set; }
 
     /// <summary>Optional. The cross instance replication config for the instance.</summary>
     [JsonPropertyName("crossInstanceReplicationConfig")]
