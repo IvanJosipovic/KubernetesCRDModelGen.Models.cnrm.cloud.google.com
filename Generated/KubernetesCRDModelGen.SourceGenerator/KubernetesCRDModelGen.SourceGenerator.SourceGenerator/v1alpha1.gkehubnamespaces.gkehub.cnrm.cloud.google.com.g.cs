@@ -70,6 +70,10 @@ public partial class V1alpha1GKEHubNamespaceSpec
     [JsonPropertyName("namespaceLabels")]
     public IDictionary<string, string>? NamespaceLabels { get; set; }
 
+    /// <summary>Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
+    [JsonPropertyName("resourceID")]
+    public string? ResourceID { get; set; }
+
     /// <summary>Immutable. The scope that this namespace belongs to.</summary>
     [JsonPropertyName("scopeRef")]
     public required V1alpha1GKEHubNamespaceSpecScopeRef ScopeRef { get; set; }
