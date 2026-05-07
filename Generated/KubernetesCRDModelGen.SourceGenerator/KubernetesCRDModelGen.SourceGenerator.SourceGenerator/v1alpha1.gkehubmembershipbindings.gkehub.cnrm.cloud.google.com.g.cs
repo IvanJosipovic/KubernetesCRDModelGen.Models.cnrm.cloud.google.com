@@ -76,6 +76,10 @@ public partial class V1alpha1GKEHubMembershipBindingSpecScopeRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1GKEHubMembershipBindingSpec
 {
+    /// <summary>Optional. Labels for this MembershipBinding.</summary>
+    [JsonPropertyName("labels")]
+    public IDictionary<string, string>? Labels { get; set; }
+
     /// <summary>Immutable. The membership that this binding belongs to.</summary>
     [JsonPropertyName("membershipRef")]
     public required V1alpha1GKEHubMembershipBindingSpecMembershipRef MembershipRef { get; set; }
