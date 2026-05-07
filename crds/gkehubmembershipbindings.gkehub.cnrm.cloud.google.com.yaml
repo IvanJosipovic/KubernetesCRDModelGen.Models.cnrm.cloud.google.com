@@ -53,6 +53,11 @@ spec:
             type: object
           spec:
             properties:
+              labels:
+                additionalProperties:
+                  type: string
+                description: Optional. Labels for this MembershipBinding.
+                type: object
               membershipRef:
                 description: Immutable. The membership that this binding belongs to.
                 oneOf:
