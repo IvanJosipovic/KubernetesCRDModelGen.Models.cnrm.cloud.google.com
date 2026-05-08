@@ -93,6 +93,10 @@ public partial class V1alpha1GKEHubScopeRBACRoleBindingSpec
     [JsonPropertyName("group")]
     public string? Group { get; set; }
 
+    /// <summary>Optional. Labels for this RBACRoleBinding.</summary>
+    [JsonPropertyName("labels")]
+    public IDictionary<string, string>? Labels { get; set; }
+
     /// <summary>Immutable. Optional. The rbacRoleBindingID of the resource; if not provided, the name of the resource will be used as the rbacRoleBindingID.</summary>
     [JsonPropertyName("rbacRoleBindingID")]
     public string? RbacRoleBindingID { get; set; }
