@@ -131,11 +131,82 @@ public partial class V1alpha1ComputeFutureReservationSpecProjectRef
     public string? Namespace { get; set; }
 }
 
+/// <summary>The resource reference that defaults to Project if Kind is not specified.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1ComputeFutureReservationSpecShareSettingsProjectMapKeyRef
+{
+    /// <summary>APIVersion of the referenced resource</summary>
+    [JsonPropertyName("apiVersion")]
+    public string? ApiVersion { get; set; }
+
+    /// <summary>The external name of the referenced resource</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>Kind of the referenced resource</summary>
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+/// <summary>The project ID, should be same as the key of this project config in the parent map.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1ComputeFutureReservationSpecShareSettingsProjectMapValueProjectIDRef
+{
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The kind of the Project resource; optional but must be `Project` if provided.</summary>
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
+    /// <summary>The `name` field of a `Project` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1ComputeFutureReservationSpecShareSettingsProjectMapValue
+{
+    /// <summary>The project ID, should be same as the key of this project config in the parent map.</summary>
+    [JsonPropertyName("projectIDRef")]
+    public V1alpha1ComputeFutureReservationSpecShareSettingsProjectMapValueProjectIDRef? ProjectIDRef { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1ComputeFutureReservationSpecShareSettingsProjectMap
+{
+    /// <summary>The resource reference that defaults to Project if Kind is not specified.</summary>
+    [JsonPropertyName("keyRef")]
+    public required V1alpha1ComputeFutureReservationSpecShareSettingsProjectMapKeyRef KeyRef { get; set; }
+
+    [JsonPropertyName("value")]
+    public V1alpha1ComputeFutureReservationSpecShareSettingsProjectMapValue? Value { get; set; }
+}
+
 /// <summary>List of Projects/Folders to share with.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeFutureReservationSpecShareSettings
 {
+    /// <summary>A map of key(i.e. project or other shared resources) and associated project config. This is only valid when shareType&apos;s value is SPECIFIC_PROJECTS.`</summary>
+    [JsonPropertyName("projectMap")]
+    public IList<V1alpha1ComputeFutureReservationSpecShareSettingsProjectMap>? ProjectMap { get; set; }
+
     /// <summary>Type of sharing for this shared-reservation Check the ShareType enum for the list of possible values.</summary>
     [JsonPropertyName("shareType")]
     public string? ShareType { get; set; }
@@ -411,11 +482,24 @@ public partial class V1alpha1ComputeFutureReservationStatusObservedStateStatusLa
     public string? Timestamp { get; set; }
 }
 
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1ComputeFutureReservationStatusObservedStateStatusLastKnownGoodStateFutureReservationSpecsShareSettingsProjectMap
+{
+    /// <summary>The project ID, should be same as the key of this project config in the parent map.</summary>
+    [JsonPropertyName("projectID")]
+    public string? ProjectID { get; set; }
+}
+
 /// <summary>Output only. [Output Only] The previous share settings of the Future Reservation.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeFutureReservationStatusObservedStateStatusLastKnownGoodStateFutureReservationSpecsShareSettings
 {
+    /// <summary>A map of project id and project config. This is only valid when shareType&apos;s value is SPECIFIC_PROJECTS.`</summary>
+    [JsonPropertyName("projectMap")]
+    public IDictionary<string, V1alpha1ComputeFutureReservationStatusObservedStateStatusLastKnownGoodStateFutureReservationSpecsShareSettingsProjectMap>? ProjectMap { get; set; }
+
     /// <summary>Type of sharing for this shared-reservation Check the ShareType enum for the list of possible values.</summary>
     [JsonPropertyName("shareType")]
     public string? ShareType { get; set; }
