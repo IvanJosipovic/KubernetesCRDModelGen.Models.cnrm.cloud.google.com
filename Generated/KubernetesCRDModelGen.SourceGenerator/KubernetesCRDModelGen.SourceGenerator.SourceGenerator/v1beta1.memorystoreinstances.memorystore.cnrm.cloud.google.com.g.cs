@@ -604,6 +604,10 @@ public partial class V1beta1MemorystoreInstanceStatusObservedState
     [JsonPropertyName("crossInstanceReplicationConfig")]
     public V1beta1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfig? CrossInstanceReplicationConfig { get; set; }
 
+    /// <summary>Output only. The current version of the maintenance schedule.</summary>
+    [JsonPropertyName("effectiveMaintenanceVersion")]
+    public string? EffectiveMaintenanceVersion { get; set; }
+
     /// <summary>Optional. Endpoints for the instance.</summary>
     [JsonPropertyName("endpoints")]
     public IList<V1beta1MemorystoreInstanceStatusObservedStateEndpoints>? Endpoints { get; set; }
