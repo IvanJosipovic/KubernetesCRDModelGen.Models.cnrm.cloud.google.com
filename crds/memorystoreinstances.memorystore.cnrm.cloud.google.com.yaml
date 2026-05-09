@@ -416,6 +416,9 @@ spec:
                           type: object
                         type: array
                     type: object
+                  effectiveMaintenanceVersion:
+                    description: Output only. The current version of the maintenance schedule.
+                    type: string
                   endpoints:
                     description: Optional. Endpoints for the instance.
                     items:
@@ -901,6 +904,9 @@ spec:
                           type: object
                         type: array
                     type: object
+                  effectiveMaintenanceVersion:
+                    description: Output only. The current version of the maintenance schedule.
+                    type: string
                   endpoints:
                     description: Optional. Endpoints for the instance.
                     items:
