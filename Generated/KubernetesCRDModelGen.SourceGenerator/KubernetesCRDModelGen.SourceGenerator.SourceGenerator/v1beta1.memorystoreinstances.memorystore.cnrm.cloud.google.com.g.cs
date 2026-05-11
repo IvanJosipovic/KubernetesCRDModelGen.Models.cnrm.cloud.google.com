@@ -600,6 +600,10 @@ public partial class V1beta1MemorystoreInstanceStatusObservedStateStateInfo
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MemorystoreInstanceStatusObservedState
 {
+    /// <summary>Output only. The list of available maintenance versions for the instance.</summary>
+    [JsonPropertyName("availableMaintenanceVersions")]
+    public IList<string>? AvailableMaintenanceVersions { get; set; }
+
     /// <summary>Output only. Creation timestamp of the instance.</summary>
     [JsonPropertyName("createTime")]
     public string? CreateTime { get; set; }
