@@ -329,6 +329,10 @@ public partial class V1alpha1MemorystoreInstanceSpec
     [JsonPropertyName("location")]
     public required string Location { get; set; }
 
+    /// <summary>Optional. The maintenance version of the instance.</summary>
+    [JsonPropertyName("maintenanceVersion")]
+    public string? MaintenanceVersion { get; set; }
+
     /// <summary>Optional. The mode config for the instance.</summary>
     [JsonPropertyName("mode")]
     public string? Mode { get; set; }

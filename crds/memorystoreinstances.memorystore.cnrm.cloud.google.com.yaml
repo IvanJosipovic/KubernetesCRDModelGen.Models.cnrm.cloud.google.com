@@ -231,6 +231,9 @@ spec:
                 x-kubernetes-validations:
                 - message: Location field is immutable
                   rule: self == oldSelf
+              maintenanceVersion:
+                description: Optional. The maintenance version of the instance.
+                type: string
               mode:
                 description: Optional. The mode config for the instance.
                 type: string
@@ -719,6 +722,9 @@ spec:
                 x-kubernetes-validations:
                 - message: Location field is immutable
                   rule: self == oldSelf
+              maintenanceVersion:
+                description: Optional. The maintenance version of the instance.
+                type: string
               mode:
                 description: Optional. The mode config for the instance.
                 type: string
