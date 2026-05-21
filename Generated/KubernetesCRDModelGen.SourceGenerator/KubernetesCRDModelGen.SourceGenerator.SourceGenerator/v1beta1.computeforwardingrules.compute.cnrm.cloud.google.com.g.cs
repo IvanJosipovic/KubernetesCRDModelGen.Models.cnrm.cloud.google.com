@@ -726,6 +726,10 @@ public partial class V1beta1ComputeForwardingRuleStatus
     /// <summary>The internal fully qualified service name for this Forwarding Rule. This field is only used for INTERNAL load balancing.</summary>
     [JsonPropertyName("serviceName")]
     public string? ServiceName { get; set; }
+
+    /// <summary>The target resource to receive the matched traffic.</summary>
+    [JsonPropertyName("target")]
+    public string? Target { get; set; }
 }
 
 /// <summary>ComputeForwardingRule is the Schema for the compute API</summary>
