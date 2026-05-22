@@ -9,14 +9,14 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.apihub.cnrm.cloud.google.com;
-/// <summary>ApiHubDeployment is the Schema for the ApiHubDeployment API</summary>
+/// <summary>APIHubDeployment is the Schema for the APIHubDeployment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
-public partial class V1alpha1ApiHubDeploymentList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1ApiHubDeployment>
+public partial class V1alpha1APIHubDeploymentList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1APIHubDeployment>
 {
     public const string KubeApiVersion = "v1alpha1";
-    public const string KubeKind = "ApiHubDeploymentList";
+    public const string KubeKind = "APIHubDeploymentList";
     public const string KubeGroup = "apihub.cnrm.cloud.google.com";
     public const string KubePluralName = "apihubdeployments";
     /// <summary>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources</summary>
@@ -25,191 +25,67 @@ public partial class V1alpha1ApiHubDeploymentList : IKubernetesObject<V1ListMeta
 
     /// <summary>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds</summary>
     [JsonPropertyName("kind")]
-    public string Kind { get; set; } = "ApiHubDeploymentList";
+    public string Kind { get; set; } = "APIHubDeploymentList";
 
     /// <summary>ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.</summary>
     [JsonPropertyName("metadata")]
     public V1ListMeta? Metadata { get; set; }
 
-    /// <summary>List of V1alpha1ApiHubDeployment objects.</summary>
+    /// <summary>List of V1alpha1APIHubDeployment objects.</summary>
     [JsonPropertyName("items")]
-    public required IList<V1alpha1ApiHubDeployment> Items { get; set; }
-}
-
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecDeploymentTypeEnumValuesValues
-{
-    /// <summary>Optional. The detailed description of the allowed value.</summary>
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-
-    /// <summary>Required. The display name of the allowed value.</summary>
-    [JsonPropertyName("displayName")]
-    public string? DisplayName { get; set; }
-
-    /// <summary>
-    /// Required. The ID of the allowed value.
-    ///  * If provided, the same will be used. The service will throw an error if
-    ///  the specified id is already used by another allowed value in the same
-    ///  attribute resource.
-    ///  * If not provided, a system generated id derived from the display name
-    ///  will be used. In this case, the service will handle conflict resolution
-    ///  by adding a system generated suffix in case of duplicates.
-    /// 
-    ///  This value should be 4-63 characters, and valid characters
-    ///  are /[a-z][0-9]-/.
-    /// </summary>
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-
-    /// <summary>Optional. When set to true, the allowed value cannot be updated or deleted by the user. It can only be true for System defined attributes.</summary>
-    [JsonPropertyName("immutable")]
-    public bool? Immutable { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is enum.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecDeploymentTypeEnumValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is enum.</summary>
-    [JsonPropertyName("values")]
-    public IList<V1alpha1ApiHubDeploymentSpecDeploymentTypeEnumValuesValues>? Values { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is JSON.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecDeploymentTypeJsonValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is string or JSON.</summary>
-    [JsonPropertyName("values")]
-    public IList<string>? Values { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is string.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecDeploymentTypeStringValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is string or JSON.</summary>
-    [JsonPropertyName("values")]
-    public IList<string>? Values { get; set; }
+    public required IList<V1alpha1APIHubDeployment> Items { get; set; }
 }
 
 /// <summary>Required. The type of deployment. This maps to the following system defined attribute: `projects/{project}/locations/{location}/attributes/system-deployment-type` attribute. The number of values for this attribute will be based on the cardinality of the attribute. The same can be retrieved via GetAttribute API. All values should be from the list of allowed values defined for the attribute.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecDeploymentType
+public partial class V1alpha1APIHubDeploymentSpecDeploymentTypeRef
 {
-    /// <summary>The attribute values associated with a resource in case attribute data type is enum.</summary>
-    [JsonPropertyName("enumValues")]
-    public V1alpha1ApiHubDeploymentSpecDeploymentTypeEnumValues? EnumValues { get; set; }
+    /// <summary>The `id` of an allowed value of an attribute, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
 
-    /// <summary>The attribute values associated with a resource in case attribute data type is JSON.</summary>
-    [JsonPropertyName("jsonValues")]
-    public V1alpha1ApiHubDeploymentSpecDeploymentTypeJsonValues? JsonValues { get; set; }
+    /// <summary>The `name` field of a `APIHubAttribute` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
 
-    /// <summary>The attribute values associated with a resource in case attribute data type is string.</summary>
-    [JsonPropertyName("stringValues")]
-    public V1alpha1ApiHubDeploymentSpecDeploymentTypeStringValues? StringValues { get; set; }
+    /// <summary>The `namespace` field of a `APIHubAttribute` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
 }
 
 /// <summary>Optional. The documentation of the deployment.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecDocumentation
+public partial class V1alpha1APIHubDeploymentSpecDocumentation
 {
     /// <summary>Optional. The uri of the externally hosted documentation.</summary>
     [JsonPropertyName("externalURI")]
     public string? ExternalURI { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecEnvironmentEnumValuesValues
-{
-    /// <summary>Optional. The detailed description of the allowed value.</summary>
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-
-    /// <summary>Required. The display name of the allowed value.</summary>
-    [JsonPropertyName("displayName")]
-    public string? DisplayName { get; set; }
-
-    /// <summary>
-    /// Required. The ID of the allowed value.
-    ///  * If provided, the same will be used. The service will throw an error if
-    ///  the specified id is already used by another allowed value in the same
-    ///  attribute resource.
-    ///  * If not provided, a system generated id derived from the display name
-    ///  will be used. In this case, the service will handle conflict resolution
-    ///  by adding a system generated suffix in case of duplicates.
-    /// 
-    ///  This value should be 4-63 characters, and valid characters
-    ///  are /[a-z][0-9]-/.
-    /// </summary>
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-
-    /// <summary>Optional. When set to true, the allowed value cannot be updated or deleted by the user. It can only be true for System defined attributes.</summary>
-    [JsonPropertyName("immutable")]
-    public bool? Immutable { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is enum.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecEnvironmentEnumValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is enum.</summary>
-    [JsonPropertyName("values")]
-    public IList<V1alpha1ApiHubDeploymentSpecEnvironmentEnumValuesValues>? Values { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is JSON.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecEnvironmentJsonValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is string or JSON.</summary>
-    [JsonPropertyName("values")]
-    public IList<string>? Values { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is string.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecEnvironmentStringValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is string or JSON.</summary>
-    [JsonPropertyName("values")]
-    public IList<string>? Values { get; set; }
-}
-
 /// <summary>Optional. The environment mapping to this deployment. This maps to the following system defined attribute: `projects/{project}/locations/{location}/attributes/system-environment` attribute. The number of values for this attribute will be based on the cardinality of the attribute. The same can be retrieved via GetAttribute API. All values should be from the list of allowed values defined for the attribute.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecEnvironment
+public partial class V1alpha1APIHubDeploymentSpecEnvironmentRef
 {
-    /// <summary>The attribute values associated with a resource in case attribute data type is enum.</summary>
-    [JsonPropertyName("enumValues")]
-    public V1alpha1ApiHubDeploymentSpecEnvironmentEnumValues? EnumValues { get; set; }
+    /// <summary>The `id` of an allowed value of an attribute, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
 
-    /// <summary>The attribute values associated with a resource in case attribute data type is JSON.</summary>
-    [JsonPropertyName("jsonValues")]
-    public V1alpha1ApiHubDeploymentSpecEnvironmentJsonValues? JsonValues { get; set; }
+    /// <summary>The `name` field of a `APIHubAttribute` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
 
-    /// <summary>The attribute values associated with a resource in case attribute data type is string.</summary>
-    [JsonPropertyName("stringValues")]
-    public V1alpha1ApiHubDeploymentSpecEnvironmentStringValues? StringValues { get; set; }
+    /// <summary>The `namespace` field of a `APIHubAttribute` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
 }
 
 /// <summary>The project that this resource belongs to.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecProjectRef
+public partial class V1alpha1APIHubDeploymentSpecProjectRef
 {
     /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
@@ -228,94 +104,32 @@ public partial class V1alpha1ApiHubDeploymentSpecProjectRef
     public string? Namespace { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecSloEnumValuesValues
-{
-    /// <summary>Optional. The detailed description of the allowed value.</summary>
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-
-    /// <summary>Required. The display name of the allowed value.</summary>
-    [JsonPropertyName("displayName")]
-    public string? DisplayName { get; set; }
-
-    /// <summary>
-    /// Required. The ID of the allowed value.
-    ///  * If provided, the same will be used. The service will throw an error if
-    ///  the specified id is already used by another allowed value in the same
-    ///  attribute resource.
-    ///  * If not provided, a system generated id derived from the display name
-    ///  will be used. In this case, the service will handle conflict resolution
-    ///  by adding a system generated suffix in case of duplicates.
-    /// 
-    ///  This value should be 4-63 characters, and valid characters
-    ///  are /[a-z][0-9]-/.
-    /// </summary>
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-
-    /// <summary>Optional. When set to true, the allowed value cannot be updated or deleted by the user. It can only be true for System defined attributes.</summary>
-    [JsonPropertyName("immutable")]
-    public bool? Immutable { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is enum.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecSloEnumValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is enum.</summary>
-    [JsonPropertyName("values")]
-    public IList<V1alpha1ApiHubDeploymentSpecSloEnumValuesValues>? Values { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is JSON.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecSloJsonValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is string or JSON.</summary>
-    [JsonPropertyName("values")]
-    public IList<string>? Values { get; set; }
-}
-
-/// <summary>The attribute values associated with a resource in case attribute data type is string.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecSloStringValues
-{
-    /// <summary>Required. The attribute values in case attribute data type is string or JSON.</summary>
-    [JsonPropertyName("values")]
-    public IList<string>? Values { get; set; }
-}
-
 /// <summary>Optional. The SLO for this deployment. This maps to the following system defined attribute: `projects/{project}/locations/{location}/attributes/system-slo` attribute. The number of values for this attribute will be based on the cardinality of the attribute. The same can be retrieved via GetAttribute API. All values should be from the list of allowed values defined for the attribute.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpecSlo
+public partial class V1alpha1APIHubDeploymentSpecSloRef
 {
-    /// <summary>The attribute values associated with a resource in case attribute data type is enum.</summary>
-    [JsonPropertyName("enumValues")]
-    public V1alpha1ApiHubDeploymentSpecSloEnumValues? EnumValues { get; set; }
+    /// <summary>The `id` of an allowed value of an attribute, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
 
-    /// <summary>The attribute values associated with a resource in case attribute data type is JSON.</summary>
-    [JsonPropertyName("jsonValues")]
-    public V1alpha1ApiHubDeploymentSpecSloJsonValues? JsonValues { get; set; }
+    /// <summary>The `name` field of a `APIHubAttribute` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
 
-    /// <summary>The attribute values associated with a resource in case attribute data type is string.</summary>
-    [JsonPropertyName("stringValues")]
-    public V1alpha1ApiHubDeploymentSpecSloStringValues? StringValues { get; set; }
+    /// <summary>The `namespace` field of a `APIHubAttribute` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
 }
 
-/// <summary>ApiHubDeploymentSpec defines the desired state of ApiHubDeployment</summary>
+/// <summary>APIHubDeploymentSpec defines the desired state of APIHubDeployment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentSpec
+public partial class V1alpha1APIHubDeploymentSpec
 {
     /// <summary>Required. The type of deployment. This maps to the following system defined attribute: `projects/{project}/locations/{location}/attributes/system-deployment-type` attribute. The number of values for this attribute will be based on the cardinality of the attribute. The same can be retrieved via GetAttribute API. All values should be from the list of allowed values defined for the attribute.</summary>
-    [JsonPropertyName("deploymentType")]
-    public required V1alpha1ApiHubDeploymentSpecDeploymentType DeploymentType { get; set; }
+    [JsonPropertyName("deploymentTypeRef")]
+    public required V1alpha1APIHubDeploymentSpecDeploymentTypeRef DeploymentTypeRef { get; set; }
 
     /// <summary>Optional. The description of the deployment.</summary>
     [JsonPropertyName("description")]
@@ -327,15 +141,15 @@ public partial class V1alpha1ApiHubDeploymentSpec
 
     /// <summary>Optional. The documentation of the deployment.</summary>
     [JsonPropertyName("documentation")]
-    public V1alpha1ApiHubDeploymentSpecDocumentation? Documentation { get; set; }
+    public V1alpha1APIHubDeploymentSpecDocumentation? Documentation { get; set; }
 
     /// <summary>Required. The endpoints at which this deployment resource is listening for API requests. This could be a list of complete URIs, hostnames or an IP addresses.</summary>
     [JsonPropertyName("endpoints")]
     public required IList<string> Endpoints { get; set; }
 
     /// <summary>Optional. The environment mapping to this deployment. This maps to the following system defined attribute: `projects/{project}/locations/{location}/attributes/system-environment` attribute. The number of values for this attribute will be based on the cardinality of the attribute. The same can be retrieved via GetAttribute API. All values should be from the list of allowed values defined for the attribute.</summary>
-    [JsonPropertyName("environment")]
-    public V1alpha1ApiHubDeploymentSpecEnvironment? Environment { get; set; }
+    [JsonPropertyName("environmentRef")]
+    public V1alpha1APIHubDeploymentSpecEnvironmentRef? EnvironmentRef { get; set; }
 
     /// <summary>The location of this resource.</summary>
     [JsonPropertyName("location")]
@@ -343,9 +157,9 @@ public partial class V1alpha1ApiHubDeploymentSpec
 
     /// <summary>The project that this resource belongs to.</summary>
     [JsonPropertyName("projectRef")]
-    public required V1alpha1ApiHubDeploymentSpecProjectRef ProjectRef { get; set; }
+    public required V1alpha1APIHubDeploymentSpecProjectRef ProjectRef { get; set; }
 
-    /// <summary>The ApiHubDeployment name. If not given, the metadata.name will be used.</summary>
+    /// <summary>The APIHubDeployment name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
@@ -354,13 +168,13 @@ public partial class V1alpha1ApiHubDeploymentSpec
     public required string ResourceURI { get; set; }
 
     /// <summary>Optional. The SLO for this deployment. This maps to the following system defined attribute: `projects/{project}/locations/{location}/attributes/system-slo` attribute. The number of values for this attribute will be based on the cardinality of the attribute. The same can be retrieved via GetAttribute API. All values should be from the list of allowed values defined for the attribute.</summary>
-    [JsonPropertyName("slo")]
-    public V1alpha1ApiHubDeploymentSpecSlo? Slo { get; set; }
+    [JsonPropertyName("sloRef")]
+    public V1alpha1APIHubDeploymentSpecSloRef? SloRef { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentStatusConditions
+public partial class V1alpha1APIHubDeploymentStatusConditions
 {
     /// <summary>Last time the condition transitioned from one status to another.</summary>
     [JsonPropertyName("lastTransitionTime")]
@@ -386,7 +200,7 @@ public partial class V1alpha1ApiHubDeploymentStatusConditions
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentStatusObservedState
+public partial class V1alpha1APIHubDeploymentStatusObservedState
 {
     /// <summary>Output only. The API versions linked to this deployment. Note: A particular deployment could be linked to multiple different API versions (of same or different APIs).</summary>
     [JsonPropertyName("apiVersions")]
@@ -401,16 +215,16 @@ public partial class V1alpha1ApiHubDeploymentStatusObservedState
     public string? UpdateTime { get; set; }
 }
 
-/// <summary>ApiHubDeploymentStatus defines the config connector machine state of ApiHubDeployment</summary>
+/// <summary>APIHubDeploymentStatus defines the config connector machine state of APIHubDeployment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1ApiHubDeploymentStatus
+public partial class V1alpha1APIHubDeploymentStatus
 {
     /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
-    public IList<V1alpha1ApiHubDeploymentStatusConditions>? Conditions { get; set; }
+    public IList<V1alpha1APIHubDeploymentStatusConditions>? Conditions { get; set; }
 
-    /// <summary>A unique specifier for the ApiHubDeployment resource in GCP.</summary>
+    /// <summary>A unique specifier for the APIHubDeployment resource in GCP.</summary>
     [JsonPropertyName("externalRef")]
     public string? ExternalRef { get; set; }
 
@@ -420,17 +234,17 @@ public partial class V1alpha1ApiHubDeploymentStatus
 
     /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
     [JsonPropertyName("observedState")]
-    public V1alpha1ApiHubDeploymentStatusObservedState? ObservedState { get; set; }
+    public V1alpha1APIHubDeploymentStatusObservedState? ObservedState { get; set; }
 }
 
-/// <summary>ApiHubDeployment is the Schema for the ApiHubDeployment API</summary>
+/// <summary>APIHubDeployment is the Schema for the APIHubDeployment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
-public partial class V1alpha1ApiHubDeployment : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1ApiHubDeploymentSpec>, IStatus<V1alpha1ApiHubDeploymentStatus?>
+public partial class V1alpha1APIHubDeployment : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1APIHubDeploymentSpec>, IStatus<V1alpha1APIHubDeploymentStatus?>
 {
     public const string KubeApiVersion = "v1alpha1";
-    public const string KubeKind = "ApiHubDeployment";
+    public const string KubeKind = "APIHubDeployment";
     public const string KubeGroup = "apihub.cnrm.cloud.google.com";
     public const string KubePluralName = "apihubdeployments";
     /// <summary>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources</summary>
@@ -439,17 +253,17 @@ public partial class V1alpha1ApiHubDeployment : IKubernetesObject<V1ObjectMeta>,
 
     /// <summary>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds</summary>
     [JsonPropertyName("kind")]
-    public string Kind { get; set; } = "ApiHubDeployment";
+    public string Kind { get; set; } = "APIHubDeployment";
 
     /// <summary>Standard object&apos;s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</summary>
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
-    /// <summary>ApiHubDeploymentSpec defines the desired state of ApiHubDeployment</summary>
+    /// <summary>APIHubDeploymentSpec defines the desired state of APIHubDeployment</summary>
     [JsonPropertyName("spec")]
-    public required V1alpha1ApiHubDeploymentSpec Spec { get; set; }
+    public required V1alpha1APIHubDeploymentSpec Spec { get; set; }
 
-    /// <summary>ApiHubDeploymentStatus defines the config connector machine state of ApiHubDeployment</summary>
+    /// <summary>APIHubDeploymentStatus defines the config connector machine state of APIHubDeployment</summary>
     [JsonPropertyName("status")]
-    public V1alpha1ApiHubDeploymentStatus? Status { get; set; }
+    public V1alpha1APIHubDeploymentStatus? Status { get; set; }
 }
