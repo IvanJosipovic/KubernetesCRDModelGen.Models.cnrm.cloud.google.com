@@ -15,6 +15,7 @@ spec:
     kind: StorageBucket
     categories:
     - gcp
+    listKind: StorageBucketList
     plural: storagebuckets
     shortNames:
     - gcpstoragebucket
@@ -42,16 +43,18 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: StorageBucket is the Schema for the StorageBucket API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: StorageBucketSpec defines the desired state of StorageBucket
             properties:
               autoclass:
                 description: The bucket's autoclass configuration.
@@ -63,9 +66,7 @@ spec:
                 - enabled
                 type: object
               bucketPolicyOnly:
-                description: |-
-                  DEPRECATED. Please use the `uniformBucketLevelAccess` field as this field has been renamed by Google. The `uniformBucketLevelAccess` field will supersede this field.
-                  Enables Bucket PolicyOnly access to a bucket.
+                description: DEPRECATED. Please use the `uniformBucketLevelAccess` field as this field has been renamed by Google. The `uniformBucketLevelAccess` field will supersede this field. Enables Bucket PolicyOnly access to a bucket.
                 type: boolean
               cors:
                 description: The bucket's Cross-Origin Resource Sharing (CORS) configuration.
@@ -109,6 +110,7 @@ spec:
                 description: The bucket's encryption configuration.
                 properties:
                   kmsKeyRef:
+                    description: A reference to the KMS Crypto Key that will be used to encrypt objects inserted into this bucket.
                     oneOf:
                     - not:
                         required:
@@ -125,13 +127,13 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.'
+                        description: A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.
                         type: string
                       name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        description: The `name` of a `KMSCryptoKey` resource.
                         type: string
                       namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        description: The `namespace` of a `KMSCryptoKey` resource.
                         type: string
                     type: object
                 required:
@@ -169,9 +171,7 @@ spec:
                           description: Number of days elapsed since the user-specified timestamp set on an object.
                           type: integer
                         daysSinceNoncurrentTime:
-                          description: |-
-                            Number of days elapsed since the noncurrent timestamp of an object. This
-                            										condition is relevant only for versioned objects.
+                          description: Number of days elapsed since the noncurrent timestamp of an object. This condition is relevant only for versioned objects.
                           type: integer
                         matchesPrefix:
                           description: One or more matching name prefixes to satisfy this condition.
@@ -274,9 +274,10 @@ spec:
                 type: object
             type: object
           status:
+            description: StorageBucketStatus defines the config connector machine state of StorageBucket
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the object's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -298,9 +299,10 @@ spec:
                 type: array
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
               observedState:
-                description: The observed state of the underlying GCP resource.
+                description: ObservedState is the state of the resource as most recently observed in GCP.
                 properties:
                   softDeletePolicy:
                     description: The bucket's soft delete policy, which defines the period of time that soft-deleted objects will be retained, and cannot be permanently deleted. If it is not provided, by default Google Cloud Storage sets this to default soft delete policy.
@@ -310,6 +312,7 @@ spec:
                         type: string
                       retentionDurationSeconds:
                         description: The duration in seconds that soft-deleted objects in the bucket will be retained and cannot be permanently deleted. Default value is 604800.
+                        format: int64
                         type: integer
                     type: object
                 type: object
@@ -325,9 +328,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
