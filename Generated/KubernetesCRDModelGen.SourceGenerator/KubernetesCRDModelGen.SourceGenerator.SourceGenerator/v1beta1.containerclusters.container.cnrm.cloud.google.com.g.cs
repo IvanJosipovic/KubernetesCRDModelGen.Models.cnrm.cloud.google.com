@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.container.cnrm.cloud.google.com;
+/// <summary>ContainerCluster is the Schema for the ContainerCluster API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -83,7 +84,7 @@ public partial class V1beta1ContainerClusterSpecAddonsConfigGcpFilestoreCsiDrive
     public required bool Enabled { get; set; }
 }
 
-/// <summary>The status of the GCS Fuse CSI driver addon, which allows the usage of gcs bucket as volumes. Defaults to disabled; set enabled = true to enable.</summary>
+/// <summary>The status of the GCS Fuse CSI driver addon, which allows the usage of GCS bucket as volumes. Defaults to disabled; set enabled = true to enable.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecAddonsConfigGcsFuseCsiDriverConfig
@@ -176,7 +177,7 @@ public partial class V1beta1ContainerClusterSpecAddonsConfig
     [JsonPropertyName("gcpFilestoreCsiDriverConfig")]
     public V1beta1ContainerClusterSpecAddonsConfigGcpFilestoreCsiDriverConfig? GcpFilestoreCsiDriverConfig { get; set; }
 
-    /// <summary>The status of the GCS Fuse CSI driver addon, which allows the usage of gcs bucket as volumes. Defaults to disabled; set enabled = true to enable.</summary>
+    /// <summary>The status of the GCS Fuse CSI driver addon, which allows the usage of GCS bucket as volumes. Defaults to disabled; set enabled = true to enable.</summary>
     [JsonPropertyName("gcsFuseCsiDriverConfig")]
     public V1beta1ContainerClusterSpecAddonsConfigGcsFuseCsiDriverConfig? GcsFuseCsiDriverConfig { get; set; }
 
@@ -229,23 +230,20 @@ public partial class V1beta1ContainerClusterSpecBinaryAuthorization
     public string? EvaluationMode { get; set; }
 }
 
-/// <summary>
-/// The Customer Managed Encryption Key used to encrypt the
-/// boot disk attached to each node in the node pool.
-/// </summary>
+/// <summary>Immutable. The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioningDefaultsBootDiskKMSKeyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -285,7 +283,7 @@ public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioni
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioningDefaultsServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The `email` field of an `IAMServiceAccount` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -303,11 +301,11 @@ public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioni
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioningDefaultsShieldedInstanceConfig
 {
-    /// <summary>Defines whether the instance has integrity monitoring enabled.</summary>
+    /// <summary>Immutable. Defines whether the instance has integrity monitoring enabled.</summary>
     [JsonPropertyName("enableIntegrityMonitoring")]
     public bool? EnableIntegrityMonitoring { get; set; }
 
-    /// <summary>Defines whether the instance has Secure Boot enabled.</summary>
+    /// <summary>Immutable. Defines whether the instance has Secure Boot enabled.</summary>
     [JsonPropertyName("enableSecureBoot")]
     public bool? EnableSecureBoot { get; set; }
 }
@@ -325,11 +323,7 @@ public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioni
     [JsonPropertyName("batchPercentage")]
     public double? BatchPercentage { get; set; }
 
-    /// <summary>
-    /// Soak time after each batch gets drained.
-    /// 
-    /// 																			A duration in seconds with up to nine fractional digits, ending with &apos;s&apos;. Example: &quot;3.5s&quot;.
-    /// </summary>
+    /// <summary>Soak time after each batch gets drained. A duration in seconds with up to nine fractional digits, ending with &apos;s&apos;. Example: &quot;3.5s&quot;.</summary>
     [JsonPropertyName("batchSoakDuration")]
     public string? BatchSoakDuration { get; set; }
 }
@@ -342,7 +336,7 @@ public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioni
     /// <summary>
     /// Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.
     /// 
-    /// 																A duration in seconds with up to nine fractional digits, ending with &apos;s&apos;. Example: &quot;3.5s&quot;.
+    /// A duration in seconds with up to nine fractional digits, ending with &apos;s&apos;. Example: &quot;3.5s&quot;.
     /// </summary>
     [JsonPropertyName("nodePoolSoakDuration")]
     public string? NodePoolSoakDuration { get; set; }
@@ -379,10 +373,7 @@ public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioni
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioningDefaults
 {
-    /// <summary>
-    /// The Customer Managed Encryption Key used to encrypt the
-    /// boot disk attached to each node in the node pool.
-    /// </summary>
+    /// <summary>Immutable. The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.</summary>
     [JsonPropertyName("bootDiskKMSKeyRef")]
     public V1beta1ContainerClusterSpecClusterAutoscalingAutoProvisioningDefaultsBootDiskKMSKeyRef? BootDiskKMSKeyRef { get; set; }
 
@@ -486,7 +477,7 @@ public partial class V1beta1ContainerClusterSpecClusterTelemetry
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecConfidentialNodes
 {
-    /// <summary>Immutable. Whether Confidential Nodes feature is enabled for all nodes in this cluster.</summary>
+    /// <summary>Immutable. Whether Confidential Nodes feature is enabled for all nodes in this pool.</summary>
     [JsonPropertyName("enabled")]
     public required bool Enabled { get; set; }
 }
@@ -539,7 +530,7 @@ public partial class V1beta1ContainerClusterSpecCostManagementConfig
     public required bool Enabled { get; set; }
 }
 
-/// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;ALL_OBJECTS_ENCRYPTION_ENABLED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
+/// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecDatabaseEncryption
@@ -616,15 +607,15 @@ public partial class V1beta1ContainerClusterSpecIdentityServiceConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecIpAllocationPolicyAdditionalIpRangesConfigsSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The ComputeSubnetwork selflink of form &quot;projects/{{project}}/regions/{{region}}/subnetworks/{{name}}&quot;, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -670,7 +661,7 @@ public partial class V1beta1ContainerClusterSpecIpAllocationPolicyPodCidrOverpro
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecIpAllocationPolicy
 {
-    /// <summary>AdditionalIpRangesConfigs is the configuration for additional pod secondary ranges supporting the ClusterUpdate message. Each AdditionalIPRangesConfig corresponds to a single subnetwork.</summary>
+    /// <summary>AdditionalIPRangesConfig is the configuration for additional pod secondary ranges supporting the ClusterUpdate message. Each AdditionalIPRangesConfig corresponds to a single subnetwork.</summary>
     [JsonPropertyName("additionalIpRangesConfigs")]
     public IList<V1beta1ContainerClusterSpecIpAllocationPolicyAdditionalIpRangesConfigs>? AdditionalIpRangesConfigs { get; set; }
 
@@ -713,7 +704,7 @@ public partial class V1beta1ContainerClusterSpecLoggingConfig
     public required IList<string> EnableComponents { get; set; }
 }
 
-/// <summary>Time window specified for daily maintenance operations. Specify start_time in RFC3339 format &quot;HH:MM”, where HH : [00-23] and MM : [00-59] GMT.</summary>
+/// <summary>Time window specified for daily maintenance operations. Specify start_time in RFC3339 format &quot;HH:MM&quot;, where HH : [00-23] and MM : [00-59] GMT.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecMaintenancePolicyDailyMaintenanceWindow
@@ -773,7 +764,7 @@ public partial class V1beta1ContainerClusterSpecMaintenancePolicyRecurringWindow
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecMaintenancePolicy
 {
-    /// <summary>Time window specified for daily maintenance operations. Specify start_time in RFC3339 format &quot;HH:MM”, where HH : [00-23] and MM : [00-59] GMT.</summary>
+    /// <summary>Time window specified for daily maintenance operations. Specify start_time in RFC3339 format &quot;HH:MM&quot;, where HH : [00-23] and MM : [00-59] GMT.</summary>
     [JsonPropertyName("dailyMaintenanceWindow")]
     public V1beta1ContainerClusterSpecMaintenancePolicyDailyMaintenanceWindow? DailyMaintenanceWindow { get; set; }
 
@@ -886,7 +877,7 @@ public partial class V1beta1ContainerClusterSpecMasterAuthorizedNetworksConfig
     [JsonPropertyName("cidrBlocks")]
     public IList<V1beta1ContainerClusterSpecMasterAuthorizedNetworksConfigCidrBlocks>? CidrBlocks { get; set; }
 
-    /// <summary>Whether master is accessbile via Google Compute Engine Public IP addresses.</summary>
+    /// <summary>Whether master is accessible via Google Compute Engine Public IP addresses.</summary>
     [JsonPropertyName("gcpPublicCidrsAccessEnabled")]
     public bool? GcpPublicCidrsAccessEnabled { get; set; }
 }
@@ -960,15 +951,15 @@ public partial class V1beta1ContainerClusterSpecNetworkPolicy
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>The value of an externally managed ComputeNetwork resource. Should be in the format &quot;https://www.googleapis.com/compute/{{version}}/projects/{{projectId}}/global/networks/{{networkId}}&quot; or &quot;projects/{{projectId}}/global/networks/{{networkId}}&quot;</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -991,15 +982,15 @@ public partial class V1beta1ContainerClusterSpecNodeConfigAdvancedMachineFeature
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNodeConfigBootDiskKMSCryptoKeyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -1053,7 +1044,7 @@ public partial class V1beta1ContainerClusterSpecNodeConfigFastSocket
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNodeConfigGcfsConfig
 {
-    /// <summary>Immutable. Whether or not GCFS is enabled.</summary>
+    /// <summary>Whether or not GCFS is enabled.</summary>
     [JsonPropertyName("enabled")]
     public required bool Enabled { get; set; }
 }
@@ -1173,24 +1164,20 @@ public partial class V1beta1ContainerClusterSpecNodeConfigLocalNvmeSsdBlockConfi
     public required int LocalSsdCount { get; set; }
 }
 
-/// <summary>
-/// Immutable. Setting this field will assign instances
-/// of this pool to run on the specified node group. This is useful
-/// for running workloads on sole tenant nodes.
-/// </summary>
+/// <summary>Immutable. Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNodeConfigNodeGroupRef
 {
-    /// <summary>Allowed value: The `name` field of a `ComputeNodeGroup` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNodeGroup resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/nodeGroups/{{nodeGroupID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNodeGroup resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNodeGroup resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -1227,7 +1214,7 @@ public partial class V1beta1ContainerClusterSpecNodeConfigSandboxConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNodeConfigServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The `email` field of an `IAMServiceAccount` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -1404,11 +1391,7 @@ public partial class V1beta1ContainerClusterSpecNodeConfig
     [JsonPropertyName("minCpuPlatform")]
     public string? MinCpuPlatform { get; set; }
 
-    /// <summary>
-    /// Immutable. Setting this field will assign instances
-    /// of this pool to run on the specified node group. This is useful
-    /// for running workloads on sole tenant nodes.
-    /// </summary>
+    /// <summary>Immutable. Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.</summary>
     [JsonPropertyName("nodeGroupRef")]
     public V1beta1ContainerClusterSpecNodeConfigNodeGroupRef? NodeGroupRef { get; set; }
 
@@ -1529,15 +1512,15 @@ public partial class V1beta1ContainerClusterSpecNotificationConfigPubsubFilter
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNotificationConfigPubsubTopicRef
 {
-    /// <summary>Allowed value: string of the format `projects/{{project}}/topics/{{value}}`, where {{value}} is the `name` field of a `PubSubTopic` resource.</summary>
+    /// <summary>A reference to an externally managed PubSubTopic resource. Should be in the format &quot;projects/{{projectID}}/topics/{{topicID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a PubSubTopic resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a PubSubTopic resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -1590,23 +1573,20 @@ public partial class V1beta1ContainerClusterSpecPrivateClusterConfigMasterGlobal
     public required bool Enabled { get; set; }
 }
 
-/// <summary>
-/// Immutable. Subnetwork in cluster&apos;s network where master&apos;s endpoint
-/// will be provisioned.
-/// </summary>
+/// <summary>Immutable. Subnetwork in cluster&apos;s network where master&apos;s endpoint will be provisioned.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecPrivateClusterConfigPrivateEndpointSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The ComputeSubnetwork selflink of form &quot;projects/{{project}}/regions/{{region}}/subnetworks/{{name}}&quot;, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -1640,10 +1620,7 @@ public partial class V1beta1ContainerClusterSpecPrivateClusterConfig
     [JsonPropertyName("privateEndpoint")]
     public string? PrivateEndpoint { get; set; }
 
-    /// <summary>
-    /// Immutable. Subnetwork in cluster&apos;s network where master&apos;s endpoint
-    /// will be provisioned.
-    /// </summary>
+    /// <summary>Immutable. Subnetwork in cluster&apos;s network where master&apos;s endpoint will be provisioned.</summary>
     [JsonPropertyName("privateEndpointSubnetworkRef")]
     public V1beta1ContainerClusterSpecPrivateClusterConfigPrivateEndpointSubnetworkRef? PrivateEndpointSubnetworkRef { get; set; }
 
@@ -1681,13 +1658,7 @@ public partial class V1beta1ContainerClusterSpecProtectConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecReleaseChannel
 {
-    /// <summary>
-    /// The selected release channel. Accepted values are:
-    /// * UNSPECIFIED: Not set.
-    /// * RAPID: Weekly upgrade cadence; Early testers and developers who requires new features.
-    /// * REGULAR: Multiple per month upgrade cadence; Production users who need features not yet offered in the Stable channel.
-    /// * STABLE: Every few months upgrade cadence; Production users who need stability above all else, and for whom frequent upgrades are too risky.
-    /// </summary>
+    /// <summary>The selected release channel. Accepted values are: * UNSPECIFIED: Not set. * RAPID: Weekly upgrade cadence; Early testers and developers who requires new features. * REGULAR: Multiple per month upgrade cadence; Production users who need features not yet offered in the Stable channel. * STABLE: Every few months upgrade cadence; Production users who need stability above all else, and for whom frequent upgrades are too risky.</summary>
     [JsonPropertyName("channel")]
     public required string Channel { get; set; }
 }
@@ -1748,15 +1719,15 @@ public partial class V1beta1ContainerClusterSpecServiceExternalIpsConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The ComputeSubnetwork selflink of form &quot;projects/{{project}}/regions/{{region}}/subnetworks/{{name}}&quot;, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -1776,10 +1747,7 @@ public partial class V1beta1ContainerClusterSpecVerticalPodAutoscaling
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecWorkloadIdentityConfig
 {
-    /// <summary>
-    /// DEPRECATED. This field will be removed in a future major release as it has been deprecated in the API. Use `workloadPool` instead; `workloadPool` field will supersede this field.
-    /// Enables workload identity.
-    /// </summary>
+    /// <summary>DEPRECATED. This field will be removed in a future major release as it has been deprecated in the API. Use `workloadPool` instead; `workloadPool` field will supersede this field. Enables workload identity.</summary>
     [JsonPropertyName("identityNamespace")]
     public string? IdentityNamespace { get; set; }
 
@@ -1832,7 +1800,7 @@ public partial class V1beta1ContainerClusterSpec
     [JsonPropertyName("costManagementConfig")]
     public V1beta1ContainerClusterSpecCostManagementConfig? CostManagementConfig { get; set; }
 
-    /// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;ALL_OBJECTS_ENCRYPTION_ENABLED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
+    /// <summary>Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &quot;ENCRYPTED&quot;; &quot;DECRYPTED&quot;. key_name is the name of a CloudKMS key.</summary>
     [JsonPropertyName("databaseEncryption")]
     public V1beta1ContainerClusterSpecDatabaseEncryption? DatabaseEncryption { get; set; }
 
@@ -2137,7 +2105,7 @@ public partial class V1beta1ContainerClusterStatusObservedState
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ContainerCluster&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ContainerClusterStatusConditions>? Conditions { get; set; }
 
@@ -2155,7 +2123,7 @@ public partial class V1beta1ContainerClusterStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The observed state of the underlying GCP resource.</summary>
     [JsonPropertyName("observedState")]
@@ -2177,6 +2145,7 @@ public partial class V1beta1ContainerClusterStatus
     public string? TpuIpv4CidrBlock { get; set; }
 }
 
+/// <summary>ContainerCluster is the Schema for the ContainerCluster API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
