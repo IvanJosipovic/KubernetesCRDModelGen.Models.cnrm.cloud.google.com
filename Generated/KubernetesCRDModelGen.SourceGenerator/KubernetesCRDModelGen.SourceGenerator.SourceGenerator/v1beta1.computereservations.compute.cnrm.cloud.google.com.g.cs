@@ -36,6 +36,87 @@ public partial class V1beta1ComputeReservationList : IKubernetesObject<V1ListMet
     public required IList<V1beta1ComputeReservation> Items { get; set; }
 }
 
+/// <summary>The resource reference that defaults to Project if Kind is not specified.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeReservationSpecShareSettingsProjectMapKeyRef
+{
+    /// <summary>APIVersion of the referenced resource</summary>
+    [JsonPropertyName("apiVersion")]
+    public string? ApiVersion { get; set; }
+
+    /// <summary>The external name of the referenced resource</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>Kind of the referenced resource</summary>
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+/// <summary>The project ID, should be same as the key of this project config in the parent map.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeReservationSpecShareSettingsProjectMapValueProjectIDRef
+{
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The kind of the Project resource; optional but must be `Project` if provided.</summary>
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
+    /// <summary>The `name` field of a `Project` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeReservationSpecShareSettingsProjectMapValue
+{
+    /// <summary>The project ID, should be same as the key of this project config in the parent map.</summary>
+    [JsonPropertyName("projectIDRef")]
+    public V1beta1ComputeReservationSpecShareSettingsProjectMapValueProjectIDRef? ProjectIDRef { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeReservationSpecShareSettingsProjectMap
+{
+    /// <summary>The resource reference that defaults to Project if Kind is not specified.</summary>
+    [JsonPropertyName("keyRef")]
+    public required V1beta1ComputeReservationSpecShareSettingsProjectMapKeyRef KeyRef { get; set; }
+
+    [JsonPropertyName("value")]
+    public V1beta1ComputeReservationSpecShareSettingsProjectMapValue? Value { get; set; }
+}
+
+/// <summary>The share setting for reservations and sole tenancy node groups.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeReservationSpecShareSettings
+{
+    /// <summary>A map of key(i.e. project or other shared resources) and associated project config. This is only valid when shareType&apos;s value is SPECIFIC_PROJECTS.</summary>
+    [JsonPropertyName("projectMap")]
+    public IList<V1beta1ComputeReservationSpecShareSettingsProjectMap>? ProjectMap { get; set; }
+
+    /// <summary>Immutable. Type of sharing for this shared-reservation Check the ShareType enum for the list of possible values.</summary>
+    [JsonPropertyName("shareType")]
+    public string? ShareType { get; set; }
+}
+
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeReservationSpecSpecificReservationInstancePropertiesGuestAccelerators
@@ -114,6 +195,10 @@ public partial class V1beta1ComputeReservationSpec
     /// <summary>Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
+
+    /// <summary>The share setting for reservations and sole tenancy node groups.</summary>
+    [JsonPropertyName("shareSettings")]
+    public V1beta1ComputeReservationSpecShareSettings? ShareSettings { get; set; }
 
     /// <summary>Reservation for instances with specific machine shapes.</summary>
     [JsonPropertyName("specificReservation")]
