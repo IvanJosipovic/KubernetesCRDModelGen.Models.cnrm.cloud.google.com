@@ -109,7 +109,7 @@ public partial class V1alpha1EventarcEnrollmentSpec
 
     /// <summary>Required. Destination is the Pipeline that the Enrollment is delivering to.</summary>
     [JsonPropertyName("destinationRef")]
-    public V1alpha1EventarcEnrollmentSpecDestinationRef? DestinationRef { get; set; }
+    public required V1alpha1EventarcEnrollmentSpecDestinationRef DestinationRef { get; set; }
 
     /// <summary>Optional. Resource display name.</summary>
     [JsonPropertyName("displayName")]
@@ -121,11 +121,11 @@ public partial class V1alpha1EventarcEnrollmentSpec
 
     /// <summary>The location of this resource.</summary>
     [JsonPropertyName("location")]
-    public string? Location { get; set; }
+    public required string Location { get; set; }
 
     /// <summary>Required. Resource name of the message bus identifying the source of the messages.</summary>
     [JsonPropertyName("messageBusRef")]
-    public V1alpha1EventarcEnrollmentSpecMessageBusRef? MessageBusRef { get; set; }
+    public required V1alpha1EventarcEnrollmentSpecMessageBusRef MessageBusRef { get; set; }
 
     /// <summary>The project that this resource belongs to.</summary>
     [JsonPropertyName("projectRef")]

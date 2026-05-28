@@ -163,6 +163,9 @@ spec:
                 type: string
             required:
             - celMatch
+            - destinationRef
+            - location
+            - messageBusRef
             - projectRef
             type: object
           status:
