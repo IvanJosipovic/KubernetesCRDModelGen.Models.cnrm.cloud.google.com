@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeNetwork is the Schema for the ComputeNetwork API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,6 +36,7 @@ public partial class V1beta1ComputeNetworkList : IKubernetesObject<V1ListMeta>, 
     public required IList<V1beta1ComputeNetwork> Items { get; set; }
 }
 
+/// <summary>ComputeNetworkSpec defines the desired state of ComputeNetwork</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkSpec
@@ -50,44 +52,23 @@ public partial class V1beta1ComputeNetworkSpec
     [JsonPropertyName("autoCreateSubnetworks")]
     public bool? AutoCreateSubnetworks { get; set; }
 
-    /// <summary>
-    /// If set to &apos;true&apos;, default routes (&apos;0.0.0.0/0&apos;) will be deleted
-    /// immediately after network creation. Defaults to &apos;false&apos;.
-    /// </summary>
+    /// <summary>If set to &apos;true&apos;, default routes (&apos;0.0.0.0/0&apos;) will be deleted immediately after network creation. Defaults to &apos;false&apos;.</summary>
     [JsonPropertyName("deleteDefaultRoutesOnCreate")]
     public bool? DeleteDefaultRoutesOnCreate { get; set; }
 
-    /// <summary>
-    /// Immutable. An optional description of this resource. The resource must be
-    /// recreated to modify this field.
-    /// </summary>
+    /// <summary>Immutable. An optional description of this resource. The resource must be recreated to modify this field.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Enable ULA internal ipv6 on this network. Enabling this feature will assign
-    /// a /48 from google defined ULA prefix fd20::/20.
-    /// </summary>
+    /// <summary>Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20.</summary>
     [JsonPropertyName("enableUlaInternalIpv6")]
     public bool? EnableUlaInternalIpv6 { get; set; }
 
-    /// <summary>
-    /// Immutable. When enabling ula internal ipv6, caller optionally can specify the /48 range
-    /// they want from the google defined ULA prefix fd20::/20. The input must be a
-    /// valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will
-    /// fail if the speficied /48 is already in used by another resource.
-    /// If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field.
-    /// </summary>
+    /// <summary>Immutable. When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field.</summary>
     [JsonPropertyName("internalIpv6Range")]
     public string? InternalIpv6Range { get; set; }
 
-    /// <summary>
-    /// Immutable. Maximum Transmission Unit in bytes. The default value is 1460 bytes.
-    /// The minimum value for this field is 1300 and the maximum value is 8896 bytes (jumbo frames).
-    /// Note that packets larger than 1500 bytes (standard Ethernet) can be subject to TCP-MSS clamping or dropped
-    /// with an ICMP &apos;Fragmentation-Needed&apos; message if the packets are routed to the Internet or other VPCs
-    /// with varying MTUs.
-    /// </summary>
+    /// <summary>Immutable. Maximum Transmission Unit in bytes. The default value is 1460 bytes. The minimum value for this field is 1300 and the maximum value is 8896 bytes (jumbo frames). Note that packets larger than 1500 bytes (standard Ethernet) can be subject to TCP-MSS clamping or dropped with an ICMP &apos;Fragmentation-Needed&apos; message if the packets are routed to the Internet or other VPCs with varying MTUs.</summary>
     [JsonPropertyName("mtu")]
     public int? Mtu { get; set; }
 
@@ -95,17 +76,11 @@ public partial class V1beta1ComputeNetworkSpec
     [JsonPropertyName("networkFirewallPolicyEnforcementOrder")]
     public string? NetworkFirewallPolicyEnforcementOrder { get; set; }
 
-    /// <summary>Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
+    /// <summary>The ComputeNetwork name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// The network-wide routing mode to use. If set to &apos;REGIONAL&apos;, this
-    /// network&apos;s cloud routers will only advertise routes with subnetworks
-    /// of this network in the same region as the router. If set to &apos;GLOBAL&apos;,
-    /// this network&apos;s cloud routers will advertise routes with all
-    /// subnetworks of this network, across regions. Possible values: [&quot;REGIONAL&quot;, &quot;GLOBAL&quot;].
-    /// </summary>
+    /// <summary>The network-wide routing mode to use. If set to &apos;REGIONAL&apos;, this network&apos;s cloud routers will only advertise routes with subnetworks of this network in the same region as the router. If set to &apos;GLOBAL&apos;, this network&apos;s cloud routers will advertise routes with all subnetworks of this network, across regions. Possible values: [&quot;REGIONAL&quot;, &quot;GLOBAL&quot;].</summary>
     [JsonPropertyName("routingMode")]
     public string? RoutingMode { get; set; }
 }
@@ -135,18 +110,16 @@ public partial class V1beta1ComputeNetworkStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeNetworkStatus defines the config connector machine state of ComputeNetwork</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeNetworkStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// The gateway address for default routing out of the network. This value
-    /// is selected by GCP.
-    /// </summary>
+    /// <summary>The gateway address for default routing out of the network. This value is selected by GCP.</summary>
     [JsonPropertyName("gatewayIpv4")]
     public string? GatewayIpv4 { get; set; }
 
@@ -154,10 +127,12 @@ public partial class V1beta1ComputeNetworkStatus
     [JsonPropertyName("observedGeneration")]
     public int? ObservedGeneration { get; set; }
 
+    /// <summary>The self link of the ComputeNetwork.</summary>
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeNetwork is the Schema for the ComputeNetwork API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -179,9 +154,11 @@ public partial class V1beta1ComputeNetwork : IKubernetesObject<V1ObjectMeta>, IS
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeNetworkSpec defines the desired state of ComputeNetwork</summary>
     [JsonPropertyName("spec")]
     public V1beta1ComputeNetworkSpec? Spec { get; set; }
 
+    /// <summary>ComputeNetworkStatus defines the config connector machine state of ComputeNetwork</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeNetworkStatus? Status { get; set; }
 }
