@@ -63,7 +63,7 @@ public partial class V1alpha1ComputeNetworkEdgeSecurityServiceSpecProjectRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeNetworkEdgeSecurityServiceSpecSecurityPolicyRef
 {
-    /// <summary>The value of an externally managed ComputeSecurityPolicy resource</summary>
+    /// <summary>A reference to an externally managed ComputeSecurityPolicy resource. Should be in the format &quot;projects/{{projectID}}/global/securityPolicies/{{name}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
