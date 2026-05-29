@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.osconfig.cnrm.cloud.google.com;
+/// <summary>OSConfigOSPolicyAssignment is the Schema for the OSConfigOSPolicyAssignment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -61,7 +62,15 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecInstanceFilterInventor
     [JsonPropertyName("osShortName")]
     public required string OsShortName { get; set; }
 
-    /// <summary>The OS version Prefix matches are supported if asterisk(*) is provided as the last character. For example, to match all versions with a major version of `7`, specify the following value for this field `7.*` An empty string matches all OS versions.</summary>
+    /// <summary>
+    /// The OS version
+    /// 
+    ///  Prefix matches are supported if asterisk(*) is provided as the
+    ///  last character. For example, to match all versions with a major
+    ///  version of `7`, specify the following value for this field `7.*`
+    /// 
+    ///  An empty string matches all OS versions.
+    /// </summary>
     [JsonPropertyName("osVersion")]
     public string? OsVersion { get; set; }
 }
@@ -75,15 +84,30 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecInstanceFilter
     [JsonPropertyName("all")]
     public bool? All { get; set; }
 
-    /// <summary>List of label sets used for VM exclusion. If the list has more than one label set, the VM is excluded if any of the label sets are applicable for the VM.</summary>
+    /// <summary>
+    /// List of label sets used for VM exclusion.
+    /// 
+    ///  If the list has more than one label set, the VM is excluded if any
+    ///  of the label sets are applicable for the VM.
+    /// </summary>
     [JsonPropertyName("exclusionLabels")]
     public IList<V1beta1OSConfigOSPolicyAssignmentSpecInstanceFilterExclusionLabels>? ExclusionLabels { get; set; }
 
-    /// <summary>List of label sets used for VM inclusion. If the list has more than one `LabelSet`, the VM is included if any of the label sets are applicable for the VM.</summary>
+    /// <summary>
+    /// List of label sets used for VM inclusion.
+    /// 
+    ///  If the list has more than one `LabelSet`, the VM is included if any
+    ///  of the label sets are applicable for the VM.
+    /// </summary>
     [JsonPropertyName("inclusionLabels")]
     public IList<V1beta1OSConfigOSPolicyAssignmentSpecInstanceFilterInclusionLabels>? InclusionLabels { get; set; }
 
-    /// <summary>List of inventories to select VMs. A VM is selected if its inventory data matches at least one of the following inventories.</summary>
+    /// <summary>
+    /// List of inventories to select VMs.
+    /// 
+    ///  A VM is selected if its inventory data matches at least one of the
+    ///  following inventories.
+    /// </summary>
     [JsonPropertyName("inventories")]
     public IList<V1beta1OSConfigOSPolicyAssignmentSpecInstanceFilterInventories>? Inventories { get; set; }
 }
@@ -96,7 +120,15 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
     [JsonPropertyName("osShortName")]
     public required string OsShortName { get; set; }
 
-    /// <summary>The OS version Prefix matches are supported if asterisk(*) is provided as the last character. For example, to match all versions with a major version of `7`, specify the following value for this field `7.*` An empty string matches all OS versions.</summary>
+    /// <summary>
+    /// The OS version
+    /// 
+    ///  Prefix matches are supported if asterisk(*) is provided as the
+    ///  last character. For example, to match all versions with a major
+    ///  version of `7`, specify the following value for this field `7.*`
+    /// 
+    ///  An empty string matches all OS versions.
+    /// </summary>
     [JsonPropertyName("osVersion")]
     public string? OsVersion { get; set; }
 }
@@ -138,7 +170,13 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsResourcesExecEnforceFile
 {
-    /// <summary>Defaults to false. When false, files are subject to validations based on the file type: Remote: A checksum must be specified. Cloud Storage: An object generation number must be specified.</summary>
+    /// <summary>
+    /// Defaults to false. When false, files are subject to validations
+    ///  based on the file type:
+    /// 
+    ///  Remote: A checksum must be specified.
+    ///  Cloud Storage: An object generation number must be specified.
+    /// </summary>
     [JsonPropertyName("allowInsecure")]
     public bool? AllowInsecure { get; set; }
 
@@ -218,7 +256,13 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsResourcesExecValidateFile
 {
-    /// <summary>Defaults to false. When false, files are subject to validations based on the file type: Remote: A checksum must be specified. Cloud Storage: An object generation number must be specified.</summary>
+    /// <summary>
+    /// Defaults to false. When false, files are subject to validations
+    ///  based on the file type:
+    /// 
+    ///  Remote: A checksum must be specified.
+    ///  Cloud Storage: An object generation number must be specified.
+    /// </summary>
     [JsonPropertyName("allowInsecure")]
     public bool? AllowInsecure { get; set; }
 
@@ -312,7 +356,13 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsResourcesFileFile
 {
-    /// <summary>Defaults to false. When false, files are subject to validations based on the file type: Remote: A checksum must be specified. Cloud Storage: An object generation number must be specified.</summary>
+    /// <summary>
+    /// Defaults to false. When false, files are subject to validations
+    ///  based on the file type:
+    /// 
+    ///  Remote: A checksum must be specified.
+    ///  Cloud Storage: An object generation number must be specified.
+    /// </summary>
     [JsonPropertyName("allowInsecure")]
     public bool? AllowInsecure { get; set; }
 
@@ -346,7 +396,21 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
     [JsonPropertyName("path")]
     public required string Path { get; set; }
 
-    /// <summary>Consists of three octal digits which represent, in order, the permissions of the owner, group, and other users for the file (similarly to the numeric mode used in the linux chmod utility). Each digit represents a three bit number with the 4 bit corresponding to the read permissions, the 2 bit corresponds to the write bit, and the one bit corresponds to the execute permission. Default behavior is 755. Below are some examples of permissions and their associated values: read, write, and execute: 7 read and execute: 5 read and write: 6 read only: 4</summary>
+    /// <summary>
+    /// Consists of three octal digits which represent, in
+    ///  order, the permissions of the owner, group, and other users for the
+    ///  file (similarly to the numeric mode used in the linux chmod
+    ///  utility). Each digit represents a three bit number with the 4 bit
+    ///  corresponding to the read permissions, the 2 bit corresponds to the
+    ///  write bit, and the one bit corresponds to the execute permission.
+    ///  Default behavior is 755.
+    /// 
+    ///  Below are some examples of permissions and their associated values:
+    ///  read, write, and execute: 7
+    ///  read and execute: 5
+    ///  read and write: 6
+    ///  read only: 4
+    /// </summary>
     [JsonPropertyName("permissions")]
     public string? Permissions { get; set; }
 
@@ -402,7 +466,13 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsResourcesPkgDebSource
 {
-    /// <summary>Defaults to false. When false, files are subject to validations based on the file type: Remote: A checksum must be specified. Cloud Storage: An object generation number must be specified.</summary>
+    /// <summary>
+    /// Defaults to false. When false, files are subject to validations
+    ///  based on the file type:
+    /// 
+    ///  Remote: A checksum must be specified.
+    ///  Cloud Storage: An object generation number must be specified.
+    /// </summary>
     [JsonPropertyName("allowInsecure")]
     public bool? AllowInsecure { get; set; }
 
@@ -480,7 +550,13 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsResourcesPkgMsiSource
 {
-    /// <summary>Defaults to false. When false, files are subject to validations based on the file type: Remote: A checksum must be specified. Cloud Storage: An object generation number must be specified.</summary>
+    /// <summary>
+    /// Defaults to false. When false, files are subject to validations
+    ///  based on the file type:
+    /// 
+    ///  Remote: A checksum must be specified.
+    ///  Cloud Storage: An object generation number must be specified.
+    /// </summary>
     [JsonPropertyName("allowInsecure")]
     public bool? AllowInsecure { get; set; }
 
@@ -548,7 +624,13 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsResourcesPkgRpmSource
 {
-    /// <summary>Defaults to false. When false, files are subject to validations based on the file type: Remote: A checksum must be specified. Cloud Storage: An object generation number must be specified.</summary>
+    /// <summary>
+    /// Defaults to false. When false, files are subject to validations
+    ///  based on the file type:
+    /// 
+    ///  Remote: A checksum must be specified.
+    ///  Cloud Storage: An object generation number must be specified.
+    /// </summary>
     [JsonPropertyName("allowInsecure")]
     public bool? AllowInsecure { get; set; }
 
@@ -694,7 +776,7 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
     [JsonPropertyName("gpgKeys")]
     public IList<string>? GpgKeys { get; set; }
 
-    /// <summary>Required. A one word, unique name for this repository. This is the `repo id` in the yum config file and also the `display_name` if `display_name` is omitted. This id is also used as the unique identifier when checking for resource conflicts.</summary>
+    /// <summary>Required. A one word, unique name for this repository. This is  the `repo id` in the yum config file and also the `display_name` if `display_name` is omitted. This id is also used as the unique identifier when checking for resource conflicts.</summary>
     [JsonPropertyName("id")]
     public required string Id { get; set; }
 }
@@ -755,7 +837,15 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
     [JsonPropertyName("file")]
     public V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsResourcesFile? File { get; set; }
 
-    /// <summary>Required. The id of the resource with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the OS policy.</summary>
+    /// <summary>
+    /// Required. The id of the resource with the following restrictions:
+    /// 
+    ///  * Must contain only lowercase letters, numbers, and hyphens.
+    ///  * Must start with a letter.
+    ///  * Must be between 1-63 characters.
+    ///  * Must end with a number or a letter.
+    ///  * Must be unique within the OS policy.
+    /// </summary>
     [JsonPropertyName("id")]
     public required string Id { get; set; }
 
@@ -772,7 +862,21 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGrou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroups
 {
-    /// <summary>List of inventory filters for the resource group. The resources in this resource group are applied to the target VM if it satisfies at least one of the following inventory filters. For example, to apply this resource group to VMs running either `RHEL` or `CentOS` operating systems, specify 2 items for the list with following values: inventory_filters[0].os_short_name=&apos;rhel&apos; and inventory_filters[1].os_short_name=&apos;centos&apos; If the list is empty, this resource group will be applied to the target VM unconditionally.</summary>
+    /// <summary>
+    /// List of inventory filters for the resource group.
+    /// 
+    ///  The resources in this resource group are applied to the target VM if it
+    ///  satisfies at least one of the following inventory filters.
+    /// 
+    ///  For example, to apply this resource group to VMs running either `RHEL` or
+    ///  `CentOS` operating systems, specify 2 items for the list with following
+    ///  values:
+    ///  inventory_filters[0].os_short_name=&apos;rhel&apos; and
+    ///  inventory_filters[1].os_short_name=&apos;centos&apos;
+    /// 
+    ///  If the list is empty, this resource group will be applied to the target
+    ///  VM unconditionally.
+    /// </summary>
     [JsonPropertyName("inventoryFilters")]
     public IList<V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroupsInventoryFilters>? InventoryFilters { get; set; }
 
@@ -793,7 +897,15 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPolicies
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>Required. The id of the OS policy with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the assignment.</summary>
+    /// <summary>
+    /// Required. The id of the OS policy with the following restrictions:
+    /// 
+    ///  * Must contain only lowercase letters, numbers, and hyphens.
+    ///  * Must start with a letter.
+    ///  * Must be between 1-63 characters.
+    ///  * Must end with a number or a letter.
+    ///  * Must be unique within the assignment.
+    /// </summary>
     [JsonPropertyName("id")]
     public required string Id { get; set; }
 
@@ -801,7 +913,16 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecOsPolicies
     [JsonPropertyName("mode")]
     public required string Mode { get; set; }
 
-    /// <summary>Required. List of resource groups for the policy. For a particular VM, resource groups are evaluated in the order specified and the first resource group that is applicable is selected and the rest are ignored. If none of the resource groups are applicable for a VM, the VM is considered to be non-compliant w.r.t this policy. This behavior can be toggled by the flag `allow_no_resource_group_match`</summary>
+    /// <summary>
+    /// Required. List of resource groups for the policy.
+    ///  For a particular VM, resource groups are evaluated in the order specified
+    ///  and the first resource group that is applicable is selected and the rest
+    ///  are ignored.
+    /// 
+    ///  If none of the resource groups are applicable for a VM, the VM is
+    ///  considered to be non-compliant w.r.t this policy. This behavior can be
+    ///  toggled by the flag `allow_no_resource_group_match`
+    /// </summary>
     [JsonPropertyName("resourceGroups")]
     public required IList<V1beta1OSConfigOSPolicyAssignmentSpecOsPoliciesResourceGroups> ResourceGroups { get; set; }
 }
@@ -856,6 +977,7 @@ public partial class V1beta1OSConfigOSPolicyAssignmentSpecRollout
     public required string MinWaitDuration { get; set; }
 }
 
+/// <summary>OSConfigOSPolicyAssignmentSpec defines the desired state of OSConfigOSPolicyAssignment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentSpec
@@ -918,6 +1040,7 @@ public partial class V1beta1OSConfigOSPolicyAssignmentStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>OSConfigOSPolicyAssignmentStatus defines the config connector machine state of OSConfigOSPolicyAssignment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigOSPolicyAssignmentStatus
@@ -926,7 +1049,7 @@ public partial class V1beta1OSConfigOSPolicyAssignmentStatus
     [JsonPropertyName("baseline")]
     public bool? Baseline { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1OSConfigOSPolicyAssignmentStatusConditions>? Conditions { get; set; }
 
@@ -963,6 +1086,7 @@ public partial class V1beta1OSConfigOSPolicyAssignmentStatus
     public string? Uid { get; set; }
 }
 
+/// <summary>OSConfigOSPolicyAssignment is the Schema for the OSConfigOSPolicyAssignment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -984,9 +1108,11 @@ public partial class V1beta1OSConfigOSPolicyAssignment : IKubernetesObject<V1Obj
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>OSConfigOSPolicyAssignmentSpec defines the desired state of OSConfigOSPolicyAssignment</summary>
     [JsonPropertyName("spec")]
     public required V1beta1OSConfigOSPolicyAssignmentSpec Spec { get; set; }
 
+    /// <summary>OSConfigOSPolicyAssignmentStatus defines the config connector machine state of OSConfigOSPolicyAssignment</summary>
     [JsonPropertyName("status")]
     public V1beta1OSConfigOSPolicyAssignmentStatus? Status { get; set; }
 }
