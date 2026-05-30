@@ -41,15 +41,15 @@ public partial class V1alpha1AlloyDBInstanceList : IKubernetesObject<V1ListMeta>
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AlloyDBInstanceSpecClusterRef
 {
-    /// <summary>If provided must be in the format `projects/[projectId]/locations/[location]/clusters/[clusterId]`.</summary>
+    /// <summary>A reference to an externally managed AlloyDBCluster resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/clusters/{{clusterID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `metadata.name` field of a `AlloyDBCluster` resource.</summary>
+    /// <summary>The name of a AlloyDBCluster resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `metadata.namespace` field of a `AlloyDBCluster` resource.</summary>
+    /// <summary>The namespace of a AlloyDBCluster resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
