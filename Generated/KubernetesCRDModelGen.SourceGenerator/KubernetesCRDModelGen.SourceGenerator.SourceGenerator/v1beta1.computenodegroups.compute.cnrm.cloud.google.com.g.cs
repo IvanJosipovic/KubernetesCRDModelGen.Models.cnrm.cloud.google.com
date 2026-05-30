@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeNodeGroup is the Schema for the ComputeNodeGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,36 +36,20 @@ public partial class V1beta1ComputeNodeGroupList : IKubernetesObject<V1ListMeta>
     public required IList<V1beta1ComputeNodeGroup> Items { get; set; }
 }
 
-/// <summary>
-/// Immutable. If you use sole-tenant nodes for your workloads, you can use the node
-/// group autoscaler to automatically manage the sizes of your node groups.
-/// </summary>
+/// <summary>Immutable. If you use sole-tenant nodes for your workloads, you can use the node group autoscaler to automatically manage the sizes of your node groups.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNodeGroupSpecAutoscalingPolicy
 {
-    /// <summary>
-    /// Immutable. Maximum size of the node group. Set to a value less than or equal
-    /// to 100 and greater than or equal to min-nodes.
-    /// </summary>
+    /// <summary>Immutable. Maximum size of the node group. Set to a value less than or equal to 100 and greater than or equal to min-nodes.</summary>
     [JsonPropertyName("maxNodes")]
-    public int? MaxNodes { get; set; }
+    public long? MaxNodes { get; set; }
 
-    /// <summary>
-    /// Immutable. Minimum size of the node group. Must be less
-    /// than or equal to max-nodes. The default value is 0.
-    /// </summary>
+    /// <summary>Immutable. Minimum size of the node group. Must be less than or equal to max-nodes. The default value is 0.</summary>
     [JsonPropertyName("minNodes")]
-    public int? MinNodes { get; set; }
+    public long? MinNodes { get; set; }
 
-    /// <summary>
-    /// Immutable. The autoscaling mode. Set to one of the following:
-    ///   - OFF: Disables the autoscaler.
-    ///   - ON: Enables scaling in and scaling out.
-    ///   - ONLY_SCALE_OUT: Enables only scaling out.
-    ///   You must use this mode if your node groups are configured to
-    ///   restart their hosted VMs on minimal servers. Possible values: [&quot;OFF&quot;, &quot;ON&quot;, &quot;ONLY_SCALE_OUT&quot;].
-    /// </summary>
+    /// <summary>Immutable. The autoscaling mode. Set to one of the following: - OFF: Disables the autoscaler. - ON: Enables scaling in and scaling out. - ONLY_SCALE_OUT: Enables only scaling out. You must use this mode if your node groups are configured to restart their hosted VMs on minimal servers. Possible values: [&quot;OFF&quot;, &quot;ON&quot;, &quot;ONLY_SCALE_OUT&quot;].</summary>
     [JsonPropertyName("mode")]
     public string? Mode { get; set; }
 }
@@ -102,36 +87,33 @@ public partial class V1beta1ComputeNodeGroupSpecNodeTemplateRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNodeGroupSpecShareSettingsProjectMapIdRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The project id/number should be the same as the key of this project
-/// config in the project map.
-/// </summary>
+/// <summary>The project id/number should be the same as the key of this project config in the project map.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNodeGroupSpecShareSettingsProjectMapProjectIdRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -144,10 +126,7 @@ public partial class V1beta1ComputeNodeGroupSpecShareSettingsProjectMap
     [JsonPropertyName("idRef")]
     public required V1beta1ComputeNodeGroupSpecShareSettingsProjectMapIdRef IdRef { get; set; }
 
-    /// <summary>
-    /// The project id/number should be the same as the key of this project
-    /// config in the project map.
-    /// </summary>
+    /// <summary>The project id/number should be the same as the key of this project config in the project map.</summary>
     [JsonPropertyName("projectIdRef")]
     public required V1beta1ComputeNodeGroupSpecShareSettingsProjectMapProjectIdRef ProjectIdRef { get; set; }
 }
@@ -166,14 +145,12 @@ public partial class V1beta1ComputeNodeGroupSpecShareSettings
     public required string ShareType { get; set; }
 }
 
+/// <summary>ComputeNodeGroupSpec defines the desired state of ComputeNodeGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNodeGroupSpec
 {
-    /// <summary>
-    /// Immutable. If you use sole-tenant nodes for your workloads, you can use the node
-    /// group autoscaler to automatically manage the sizes of your node groups.
-    /// </summary>
+    /// <summary>Immutable. If you use sole-tenant nodes for your workloads, you can use the node group autoscaler to automatically manage the sizes of your node groups.</summary>
     [JsonPropertyName("autoscalingPolicy")]
     public V1beta1ComputeNodeGroupSpecAutoscalingPolicy? AutoscalingPolicy { get; set; }
 
@@ -183,7 +160,7 @@ public partial class V1beta1ComputeNodeGroupSpec
 
     /// <summary>Immutable. The initial number of nodes in the node group. One of &apos;initial_size&apos; or &apos;size&apos; must be specified.</summary>
     [JsonPropertyName("initialSize")]
-    public int? InitialSize { get; set; }
+    public long? InitialSize { get; set; }
 
     /// <summary>Immutable. Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT.</summary>
     [JsonPropertyName("maintenancePolicy")]
@@ -207,7 +184,7 @@ public partial class V1beta1ComputeNodeGroupSpec
 
     /// <summary>Immutable. The total number of nodes in the node group. One of &apos;initial_size&apos; or &apos;size&apos; must be specified.</summary>
     [JsonPropertyName("size")]
-    public int? Size { get; set; }
+    public long? Size { get; set; }
 
     /// <summary>Immutable. Zone where this node group is located.</summary>
     [JsonPropertyName("zone")]
@@ -239,11 +216,12 @@ public partial class V1beta1ComputeNodeGroupStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeNodeGroupStatus defines the config connector machine state of ComputeNodeGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNodeGroupStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeNodeGroupStatusConditions>? Conditions { get; set; }
 
@@ -253,12 +231,13 @@ public partial class V1beta1ComputeNodeGroupStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeNodeGroup is the Schema for the ComputeNodeGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -280,9 +259,11 @@ public partial class V1beta1ComputeNodeGroup : IKubernetesObject<V1ObjectMeta>, 
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeNodeGroupSpec defines the desired state of ComputeNodeGroup</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeNodeGroupSpec Spec { get; set; }
 
+    /// <summary>ComputeNodeGroupStatus defines the config connector machine state of ComputeNodeGroup</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeNodeGroupStatus? Status { get; set; }
 }
