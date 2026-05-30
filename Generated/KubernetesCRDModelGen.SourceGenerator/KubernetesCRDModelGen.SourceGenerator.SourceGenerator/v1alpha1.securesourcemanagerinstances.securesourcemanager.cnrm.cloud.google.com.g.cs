@@ -59,15 +59,15 @@ public partial class V1alpha1SecureSourceManagerInstanceSpecKmsKeyRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1SecureSourceManagerInstanceSpecPrivateConfigCaPoolRef
 {
-    /// <summary>A reference to an externally managed PrivateCACAPool. Should be in the format `projects/{project_id}/locations/{region}/caPools/{caPool}`.</summary>
+    /// <summary>A reference to an externally managed PrivateCACAPool resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/caPools/{{caPoolID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` of a `PrivateCACAPool` resource.</summary>
+    /// <summary>The name of a PrivateCACAPool resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` of a `PrivateCACAPool` resource.</summary>
+    /// <summary>The namespace of a PrivateCACAPool resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
