@@ -724,47 +724,6 @@ public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStat
     public int? SourcePort { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStateProbingDetailsErrorDetails
-{
-    /// <summary>
-    /// A URL/resource name that uniquely identifies the type of the serialized
-    ///  protocol buffer message. This string must contain at least
-    ///  one &quot;/&quot; character. The last segment of the URL&apos;s path must represent
-    ///  the fully qualified name of the type (as in
-    ///  `path/google.protobuf.Duration`). The name should be in a canonical form
-    ///  (e.g., leading &quot;.&quot; is not accepted).
-    /// 
-    ///  In practice, teams usually precompile into the binary all types that they
-    ///  expect it to use in the context of Any. However, for URLs which use the
-    ///  scheme `http`, `https`, or no scheme, one can optionally set up a type
-    ///  server that maps type URLs to message definitions as follows:
-    /// 
-    ///  * If no scheme is provided, `https` is assumed.
-    ///  * An HTTP GET on the URL must yield a [google.protobuf.Type][]
-    ///    value in binary format, or produce an error.
-    ///  * Applications are allowed to cache lookup results based on the
-    ///    URL, or have them precompiled into a binary to avoid any
-    ///    lookup. Therefore, binary compatibility needs to be preserved
-    ///    on changes to types. (Use versioned type names to manage
-    ///    breaking changes.)
-    /// 
-    ///  Note: this functionality is not currently available in the official
-    ///  protobuf release, and it is not used for type URLs beginning with
-    ///  type.googleapis.com.
-    /// 
-    ///  Schemes other than `http`, `https` (or the empty scheme) might be
-    ///  used with implementation specific semantics.
-    /// </summary>
-    [JsonPropertyName("typeURL")]
-    public string? TypeURL { get; set; }
-
-    /// <summary>Must be a valid serialized protocol buffer of the above specified type.</summary>
-    [JsonPropertyName("value")]
-    public string? Value { get; set; }
-}
-
 /// <summary>Details about an internal failure or the cancellation of active probing.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -773,10 +732,6 @@ public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStat
     /// <summary>The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].</summary>
     [JsonPropertyName("code")]
     public int? Code { get; set; }
-
-    /// <summary>A list of messages that carry the error details.  There is a common set of message types for APIs to use.</summary>
-    [JsonPropertyName("details")]
-    public IList<V1alpha1NetworkManagementConnectivityTestStatusObservedStateProbingDetailsErrorDetails>? Details { get; set; }
 
     /// <summary>A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.</summary>
     [JsonPropertyName("message")]
@@ -848,47 +803,6 @@ public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStat
     public string? VerifyTime { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStateReachabilityDetailsErrorDetails
-{
-    /// <summary>
-    /// A URL/resource name that uniquely identifies the type of the serialized
-    ///  protocol buffer message. This string must contain at least
-    ///  one &quot;/&quot; character. The last segment of the URL&apos;s path must represent
-    ///  the fully qualified name of the type (as in
-    ///  `path/google.protobuf.Duration`). The name should be in a canonical form
-    ///  (e.g., leading &quot;.&quot; is not accepted).
-    /// 
-    ///  In practice, teams usually precompile into the binary all types that they
-    ///  expect it to use in the context of Any. However, for URLs which use the
-    ///  scheme `http`, `https`, or no scheme, one can optionally set up a type
-    ///  server that maps type URLs to message definitions as follows:
-    /// 
-    ///  * If no scheme is provided, `https` is assumed.
-    ///  * An HTTP GET on the URL must yield a [google.protobuf.Type][]
-    ///    value in binary format, or produce an error.
-    ///  * Applications are allowed to cache lookup results based on the
-    ///    URL, or have them precompiled into a binary to avoid any
-    ///    lookup. Therefore, binary compatibility needs to be preserved
-    ///    on changes to types. (Use versioned type names to manage
-    ///    breaking changes.)
-    /// 
-    ///  Note: this functionality is not currently available in the official
-    ///  protobuf release, and it is not used for type URLs beginning with
-    ///  type.googleapis.com.
-    /// 
-    ///  Schemes other than `http`, `https` (or the empty scheme) might be
-    ///  used with implementation specific semantics.
-    /// </summary>
-    [JsonPropertyName("typeURL")]
-    public string? TypeURL { get; set; }
-
-    /// <summary>Must be a valid serialized protocol buffer of the above specified type.</summary>
-    [JsonPropertyName("value")]
-    public string? Value { get; set; }
-}
-
 /// <summary>The details of a failure or a cancellation of reachability analysis.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -897,10 +811,6 @@ public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStat
     /// <summary>The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].</summary>
     [JsonPropertyName("code")]
     public int? Code { get; set; }
-
-    /// <summary>A list of messages that carry the error details.  There is a common set of message types for APIs to use.</summary>
-    [JsonPropertyName("details")]
-    public IList<V1alpha1NetworkManagementConnectivityTestStatusObservedStateReachabilityDetailsErrorDetails>? Details { get; set; }
 
     /// <summary>A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.</summary>
     [JsonPropertyName("message")]
@@ -2011,47 +1921,6 @@ public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStat
     public string? VerifyTime { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStateReturnReachabilityDetailsErrorDetails
-{
-    /// <summary>
-    /// A URL/resource name that uniquely identifies the type of the serialized
-    ///  protocol buffer message. This string must contain at least
-    ///  one &quot;/&quot; character. The last segment of the URL&apos;s path must represent
-    ///  the fully qualified name of the type (as in
-    ///  `path/google.protobuf.Duration`). The name should be in a canonical form
-    ///  (e.g., leading &quot;.&quot; is not accepted).
-    /// 
-    ///  In practice, teams usually precompile into the binary all types that they
-    ///  expect it to use in the context of Any. However, for URLs which use the
-    ///  scheme `http`, `https`, or no scheme, one can optionally set up a type
-    ///  server that maps type URLs to message definitions as follows:
-    /// 
-    ///  * If no scheme is provided, `https` is assumed.
-    ///  * An HTTP GET on the URL must yield a [google.protobuf.Type][]
-    ///    value in binary format, or produce an error.
-    ///  * Applications are allowed to cache lookup results based on the
-    ///    URL, or have them precompiled into a binary to avoid any
-    ///    lookup. Therefore, binary compatibility needs to be preserved
-    ///    on changes to types. (Use versioned type names to manage
-    ///    breaking changes.)
-    /// 
-    ///  Note: this functionality is not currently available in the official
-    ///  protobuf release, and it is not used for type URLs beginning with
-    ///  type.googleapis.com.
-    /// 
-    ///  Schemes other than `http`, `https` (or the empty scheme) might be
-    ///  used with implementation specific semantics.
-    /// </summary>
-    [JsonPropertyName("typeURL")]
-    public string? TypeURL { get; set; }
-
-    /// <summary>Must be a valid serialized protocol buffer of the above specified type.</summary>
-    [JsonPropertyName("value")]
-    public string? Value { get; set; }
-}
-
 /// <summary>The details of a failure or a cancellation of reachability analysis.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -2060,10 +1929,6 @@ public partial class V1alpha1NetworkManagementConnectivityTestStatusObservedStat
     /// <summary>The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].</summary>
     [JsonPropertyName("code")]
     public int? Code { get; set; }
-
-    /// <summary>A list of messages that carry the error details.  There is a common set of message types for APIs to use.</summary>
-    [JsonPropertyName("details")]
-    public IList<V1alpha1NetworkManagementConnectivityTestStatusObservedStateReturnReachabilityDetailsErrorDetails>? Details { get; set; }
 
     /// <summary>A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.</summary>
     [JsonPropertyName("message")]
