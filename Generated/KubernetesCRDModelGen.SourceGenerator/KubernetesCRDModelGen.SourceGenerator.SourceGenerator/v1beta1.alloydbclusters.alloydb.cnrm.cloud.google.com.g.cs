@@ -435,15 +435,15 @@ public partial class V1beta1AlloyDBClusterSpecProjectRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AlloyDBClusterSpecRestoreBackupSourceBackupNameRef
 {
-    /// <summary>If provided must be in the format `projects/[projectId]/locations/[location]/backups/[backupId]`.</summary>
+    /// <summary>A reference to an externally managed AlloyDBBackup resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/backups/{{backupID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `metadata.name` field of a `AlloyDBBackup` resource.</summary>
+    /// <summary>The name of a AlloyDBBackup resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `metadata.namespace` field of a `AlloyDBBackup` resource.</summary>
+    /// <summary>The namespace of a AlloyDBBackup resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
