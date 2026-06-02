@@ -36,13 +36,31 @@ public partial class V1alpha1CloudBatchResourceAllowanceList : IKubernetesObject
     public required IList<V1alpha1CloudBatchResourceAllowance> Items { get; set; }
 }
 
+/// <summary>Required. The Pub/Sub topic where notifications like the resource allowance state changes will be published.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1CloudBatchResourceAllowanceSpecNotificationsPubsubTopicRef
+{
+    /// <summary>A reference to an externally managed PubSubTopic resource. Should be in the format &quot;projects/{{projectID}}/topics/{{topicID}}&quot;.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The name of a PubSubTopic resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a PubSubTopic resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudBatchResourceAllowanceSpecNotifications
 {
     /// <summary>Required. The Pub/Sub topic where notifications like the resource allowance state changes will be published.</summary>
-    [JsonPropertyName("pubsubTopic")]
-    public string? PubsubTopic { get; set; }
+    [JsonPropertyName("pubsubTopicRef")]
+    public V1alpha1CloudBatchResourceAllowanceSpecNotificationsPubsubTopicRef? PubsubTopicRef { get; set; }
 }
 
 /// <summary>The project that this resource belongs to.</summary>
