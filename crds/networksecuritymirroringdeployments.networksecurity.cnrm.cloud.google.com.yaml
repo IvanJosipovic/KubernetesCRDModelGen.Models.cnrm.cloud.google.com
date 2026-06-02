@@ -4,23 +4,22 @@ metadata:
   annotations:
     cnrm.cloud.google.com/version: 0.0.0-dev
   labels:
-    cnrm.cloud.google.com/dcl2crd: "true"
     cnrm.cloud.google.com/managed-by-kcc: "true"
-    cnrm.cloud.google.com/stability-level: stable
+    cnrm.cloud.google.com/stability-level: alpha
     cnrm.cloud.google.com/system: "true"
-  name: logginglogbuckets.logging.cnrm.cloud.google.com
+  name: networksecuritymirroringdeployments.networksecurity.cnrm.cloud.google.com
 spec:
-  group: logging.cnrm.cloud.google.com
+  group: networksecurity.cnrm.cloud.google.com
   names:
-    kind: LoggingLogBucket
+    kind: NetworkSecurityMirroringDeployment
     categories:
     - gcp
-    listKind: LoggingLogBucketList
-    plural: logginglogbuckets
+    listKind: NetworkSecurityMirroringDeploymentList
+    plural: networksecuritymirroringdeployments
     shortNames:
-    - gcplogginglogbucket
-    - gcplogginglogbuckets
-    singular: logginglogbucket
+    - gcpnetworksecuritymirroringdeployment
+    - gcpnetworksecuritymirroringdeployments
+    singular: networksecuritymirroringdeployment
   preserveUnknownFields: false
   scope: Namespaced
   versions:
@@ -40,10 +39,10 @@ spec:
       jsonPath: .status.conditions[?(@.type=='Ready')].lastTransitionTime
       name: Status Age
       type: date
-    name: v1beta1
+    name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: LoggingLogBucket is the Schema for the LoggingLogBucket API
+        description: NetworkSecurityMirroringDeployment is the Schema for the NetworkSecurityMirroringDeployment API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
@@ -54,19 +53,13 @@ spec:
           metadata:
             type: object
           spec:
-            description: LoggingLogBucketSpec defines the desired state of LoggingLogBucket
-            oneOf:
-            - required:
-              - billingAccountRef
-            - required:
-              - folderRef
-            - required:
-              - organizationRef
-            - required:
-              - projectRef
+            description: NetworkSecurityMirroringDeploymentSpec defines the desired state of NetworkSecurityMirroringDeployment
             properties:
-              billingAccountRef:
-                description: Immutable. The BillingAccount that this resource belongs to. Only one of [billingAccountRef, folderRef, organizationRef, projectRef] may be specified.
+              description:
+                description: Optional. User-provided description of the deployment. Used as additional context for the deployment.
+                type: string
+              forwardingRuleRef:
+                description: 'Required. Immutable. The regional forwarding rule that fronts the mirroring collectors, for example: `projects/123456789/regions/us-central1/forwardingRules/my-rule`. See https://google.aip.dev/124.'
                 oneOf:
                 - not:
                     required:
@@ -83,56 +76,25 @@ spec:
                   - external
                 properties:
                   external:
-                    description: The 'name' field of a billing account, when not managed by Config Connector.
+                    description: The ComputeForwardingRule selflink in the form "projects/{{project}}/regions/{{region}}/forwardingRules/{{name}}" when not managed by Config Connector.
                     type: string
                   name:
-                    description: The 'name' field of a 'BillingAccount' resource.
+                    description: The name field of a ComputeForwardingRule resource.
                     type: string
                   namespace:
-                    description: The 'namespace' field of a 'BillingAccount' resource.
+                    description: The namespace field of a ComputeForwardingRule resource.
                     type: string
                 type: object
-              description:
-                description: Describes this bucket.
-                type: string
-              enableAnalytics:
-                description: Whether or not Log Analytics is enabled. Logs for buckets with Log Analytics enabled can be queried in the Log Analytics page using SQL queries. Cannot be disabled once enabled.
-                type: boolean
-              folderRef:
-                description: Immutable. The Folder that this resource belongs to. Only one of [billingAccountRef, folderRef, organizationRef, projectRef] may be specified.
-                oneOf:
-                - not:
-                    required:
-                    - external
-                  required:
-                  - name
-                - not:
-                    anyOf:
-                    - required:
-                      - name
-                    - required:
-                      - namespace
-                  required:
-                  - external
-                properties:
-                  external:
-                    description: The 'name' field of a folder, when not managed by Config Connector.
-                    type: string
-                  name:
-                    description: The 'name' field of a 'Folder' resource.
-                    type: string
-                  namespace:
-                    description: The 'namespace' field of a 'Folder' resource.
-                    type: string
+              labels:
+                additionalProperties:
+                  type: string
+                description: Optional. Labels are key/value pairs that help to organize and filter resources.
                 type: object
               location:
-                description: 'Immutable. The location of the resource. The supported locations are: global, us-central1, us-east1, us-west1, asia-east1, europe-west1.'
+                description: The location of this resource.
                 type: string
-              locked:
-                description: Whether the bucket has been locked. The retention period on a locked bucket may not be changed. Locked buckets may only be deleted if they are empty.
-                type: boolean
-              organizationRef:
-                description: Immutable. The Organization that this resource belongs to. Only one of [billingAccountRef, folderRef, organizationRef, projectRef] may be specified.
+              mirroringDeploymentGroupRef:
+                description: 'Required. Immutable. The deployment group that this deployment is a part of, for example: `projects/123456789/locations/global/mirroringDeploymentGroups/my-dg`. See https://google.aip.dev/124.'
                 oneOf:
                 - not:
                     required:
@@ -149,17 +111,17 @@ spec:
                   - external
                 properties:
                   external:
-                    description: The 'name' field of an organization, when not managed by Config Connector.
+                    description: A reference to an externally managed NetworkSecurityMirroringDeploymentGroup resource. Should be in the format "projects/{{projectID}}/locations/{{location}}/mirroringDeploymentGroups/{{mirroringDeploymentGroupID}}".
                     type: string
                   name:
-                    description: The 'name' field of an 'Organization' resource.
+                    description: The name field of a NetworkSecurityMirroringDeploymentGroup resource.
                     type: string
                   namespace:
-                    description: The 'namespace' field of an 'Organization' resource.
+                    description: The namespace field of a NetworkSecurityMirroringDeploymentGroup resource.
                     type: string
                 type: object
               projectRef:
-                description: Immutable. The Project that this resource belongs to. Only one of [billingAccountRef, folderRef, organizationRef, projectRef] may be specified.
+                description: The project that this resource belongs to.
                 oneOf:
                 - not:
                     required:
@@ -178,6 +140,9 @@ spec:
                   external:
                     description: The `projectID` field of a project, when not managed by Config Connector.
                     type: string
+                  kind:
+                    description: The kind of the Project resource; optional but must be `Project` if provided.
+                    type: string
                   name:
                     description: The `name` field of a `Project` resource.
                     type: string
@@ -186,20 +151,19 @@ spec:
                     type: string
                 type: object
               resourceID:
-                description: Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.
+                description: The NetworkSecurityMirroringDeployment name. If not given, the metadata.name will be used.
                 type: string
-              retentionDays:
-                description: Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used.
-                format: int64
-                type: integer
             required:
+            - forwardingRuleRef
             - location
+            - mirroringDeploymentGroupRef
+            - projectRef
             type: object
           status:
-            description: LoggingLogBucketStatus defines the config connector machine state of LoggingLogBucket
+            description: NetworkSecurityMirroringDeploymentStatus defines the config connector machine state of NetworkSecurityMirroringDeployment
             properties:
               conditions:
-                description: Conditions represent the latest available observations of the LoggingLogBucket's current state.
+                description: Conditions represent the latest available observations of the object's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -219,21 +183,29 @@ spec:
                       type: string
                   type: object
                 type: array
-              createTime:
-                description: Output only. The creation timestamp of the bucket. This is not set for any of the default buckets.
-                format: date-time
-                type: string
-              lifecycleState:
-                description: 'Output only. The bucket lifecycle state. Possible values: LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED'
+              externalRef:
+                description: A unique specifier for the NetworkSecurityMirroringDeployment resource in GCP.
                 type: string
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
                 format: int64
                 type: integer
-              updateTime:
-                description: Output only. The last update timestamp of the bucket.
-                format: date-time
-                type: string
+              observedState:
+                description: ObservedState is the state of the resource as most recently observed in GCP.
+                properties:
+                  createTime:
+                    description: Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
+                    type: string
+                  reconciling:
+                    description: Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This part of the normal operation (e.g. linking a new association to the parent group). See https://google.aip.dev/128.
+                    type: boolean
+                  state:
+                    description: Output only. The current state of the deployment. See https://google.aip.dev/216.
+                    type: string
+                  updateTime:
+                    description: Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
+                    type: string
+                type: object
             type: object
         required:
         - spec

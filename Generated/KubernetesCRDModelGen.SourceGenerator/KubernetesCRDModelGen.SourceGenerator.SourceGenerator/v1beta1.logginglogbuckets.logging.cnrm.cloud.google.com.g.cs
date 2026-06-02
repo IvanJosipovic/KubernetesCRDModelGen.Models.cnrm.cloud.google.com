@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.logging.cnrm.cloud.google.com;
+/// <summary>LoggingLogBucket is the Schema for the LoggingLogBucket API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,18 +41,15 @@ public partial class V1beta1LoggingLogBucketList : IKubernetesObject<V1ListMeta>
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogBucketSpecBillingAccountRef
 {
-    /// <summary>Allowed value: The Google Cloud resource name of a Google Cloud Billing Account (format: `billingAccounts/{{name}}`).</summary>
+    /// <summary>The &apos;name&apos; field of a billing account, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>
-    /// [WARNING] BillingAccount not yet supported in Config Connector, use &apos;external&apos; field to reference existing resources.
-    /// Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-    /// </summary>
+    /// <summary>The &apos;name&apos; field of a &apos;BillingAccount&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of a &apos;BillingAccount&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -61,15 +59,15 @@ public partial class V1beta1LoggingLogBucketSpecBillingAccountRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogBucketSpecFolderRef
 {
-    /// <summary>Allowed value: The Google Cloud resource name of a `Folder` resource (format: `folders/{{name}}`).</summary>
+    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The &apos;name&apos; field of a &apos;Folder&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of a &apos;Folder&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -79,18 +77,15 @@ public partial class V1beta1LoggingLogBucketSpecFolderRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogBucketSpecOrganizationRef
 {
-    /// <summary>Allowed value: The Google Cloud resource name of a Google Cloud Organization (format: `organizations/{{name}}`).</summary>
+    /// <summary>The &apos;name&apos; field of an organization, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>
-    /// [WARNING] Organization not yet supported in Config Connector, use &apos;external&apos; field to reference existing resources.
-    /// Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-    /// </summary>
+    /// <summary>The &apos;name&apos; field of an &apos;Organization&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of an &apos;Organization&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -100,19 +95,20 @@ public partial class V1beta1LoggingLogBucketSpecOrganizationRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogBucketSpecProjectRef
 {
-    /// <summary>Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>LoggingLogBucketSpec defines the desired state of LoggingLogBucket</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogBucketSpec
@@ -125,7 +121,7 @@ public partial class V1beta1LoggingLogBucketSpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary> Whether or not Log Analytics is enabled. Logs for buckets with Log Analytics enabled can be queried in the Log Analytics page using SQL queries. Cannot be disabled once enabled.</summary>
+    /// <summary>Whether or not Log Analytics is enabled. Logs for buckets with Log Analytics enabled can be queried in the Log Analytics page using SQL queries. Cannot be disabled once enabled.</summary>
     [JsonPropertyName("enableAnalytics")]
     public bool? EnableAnalytics { get; set; }
 
@@ -183,11 +179,12 @@ public partial class V1beta1LoggingLogBucketStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>LoggingLogBucketStatus defines the config connector machine state of LoggingLogBucket</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogBucketStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the LoggingLogBucket&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1LoggingLogBucketStatusConditions>? Conditions { get; set; }
 
@@ -201,13 +198,14 @@ public partial class V1beta1LoggingLogBucketStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>Output only. The last update timestamp of the bucket.</summary>
     [JsonPropertyName("updateTime")]
     public DateTime? UpdateTime { get; set; }
 }
 
+/// <summary>LoggingLogBucket is the Schema for the LoggingLogBucket API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -229,9 +227,11 @@ public partial class V1beta1LoggingLogBucket : IKubernetesObject<V1ObjectMeta>, 
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>LoggingLogBucketSpec defines the desired state of LoggingLogBucket</summary>
     [JsonPropertyName("spec")]
     public required V1beta1LoggingLogBucketSpec Spec { get; set; }
 
+    /// <summary>LoggingLogBucketStatus defines the config connector machine state of LoggingLogBucket</summary>
     [JsonPropertyName("status")]
     public V1beta1LoggingLogBucketStatus? Status { get; set; }
 }
