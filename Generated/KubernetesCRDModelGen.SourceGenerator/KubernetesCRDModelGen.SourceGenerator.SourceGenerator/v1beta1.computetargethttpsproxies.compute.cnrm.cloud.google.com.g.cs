@@ -40,15 +40,15 @@ public partial class V1beta1ComputeTargetHTTPSProxyList : IKubernetesObject<V1Li
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetHTTPSProxySpecCertificateManagerCertificates
 {
-    /// <summary>Allowed value: The `externalRef` field of a `CertificateManagerCertificate` resource.</summary>
+    /// <summary>Allowed value: The format `projects/{{project}}/locations/{{location}}/certificates/{{name}}` or `//certificatemanager.googleapis.com/projects/{{project}}/locations/{{location}}/certificates/{{name}}`.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a CertificateManagerCertificate resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a CertificateManagerCertificate resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -62,11 +62,11 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecCertificateMapRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a CertificateManagerCertificateMap resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a CertificateManagerCertificateMap resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -80,11 +80,11 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecServerTlsPolicyRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a NetworkSecurityServerTLSPolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a NetworkSecurityServerTLSPolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -98,11 +98,11 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecSslCertificates
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSSLCertificate resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSSLCertificate resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -116,11 +116,11 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecSslPolicyRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSSLPolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSSLPolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -134,11 +134,11 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecUrlMapRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeURLMap resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeURLMap resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

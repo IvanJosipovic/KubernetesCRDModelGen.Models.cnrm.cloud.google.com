@@ -36,6 +36,56 @@ public partial class V1alpha1IAMDenyPolicyList : IKubernetesObject<V1ListMeta>, 
     public required IList<V1alpha1IAMDenyPolicy> Items { get; set; }
 }
 
+/// <summary>The folder that this resource belongs to.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1IAMDenyPolicySpecFolderRef
+{
+    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector. This field must be set when &apos;name&apos; field is not set.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The &apos;name&apos; field of a &apos;Folder&apos; resource. This field must be set when &apos;external&apos; field is not set.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The &apos;namespace&apos; field of a &apos;Folder&apos; resource. If unset, the namespace is defaulted to the namespace of the referencer resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+/// <summary>The organization that this resource belongs to.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1IAMDenyPolicySpecOrganizationRef
+{
+    /// <summary>The &apos;name&apos; field of an organization, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public required string External { get; set; }
+}
+
+/// <summary>The project that this resource belongs to.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1IAMDenyPolicySpecProjectRef
+{
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The kind of the Project resource; optional but must be `Project` if provided.</summary>
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
+    /// <summary>The `name` field of a `Project` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
 /// <summary>
 /// The condition that determines whether this deny rule applies to a request.
 ///  If the condition expression evaluates to `true`, then the deny rule is
@@ -187,6 +237,18 @@ public partial class V1alpha1IAMDenyPolicySpec
     /// <summary>A user-specified description of the `Policy`. This value can be up to 63 characters.</summary>
     [JsonPropertyName("displayName")]
     public string? DisplayName { get; set; }
+
+    /// <summary>The folder that this resource belongs to.</summary>
+    [JsonPropertyName("folderRef")]
+    public V1alpha1IAMDenyPolicySpecFolderRef? FolderRef { get; set; }
+
+    /// <summary>The organization that this resource belongs to.</summary>
+    [JsonPropertyName("organizationRef")]
+    public V1alpha1IAMDenyPolicySpecOrganizationRef? OrganizationRef { get; set; }
+
+    /// <summary>The project that this resource belongs to.</summary>
+    [JsonPropertyName("projectRef")]
+    public V1alpha1IAMDenyPolicySpecProjectRef? ProjectRef { get; set; }
 
     /// <summary>The IAMDenyPolicy name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
