@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.pubsub.cnrm.cloud.google.com;
+/// <summary>PubSubSchema is the Schema for the PubSubSchema API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,28 +41,25 @@ public partial class V1beta1PubSubSchemaList : IKubernetesObject<V1ListMeta>, II
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubSchemaSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>PubSubSchemaSpec defines the desired state of PubSubSchema</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubSchemaSpec
 {
-    /// <summary>
-    /// The definition of the schema.
-    /// This should contain a string representing the full definition of the schema
-    /// that is a valid schema definition of the type specified in type.
-    /// </summary>
+    /// <summary>The definition of the schema. This should contain a string representing the full definition of the schema that is a valid schema definition of the type specified in `type`.</summary>
     [JsonPropertyName("definition")]
     public string? Definition { get; set; }
 
@@ -69,11 +67,11 @@ public partial class V1beta1PubSubSchemaSpec
     [JsonPropertyName("projectRef")]
     public required V1beta1PubSubSchemaSpecProjectRef ProjectRef { get; set; }
 
-    /// <summary>Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
+    /// <summary>The PubSubSchema name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>The type of the schema definition Default value: &quot;TYPE_UNSPECIFIED&quot; Possible values: [&quot;TYPE_UNSPECIFIED&quot;, &quot;PROTOCOL_BUFFER&quot;, &quot;AVRO&quot;].</summary>
+    /// <summary>The type of the schema definition.</summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
 }
@@ -103,19 +101,21 @@ public partial class V1beta1PubSubSchemaStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>PubSubSchemaStatus defines the config connector machine state of PubSubSchema</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubSchemaStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1PubSubSchemaStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>PubSubSchema is the Schema for the PubSubSchema API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -137,9 +137,11 @@ public partial class V1beta1PubSubSchema : IKubernetesObject<V1ObjectMeta>, ISpe
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>PubSubSchemaSpec defines the desired state of PubSubSchema</summary>
     [JsonPropertyName("spec")]
     public required V1beta1PubSubSchemaSpec Spec { get; set; }
 
+    /// <summary>PubSubSchemaStatus defines the config connector machine state of PubSubSchema</summary>
     [JsonPropertyName("status")]
     public V1beta1PubSubSchemaStatus? Status { get; set; }
 }
