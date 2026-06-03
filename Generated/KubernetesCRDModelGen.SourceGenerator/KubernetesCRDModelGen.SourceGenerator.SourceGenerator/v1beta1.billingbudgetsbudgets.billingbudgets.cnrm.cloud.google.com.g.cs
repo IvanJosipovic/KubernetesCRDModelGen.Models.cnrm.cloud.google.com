@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.billingbudgets.cnrm.cloud.google.com;
+/// <summary>BillingBudgetsBudget is the Schema for the BillingBudgetsBudget API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,40 +36,38 @@ public partial class V1beta1BillingBudgetsBudgetList : IKubernetesObject<V1ListM
     public required IList<V1beta1BillingBudgetsBudget> Items { get; set; }
 }
 
+/// <summary>MonitoringNotificationChannelRef defines the resource reference to MonitoringNotificationChannel, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecAllUpdatesRuleMonitoringNotificationChannels
 {
-    /// <summary>Allowed value: The Google Cloud resource name of a `MonitoringNotificationChannel` resource (format: `projects/{{project}}/notificationChannels/{{name}}`).</summary>
+    /// <summary>A reference to an externally managed MonitoringNotificationChannel resource. Should be in the format &quot;projects/{{projectID}}/notificationChannels/{{channelID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a MonitoringNotificationChannel resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a MonitoringNotificationChannel resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>PubSubTopicRef defines the resource reference to PubSubTopic, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecAllUpdatesRulePubsubTopicRef
 {
-    /// <summary>
-    /// Optional. The name of the Pub/Sub topic where budget related messages will be published, in the form `projects/{project_id}/topics/{topic_id}`. Updates are sent at regular intervals to the topic. The topic needs to be created before the budget is created; see https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications for more details. Caller is expected to have `pubsub.topics.setIamPolicy` permission on the topic when it&apos;s set for a budget, otherwise, the API call will fail with PERMISSION_DENIED. See https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#permissions_required_for_this_task for more details on Pub/Sub roles and permissions.
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `PubSubTopic` resource (format: `projects/{{project}}/topics/{{name}}`).
-    /// </summary>
+    /// <summary>A reference to an externally managed PubSubTopic resource. Should be in the format &quot;projects/{{projectID}}/topics/{{topicID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a PubSubTopic resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a PubSubTopic resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -85,12 +84,20 @@ public partial class V1beta1BillingBudgetsBudgetSpecAllUpdatesRule
     [JsonPropertyName("monitoringNotificationChannels")]
     public IList<V1beta1BillingBudgetsBudgetSpecAllUpdatesRuleMonitoringNotificationChannels>? MonitoringNotificationChannels { get; set; }
 
+    /// <summary>PubSubTopicRef defines the resource reference to PubSubTopic, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
     [JsonPropertyName("pubsubTopicRef")]
     public V1beta1BillingBudgetsBudgetSpecAllUpdatesRulePubsubTopicRef? PubsubTopicRef { get; set; }
 
     /// <summary>Optional. Required when NotificationsRule.pubsub_topic is set. The schema version of the notification sent to NotificationsRule.pubsub_topic. Only &quot;1.0&quot; is accepted. It represents the JSON schema as defined in https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.</summary>
     [JsonPropertyName("schemaVersion")]
     public string? SchemaVersion { get; set; }
+}
+
+/// <summary>Use the last period&apos;s actual spend as the budget for the present period. LastPeriodAmount can only be set when the budget&apos;s time period is a .</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1BillingBudgetsBudgetSpecAmountLastPeriodAmount
+{
 }
 
 /// <summary>A specified amount to use as the budget. `currency_code` is optional. If specified when creating a budget, it must match the currency of the billing account. If specified when updating a budget, it must match the currency_code of the existing budget. The `currency_code` is provided on output.</summary>
@@ -118,7 +125,7 @@ public partial class V1beta1BillingBudgetsBudgetSpecAmount
 {
     /// <summary>Use the last period&apos;s actual spend as the budget for the present period. LastPeriodAmount can only be set when the budget&apos;s time period is a .</summary>
     [JsonPropertyName("lastPeriodAmount")]
-    public JsonNode? LastPeriodAmount { get; set; }
+    public V1beta1BillingBudgetsBudgetSpecAmountLastPeriodAmount? LastPeriodAmount { get; set; }
 
     /// <summary>A specified amount to use as the budget. `currency_code` is optional. If specified when creating a budget, it must match the currency of the billing account. If specified when updating a budget, it must match the currency_code of the existing budget. The `currency_code` is provided on output.</summary>
     [JsonPropertyName("specifiedAmount")]
@@ -130,22 +137,15 @@ public partial class V1beta1BillingBudgetsBudgetSpecAmount
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecBillingAccountRef
 {
-    /// <summary>
-    /// The billing account of the resource
-    /// 
-    /// Allowed value: The Google Cloud resource name of a Google Cloud Billing Account (format: `billingAccounts/{{name}}`).
-    /// </summary>
+    /// <summary>The &apos;name&apos; field of a billing account, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>
-    /// [WARNING] BillingAccount not yet supported in Config Connector, use &apos;external&apos; field to reference existing resources.
-    /// Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-    /// </summary>
+    /// <summary>The &apos;name&apos; field of a &apos;BillingAccount&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of a &apos;BillingAccount&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -209,38 +209,38 @@ public partial class V1beta1BillingBudgetsBudgetSpecBudgetFilterLabels
     public IList<string>? Values { get; set; }
 }
 
+/// <summary>ProjectRef is a clean resource reference to a GCP Project that does not include the kind field.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecBudgetFilterProjects
 {
-    /// <summary>Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>BillingAccountRef is a clean resource reference to a GCP BillingAccount that does not include the kind field.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecBudgetFilterSubaccounts
 {
+    /// <summary>The &apos;name&apos; field of a billing account, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>
-    /// [WARNING] CloudBillingBillingAccount not yet supported in Config Connector, use &apos;external&apos; field to reference existing resources.
-    /// Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-    /// </summary>
+    /// <summary>The &apos;name&apos; field of a &apos;BillingAccount&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of a &apos;BillingAccount&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -294,6 +294,7 @@ public partial class V1beta1BillingBudgetsBudgetSpecThresholdRules
     public required double ThresholdPercent { get; set; }
 }
 
+/// <summary>BillingBudgetsBudgetSpec defines the desired state of BillingBudgetsBudget</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpec
@@ -318,7 +319,7 @@ public partial class V1beta1BillingBudgetsBudgetSpec
     [JsonPropertyName("displayName")]
     public string? DisplayName { get; set; }
 
-    /// <summary>Immutable. Optional. The service-generated name of the resource. Used for acquisition only. Leave unset to create a new resource.</summary>
+    /// <summary>The BillingBudgetsBudget name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
@@ -352,11 +353,12 @@ public partial class V1beta1BillingBudgetsBudgetStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>BillingBudgetsBudgetStatus defines the config connector machine state of BillingBudgetsBudget</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1BillingBudgetsBudgetStatusConditions>? Conditions { get; set; }
 
@@ -366,9 +368,10 @@ public partial class V1beta1BillingBudgetsBudgetStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>BillingBudgetsBudget is the Schema for the BillingBudgetsBudget API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -390,9 +393,11 @@ public partial class V1beta1BillingBudgetsBudget : IKubernetesObject<V1ObjectMet
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>BillingBudgetsBudgetSpec defines the desired state of BillingBudgetsBudget</summary>
     [JsonPropertyName("spec")]
     public required V1beta1BillingBudgetsBudgetSpec Spec { get; set; }
 
+    /// <summary>BillingBudgetsBudgetStatus defines the config connector machine state of BillingBudgetsBudget</summary>
     [JsonPropertyName("status")]
     public V1beta1BillingBudgetsBudgetStatus? Status { get; set; }
 }

@@ -15,6 +15,7 @@ spec:
     kind: BillingBudgetsBudget
     categories:
     - gcp
+    listKind: BillingBudgetsBudgetList
     plural: billingbudgetsbudgets
     shortNames:
     - gcpbillingbudgetsbudget
@@ -42,16 +43,18 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: BillingBudgetsBudget is the Schema for the BillingBudgetsBudget API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: BillingBudgetsBudgetSpec defines the desired state of BillingBudgetsBudget
             properties:
               allUpdatesRule:
                 description: Optional. Rules to apply to notifications sent based on budget spend and thresholds.
@@ -61,6 +64,7 @@ spec:
                     type: boolean
                   monitoringNotificationChannels:
                     items:
+                      description: MonitoringNotificationChannelRef defines the resource reference to MonitoringNotificationChannel, which "External" field holds the GCP identifier for the KRM object.
                       oneOf:
                       - not:
                           required:
@@ -77,17 +81,18 @@ spec:
                         - external
                       properties:
                         external:
-                          description: 'Allowed value: The Google Cloud resource name of a `MonitoringNotificationChannel` resource (format: `projects/{{project}}/notificationChannels/{{name}}`).'
+                          description: A reference to an externally managed MonitoringNotificationChannel resource. Should be in the format "projects/{{projectID}}/notificationChannels/{{channelID}}".
                           type: string
                         name:
-                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          description: The name of a MonitoringNotificationChannel resource.
                           type: string
                         namespace:
-                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          description: The namespace of a MonitoringNotificationChannel resource.
                           type: string
                       type: object
                     type: array
                   pubsubTopicRef:
+                    description: PubSubTopicRef defines the resource reference to PubSubTopic, which "External" field holds the GCP identifier for the KRM object.
                     oneOf:
                     - not:
                         required:
@@ -104,16 +109,13 @@ spec:
                       - external
                     properties:
                       external:
-                        description: |-
-                          Optional. The name of the Pub/Sub topic where budget related messages will be published, in the form `projects/{project_id}/topics/{topic_id}`. Updates are sent at regular intervals to the topic. The topic needs to be created before the budget is created; see https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications for more details. Caller is expected to have `pubsub.topics.setIamPolicy` permission on the topic when it's set for a budget, otherwise, the API call will fail with PERMISSION_DENIED. See https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#permissions_required_for_this_task for more details on Pub/Sub roles and permissions.
-
-                          Allowed value: The Google Cloud resource name of a `PubSubTopic` resource (format: `projects/{{project}}/topics/{{name}}`).
+                        description: A reference to an externally managed PubSubTopic resource. Should be in the format "projects/{{projectID}}/topics/{{topicID}}".
                         type: string
                       name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        description: The name of a PubSubTopic resource.
                         type: string
                       namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        description: The namespace of a PubSubTopic resource.
                         type: string
                     type: object
                   schemaVersion:
@@ -126,7 +128,6 @@ spec:
                   lastPeriodAmount:
                     description: Use the last period's actual spend as the budget for the present period. LastPeriodAmount can only be set when the budget's time period is a .
                     type: object
-                    x-kubernetes-preserve-unknown-fields: true
                   specifiedAmount:
                     description: A specified amount to use as the budget. `currency_code` is optional. If specified when creating a budget, it must match the currency of the billing account. If specified when updating a budget, it must match the currency_code of the existing budget. The `currency_code` is provided on output.
                     properties:
@@ -161,18 +162,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: |-
-                      The billing account of the resource
-
-                      Allowed value: The Google Cloud resource name of a Google Cloud Billing Account (format: `billingAccounts/{{name}}`).
+                    description: The 'name' field of a billing account, when not managed by Config Connector.
                     type: string
                   name:
-                    description: |-
-                      [WARNING] BillingAccount not yet supported in Config Connector, use 'external' field to reference existing resources.
-                      Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                    description: The 'name' field of a 'BillingAccount' resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The 'namespace' field of a 'BillingAccount' resource.
                     type: string
                 type: object
               budgetFilter:
@@ -240,6 +236,7 @@ spec:
                     type: object
                   projects:
                     items:
+                      description: ProjectRef is a clean resource reference to a GCP Project that does not include the kind field.
                       oneOf:
                       - not:
                           required:
@@ -256,13 +253,13 @@ spec:
                         - external
                       properties:
                         external:
-                          description: 'Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).'
+                          description: The `projectID` field of a project, when not managed by Config Connector.
                           type: string
                         name:
-                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          description: The `name` field of a `Project` resource.
                           type: string
                         namespace:
-                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          description: The `namespace` field of a `Project` resource.
                           type: string
                       type: object
                     type: array
@@ -273,6 +270,7 @@ spec:
                     type: array
                   subaccounts:
                     items:
+                      description: BillingAccountRef is a clean resource reference to a GCP BillingAccount that does not include the kind field.
                       oneOf:
                       - not:
                           required:
@@ -289,14 +287,13 @@ spec:
                         - external
                       properties:
                         external:
+                          description: The 'name' field of a billing account, when not managed by Config Connector.
                           type: string
                         name:
-                          description: |-
-                            [WARNING] CloudBillingBillingAccount not yet supported in Config Connector, use 'external' field to reference existing resources.
-                            Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                          description: The 'name' field of a 'BillingAccount' resource.
                           type: string
                         namespace:
-                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          description: The 'namespace' field of a 'BillingAccount' resource.
                           type: string
                       type: object
                     type: array
@@ -305,7 +302,7 @@ spec:
                 description: User data for display name in UI. The name must be less than or equal to 60 characters.
                 type: string
               resourceID:
-                description: Immutable. Optional. The service-generated name of the resource. Used for acquisition only. Leave unset to create a new resource.
+                description: The BillingBudgetsBudget name. If not given, the metadata.name will be used.
                 type: string
               thresholdRules:
                 description: Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget.
@@ -316,7 +313,6 @@ spec:
                       type: string
                     thresholdPercent:
                       description: 'Required. Send an alert when this threshold is exceeded. This is a 1.0-based percentage, so 0.5 = 50%. Validation: non-negative number.'
-                      format: double
                       type: number
                   required:
                   - thresholdPercent
@@ -327,9 +323,10 @@ spec:
             - billingAccountRef
             type: object
           status:
+            description: BillingBudgetsBudgetStatus defines the config connector machine state of BillingBudgetsBudget
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the object's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -354,6 +351,7 @@ spec:
                 type: string
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
             type: object
         required:
@@ -363,9 +361,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
