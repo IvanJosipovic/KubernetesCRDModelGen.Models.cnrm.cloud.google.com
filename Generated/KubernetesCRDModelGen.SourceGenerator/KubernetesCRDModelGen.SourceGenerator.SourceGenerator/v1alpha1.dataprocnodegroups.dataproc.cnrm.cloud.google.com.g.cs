@@ -349,6 +349,13 @@ public partial class V1alpha1DataprocNodeGroupStatusConditions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataprocNodeGroupStatusObservedStateNodeGroupConfigInstanceFlexibilityPolicyInstanceSelectionResults
 {
+    /// <summary>Output only. Full machine-type names, e.g. &quot;n1-standard-16&quot;.</summary>
+    [JsonPropertyName("machineType")]
+    public string? MachineType { get; set; }
+
+    /// <summary>Output only. Number of VM provisioned with the machine_type.</summary>
+    [JsonPropertyName("vmCount")]
+    public int? VmCount { get; set; }
 }
 
 /// <summary>Optional. Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.</summary>
@@ -387,6 +394,17 @@ public partial class V1alpha1DataprocNodeGroupStatusObservedStateNodeGroupConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataprocNodeGroupStatusObservedStateNodeGroupConfigManagedGroupConfig
 {
+    /// <summary>Output only. The name of the Instance Group Manager for this group.</summary>
+    [JsonPropertyName("instanceGroupManagerName")]
+    public string? InstanceGroupManagerName { get; set; }
+
+    /// <summary>Output only. The partial URI to the instance group manager for this group. E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.</summary>
+    [JsonPropertyName("instanceGroupManagerURI")]
+    public string? InstanceGroupManagerURI { get; set; }
+
+    /// <summary>Output only. The name of the Instance Template used for the Managed Instance Group.</summary>
+    [JsonPropertyName("instanceTemplateName")]
+    public string? InstanceTemplateName { get; set; }
 }
 
 /// <summary>Optional. The node group instance group configuration.</summary>

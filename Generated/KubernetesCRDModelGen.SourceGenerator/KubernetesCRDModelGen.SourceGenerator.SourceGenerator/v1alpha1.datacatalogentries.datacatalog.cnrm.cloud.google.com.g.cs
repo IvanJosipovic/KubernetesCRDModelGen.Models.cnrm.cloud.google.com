@@ -1235,6 +1235,36 @@ public partial class V1alpha1DataCatalogEntryStatusObservedStateFeatureOnlineSto
     public string? StorageType { get; set; }
 }
 
+/// <summary>Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1DataCatalogEntryStatusObservedStateGcsFilesetSpecSampleGCSFileSpecsGcsTimestamps
+{
+    /// <summary>Creation timestamp of the resource within the given system.</summary>
+    [JsonPropertyName("createTime")]
+    public string? CreateTime { get; set; }
+
+    /// <summary>
+    /// Output only. Expiration timestamp of the resource within the given system.
+    /// 
+    ///  Currently only applicable to BigQuery resources.
+    /// </summary>
+    [JsonPropertyName("expireTime")]
+    public string? ExpireTime { get; set; }
+
+    /// <summary>
+    /// Timestamp of the last modification of the resource or its metadata within
+    ///  a given system.
+    /// 
+    ///  Note: Depending on the source system, not every modification updates this
+    ///  timestamp.
+    ///  For example, BigQuery timestamps every metadata modification but not data
+    ///  or permission changes.
+    /// </summary>
+    [JsonPropertyName("updateTime")]
+    public string? UpdateTime { get; set; }
+}
+
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataCatalogEntryStatusObservedStateGcsFilesetSpecSampleGCSFileSpecs
@@ -1242,6 +1272,14 @@ public partial class V1alpha1DataCatalogEntryStatusObservedStateGcsFilesetSpecSa
     /// <summary>Required. Full file path. Example: `gs://bucket_name/a/b.txt`.</summary>
     [JsonPropertyName("filePath")]
     public string? FilePath { get; set; }
+
+    /// <summary>Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.</summary>
+    [JsonPropertyName("gcsTimestamps")]
+    public V1alpha1DataCatalogEntryStatusObservedStateGcsFilesetSpecSampleGCSFileSpecsGcsTimestamps? GcsTimestamps { get; set; }
+
+    /// <summary>Output only. File size in bytes.</summary>
+    [JsonPropertyName("sizeBytes")]
+    public long? SizeBytes { get; set; }
 }
 
 /// <summary>Specification that applies to a Cloud Storage fileset. Valid only for entries with the `FILESET` type.</summary>
