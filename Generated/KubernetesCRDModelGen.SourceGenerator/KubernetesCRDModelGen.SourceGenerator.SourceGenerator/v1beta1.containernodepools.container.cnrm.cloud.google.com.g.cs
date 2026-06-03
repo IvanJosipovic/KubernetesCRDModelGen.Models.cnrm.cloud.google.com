@@ -566,6 +566,16 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfigTaint
     public required string Value { get; set; }
 }
 
+/// <summary>Parameters that can be configured on Windows nodes.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ContainerNodePoolSpecNodeConfigWindowsNodeConfig
+{
+    /// <summary>os_version specifies the Windows Server release version to be used on the node.</summary>
+    [JsonPropertyName("osVersion")]
+    public string? OsVersion { get; set; }
+}
+
 /// <summary>The workload metadata configuration for this node.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -722,6 +732,10 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfig
     /// <summary>List of Kubernetes taints to be applied to each node.</summary>
     [JsonPropertyName("taint")]
     public IList<V1beta1ContainerNodePoolSpecNodeConfigTaint>? Taint { get; set; }
+
+    /// <summary>Parameters that can be configured on Windows nodes.</summary>
+    [JsonPropertyName("windowsNodeConfig")]
+    public V1beta1ContainerNodePoolSpecNodeConfigWindowsNodeConfig? WindowsNodeConfig { get; set; }
 
     /// <summary>The workload metadata configuration for this node.</summary>
     [JsonPropertyName("workloadMetadataConfig")]
