@@ -45,11 +45,11 @@ public partial class V1beta1ApigeeEnvgroupAttachmentSpecEnvgroupRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a ApigeeEnvgroup resource.</summary>
+    /// <summary>The name of an ApigeeEnvgroup resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a ApigeeEnvgroup resource.</summary>
+    /// <summary>The namespace of an ApigeeEnvgroup resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -63,11 +63,11 @@ public partial class V1beta1ApigeeEnvgroupAttachmentSpecEnvironmentRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a ApigeeEnvironment resource.</summary>
+    /// <summary>The name of an ApigeeEnvironment resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a ApigeeEnvironment resource.</summary>
+    /// <summary>The namespace of an ApigeeEnvironment resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

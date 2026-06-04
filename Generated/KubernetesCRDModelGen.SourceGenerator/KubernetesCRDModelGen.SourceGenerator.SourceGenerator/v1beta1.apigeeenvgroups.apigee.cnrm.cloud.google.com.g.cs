@@ -36,7 +36,7 @@ public partial class V1beta1ApigeeEnvgroupList : IKubernetesObject<V1ListMeta>, 
     public required IList<V1beta1ApigeeEnvgroup> Items { get; set; }
 }
 
-/// <summary>ApigeeOrganizationRef is a reference to a ApigeeOrganization resource.</summary>
+/// <summary>ApigeeOrganizationRef is a reference to an ApigeeOrganization resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ApigeeEnvgroupSpecOrganizationRef
@@ -45,11 +45,11 @@ public partial class V1beta1ApigeeEnvgroupSpecOrganizationRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a ApigeeOrganization resource.</summary>
+    /// <summary>The name of an ApigeeOrganization resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a ApigeeOrganization resource.</summary>
+    /// <summary>The namespace of an ApigeeOrganization resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -63,7 +63,7 @@ public partial class V1beta1ApigeeEnvgroupSpec
     [JsonPropertyName("hostnames")]
     public IList<string>? Hostnames { get; set; }
 
-    /// <summary>ApigeeOrganizationRef is a reference to a ApigeeOrganization resource.</summary>
+    /// <summary>ApigeeOrganizationRef is a reference to an ApigeeOrganization resource.</summary>
     [JsonPropertyName("organizationRef")]
     public required V1beta1ApigeeEnvgroupSpecOrganizationRef OrganizationRef { get; set; }
 

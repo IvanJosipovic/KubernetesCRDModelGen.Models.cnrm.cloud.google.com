@@ -45,11 +45,11 @@ public partial class V1beta1AccessContextManagerAccessLevelSpecAccessPolicyRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AccessContextManagerAccessPolicy resource.</summary>
+    /// <summary>The name of an AccessContextManagerAccessPolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AccessContextManagerAccessPolicy resource.</summary>
+    /// <summary>The namespace of an AccessContextManagerAccessPolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -129,7 +129,7 @@ public partial class V1beta1AccessContextManagerAccessLevelSpecBasicConditionsMe
     public string? User { get; set; }
 }
 
-/// <summary>AccessLevelRef is a reference to a AccessLevel resource.</summary>
+/// <summary>AccessLevelRef is a reference to an AccessLevel resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AccessContextManagerAccessLevelSpecBasicConditionsRequiredAccessLevels
@@ -138,11 +138,11 @@ public partial class V1beta1AccessContextManagerAccessLevelSpecBasicConditionsRe
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AccessLevel resource.</summary>
+    /// <summary>The name of an AccessLevel resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AccessLevel resource.</summary>
+    /// <summary>The namespace of an AccessLevel resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

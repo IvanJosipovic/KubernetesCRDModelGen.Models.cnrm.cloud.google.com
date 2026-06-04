@@ -75,10 +75,10 @@ spec:
                     description: A reference to an externally managed ApigeeEnvgroup resource. Should be in the format "organizations/{{organizationID}}/envgroups/{{envgroupID}}".
                     type: string
                   name:
-                    description: The name of a ApigeeEnvgroup resource.
+                    description: The name of an ApigeeEnvgroup resource.
                     type: string
                   namespace:
-                    description: The namespace of a ApigeeEnvgroup resource.
+                    description: The namespace of an ApigeeEnvgroup resource.
                     type: string
                 type: object
               environmentRef:
@@ -102,10 +102,10 @@ spec:
                     description: A reference to an externally managed ApigeeEnvironment resource. Should be in the format "organizations/{{organizationID}}/environments/{{environmentID}}".
                     type: string
                   name:
-                    description: The name of a ApigeeEnvironment resource.
+                    description: The name of an ApigeeEnvironment resource.
                     type: string
                   namespace:
-                    description: The namespace of a ApigeeEnvironment resource.
+                    description: The namespace of an ApigeeEnvironment resource.
                     type: string
                 type: object
               resourceID:
@@ -213,10 +213,10 @@ spec:
                     description: A reference to an externally managed ApigeeEnvgroup resource. Should be in the format "organizations/{{organizationID}}/envgroups/{{envgroupID}}".
                     type: string
                   name:
-                    description: The name of a ApigeeEnvgroup resource.
+                    description: The name of an ApigeeEnvgroup resource.
                     type: string
                   namespace:
-                    description: The namespace of a ApigeeEnvgroup resource.
+                    description: The namespace of an ApigeeEnvgroup resource.
                     type: string
                 type: object
               environmentRef:
@@ -240,10 +240,10 @@ spec:
                     description: A reference to an externally managed ApigeeEnvironment resource. Should be in the format "organizations/{{organizationID}}/environments/{{environmentID}}".
                     type: string
                   name:
-                    description: The name of a ApigeeEnvironment resource.
+                    description: The name of an ApigeeEnvironment resource.
                     type: string
                   namespace:
-                    description: The namespace of a ApigeeEnvironment resource.
+                    description: The namespace of an ApigeeEnvironment resource.
                     type: string
                 type: object
               resourceID:

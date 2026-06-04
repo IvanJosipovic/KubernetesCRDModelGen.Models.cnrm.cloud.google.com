@@ -45,11 +45,11 @@ public partial class V1beta1AlloyDBInstanceSpecClusterRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AlloyDBCluster resource.</summary>
+    /// <summary>The name of an AlloyDBCluster resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AlloyDBCluster resource.</summary>
+    /// <summary>The namespace of an AlloyDBCluster resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

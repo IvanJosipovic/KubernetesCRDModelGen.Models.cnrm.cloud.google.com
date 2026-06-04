@@ -99,7 +99,7 @@ public partial class V1alpha1EssentialContactsContactSpec
     [JsonPropertyName("folderRef")]
     public V1alpha1EssentialContactsContactSpecFolderRef? FolderRef { get; set; }
 
-    /// <summary>Required. The preferred language for notifications, as a ISO 639-1 language code. See [Supported languages](https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages) for a list of supported languages.</summary>
+    /// <summary>Required. The preferred language for notifications, as an ISO 639-1 language code. See [Supported languages](https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages) for a list of supported languages.</summary>
     [JsonPropertyName("languageTag")]
     public required string LanguageTag { get; set; }
 

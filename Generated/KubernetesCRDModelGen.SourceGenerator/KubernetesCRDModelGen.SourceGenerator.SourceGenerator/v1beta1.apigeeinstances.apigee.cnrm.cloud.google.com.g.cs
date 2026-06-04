@@ -77,11 +77,11 @@ public partial class V1beta1ApigeeInstanceSpecOrganizationRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a ApigeeOrganization resource.</summary>
+    /// <summary>The name of an ApigeeOrganization resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a ApigeeOrganization resource.</summary>
+    /// <summary>The namespace of an ApigeeOrganization resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

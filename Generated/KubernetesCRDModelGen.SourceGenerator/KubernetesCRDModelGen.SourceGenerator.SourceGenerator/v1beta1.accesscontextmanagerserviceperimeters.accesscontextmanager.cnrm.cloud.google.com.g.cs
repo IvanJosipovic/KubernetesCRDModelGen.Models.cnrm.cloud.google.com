@@ -45,16 +45,16 @@ public partial class V1beta1AccessContextManagerServicePerimeterSpecAccessPolicy
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AccessContextManagerAccessPolicy resource.</summary>
+    /// <summary>The name of an AccessContextManagerAccessPolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AccessContextManagerAccessPolicy resource.</summary>
+    /// <summary>The namespace of an AccessContextManagerAccessPolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>AccessLevelRef is a reference to a AccessLevel resource.</summary>
+/// <summary>AccessLevelRef is a reference to an AccessLevel resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AccessContextManagerServicePerimeterSpecSpecAccessLevels
@@ -63,11 +63,11 @@ public partial class V1beta1AccessContextManagerServicePerimeterSpecSpecAccessLe
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AccessLevel resource.</summary>
+    /// <summary>The name of an AccessLevel resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AccessLevel resource.</summary>
+    /// <summary>The namespace of an AccessLevel resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -241,11 +241,11 @@ public partial class V1beta1AccessContextManagerServicePerimeterSpecSpecIngressP
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AccessLevel resource.</summary>
+    /// <summary>The name of an AccessLevel resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AccessLevel resource.</summary>
+    /// <summary>The namespace of an AccessLevel resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -450,7 +450,7 @@ public partial class V1beta1AccessContextManagerServicePerimeterSpecSpec
     public V1beta1AccessContextManagerServicePerimeterSpecSpecVpcAccessibleServices? VpcAccessibleServices { get; set; }
 }
 
-/// <summary>AccessLevelRef is a reference to a AccessLevel resource.</summary>
+/// <summary>AccessLevelRef is a reference to an AccessLevel resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1AccessContextManagerServicePerimeterSpecStatusAccessLevels
@@ -459,11 +459,11 @@ public partial class V1beta1AccessContextManagerServicePerimeterSpecStatusAccess
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AccessLevel resource.</summary>
+    /// <summary>The name of an AccessLevel resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AccessLevel resource.</summary>
+    /// <summary>The namespace of an AccessLevel resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -637,11 +637,11 @@ public partial class V1beta1AccessContextManagerServicePerimeterSpecStatusIngres
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AccessLevel resource.</summary>
+    /// <summary>The name of an AccessLevel resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AccessLevel resource.</summary>
+    /// <summary>The namespace of an AccessLevel resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
