@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.pubsub.cnrm.cloud.google.com;
+/// <summary>PubSubTopic is the Schema for the PubSubTopic API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,13 +36,7 @@ public partial class V1beta1PubSubTopicList : IKubernetesObject<V1ListMeta>, IIt
     public required IList<V1beta1PubSubTopic> Items { get; set; }
 }
 
-/// <summary>
-/// The KMSCryptoKey to be used to protect access to messages published
-/// on this topic. Your project&apos;s Pub/Sub service account
-/// (&apos;service-{{PROJECT_NUMBER}}@gcp-sa-pubsub.iam.gserviceaccount.com&apos;)
-/// must have &apos;roles/cloudkms.cryptoKeyEncrypterDecrypter&apos; to use this
-/// feature.
-/// </summary>
+/// <summary>The KMSCryptoKey to be used to protect access to messages published on this topic. Your project&apos;s Pub/Sub service account (&apos;service-{{PROJECT_NUMBER}}@gcp-sa-pubsub.iam.gserviceaccount.com&apos;) must have &apos;roles/cloudkms.cryptoKeyEncrypterDecrypter&apos; to use this feature.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpecKmsKeyRef
@@ -59,23 +54,12 @@ public partial class V1beta1PubSubTopicSpecKmsKeyRef
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// Policy constraining the set of Google Cloud Platform regions where
-/// messages published to the topic may be stored. If not present, then no
-/// constraints are in effect.
-/// </summary>
+/// <summary>Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpecMessageStoragePolicy
 {
-    /// <summary>
-    /// A list of IDs of GCP regions where messages that are published to
-    /// the topic may be persisted in storage. Messages published by
-    /// publishers running in non-allowed GCP regions (or running outside
-    /// of GCP altogether) will be routed for storage in one of the
-    /// allowed regions. An empty list means that no regions are allowed,
-    /// and is not a valid configuration.
-    /// </summary>
+    /// <summary>A list of IDs of GCP regions where messages that are published to the topic may be persisted in storage. Messages published by publishers running in non-allowed GCP regions (or running outside of GCP altogether) will be routed for storage in one of the allowed regions. An empty list means that no regions are allowed, and is not a valid configuration.</summary>
     [JsonPropertyName("allowedPersistenceRegions")]
     public required IList<string> AllowedPersistenceRegions { get; set; }
 }
@@ -110,37 +94,20 @@ public partial class V1beta1PubSubTopicSpecSchemaSettings
     public required V1beta1PubSubTopicSpecSchemaSettingsSchemaRef SchemaRef { get; set; }
 }
 
+/// <summary>PubSubTopicSpec defines the desired state of PubSubTopic</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpec
 {
-    /// <summary>
-    /// The KMSCryptoKey to be used to protect access to messages published
-    /// on this topic. Your project&apos;s Pub/Sub service account
-    /// (&apos;service-{{PROJECT_NUMBER}}@gcp-sa-pubsub.iam.gserviceaccount.com&apos;)
-    /// must have &apos;roles/cloudkms.cryptoKeyEncrypterDecrypter&apos; to use this
-    /// feature.
-    /// </summary>
+    /// <summary>The KMSCryptoKey to be used to protect access to messages published on this topic. Your project&apos;s Pub/Sub service account (&apos;service-{{PROJECT_NUMBER}}@gcp-sa-pubsub.iam.gserviceaccount.com&apos;) must have &apos;roles/cloudkms.cryptoKeyEncrypterDecrypter&apos; to use this feature.</summary>
     [JsonPropertyName("kmsKeyRef")]
     public V1beta1PubSubTopicSpecKmsKeyRef? KmsKeyRef { get; set; }
 
-    /// <summary>
-    /// Indicates the minimum duration to retain a message after it is published
-    /// to the topic. If this field is set, messages published to the topic in
-    /// the last messageRetentionDuration are always available to subscribers.
-    /// For instance, it allows any attached subscription to seek to a timestamp
-    /// that is up to messageRetentionDuration in the past. If this field is not
-    /// set, message retention is controlled by settings on individual subscriptions.
-    /// Cannot be more than 31 days or less than 10 minutes.
-    /// </summary>
+    /// <summary>Indicates the minimum duration to retain a message after it is published to the topic. If this field is set, messages published to the topic in the last messageRetentionDuration are always available to subscribers. For instance, it allows any attached subscription to seek to a timestamp that is up to messageRetentionDuration in the past. If this field is not set, message retention is controlled by settings on individual subscriptions. Cannot be more than 31 days or less than 10 minutes.</summary>
     [JsonPropertyName("messageRetentionDuration")]
     public string? MessageRetentionDuration { get; set; }
 
-    /// <summary>
-    /// Policy constraining the set of Google Cloud Platform regions where
-    /// messages published to the topic may be stored. If not present, then no
-    /// constraints are in effect.
-    /// </summary>
+    /// <summary>Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect.</summary>
     [JsonPropertyName("messageStoragePolicy")]
     public V1beta1PubSubTopicSpecMessageStoragePolicy? MessageStoragePolicy { get; set; }
 
@@ -178,19 +145,21 @@ public partial class V1beta1PubSubTopicStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>PubSubTopicStatus defines the config connector machine state of PubSubTopic</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1PubSubTopicStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>PubSubTopic is the Schema for the PubSubTopic API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -212,9 +181,11 @@ public partial class V1beta1PubSubTopic : IKubernetesObject<V1ObjectMeta>, ISpec
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>PubSubTopicSpec defines the desired state of PubSubTopic</summary>
     [JsonPropertyName("spec")]
     public V1beta1PubSubTopicSpec? Spec { get; set; }
 
+    /// <summary>PubSubTopicStatus defines the config connector machine state of PubSubTopic</summary>
     [JsonPropertyName("status")]
     public V1beta1PubSubTopicStatus? Status { get; set; }
 }
