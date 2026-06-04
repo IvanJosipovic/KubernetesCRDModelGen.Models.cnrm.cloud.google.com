@@ -439,11 +439,11 @@ public partial class V1beta1AlloyDBClusterSpecRestoreBackupSourceBackupNameRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AlloyDBBackup resource.</summary>
+    /// <summary>The name of an AlloyDBBackup resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AlloyDBBackup resource.</summary>
+    /// <summary>The namespace of an AlloyDBBackup resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -467,11 +467,11 @@ public partial class V1beta1AlloyDBClusterSpecRestoreContinuousBackupSourceClust
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AlloyDBCluster resource.</summary>
+    /// <summary>The name of an AlloyDBCluster resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AlloyDBCluster resource.</summary>
+    /// <summary>The namespace of an AlloyDBCluster resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -499,11 +499,11 @@ public partial class V1beta1AlloyDBClusterSpecSecondaryConfigPrimaryClusterNameR
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name of a AlloyDBCluster resource.</summary>
+    /// <summary>The name of an AlloyDBCluster resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace of a AlloyDBCluster resource.</summary>
+    /// <summary>The namespace of an AlloyDBCluster resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

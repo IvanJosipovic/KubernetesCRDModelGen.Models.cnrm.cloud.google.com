@@ -1073,7 +1073,7 @@ public partial class V1beta1OSConfigOSPolicyAssignmentStatus
     [JsonPropertyName("revisionCreateTime")]
     public DateTime? RevisionCreateTime { get; set; }
 
-    /// <summary>Output only. The assignment revision ID A new revision is committed whenever a rollout is triggered for a OS policy assignment</summary>
+    /// <summary>Output only. The assignment revision ID A new revision is committed whenever a rollout is triggered for an OS policy assignment</summary>
     [JsonPropertyName("revisionId")]
     public string? RevisionId { get; set; }
 
