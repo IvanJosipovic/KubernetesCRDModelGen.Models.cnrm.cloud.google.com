@@ -263,7 +263,7 @@ public partial class V1alpha1NetworkServicesLBRouteExtensionSpecExtensionChains
     public required string Name { get; set; }
 }
 
-/// <summary>ForwardingRuleRef defines the resource reference to ComputeForwardingRule, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>ForwardingRuleRef is a reference to a ComputeForwardingRule.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1NetworkServicesLBRouteExtensionSpecForwardingRuleRefs

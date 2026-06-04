@@ -36,7 +36,7 @@ public partial class V1alpha1ManagedKafkaConsumerGroupList : IKubernetesObject<V
     public required IList<V1alpha1ManagedKafkaConsumerGroup> Items { get; set; }
 }
 
-/// <summary>ClusterRef defines the resource reference to ManagedKafkaCluster, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>ClusterRef is a reference to a ManagedKafkaCluster.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ManagedKafkaConsumerGroupSpecClusterRef
@@ -81,7 +81,7 @@ public partial class V1alpha1ManagedKafkaConsumerGroupSpecProjectRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ManagedKafkaConsumerGroupSpec
 {
-    /// <summary>ClusterRef defines the resource reference to ManagedKafkaCluster, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>ClusterRef is a reference to a ManagedKafkaCluster.</summary>
     [JsonPropertyName("clusterRef")]
     public required V1alpha1ManagedKafkaConsumerGroupSpecClusterRef ClusterRef { get; set; }
 

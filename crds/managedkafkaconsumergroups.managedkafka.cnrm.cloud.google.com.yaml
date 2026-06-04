@@ -55,7 +55,7 @@ spec:
             description: ManagedKafkaConsumerGroupSpec defines the desired state of ManagedKafkaConsumerGroup
             properties:
               clusterRef:
-                description: ClusterRef defines the resource reference to ManagedKafkaCluster, which "External" field holds the GCP identifier for the KRM object.
+                description: ClusterRef is a reference to a ManagedKafkaCluster.
                 oneOf:
                 - not:
                     required:

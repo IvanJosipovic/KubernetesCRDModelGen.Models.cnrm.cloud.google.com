@@ -135,7 +135,7 @@ public partial class V1alpha1DiscoveryEngineEngineSpecCommonConfig
     public string? CompanyName { get; set; }
 }
 
-/// <summary>DiscoveryEngineDataStoreRef defines the resource reference to DiscoveryEngineDataStore, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>DiscoveryEngineDataStoreRef is a reference to a DiscoveryEngineDataStore.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DiscoveryEngineEngineSpecDataStoreRefs
