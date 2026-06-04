@@ -121,7 +121,7 @@ spec:
                 description: Required. Immutable. Resource name of workload on which backupplan is applied
                 properties:
                   computeInstanceRef:
-                    description: InstanceRef defines the resource reference to ComputeInstance, which "External" field holds the GCP identifier for the KRM object.
+                    description: InstanceRef is a reference to a ComputeInstance.
                     oneOf:
                     - not:
                         required:
@@ -381,7 +381,7 @@ spec:
                 description: Required. Immutable. Resource name of workload on which backupplan is applied
                 properties:
                   computeInstanceRef:
-                    description: InstanceRef defines the resource reference to ComputeInstance, which "External" field holds the GCP identifier for the KRM object.
+                    description: InstanceRef is a reference to a ComputeInstance.
                     oneOf:
                     - not:
                         required:

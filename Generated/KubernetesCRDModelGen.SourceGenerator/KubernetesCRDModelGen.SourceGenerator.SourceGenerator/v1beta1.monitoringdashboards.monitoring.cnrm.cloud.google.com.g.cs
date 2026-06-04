@@ -134,7 +134,7 @@ public partial class V1beta1MonitoringDashboardSpecColumnLayoutColumnsWidgetsInc
     public string? Type { get; set; }
 }
 
-/// <summary>MonitoringAlertPolicyRef defines the resource reference to MonitoringAlertPolicy, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>MonitoringAlertPolicyRef is a reference to a MonitoringAlertPolicy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecColumnLayoutColumnsWidgetsIncidentListPolicyRefs
@@ -1792,7 +1792,7 @@ public partial class V1beta1MonitoringDashboardSpecGridLayoutWidgetsIncidentList
     public string? Type { get; set; }
 }
 
-/// <summary>MonitoringAlertPolicyRef defines the resource reference to MonitoringAlertPolicy, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>MonitoringAlertPolicyRef is a reference to a MonitoringAlertPolicy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecGridLayoutWidgetsIncidentListPolicyRefs
@@ -3420,7 +3420,7 @@ public partial class V1beta1MonitoringDashboardSpecMosaicLayoutTilesWidgetIncide
     public string? Type { get; set; }
 }
 
-/// <summary>MonitoringAlertPolicyRef defines the resource reference to MonitoringAlertPolicy, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>MonitoringAlertPolicyRef is a reference to a MonitoringAlertPolicy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecMosaicLayoutTilesWidgetIncidentListPolicyRefs
@@ -5096,7 +5096,7 @@ public partial class V1beta1MonitoringDashboardSpecRowLayoutRowsWidgetsIncidentL
     public string? Type { get; set; }
 }
 
-/// <summary>MonitoringAlertPolicyRef defines the resource reference to MonitoringAlertPolicy, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>MonitoringAlertPolicyRef is a reference to a MonitoringAlertPolicy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecRowLayoutRowsWidgetsIncidentListPolicyRefs

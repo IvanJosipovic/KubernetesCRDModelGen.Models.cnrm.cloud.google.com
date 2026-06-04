@@ -36,7 +36,7 @@ public partial class V1beta1DataCatalogPolicyTagList : IKubernetesObject<V1ListM
     public required IList<V1beta1DataCatalogPolicyTag> Items { get; set; }
 }
 
-/// <summary>PolicyTagRef defines the resource reference to DataCatalogPolicyTag, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>PolicyTagRef is a reference to a DataCatalogPolicyTag.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataCatalogPolicyTagSpecParentPolicyTagRef
@@ -54,7 +54,7 @@ public partial class V1beta1DataCatalogPolicyTagSpecParentPolicyTagRef
     public string? Namespace { get; set; }
 }
 
-/// <summary>TaxonomyRef defines the resource reference to DataCatalogTaxonomy, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>TaxonomyRef is a reference to a DataCatalogTaxonomy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataCatalogPolicyTagSpecTaxonomyRef
@@ -85,7 +85,7 @@ public partial class V1beta1DataCatalogPolicyTagSpec
     [JsonPropertyName("displayName")]
     public required string DisplayName { get; set; }
 
-    /// <summary>PolicyTagRef defines the resource reference to DataCatalogPolicyTag, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>PolicyTagRef is a reference to a DataCatalogPolicyTag.</summary>
     [JsonPropertyName("parentPolicyTagRef")]
     public V1beta1DataCatalogPolicyTagSpecParentPolicyTagRef? ParentPolicyTagRef { get; set; }
 
@@ -93,7 +93,7 @@ public partial class V1beta1DataCatalogPolicyTagSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>TaxonomyRef defines the resource reference to DataCatalogTaxonomy, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>TaxonomyRef is a reference to a DataCatalogTaxonomy.</summary>
     [JsonPropertyName("taxonomyRef")]
     public required V1beta1DataCatalogPolicyTagSpecTaxonomyRef TaxonomyRef { get; set; }
 }

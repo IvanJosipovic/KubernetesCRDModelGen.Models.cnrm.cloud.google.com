@@ -285,7 +285,7 @@ public partial class V1beta1SecretManagerSecretSpecRotation
     public string? RotationPeriod { get; set; }
 }
 
-/// <summary>PubSubTopicRef defines the resource reference to PubSubTopic, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>PubSubTopicRef is a reference to a PubSubTopic.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1SecretManagerSecretSpecTopicsTopicRef
@@ -307,7 +307,7 @@ public partial class V1beta1SecretManagerSecretSpecTopicsTopicRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1SecretManagerSecretSpecTopics
 {
-    /// <summary>PubSubTopicRef defines the resource reference to PubSubTopic, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>PubSubTopicRef is a reference to a PubSubTopic.</summary>
     [JsonPropertyName("topicRef")]
     public required V1beta1SecretManagerSecretSpecTopicsTopicRef TopicRef { get; set; }
 }

@@ -36,7 +36,7 @@ public partial class V1beta1BigQueryAnalyticsHubListingList : IKubernetesObject<
     public required IList<V1beta1BigQueryAnalyticsHubListing> Items { get; set; }
 }
 
-/// <summary>BigQueryAnalyticsHubDataExchangeRef defines the resource reference to BigQueryAnalyticsHubDataExchange, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>BigQueryAnalyticsHubDataExchangeRef is a reference to a BigQueryAnalyticsHubDataExchange.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BigQueryAnalyticsHubListingSpecDataExchangeRef
@@ -203,7 +203,7 @@ public partial class V1beta1BigQueryAnalyticsHubListingSpec
     [JsonPropertyName("categories")]
     public IList<string>? Categories { get; set; }
 
-    /// <summary>BigQueryAnalyticsHubDataExchangeRef defines the resource reference to BigQueryAnalyticsHubDataExchange, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>BigQueryAnalyticsHubDataExchangeRef is a reference to a BigQueryAnalyticsHubDataExchange.</summary>
     [JsonPropertyName("dataExchangeRef")]
     public required V1beta1BigQueryAnalyticsHubListingSpecDataExchangeRef DataExchangeRef { get; set; }
 

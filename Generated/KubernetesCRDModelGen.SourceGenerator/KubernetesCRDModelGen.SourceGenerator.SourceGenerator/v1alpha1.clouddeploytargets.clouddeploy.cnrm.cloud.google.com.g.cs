@@ -390,7 +390,7 @@ public partial class V1alpha1CloudDeployTargetSpecGke
     public string? ProxyURL { get; set; }
 }
 
-/// <summary>A resource reference to CloudDeployTarget, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>CloudDeployTargetRef is a reference to a CloudDeployTarget.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CloudDeployTargetSpecMultiTargetTargetRefs

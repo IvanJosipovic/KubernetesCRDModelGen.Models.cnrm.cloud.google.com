@@ -36,7 +36,7 @@ public partial class V1beta1BillingBudgetsBudgetList : IKubernetesObject<V1ListM
     public required IList<V1beta1BillingBudgetsBudget> Items { get; set; }
 }
 
-/// <summary>MonitoringNotificationChannelRef defines the resource reference to MonitoringNotificationChannel, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>MonitoringNotificationChannelRef is a reference to a MonitoringNotificationChannel.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecAllUpdatesRuleMonitoringNotificationChannels
@@ -54,7 +54,7 @@ public partial class V1beta1BillingBudgetsBudgetSpecAllUpdatesRuleMonitoringNoti
     public string? Namespace { get; set; }
 }
 
-/// <summary>PubSubTopicRef defines the resource reference to PubSubTopic, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>PubSubTopicRef is a reference to a PubSubTopic.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecAllUpdatesRulePubsubTopicRef
@@ -84,7 +84,7 @@ public partial class V1beta1BillingBudgetsBudgetSpecAllUpdatesRule
     [JsonPropertyName("monitoringNotificationChannels")]
     public IList<V1beta1BillingBudgetsBudgetSpecAllUpdatesRuleMonitoringNotificationChannels>? MonitoringNotificationChannels { get; set; }
 
-    /// <summary>PubSubTopicRef defines the resource reference to PubSubTopic, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>PubSubTopicRef is a reference to a PubSubTopic.</summary>
     [JsonPropertyName("pubsubTopicRef")]
     public V1beta1BillingBudgetsBudgetSpecAllUpdatesRulePubsubTopicRef? PubsubTopicRef { get; set; }
 
@@ -209,7 +209,7 @@ public partial class V1beta1BillingBudgetsBudgetSpecBudgetFilterLabels
     public IList<string>? Values { get; set; }
 }
 
-/// <summary>ProjectRef is a clean resource reference to a GCP Project that does not include the kind field.</summary>
+/// <summary>ProjectRef is a reference to a GCP Project.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecBudgetFilterProjects
@@ -227,7 +227,7 @@ public partial class V1beta1BillingBudgetsBudgetSpecBudgetFilterProjects
     public string? Namespace { get; set; }
 }
 
-/// <summary>BillingAccountRef is a clean resource reference to a GCP BillingAccount that does not include the kind field.</summary>
+/// <summary>BillingAccountRef is a reference to a GCP BillingAccount.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BillingBudgetsBudgetSpecBudgetFilterSubaccounts

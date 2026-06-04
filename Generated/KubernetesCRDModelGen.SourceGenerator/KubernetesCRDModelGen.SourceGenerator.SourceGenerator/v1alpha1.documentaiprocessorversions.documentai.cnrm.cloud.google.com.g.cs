@@ -78,7 +78,7 @@ public partial class V1alpha1DocumentAIProcessorVersionSpecKmsKeyVersionNameRef
     public string? External { get; set; }
 }
 
-/// <summary>ProcessorRef defines the resource reference to DocumentAIProcessor, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>ProcessorRef is a reference to a DocumentAIProcessor.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DocumentAIProcessorVersionSpecProcessorRef
@@ -117,7 +117,7 @@ public partial class V1alpha1DocumentAIProcessorVersionSpec
     [JsonPropertyName("kmsKeyVersionNameRef")]
     public V1alpha1DocumentAIProcessorVersionSpecKmsKeyVersionNameRef? KmsKeyVersionNameRef { get; set; }
 
-    /// <summary>ProcessorRef defines the resource reference to DocumentAIProcessor, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>ProcessorRef is a reference to a DocumentAIProcessor.</summary>
     [JsonPropertyName("processorRef")]
     public required V1alpha1DocumentAIProcessorVersionSpecProcessorRef ProcessorRef { get; set; }
 

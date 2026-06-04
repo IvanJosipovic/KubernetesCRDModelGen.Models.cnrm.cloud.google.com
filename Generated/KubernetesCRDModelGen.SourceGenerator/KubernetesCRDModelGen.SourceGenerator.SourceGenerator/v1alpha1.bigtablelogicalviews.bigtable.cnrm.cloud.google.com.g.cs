@@ -36,7 +36,7 @@ public partial class V1alpha1BigtableLogicalViewList : IKubernetesObject<V1ListM
     public required IList<V1alpha1BigtableLogicalView> Items { get; set; }
 }
 
-/// <summary>InstanceRef defines the resource reference to BigtableInstance, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>InstanceRef is a reference to a BigtableInstance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigtableLogicalViewSpecInstanceRef
@@ -63,7 +63,7 @@ public partial class V1alpha1BigtableLogicalViewSpec
     [JsonPropertyName("deletionProtection")]
     public bool? DeletionProtection { get; set; }
 
-    /// <summary>InstanceRef defines the resource reference to BigtableInstance, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>InstanceRef is a reference to a BigtableInstance.</summary>
     [JsonPropertyName("instanceRef")]
     public required V1alpha1BigtableLogicalViewSpecInstanceRef InstanceRef { get; set; }
 

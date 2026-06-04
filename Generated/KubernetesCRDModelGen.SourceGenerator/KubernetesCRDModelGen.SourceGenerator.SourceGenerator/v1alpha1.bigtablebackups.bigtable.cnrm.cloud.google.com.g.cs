@@ -36,7 +36,7 @@ public partial class V1alpha1BigtableBackupList : IKubernetesObject<V1ListMeta>,
     public required IList<V1alpha1BigtableBackup> Items { get; set; }
 }
 
-/// <summary>ClusterRef defines the resource reference to BigtableCluster, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>ClusterRef is a reference to a BigtableCluster.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigtableBackupSpecClusterRef
@@ -81,7 +81,7 @@ public partial class V1alpha1BigtableBackupSpec
     [JsonPropertyName("backupType")]
     public string? BackupType { get; set; }
 
-    /// <summary>ClusterRef defines the resource reference to BigtableCluster, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>ClusterRef is a reference to a BigtableCluster.</summary>
     [JsonPropertyName("clusterRef")]
     public required V1alpha1BigtableBackupSpecClusterRef ClusterRef { get; set; }
 

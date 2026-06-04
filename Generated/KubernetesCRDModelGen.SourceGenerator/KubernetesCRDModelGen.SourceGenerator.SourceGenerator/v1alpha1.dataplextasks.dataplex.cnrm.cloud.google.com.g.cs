@@ -120,7 +120,7 @@ public partial class V1alpha1DataplexTaskSpecExecutionSpec
     public required V1alpha1DataplexTaskSpecExecutionSpecServiceAccountRef ServiceAccountRef { get; set; }
 }
 
-/// <summary>LakeRef defines the resource reference to DataplexLake, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>LakeRef is a reference to a DataplexLake.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DataplexTaskSpecLakeRef
@@ -385,7 +385,7 @@ public partial class V1alpha1DataplexTaskSpec
     [JsonPropertyName("executionSpec")]
     public required V1alpha1DataplexTaskSpecExecutionSpec ExecutionSpec { get; set; }
 
-    /// <summary>LakeRef defines the resource reference to DataplexLake, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>LakeRef is a reference to a DataplexLake.</summary>
     [JsonPropertyName("lakeRef")]
     public V1alpha1DataplexTaskSpecLakeRef? LakeRef { get; set; }
 

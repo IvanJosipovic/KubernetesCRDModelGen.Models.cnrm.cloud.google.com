@@ -36,7 +36,7 @@ public partial class V1beta1BigQueryTableList : IKubernetesObject<V1ListMeta>, I
     public required IList<V1beta1BigQueryTable> Items { get; set; }
 }
 
-/// <summary>DatasetRef defines the resource reference to BigQueryDataset, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>DatasetRef is a reference to a BigQueryDataset.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BigQueryTableSpecDatasetRef
@@ -507,7 +507,7 @@ public partial class V1beta1BigQueryTableSpec
     [JsonPropertyName("clustering")]
     public IList<string>? Clustering { get; set; }
 
-    /// <summary>DatasetRef defines the resource reference to BigQueryDataset, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>DatasetRef is a reference to a BigQueryDataset.</summary>
     [JsonPropertyName("datasetRef")]
     public required V1beta1BigQueryTableSpecDatasetRef DatasetRef { get; set; }
 

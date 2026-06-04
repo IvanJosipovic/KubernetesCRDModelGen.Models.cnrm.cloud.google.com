@@ -76,7 +76,7 @@ public partial class V1alpha1BackupDRBackupPlanAssociationSpecProjectRef
     public string? Namespace { get; set; }
 }
 
-/// <summary>InstanceRef defines the resource reference to ComputeInstance, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>InstanceRef is a reference to a ComputeInstance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BackupDRBackupPlanAssociationSpecResourceComputeInstanceRef
@@ -99,7 +99,7 @@ public partial class V1alpha1BackupDRBackupPlanAssociationSpecResourceComputeIns
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BackupDRBackupPlanAssociationSpecResource
 {
-    /// <summary>InstanceRef defines the resource reference to ComputeInstance, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>InstanceRef is a reference to a ComputeInstance.</summary>
     [JsonPropertyName("computeInstanceRef")]
     public V1alpha1BackupDRBackupPlanAssociationSpecResourceComputeInstanceRef? ComputeInstanceRef { get; set; }
 }

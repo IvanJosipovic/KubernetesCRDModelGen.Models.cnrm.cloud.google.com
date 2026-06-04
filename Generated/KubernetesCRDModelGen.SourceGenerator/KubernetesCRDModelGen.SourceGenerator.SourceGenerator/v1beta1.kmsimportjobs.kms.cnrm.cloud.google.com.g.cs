@@ -36,7 +36,7 @@ public partial class V1beta1KMSImportJobList : IKubernetesObject<V1ListMeta>, II
     public required IList<V1beta1KMSImportJob> Items { get; set; }
 }
 
-/// <summary>KMSKeyRingRef defines the resource reference to KMSKeyRing, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+/// <summary>KMSKeyRingRef is a reference to a KMSKeyRing.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1KMSImportJobSpecKmsKeyRingRef
@@ -63,7 +63,7 @@ public partial class V1beta1KMSImportJobSpec
     [JsonPropertyName("importMethod")]
     public required string ImportMethod { get; set; }
 
-    /// <summary>KMSKeyRingRef defines the resource reference to KMSKeyRing, which &quot;External&quot; field holds the GCP identifier for the KRM object.</summary>
+    /// <summary>KMSKeyRingRef is a reference to a KMSKeyRing.</summary>
     [JsonPropertyName("kmsKeyRingRef")]
     public required V1beta1KMSImportJobSpecKmsKeyRingRef KmsKeyRingRef { get; set; }
 
