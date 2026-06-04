@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.dataflow.cnrm.cloud.google.com;
+/// <summary>DataflowJob is the Schema for the dataflow API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,15 +41,15 @@ public partial class V1beta1DataflowJobList : IKubernetesObject<V1ListMeta>, IIt
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataflowJobSpecKmsKeyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -57,15 +58,15 @@ public partial class V1beta1DataflowJobSpecKmsKeyRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataflowJobSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>The value of an externally managed ComputeNetwork resource. Should be in the format &quot;https://www.googleapis.com/compute/{{version}}/projects/{{projectId}}/global/networks/{{networkId}}&quot; or &quot;projects/{{projectId}}/global/networks/{{networkId}}&quot;</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -74,7 +75,7 @@ public partial class V1beta1DataflowJobSpecNetworkRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataflowJobSpecServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The `email` field of an `IAMServiceAccount` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -91,19 +92,20 @@ public partial class V1beta1DataflowJobSpecServiceAccountRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataflowJobSpecSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The ComputeSubnetwork selflink of form &quot;projects/{{project}}/regions/{{region}}/subnetworks/{{name}}&quot;, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `ComputeSubnetwork` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>DataflowJobSpec defines the desired state of DataflowJob</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataflowJobSpec
@@ -130,7 +132,7 @@ public partial class V1beta1DataflowJobSpec
 
     /// <summary>Immutable. The number of workers permitted to work on the job. More workers may improve processing speed at additional cost.</summary>
     [JsonPropertyName("maxWorkers")]
-    public int? MaxWorkers { get; set; }
+    public long? MaxWorkers { get; set; }
 
     [JsonPropertyName("networkRef")]
     public V1beta1DataflowJobSpecNetworkRef? NetworkRef { get; set; }
@@ -195,11 +197,12 @@ public partial class V1beta1DataflowJobStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>DataflowJobStatus defines the config connector machine state of DataflowJob</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataflowJobStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the DataflowJob&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1DataflowJobStatusConditions>? Conditions { get; set; }
 
@@ -209,7 +212,7 @@ public partial class V1beta1DataflowJobStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The current state of the resource, selected from the JobState enum.</summary>
     [JsonPropertyName("state")]
@@ -220,10 +223,11 @@ public partial class V1beta1DataflowJobStatus
     public string? Type { get; set; }
 }
 
+/// <summary>DataflowJob is the Schema for the dataflow API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
-public partial class V1beta1DataflowJob : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1DataflowJobSpec>, IStatus<V1beta1DataflowJobStatus?>
+public partial class V1beta1DataflowJob : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1DataflowJobSpec?>, IStatus<V1beta1DataflowJobStatus?>
 {
     public const string KubeApiVersion = "v1beta1";
     public const string KubeKind = "DataflowJob";
@@ -241,9 +245,11 @@ public partial class V1beta1DataflowJob : IKubernetesObject<V1ObjectMeta>, ISpec
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>DataflowJobSpec defines the desired state of DataflowJob</summary>
     [JsonPropertyName("spec")]
-    public required V1beta1DataflowJobSpec Spec { get; set; }
+    public V1beta1DataflowJobSpec? Spec { get; set; }
 
+    /// <summary>DataflowJobStatus defines the config connector machine state of DataflowJob</summary>
     [JsonPropertyName("status")]
     public V1beta1DataflowJobStatus? Status { get; set; }
 }

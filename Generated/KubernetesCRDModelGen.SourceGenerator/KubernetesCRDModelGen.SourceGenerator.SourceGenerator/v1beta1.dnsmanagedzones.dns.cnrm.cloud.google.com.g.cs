@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.dns.cnrm.cloud.google.com;
+/// <summary>DNSManagedZone is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -55,16 +56,9 @@ public partial class V1beta1DNSManagedZoneSpecDnssecConfigDefaultKeySpecs
 
     /// <summary>Length of the keys in bits.</summary>
     [JsonPropertyName("keyLength")]
-    public int? KeyLength { get; set; }
+    public long? KeyLength { get; set; }
 
-    /// <summary>
-    /// Specifies whether this is a key signing key (KSK) or a zone
-    /// signing key (ZSK). Key signing keys have the Secure Entry
-    /// Point flag set and, when active, will only be used to sign
-    /// resource record sets of type DNSKEY. Zone signing keys do
-    /// not have the Secure Entry Point flag set and will be used
-    /// to sign all other types of resource record sets. Possible values: [&quot;keySigning&quot;, &quot;zoneSigning&quot;].
-    /// </summary>
+    /// <summary>Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, will only be used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and will be used to sign all other types of resource record sets. Possible values: [&quot;keySigning&quot;, &quot;zoneSigning&quot;].</summary>
     [JsonPropertyName("keyType")]
     public string? KeyType { get; set; }
 
@@ -78,12 +72,7 @@ public partial class V1beta1DNSManagedZoneSpecDnssecConfigDefaultKeySpecs
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecDnssecConfig
 {
-    /// <summary>
-    /// Specifies parameters that will be used for generating initial DnsKeys
-    /// for this ManagedZone. If you provide a spec for keySigning or zoneSigning,
-    /// you must also provide one for the other.
-    /// default_key_specs can only be updated when the state is &apos;off&apos;.
-    /// </summary>
+    /// <summary>Specifies parameters that will be used for generating initial DnsKeys for this ManagedZone. If you provide a spec for keySigning or zoneSigning, you must also provide one for the other. default_key_specs can only be updated when the state is &apos;off&apos;.</summary>
     [JsonPropertyName("defaultKeySpecs")]
     public IList<V1beta1DNSManagedZoneSpecDnssecConfigDefaultKeySpecs>? DefaultKeySpecs { get; set; }
 
@@ -91,10 +80,7 @@ public partial class V1beta1DNSManagedZoneSpecDnssecConfig
     [JsonPropertyName("kind")]
     public string? Kind { get; set; }
 
-    /// <summary>
-    /// Specifies the mechanism used to provide authenticated denial-of-existence responses.
-    /// non_existence can only be updated when the state is &apos;off&apos;. Possible values: [&quot;nsec&quot;, &quot;nsec3&quot;].
-    /// </summary>
+    /// <summary>Specifies the mechanism used to provide authenticated denial-of-existence responses. non_existence can only be updated when the state is &apos;off&apos;. Possible values: [&quot;nsec&quot;, &quot;nsec3&quot;].</summary>
     [JsonPropertyName("nonExistence")]
     public string? NonExistence { get; set; }
 
@@ -107,11 +93,7 @@ public partial class V1beta1DNSManagedZoneSpecDnssecConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecForwardingConfigTargetNameServers
 {
-    /// <summary>
-    /// Forwarding path for this TargetNameServer. If unset or &apos;default&apos; Cloud DNS will make forwarding
-    /// decision based on address ranges, i.e. RFC1918 addresses go to the VPC, Non-RFC1918 addresses go
-    /// to the Internet. When set to &apos;private&apos;, Cloud DNS will always send queries through VPC for this target Possible values: [&quot;default&quot;, &quot;private&quot;].
-    /// </summary>
+    /// <summary>Forwarding path for this TargetNameServer. If unset or &apos;default&apos; Cloud DNS will make forwarding decision based on address ranges, i.e. RFC1918 addresses go to the VPC, Non-RFC1918 addresses go to the Internet. When set to &apos;private&apos;, Cloud DNS will always send queries through VPC for this target Possible values: [&quot;default&quot;, &quot;private&quot;].</summary>
     [JsonPropertyName("forwardingPath")]
     public string? ForwardingPath { get; set; }
 
@@ -120,20 +102,12 @@ public partial class V1beta1DNSManagedZoneSpecForwardingConfigTargetNameServers
     public required string Ipv4Address { get; set; }
 }
 
-/// <summary>
-/// The presence for this field indicates that outbound forwarding is enabled
-/// for this zone. The value of this field contains the set of destinations
-/// to forward to.
-/// </summary>
+/// <summary>The presence for this field indicates that outbound forwarding is enabled for this zone. The value of this field contains the set of destinations to forward to.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecForwardingConfig
 {
-    /// <summary>
-    /// List of target name servers to forward to. Cloud DNS will
-    /// select the best available name server if more than
-    /// one target is given.
-    /// </summary>
+    /// <summary>List of target name servers to forward to. Cloud DNS selects the best available name server if more than one target is given.</summary>
     [JsonPropertyName("targetNameServers")]
     public required IList<V1beta1DNSManagedZoneSpecForwardingConfigTargetNameServers> TargetNameServers { get; set; }
 }
@@ -143,15 +117,15 @@ public partial class V1beta1DNSManagedZoneSpecForwardingConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecPeeringConfigTargetNetworkNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>The value of an externally managed ComputeNetwork resource. Should be in the format &quot;https://www.googleapis.com/compute/{{version}}/projects/{{projectId}}/global/networks/{{networkId}}&quot; or &quot;projects/{{projectId}}/global/networks/{{networkId}}&quot;</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -166,10 +140,7 @@ public partial class V1beta1DNSManagedZoneSpecPeeringConfigTargetNetwork
     public required V1beta1DNSManagedZoneSpecPeeringConfigTargetNetworkNetworkRef NetworkRef { get; set; }
 }
 
-/// <summary>
-/// The presence of this field indicates that DNS Peering is enabled for this
-/// zone. The value of this field contains the network to peer with.
-/// </summary>
+/// <summary>The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecPeeringConfig
@@ -179,24 +150,20 @@ public partial class V1beta1DNSManagedZoneSpecPeeringConfig
     public required V1beta1DNSManagedZoneSpecPeeringConfigTargetNetwork TargetNetwork { get; set; }
 }
 
-/// <summary>
-/// The resource name of the cluster to bind this ManagedZone to.
-/// This should be specified in the format like
-/// &apos;projects/*/locations/*/clusters/*&apos;.
-/// </summary>
+/// <summary>The resource name of the cluster to bind this ManagedZone to. This should be specified in the format like &apos;projects/*/locations/*/clusters/*&apos;.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfigGkeClustersGkeClusterNameRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ContainerCluster` resource.</summary>
+    /// <summary>The GKE cluster. Valid formats: `projects/{projectID}/locations/{location}/clusters/{clusterID}` `projects/{projectID}/zones/{zone}/clusters/{clusterID}`</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>Name of the project resource. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names */</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>Namespace of the project resource. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/ */</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -205,11 +172,7 @@ public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfigGkeClusters
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfigGkeClusters
 {
-    /// <summary>
-    /// The resource name of the cluster to bind this ManagedZone to.
-    /// This should be specified in the format like
-    /// &apos;projects/*/locations/*/clusters/*&apos;.
-    /// </summary>
+    /// <summary>The resource name of the cluster to bind this ManagedZone to. This should be specified in the format like &apos;projects/*/locations/*/clusters/*&apos;.</summary>
     [JsonPropertyName("gkeClusterNameRef")]
     public required V1beta1DNSManagedZoneSpecPrivateVisibilityConfigGkeClustersGkeClusterNameRef GkeClusterNameRef { get; set; }
 }
@@ -219,15 +182,15 @@ public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfigGkeClusters
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfigNetworksNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>The value of an externally managed ComputeNetwork resource. Should be in the format &quot;https://www.googleapis.com/compute/{{version}}/projects/{{projectId}}/global/networks/{{networkId}}&quot; or &quot;projects/{{projectId}}/global/networks/{{networkId}}&quot;</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -241,10 +204,7 @@ public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfigNetworks
     public required V1beta1DNSManagedZoneSpecPrivateVisibilityConfigNetworksNetworkRef NetworkRef { get; set; }
 }
 
-/// <summary>
-/// For privately visible zones, the set of Virtual Private Cloud
-/// resources that the zone is visible from. At least one of &apos;gke_clusters&apos; or &apos;networks&apos; must be specified.
-/// </summary>
+/// <summary>For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from. At least one of &apos;gke_clusters&apos; or &apos;networks&apos; must be specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfig
@@ -253,22 +213,17 @@ public partial class V1beta1DNSManagedZoneSpecPrivateVisibilityConfig
     [JsonPropertyName("gkeClusters")]
     public IList<V1beta1DNSManagedZoneSpecPrivateVisibilityConfigGkeClusters>? GkeClusters { get; set; }
 
+    /// <summary>The list of VPC networks that can see this zone.</summary>
     [JsonPropertyName("networks")]
     public IList<V1beta1DNSManagedZoneSpecPrivateVisibilityConfigNetworks>? Networks { get; set; }
 }
 
-/// <summary>The namespace associated with the zone.</summary>
+/// <summary>Contains information about the namespace associated with the zone.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecServiceDirectoryConfigNamespace
 {
-    /// <summary>
-    /// The fully qualified or partial URL of the service directory namespace that should be
-    /// associated with the zone. This should be formatted like
-    /// &apos;https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace_id}&apos;
-    /// or simply &apos;projects/{project}/locations/{location}/namespaces/{namespace_id}&apos;
-    /// Ignored for &apos;public&apos; visibility zones.
-    /// </summary>
+    /// <summary>The fully qualified or partial URL of the service directory namespace that should be associated with the zone. This should be formatted like &apos;https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace_id}&apos; or simply &apos;projects/{project}/locations/{location}/namespaces/{namespace_id}&apos; Ignored for &apos;public&apos; visibility zones.</summary>
     [JsonPropertyName("namespaceUrl")]
     public required string NamespaceUrl { get; set; }
 }
@@ -278,11 +233,12 @@ public partial class V1beta1DNSManagedZoneSpecServiceDirectoryConfigNamespace
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpecServiceDirectoryConfig
 {
-    /// <summary>The namespace associated with the zone.</summary>
+    /// <summary>Contains information about the namespace associated with the zone.</summary>
     [JsonPropertyName("namespace")]
     public required V1beta1DNSManagedZoneSpecServiceDirectoryConfigNamespace Namespace { get; set; }
 }
 
+/// <summary>DNSManagedZoneSpec defines the desired state of DNSManagedZone</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneSpec
@@ -303,25 +259,15 @@ public partial class V1beta1DNSManagedZoneSpec
     [JsonPropertyName("dnssecConfig")]
     public V1beta1DNSManagedZoneSpecDnssecConfig? DnssecConfig { get; set; }
 
-    /// <summary>
-    /// The presence for this field indicates that outbound forwarding is enabled
-    /// for this zone. The value of this field contains the set of destinations
-    /// to forward to.
-    /// </summary>
+    /// <summary>The presence for this field indicates that outbound forwarding is enabled for this zone. The value of this field contains the set of destinations to forward to.</summary>
     [JsonPropertyName("forwardingConfig")]
     public V1beta1DNSManagedZoneSpecForwardingConfig? ForwardingConfig { get; set; }
 
-    /// <summary>
-    /// The presence of this field indicates that DNS Peering is enabled for this
-    /// zone. The value of this field contains the network to peer with.
-    /// </summary>
+    /// <summary>The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.</summary>
     [JsonPropertyName("peeringConfig")]
     public V1beta1DNSManagedZoneSpecPeeringConfig? PeeringConfig { get; set; }
 
-    /// <summary>
-    /// For privately visible zones, the set of Virtual Private Cloud
-    /// resources that the zone is visible from. At least one of &apos;gke_clusters&apos; or &apos;networks&apos; must be specified.
-    /// </summary>
+    /// <summary>For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from. At least one of &apos;gke_clusters&apos; or &apos;networks&apos; must be specified.</summary>
     [JsonPropertyName("privateVisibilityConfig")]
     public V1beta1DNSManagedZoneSpecPrivateVisibilityConfig? PrivateVisibilityConfig { get; set; }
 
@@ -329,11 +275,7 @@ public partial class V1beta1DNSManagedZoneSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// Immutable. Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
-    /// lookup queries using automatically configured records for VPC resources. This only applies
-    /// to networks listed under &apos;private_visibility_config&apos;.
-    /// </summary>
+    /// <summary>Immutable. Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under &apos;private_visibility_config&apos;.</summary>
     [JsonPropertyName("reverseLookup")]
     public bool? ReverseLookup { get; set; }
 
@@ -341,10 +283,7 @@ public partial class V1beta1DNSManagedZoneSpec
     [JsonPropertyName("serviceDirectoryConfig")]
     public V1beta1DNSManagedZoneSpecServiceDirectoryConfig? ServiceDirectoryConfig { get; set; }
 
-    /// <summary>
-    /// Immutable. The zone&apos;s visibility: public zones are exposed to the Internet,
-    /// while private zones are visible only to Virtual Private Cloud resources. Default value: &quot;public&quot; Possible values: [&quot;private&quot;, &quot;public&quot;].
-    /// </summary>
+    /// <summary>Immutable. The zone&apos;s visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources. Default value: &quot;public&quot; Possible values: [&quot;private&quot;, &quot;public&quot;].</summary>
     [JsonPropertyName("visibility")]
     public string? Visibility { get; set; }
 }
@@ -374,37 +313,33 @@ public partial class V1beta1DNSManagedZoneStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>DNSManagedZoneStatus defines the config connector machine state of DNSManagedZone</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSManagedZoneStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the DNSManagedZone&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1DNSManagedZoneStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// The time that this resource was created on the server.
-    /// This is in RFC3339 text format.
-    /// </summary>
+    /// <summary>The time that this resource was created on the server. This is in RFC3339 text format.</summary>
     [JsonPropertyName("creationTime")]
     public string? CreationTime { get; set; }
 
     /// <summary>Unique identifier for the resource; defined by the server.</summary>
     [JsonPropertyName("managedZoneId")]
-    public int? ManagedZoneId { get; set; }
+    public long? ManagedZoneId { get; set; }
 
-    /// <summary>
-    /// Delegate your managed_zone to these virtual name servers;
-    /// defined by the server.
-    /// </summary>
+    /// <summary>Delegate your managed_zone to these virtual name servers; defined by the server.</summary>
     [JsonPropertyName("nameServers")]
     public IList<string>? NameServers { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>DNSManagedZone is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -426,9 +361,11 @@ public partial class V1beta1DNSManagedZone : IKubernetesObject<V1ObjectMeta>, IS
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>DNSManagedZoneSpec defines the desired state of DNSManagedZone</summary>
     [JsonPropertyName("spec")]
     public required V1beta1DNSManagedZoneSpec Spec { get; set; }
 
+    /// <summary>DNSManagedZoneStatus defines the config connector machine state of DNSManagedZone</summary>
     [JsonPropertyName("status")]
     public V1beta1DNSManagedZoneStatus? Status { get; set; }
 }
