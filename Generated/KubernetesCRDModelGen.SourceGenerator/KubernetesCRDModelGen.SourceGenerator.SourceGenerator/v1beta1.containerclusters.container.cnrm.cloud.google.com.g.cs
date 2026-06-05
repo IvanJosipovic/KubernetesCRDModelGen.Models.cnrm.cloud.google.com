@@ -951,11 +951,12 @@ public partial class V1beta1ContainerClusterSpecNetworkPolicy
     public string? Provider { get; set; }
 }
 
+/// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNetworkRef
 {
-    /// <summary>The value of an externally managed ComputeNetwork resource. Should be in the format &quot;https://www.googleapis.com/compute/{{version}}/projects/{{projectId}}/global/networks/{{networkId}}&quot; or &quot;projects/{{projectId}}/global/networks/{{networkId}}&quot;</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -1940,6 +1941,7 @@ public partial class V1beta1ContainerClusterSpec
     [JsonPropertyName("networkPolicy")]
     public V1beta1ContainerClusterSpecNetworkPolicy? NetworkPolicy { get; set; }
 
+    /// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
     [JsonPropertyName("networkRef")]
     public V1beta1ContainerClusterSpecNetworkRef? NetworkRef { get; set; }
 
