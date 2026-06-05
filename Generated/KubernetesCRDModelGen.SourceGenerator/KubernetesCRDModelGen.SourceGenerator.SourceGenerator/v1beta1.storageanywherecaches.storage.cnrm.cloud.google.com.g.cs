@@ -142,7 +142,7 @@ public partial class V1beta1StorageAnywhereCacheStatusObservedState
     [JsonPropertyName("createTime")]
     public string? CreateTime { get; set; }
 
-    /// <summary>Output only. True if there is an active update operation against this cache instance. Subsequential update requests will be rejected if this field is true. Output only.</summary>
+    /// <summary>Output only. True if there is an active update operation against this cache instance. Subsequent update requests will be rejected if this field is true. Output only.</summary>
     [JsonPropertyName("pendingUpdate")]
     public bool? PendingUpdate { get; set; }
 
