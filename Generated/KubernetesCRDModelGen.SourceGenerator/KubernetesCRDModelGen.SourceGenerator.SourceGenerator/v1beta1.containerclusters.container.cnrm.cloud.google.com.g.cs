@@ -477,6 +477,10 @@ public partial class V1beta1ContainerClusterSpecClusterTelemetry
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecConfidentialNodes
 {
+    /// <summary>Immutable. Defines the type of technology used by the confidential node.</summary>
+    [JsonPropertyName("confidentialInstanceType")]
+    public string? ConfidentialInstanceType { get; set; }
+
     /// <summary>Immutable. Whether Confidential Nodes feature is enabled for all nodes in this pool.</summary>
     [JsonPropertyName("enabled")]
     public required bool Enabled { get; set; }
@@ -1000,6 +1004,10 @@ public partial class V1beta1ContainerClusterSpecNodeConfigBootDiskKMSCryptoKeyRe
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecNodeConfigConfidentialNodes
 {
+    /// <summary>Immutable. Defines the type of technology used by the confidential node.</summary>
+    [JsonPropertyName("confidentialInstanceType")]
+    public string? ConfidentialInstanceType { get; set; }
+
     /// <summary>Immutable. Whether Confidential Nodes feature is enabled for all nodes in this pool.</summary>
     [JsonPropertyName("enabled")]
     public required bool Enabled { get; set; }
