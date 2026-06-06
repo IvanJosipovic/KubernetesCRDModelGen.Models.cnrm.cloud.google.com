@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.resourcemanager.cnrm.cloud.google.com;
+/// <summary>Folder is the Schema for the Folder API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,51 +36,43 @@ public partial class V1beta1FolderList : IKubernetesObject<V1ListMeta>, IItems<V
     public required IList<V1beta1Folder> Items { get; set; }
 }
 
-/// <summary>
-/// The folder that this resource belongs to. Changing this forces the
-/// resource to be migrated to the newly specified folder. Only one of
-/// folderRef or organizationRef may be specified.
-/// </summary>
+/// <summary>The folder that this resource belongs to. Changing this forces the resource to be migrated to the newly specified folder. Only one of folderRef or organizationRef may be specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FolderSpecFolderRef
 {
-    /// <summary>Allowed value: The `folderId` field of a `Folder` resource.</summary>
+    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector. This field must be set when &apos;name&apos; field is not set.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The &apos;name&apos; field of a &apos;Folder&apos; resource. This field must be set when &apos;external&apos; field is not set.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of a &apos;Folder&apos; resource. If unset, the namespace is defaulted to the namespace of the referencer resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The organization that this resource belongs to. Changing this
-/// forces the resource to be migrated to the newly specified
-/// organization. Only one of folderRef or organizationRef may be
-/// specified.
-/// </summary>
+/// <summary>The organization that this resource belongs to. Changing this forces the resource to be migrated to the newly specified organization. Only one of folderRef or organizationRef may be specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FolderSpecOrganizationRef
 {
-    /// <summary>Allowed value: The `name` field of an `Organization` resource.</summary>
+    /// <summary>The &apos;name&apos; field of an organization, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The &apos;name&apos; field of an &apos;Organization&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of an &apos;Organization&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>FolderSpec defines the desired state of Folder</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FolderSpec
@@ -88,20 +81,11 @@ public partial class V1beta1FolderSpec
     [JsonPropertyName("displayName")]
     public required string DisplayName { get; set; }
 
-    /// <summary>
-    /// The folder that this resource belongs to. Changing this forces the
-    /// resource to be migrated to the newly specified folder. Only one of
-    /// folderRef or organizationRef may be specified.
-    /// </summary>
+    /// <summary>The folder that this resource belongs to. Changing this forces the resource to be migrated to the newly specified folder. Only one of folderRef or organizationRef may be specified.</summary>
     [JsonPropertyName("folderRef")]
     public V1beta1FolderSpecFolderRef? FolderRef { get; set; }
 
-    /// <summary>
-    /// The organization that this resource belongs to. Changing this
-    /// forces the resource to be migrated to the newly specified
-    /// organization. Only one of folderRef or organizationRef may be
-    /// specified.
-    /// </summary>
+    /// <summary>The organization that this resource belongs to. Changing this forces the resource to be migrated to the newly specified organization. Only one of folderRef or organizationRef may be specified.</summary>
     [JsonPropertyName("organizationRef")]
     public V1beta1FolderSpecOrganizationRef? OrganizationRef { get; set; }
 
@@ -135,11 +119,12 @@ public partial class V1beta1FolderStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>FolderStatus defines the config connector machine state of Folder</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FolderStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1FolderStatusConditions>? Conditions { get; set; }
 
@@ -161,9 +146,10 @@ public partial class V1beta1FolderStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>Folder is the Schema for the Folder API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -185,9 +171,11 @@ public partial class V1beta1Folder : IKubernetesObject<V1ObjectMeta>, ISpec<V1be
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>FolderSpec defines the desired state of Folder</summary>
     [JsonPropertyName("spec")]
     public required V1beta1FolderSpec Spec { get; set; }
 
+    /// <summary>FolderStatus defines the config connector machine state of Folder</summary>
     [JsonPropertyName("status")]
     public V1beta1FolderStatus? Status { get; set; }
 }
