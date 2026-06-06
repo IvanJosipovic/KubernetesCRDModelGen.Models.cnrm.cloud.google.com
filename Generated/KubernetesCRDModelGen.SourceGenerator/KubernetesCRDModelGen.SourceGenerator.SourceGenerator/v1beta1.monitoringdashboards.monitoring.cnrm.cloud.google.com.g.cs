@@ -41,7 +41,7 @@ public partial class V1beta1MonitoringDashboardList : IKubernetesObject<V1ListMe
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecColumnLayoutColumnsWidgetsAlertChartAlertPolicyRef
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -139,7 +139,7 @@ public partial class V1beta1MonitoringDashboardSpecColumnLayoutColumnsWidgetsInc
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecColumnLayoutColumnsWidgetsIncidentListPolicyRefs
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -1699,7 +1699,7 @@ public partial class V1beta1MonitoringDashboardSpecDashboardFilters
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecGridLayoutWidgetsAlertChartAlertPolicyRef
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -1797,7 +1797,7 @@ public partial class V1beta1MonitoringDashboardSpecGridLayoutWidgetsIncidentList
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecGridLayoutWidgetsIncidentListPolicyRefs
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -3327,7 +3327,7 @@ public partial class V1beta1MonitoringDashboardSpecGridLayout
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecMosaicLayoutTilesWidgetAlertChartAlertPolicyRef
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -3425,7 +3425,7 @@ public partial class V1beta1MonitoringDashboardSpecMosaicLayoutTilesWidgetIncide
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecMosaicLayoutTilesWidgetIncidentListPolicyRefs
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -5003,7 +5003,7 @@ public partial class V1beta1MonitoringDashboardSpecProjectRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecRowLayoutRowsWidgetsAlertChartAlertPolicyRef
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -5101,7 +5101,7 @@ public partial class V1beta1MonitoringDashboardSpecRowLayoutRowsWidgetsIncidentL
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringDashboardSpecRowLayoutRowsWidgetsIncidentListPolicyRefs
 {
-    /// <summary>The value of an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format &quot;projects/{{projectID}}/alertPolicies/{{alertPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 

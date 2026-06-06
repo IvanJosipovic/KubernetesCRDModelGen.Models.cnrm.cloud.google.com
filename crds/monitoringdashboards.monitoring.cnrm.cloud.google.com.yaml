@@ -90,7 +90,7 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                        description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                         type: string
                                       name:
                                         description: The name of a MonitoringAlertPolicy resource.
@@ -199,7 +199,7 @@ spec:
                                         - external
                                       properties:
                                         external:
-                                          description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                          description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                           type: string
                                         name:
                                           description: The name of a MonitoringAlertPolicy resource.
@@ -1235,7 +1235,7 @@ spec:
                                 - external
                               properties:
                                 external:
-                                  description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                  description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                   type: string
                                 name:
                                   description: The name of a MonitoringAlertPolicy resource.
@@ -1344,7 +1344,7 @@ spec:
                                   - external
                                 properties:
                                   external:
-                                    description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                    description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                     type: string
                                   name:
                                     description: The name of a MonitoringAlertPolicy resource.
@@ -2362,7 +2362,7 @@ spec:
                                     - external
                                   properties:
                                     external:
-                                      description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                      description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                       type: string
                                     name:
                                       description: The name of a MonitoringAlertPolicy resource.
@@ -2471,7 +2471,7 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                        description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                         type: string
                                       name:
                                         description: The name of a MonitoringAlertPolicy resource.
@@ -3532,7 +3532,7 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                        description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                         type: string
                                       name:
                                         description: The name of a MonitoringAlertPolicy resource.
@@ -3641,7 +3641,7 @@ spec:
                                         - external
                                       properties:
                                         external:
-                                          description: The value of an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
+                                          description: A reference to an externally managed MonitoringAlertPolicy resource. Should be in the format "projects/{{projectID}}/alertPolicies/{{alertPolicyID}}".
                                           type: string
                                         name:
                                           description: The name of a MonitoringAlertPolicy resource.
