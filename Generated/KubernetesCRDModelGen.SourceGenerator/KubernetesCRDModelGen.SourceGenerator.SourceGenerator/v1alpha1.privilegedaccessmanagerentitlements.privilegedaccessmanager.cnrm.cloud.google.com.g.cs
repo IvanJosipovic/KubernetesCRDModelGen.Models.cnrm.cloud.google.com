@@ -264,7 +264,7 @@ public partial class V1alpha1PrivilegedAccessManagerEntitlementSpec
     [JsonPropertyName("requesterJustificationConfig")]
     public required V1alpha1PrivilegedAccessManagerEntitlementSpecRequesterJustificationConfig RequesterJustificationConfig { get; set; }
 
-    /// <summary>The PrivilegedAccessManagerEntitlement name. If not given, the &apos;metadata.name&apos; will be used.</summary>
+    /// <summary>Immutable. The PrivilegedAccessManagerEntitlement name. If not given, the &apos;metadata.name&apos; will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 }
