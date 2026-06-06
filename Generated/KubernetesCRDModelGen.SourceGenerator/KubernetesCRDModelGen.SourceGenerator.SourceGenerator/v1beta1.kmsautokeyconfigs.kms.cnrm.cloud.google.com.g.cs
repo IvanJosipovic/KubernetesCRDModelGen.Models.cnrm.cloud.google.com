@@ -76,6 +76,28 @@ public partial class V1beta1KMSAutokeyConfigSpecKeyProject
     public string? Namespace { get; set; }
 }
 
+/// <summary>Immutable. The project that this resource belongs to.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1KMSAutokeyConfigSpecProjectRef
+{
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The kind of the Project resource; optional but must be `Project` if provided.</summary>
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
+    /// <summary>The `name` field of a `Project` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
 /// <summary>KMSAutokeyConfigSpec defines the desired state of KMSAutokeyConfig</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -83,11 +105,18 @@ public partial class V1beta1KMSAutokeyConfigSpec
 {
     /// <summary>Immutable. The folder that this resource belongs to.</summary>
     [JsonPropertyName("folderRef")]
-    public required V1beta1KMSAutokeyConfigSpecFolderRef FolderRef { get; set; }
+    public V1beta1KMSAutokeyConfigSpecFolderRef? FolderRef { get; set; }
 
     /// <summary>The Project that this resource belongs to.</summary>
     [JsonPropertyName("keyProject")]
     public V1beta1KMSAutokeyConfigSpecKeyProject? KeyProject { get; set; }
+
+    [JsonPropertyName("keyProjectResolutionMode")]
+    public string? KeyProjectResolutionMode { get; set; }
+
+    /// <summary>Immutable. The project that this resource belongs to.</summary>
+    [JsonPropertyName("projectRef")]
+    public V1beta1KMSAutokeyConfigSpecProjectRef? ProjectRef { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
