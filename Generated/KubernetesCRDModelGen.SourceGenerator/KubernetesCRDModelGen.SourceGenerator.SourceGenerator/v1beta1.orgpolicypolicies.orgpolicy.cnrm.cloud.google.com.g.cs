@@ -13,15 +13,15 @@ namespace KubernetesCRDModelGen.Models.orgpolicy.cnrm.cloud.google.com;
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
-public partial class V1alpha1OrgPolicyPolicyList : IKubernetesObject<V1ListMeta>, IItems<V1alpha1OrgPolicyPolicy>
+public partial class V1beta1OrgPolicyPolicyList : IKubernetesObject<V1ListMeta>, IItems<V1beta1OrgPolicyPolicy>
 {
-    public const string KubeApiVersion = "v1alpha1";
+    public const string KubeApiVersion = "v1beta1";
     public const string KubeKind = "OrgPolicyPolicyList";
     public const string KubeGroup = "orgpolicy.cnrm.cloud.google.com";
     public const string KubePluralName = "orgpolicypolicies";
     /// <summary>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources</summary>
     [JsonPropertyName("apiVersion")]
-    public string ApiVersion { get; set; } = "orgpolicy.cnrm.cloud.google.com/v1alpha1";
+    public string ApiVersion { get; set; } = "orgpolicy.cnrm.cloud.google.com/v1beta1";
 
     /// <summary>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds</summary>
     [JsonPropertyName("kind")]
@@ -31,15 +31,15 @@ public partial class V1alpha1OrgPolicyPolicyList : IKubernetesObject<V1ListMeta>
     [JsonPropertyName("metadata")]
     public V1ListMeta? Metadata { get; set; }
 
-    /// <summary>List of V1alpha1OrgPolicyPolicy objects.</summary>
+    /// <summary>List of V1beta1OrgPolicyPolicy objects.</summary>
     [JsonPropertyName("items")]
-    public required IList<V1alpha1OrgPolicyPolicy> Items { get; set; }
+    public required IList<V1beta1OrgPolicyPolicy> Items { get; set; }
 }
 
 /// <summary>A condition which determines whether this rule is used in the evaluation of the policy. When set, the `expression` field in the `Expr&apos; must include from 1 to 10 subexpressions, joined by the &quot;||&quot; or &quot; &amp; &amp; &quot; operators. Each subexpression must be of the form &quot;resource.matchTag(&apos; &lt;ORG_ID&gt;/tag_key_short_name, &apos;tag_value_short_name&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/key_id&apos;, &apos;tagValues/value_id&apos;)&quot;. where key_name and value_name are the resource names for Label Keys and Values. These names are available from the Tag Manager Service. An example expression is: &quot;resource.matchTag(&apos;123456789/environment, &apos;prod&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/123&apos;, &apos;tagValues/456&apos;)&quot;.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRulesCondition
+public partial class V1beta1OrgPolicyPolicySpecDryRunSpecRulesCondition
 {
     /// <summary>Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.</summary>
     [JsonPropertyName("description")]
@@ -72,7 +72,7 @@ public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRulesCondition
 /// </summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRulesParameters
+public partial class V1beta1OrgPolicyPolicySpecDryRunSpecRulesParameters
 {
     /// <summary>When true, any Google Kubernetes Engine resource path is permitted.</summary>
     [JsonPropertyName("allowAnyGKEPath")]
@@ -170,7 +170,7 @@ public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRulesParameters
 /// <summary>List of values to be used for this policy rule. This field can be set only in policies for list constraints.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRulesValues
+public partial class V1beta1OrgPolicyPolicySpecDryRunSpecRulesValues
 {
     /// <summary>List of values allowed at this resource.</summary>
     [JsonPropertyName("allowedValues")]
@@ -183,7 +183,7 @@ public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRulesValues
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRules
+public partial class V1beta1OrgPolicyPolicySpecDryRunSpecRules
 {
     /// <summary>Setting this to true means that all values are allowed. This field can be set only in policies for list constraints.</summary>
     [JsonPropertyName("allowAll")]
@@ -191,7 +191,7 @@ public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRules
 
     /// <summary>A condition which determines whether this rule is used in the evaluation of the policy. When set, the `expression` field in the `Expr&apos; must include from 1 to 10 subexpressions, joined by the &quot;||&quot; or &quot; &amp; &amp; &quot; operators. Each subexpression must be of the form &quot;resource.matchTag(&apos; &lt;ORG_ID&gt;/tag_key_short_name, &apos;tag_value_short_name&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/key_id&apos;, &apos;tagValues/value_id&apos;)&quot;. where key_name and value_name are the resource names for Label Keys and Values. These names are available from the Tag Manager Service. An example expression is: &quot;resource.matchTag(&apos;123456789/environment, &apos;prod&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/123&apos;, &apos;tagValues/456&apos;)&quot;.</summary>
     [JsonPropertyName("condition")]
-    public V1alpha1OrgPolicyPolicySpecDryRunSpecRulesCondition? Condition { get; set; }
+    public V1beta1OrgPolicyPolicySpecDryRunSpecRulesCondition? Condition { get; set; }
 
     /// <summary>Setting this to true means that all values are denied. This field can be set only in policies for list constraints.</summary>
     [JsonPropertyName("denyAll")]
@@ -214,17 +214,17 @@ public partial class V1alpha1OrgPolicyPolicySpecDryRunSpecRules
     ///          - &quot;@example.com&quot;
     /// </summary>
     [JsonPropertyName("parameters")]
-    public V1alpha1OrgPolicyPolicySpecDryRunSpecRulesParameters? Parameters { get; set; }
+    public V1beta1OrgPolicyPolicySpecDryRunSpecRulesParameters? Parameters { get; set; }
 
     /// <summary>List of values to be used for this policy rule. This field can be set only in policies for list constraints.</summary>
     [JsonPropertyName("values")]
-    public V1alpha1OrgPolicyPolicySpecDryRunSpecRulesValues? Values { get; set; }
+    public V1beta1OrgPolicyPolicySpecDryRunSpecRulesValues? Values { get; set; }
 }
 
 /// <summary>Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it&apos;s enforced.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecDryRunSpec
+public partial class V1beta1OrgPolicyPolicySpecDryRunSpec
 {
     /// <summary>
     /// Determines the inheritance behavior for this policy.
@@ -252,13 +252,13 @@ public partial class V1alpha1OrgPolicyPolicySpecDryRunSpec
     ///      true for a target resource take precedence.
     /// </summary>
     [JsonPropertyName("rules")]
-    public IList<V1alpha1OrgPolicyPolicySpecDryRunSpecRules>? Rules { get; set; }
+    public IList<V1beta1OrgPolicyPolicySpecDryRunSpecRules>? Rules { get; set; }
 }
 
 /// <summary>Immutable. The Folder that this resource belongs to. One and only one of &apos;projectRef&apos;, &apos;folderRef&apos;, or &apos;organizationRef&apos; must be set.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecFolderRef
+public partial class V1beta1OrgPolicyPolicySpecFolderRef
 {
     /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector. This field must be set when &apos;name&apos; field is not set.</summary>
     [JsonPropertyName("external")]
@@ -276,7 +276,7 @@ public partial class V1alpha1OrgPolicyPolicySpecFolderRef
 /// <summary>Immutable. The Organization that this resource belongs to. One and only one of &apos;projectRef&apos;, &apos;folderRef&apos;, or &apos;organizationRef&apos; must be set.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecOrganizationRef
+public partial class V1beta1OrgPolicyPolicySpecOrganizationRef
 {
     /// <summary>The &apos;name&apos; field of an organization, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
@@ -286,7 +286,7 @@ public partial class V1alpha1OrgPolicyPolicySpecOrganizationRef
 /// <summary>Immutable. The Project that this resource belongs to. One and only one of &apos;projectRef&apos;, &apos;folderRef&apos;, or &apos;organizationRef&apos; must be set.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecProjectRef
+public partial class V1beta1OrgPolicyPolicySpecProjectRef
 {
     /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
@@ -308,7 +308,7 @@ public partial class V1alpha1OrgPolicyPolicySpecProjectRef
 /// <summary>A condition which determines whether this rule is used in the evaluation of the policy. When set, the `expression` field in the `Expr&apos; must include from 1 to 10 subexpressions, joined by the &quot;||&quot; or &quot; &amp; &amp; &quot; operators. Each subexpression must be of the form &quot;resource.matchTag(&apos; &lt;ORG_ID&gt;/tag_key_short_name, &apos;tag_value_short_name&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/key_id&apos;, &apos;tagValues/value_id&apos;)&quot;. where key_name and value_name are the resource names for Label Keys and Values. These names are available from the Tag Manager Service. An example expression is: &quot;resource.matchTag(&apos;123456789/environment, &apos;prod&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/123&apos;, &apos;tagValues/456&apos;)&quot;.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecSpecRulesCondition
+public partial class V1beta1OrgPolicyPolicySpecSpecRulesCondition
 {
     /// <summary>Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.</summary>
     [JsonPropertyName("description")]
@@ -341,7 +341,7 @@ public partial class V1alpha1OrgPolicyPolicySpecSpecRulesCondition
 /// </summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecSpecRulesParameters
+public partial class V1beta1OrgPolicyPolicySpecSpecRulesParameters
 {
     /// <summary>When true, any Google Kubernetes Engine resource path is permitted.</summary>
     [JsonPropertyName("allowAnyGKEPath")]
@@ -439,7 +439,7 @@ public partial class V1alpha1OrgPolicyPolicySpecSpecRulesParameters
 /// <summary>List of values to be used for this policy rule. This field can be set only in policies for list constraints.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecSpecRulesValues
+public partial class V1beta1OrgPolicyPolicySpecSpecRulesValues
 {
     /// <summary>List of values allowed at this resource.</summary>
     [JsonPropertyName("allowedValues")]
@@ -452,7 +452,7 @@ public partial class V1alpha1OrgPolicyPolicySpecSpecRulesValues
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecSpecRules
+public partial class V1beta1OrgPolicyPolicySpecSpecRules
 {
     /// <summary>Setting this to true means that all values are allowed. This field can be set only in policies for list constraints.</summary>
     [JsonPropertyName("allowAll")]
@@ -460,7 +460,7 @@ public partial class V1alpha1OrgPolicyPolicySpecSpecRules
 
     /// <summary>A condition which determines whether this rule is used in the evaluation of the policy. When set, the `expression` field in the `Expr&apos; must include from 1 to 10 subexpressions, joined by the &quot;||&quot; or &quot; &amp; &amp; &quot; operators. Each subexpression must be of the form &quot;resource.matchTag(&apos; &lt;ORG_ID&gt;/tag_key_short_name, &apos;tag_value_short_name&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/key_id&apos;, &apos;tagValues/value_id&apos;)&quot;. where key_name and value_name are the resource names for Label Keys and Values. These names are available from the Tag Manager Service. An example expression is: &quot;resource.matchTag(&apos;123456789/environment, &apos;prod&apos;)&quot;. or &quot;resource.matchTagId(&apos;tagKeys/123&apos;, &apos;tagValues/456&apos;)&quot;.</summary>
     [JsonPropertyName("condition")]
-    public V1alpha1OrgPolicyPolicySpecSpecRulesCondition? Condition { get; set; }
+    public V1beta1OrgPolicyPolicySpecSpecRulesCondition? Condition { get; set; }
 
     /// <summary>Setting this to true means that all values are denied. This field can be set only in policies for list constraints.</summary>
     [JsonPropertyName("denyAll")]
@@ -483,17 +483,17 @@ public partial class V1alpha1OrgPolicyPolicySpecSpecRules
     ///          - &quot;@example.com&quot;
     /// </summary>
     [JsonPropertyName("parameters")]
-    public V1alpha1OrgPolicyPolicySpecSpecRulesParameters? Parameters { get; set; }
+    public V1beta1OrgPolicyPolicySpecSpecRulesParameters? Parameters { get; set; }
 
     /// <summary>List of values to be used for this policy rule. This field can be set only in policies for list constraints.</summary>
     [JsonPropertyName("values")]
-    public V1alpha1OrgPolicyPolicySpecSpecRulesValues? Values { get; set; }
+    public V1beta1OrgPolicyPolicySpecSpecRulesValues? Values { get; set; }
 }
 
 /// <summary>Basic information about the Organization Policy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpecSpec
+public partial class V1beta1OrgPolicyPolicySpecSpec
 {
     /// <summary>
     /// Determines the inheritance behavior for this policy.
@@ -521,29 +521,29 @@ public partial class V1alpha1OrgPolicyPolicySpecSpec
     ///      true for a target resource take precedence.
     /// </summary>
     [JsonPropertyName("rules")]
-    public IList<V1alpha1OrgPolicyPolicySpecSpecRules>? Rules { get; set; }
+    public IList<V1beta1OrgPolicyPolicySpecSpecRules>? Rules { get; set; }
 }
 
 /// <summary>OrgPolicyPolicySpec defines the desired state of OrgPolicyPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicySpec
+public partial class V1beta1OrgPolicyPolicySpec
 {
     /// <summary>Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it&apos;s enforced.</summary>
     [JsonPropertyName("dryRunSpec")]
-    public V1alpha1OrgPolicyPolicySpecDryRunSpec? DryRunSpec { get; set; }
+    public V1beta1OrgPolicyPolicySpecDryRunSpec? DryRunSpec { get; set; }
 
     /// <summary>Immutable. The Folder that this resource belongs to. One and only one of &apos;projectRef&apos;, &apos;folderRef&apos;, or &apos;organizationRef&apos; must be set.</summary>
     [JsonPropertyName("folderRef")]
-    public V1alpha1OrgPolicyPolicySpecFolderRef? FolderRef { get; set; }
+    public V1beta1OrgPolicyPolicySpecFolderRef? FolderRef { get; set; }
 
     /// <summary>Immutable. The Organization that this resource belongs to. One and only one of &apos;projectRef&apos;, &apos;folderRef&apos;, or &apos;organizationRef&apos; must be set.</summary>
     [JsonPropertyName("organizationRef")]
-    public V1alpha1OrgPolicyPolicySpecOrganizationRef? OrganizationRef { get; set; }
+    public V1beta1OrgPolicyPolicySpecOrganizationRef? OrganizationRef { get; set; }
 
     /// <summary>Immutable. The Project that this resource belongs to. One and only one of &apos;projectRef&apos;, &apos;folderRef&apos;, or &apos;organizationRef&apos; must be set.</summary>
     [JsonPropertyName("projectRef")]
-    public V1alpha1OrgPolicyPolicySpecProjectRef? ProjectRef { get; set; }
+    public V1beta1OrgPolicyPolicySpecProjectRef? ProjectRef { get; set; }
 
     /// <summary>The OrgPolicyPolicy name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
@@ -551,12 +551,12 @@ public partial class V1alpha1OrgPolicyPolicySpec
 
     /// <summary>Basic information about the Organization Policy.</summary>
     [JsonPropertyName("spec")]
-    public V1alpha1OrgPolicyPolicySpecSpec? Spec { get; set; }
+    public V1beta1OrgPolicyPolicySpecSpec? Spec { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicyStatusConditions
+public partial class V1beta1OrgPolicyPolicyStatusConditions
 {
     /// <summary>Last time the condition transitioned from one status to another.</summary>
     [JsonPropertyName("lastTransitionTime")]
@@ -582,7 +582,7 @@ public partial class V1alpha1OrgPolicyPolicyStatusConditions
 /// <summary>Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it&apos;s enforced.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicyStatusObservedStateDryRunSpec
+public partial class V1beta1OrgPolicyPolicyStatusObservedStateDryRunSpec
 {
     /// <summary>Output only. The time stamp this was previously updated. This represents the last time a call to `CreatePolicy` or `UpdatePolicy` was made for that policy.</summary>
     [JsonPropertyName("updateTime")]
@@ -592,7 +592,7 @@ public partial class V1alpha1OrgPolicyPolicyStatusObservedStateDryRunSpec
 /// <summary>Basic information about the Organization Policy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicyStatusObservedStateSpec
+public partial class V1beta1OrgPolicyPolicyStatusObservedStateSpec
 {
     /// <summary>Output only. The time stamp this was previously updated. This represents the last time a call to `CreatePolicy` or `UpdatePolicy` was made for that policy.</summary>
     [JsonPropertyName("updateTime")]
@@ -602,25 +602,25 @@ public partial class V1alpha1OrgPolicyPolicyStatusObservedStateSpec
 /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicyStatusObservedState
+public partial class V1beta1OrgPolicyPolicyStatusObservedState
 {
     /// <summary>Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it&apos;s enforced.</summary>
     [JsonPropertyName("dryRunSpec")]
-    public V1alpha1OrgPolicyPolicyStatusObservedStateDryRunSpec? DryRunSpec { get; set; }
+    public V1beta1OrgPolicyPolicyStatusObservedStateDryRunSpec? DryRunSpec { get; set; }
 
     /// <summary>Basic information about the Organization Policy.</summary>
     [JsonPropertyName("spec")]
-    public V1alpha1OrgPolicyPolicyStatusObservedStateSpec? Spec { get; set; }
+    public V1beta1OrgPolicyPolicyStatusObservedStateSpec? Spec { get; set; }
 }
 
 /// <summary>OrgPolicyPolicyStatus defines the config connector machine state of OrgPolicyPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1OrgPolicyPolicyStatus
+public partial class V1beta1OrgPolicyPolicyStatus
 {
     /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
-    public IList<V1alpha1OrgPolicyPolicyStatusConditions>? Conditions { get; set; }
+    public IList<V1beta1OrgPolicyPolicyStatusConditions>? Conditions { get; set; }
 
     /// <summary>A unique specifier for the OrgPolicyPolicy resource in GCP.</summary>
     [JsonPropertyName("externalRef")]
@@ -632,22 +632,22 @@ public partial class V1alpha1OrgPolicyPolicyStatus
 
     /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
     [JsonPropertyName("observedState")]
-    public V1alpha1OrgPolicyPolicyStatusObservedState? ObservedState { get; set; }
+    public V1beta1OrgPolicyPolicyStatusObservedState? ObservedState { get; set; }
 }
 
 /// <summary>OrgPolicyPolicy is the Schema for the OrgPolicyPolicy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
-public partial class V1alpha1OrgPolicyPolicy : IKubernetesObject<V1ObjectMeta>, ISpec<V1alpha1OrgPolicyPolicySpec>, IStatus<V1alpha1OrgPolicyPolicyStatus?>
+public partial class V1beta1OrgPolicyPolicy : IKubernetesObject<V1ObjectMeta>, ISpec<V1beta1OrgPolicyPolicySpec>, IStatus<V1beta1OrgPolicyPolicyStatus?>
 {
-    public const string KubeApiVersion = "v1alpha1";
+    public const string KubeApiVersion = "v1beta1";
     public const string KubeKind = "OrgPolicyPolicy";
     public const string KubeGroup = "orgpolicy.cnrm.cloud.google.com";
     public const string KubePluralName = "orgpolicypolicies";
     /// <summary>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources</summary>
     [JsonPropertyName("apiVersion")]
-    public string ApiVersion { get; set; } = "orgpolicy.cnrm.cloud.google.com/v1alpha1";
+    public string ApiVersion { get; set; } = "orgpolicy.cnrm.cloud.google.com/v1beta1";
 
     /// <summary>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds</summary>
     [JsonPropertyName("kind")]
@@ -659,9 +659,9 @@ public partial class V1alpha1OrgPolicyPolicy : IKubernetesObject<V1ObjectMeta>, 
 
     /// <summary>OrgPolicyPolicySpec defines the desired state of OrgPolicyPolicy</summary>
     [JsonPropertyName("spec")]
-    public required V1alpha1OrgPolicyPolicySpec Spec { get; set; }
+    public required V1beta1OrgPolicyPolicySpec Spec { get; set; }
 
     /// <summary>OrgPolicyPolicyStatus defines the config connector machine state of OrgPolicyPolicy</summary>
     [JsonPropertyName("status")]
-    public V1alpha1OrgPolicyPolicyStatus? Status { get; set; }
+    public V1beta1OrgPolicyPolicyStatus? Status { get; set; }
 }
