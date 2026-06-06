@@ -57,7 +57,7 @@ spec:
               certificateManagerCertificates:
                 description: URLs to certificate manager certificate resources that are used to authenticate connections between users and the load balancer. Currently, you may specify up to 15 certificates. Certificate manager certificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. sslCertificates and certificateManagerCertificates fields cannot be defined together.
                 items:
-                  description: A reference to a CertificateManagerCertificate resource.
+                  description: CertificateManagerCertificateRef is a reference to a CertificateManagerCertificate.
                   oneOf:
                   - not:
                       required:
@@ -74,7 +74,7 @@ spec:
                     - external
                   properties:
                     external:
-                      description: 'Allowed value: The format `projects/{{project}}/locations/{{location}}/certificates/{{name}}` or `//certificatemanager.googleapis.com/projects/{{project}}/locations/{{location}}/certificates/{{name}}`.'
+                      description: A reference to an externally managed CertificateManagerCertificate resource. Should be in the format "projects/{{projectID}}/locations/{{location}}/certificates/{{certificateID}}".
                       type: string
                     name:
                       description: The name of a CertificateManagerCertificate resource.

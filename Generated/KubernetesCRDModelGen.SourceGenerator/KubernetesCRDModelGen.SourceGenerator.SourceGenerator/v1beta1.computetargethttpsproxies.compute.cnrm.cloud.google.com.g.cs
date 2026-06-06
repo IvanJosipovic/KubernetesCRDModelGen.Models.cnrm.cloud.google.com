@@ -35,12 +35,12 @@ public partial class V1beta1ComputeTargetHTTPSProxyList : IKubernetesObject<V1Li
     public required IList<V1beta1ComputeTargetHTTPSProxy> Items { get; set; }
 }
 
-/// <summary>A reference to a CertificateManagerCertificate resource.</summary>
+/// <summary>CertificateManagerCertificateRef is a reference to a CertificateManagerCertificate.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetHTTPSProxySpecCertificateManagerCertificates
 {
-    /// <summary>Allowed value: The format `projects/{{project}}/locations/{{location}}/certificates/{{name}}` or `//certificatemanager.googleapis.com/projects/{{project}}/locations/{{location}}/certificates/{{name}}`.</summary>
+    /// <summary>A reference to an externally managed CertificateManagerCertificate resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/certificates/{{certificateID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
