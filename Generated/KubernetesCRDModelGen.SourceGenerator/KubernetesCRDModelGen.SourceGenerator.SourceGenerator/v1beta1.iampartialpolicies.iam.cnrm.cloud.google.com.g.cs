@@ -64,7 +64,7 @@ public enum V1beta1IAMPartialPolicySpecBindingsMembersMemberFromBigQueryConnecti
     CloudResource
 }
 
-/// <summary>BigQueryConnectionConnection whose service account is to be bound to the role. Use the Type field to specify the connection type. For &quot;spark&quot; connetion, the service account is in `status.observedState.spark.serviceAccountID`. For &quot;cloudSQL&quot; connection, the service account is in `status.observedState.cloudSQL.serviceAccountID`. For &quot;cloudResource&quot; connection, the service account is in `status.observedState.cloudResource.serviceAccountID`.</summary>
+/// <summary>BigQueryConnectionConnection whose service account is to be bound to the role. Use the Type field to specify the connection type. For &quot;spark&quot; connection, the service account is in `status.observedState.spark.serviceAccountID`. For &quot;cloudSQL&quot; connection, the service account is in `status.observedState.cloudSQL.serviceAccountID`. For &quot;cloudResource&quot; connection, the service account is in `status.observedState.cloudResource.serviceAccountID`.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAMPartialPolicySpecBindingsMembersMemberFromBigQueryConnectionConnectionRef
@@ -133,7 +133,7 @@ public partial class V1beta1IAMPartialPolicySpecBindingsMembersMemberFromSqlInst
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAMPartialPolicySpecBindingsMembersMemberFrom
 {
-    /// <summary>BigQueryConnectionConnection whose service account is to be bound to the role. Use the Type field to specify the connection type. For &quot;spark&quot; connetion, the service account is in `status.observedState.spark.serviceAccountID`. For &quot;cloudSQL&quot; connection, the service account is in `status.observedState.cloudSQL.serviceAccountID`. For &quot;cloudResource&quot; connection, the service account is in `status.observedState.cloudResource.serviceAccountID`.</summary>
+    /// <summary>BigQueryConnectionConnection whose service account is to be bound to the role. Use the Type field to specify the connection type. For &quot;spark&quot; connection, the service account is in `status.observedState.spark.serviceAccountID`. For &quot;cloudSQL&quot; connection, the service account is in `status.observedState.cloudSQL.serviceAccountID`. For &quot;cloudResource&quot; connection, the service account is in `status.observedState.cloudResource.serviceAccountID`.</summary>
     [JsonPropertyName("bigQueryConnectionConnectionRef")]
     public V1beta1IAMPartialPolicySpecBindingsMembersMemberFromBigQueryConnectionConnectionRef? BigQueryConnectionConnectionRef { get; set; }
 

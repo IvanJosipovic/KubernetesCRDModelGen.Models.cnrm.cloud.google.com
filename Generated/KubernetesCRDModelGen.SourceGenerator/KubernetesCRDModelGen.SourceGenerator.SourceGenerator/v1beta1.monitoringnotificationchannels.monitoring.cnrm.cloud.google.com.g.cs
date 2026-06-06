@@ -197,7 +197,7 @@ public partial class V1beta1MonitoringNotificationChannelSpec
     [JsonPropertyName("labels")]
     public IDictionary<string, string>? Labels { get; set; }
 
-    /// <summary>Immutable. Optional. The service-generated name of theresource. Used for acquisition only. Leave unset to create a new resource.</summary>
+    /// <summary>Immutable. Optional. The service-generated name of the resource. Used for acquisition only. Leave unset to create a new resource.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
