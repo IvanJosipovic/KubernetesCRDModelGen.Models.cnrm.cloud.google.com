@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.logging.cnrm.cloud.google.com;
+/// <summary>LoggingLogSink is the Schema for the LoggingLogSink API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,7 +36,6 @@ public partial class V1beta1LoggingLogSinkList : IKubernetesObject<V1ListMeta>, 
     public required IList<V1beta1LoggingLogSink> Items { get; set; }
 }
 
-/// <summary>Options that affect sinks exporting data to BigQuery.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecBigqueryOptions
@@ -45,71 +45,74 @@ public partial class V1beta1LoggingLogSinkSpecBigqueryOptions
     public required bool UsePartitionedTables { get; set; }
 }
 
+/// <summary>DatasetRef is a reference to a BigQueryDataset.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecDestinationBigQueryDatasetRef
 {
-    /// <summary>Allowed value: string of the format `bigquery.googleapis.com/projects/{{project}}/datasets/{{value}}`, where {{value}} is the `name` field of a `BigQueryDataset` resource.</summary>
+    /// <summary>A reference to an externally-managed BigQueryDataset resource. Should be in the format &quot;projects/{{projectID}}/datasets/{{datasetID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a BigQueryDataset resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a BigQueryDataset resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>Only `external` field is supported to configure the reference.</summary>
+/// <summary>LoggingLogBucketRef is a reference to a LoggingLogBucket.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecDestinationLoggingLogBucketRef
 {
-    /// <summary>Allowed value: string of the format `logging.googleapis.com/projects/{{project}}/locations/{{location}}/buckets/{{value}}`, where {{value}} is the `name` field of a `LoggingLogBucket` resource.</summary>
+    /// <summary>A reference to an externally managed LoggingLogBucket resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/buckets/{{bucketID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a LoggingLogBucket resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a LoggingLogBucket resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>PubSubTopicRef is a reference to a PubSubTopic.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecDestinationPubSubTopicRef
 {
-    /// <summary>Allowed value: string of the format `pubsub.googleapis.com/projects/{{project}}/topics/{{value}}`, where {{value}} is the `name` field of a `PubSubTopic` resource.</summary>
+    /// <summary>A reference to an externally managed PubSubTopic resource. Should be in the format &quot;projects/{{projectID}}/topics/{{topicID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a PubSubTopic resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a PubSubTopic resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>StorageBucketRef is a reference to a StorageBucket.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecDestinationStorageBucketRef
 {
-    /// <summary>Allowed value: string of the format `storage.googleapis.com/{{value}}`, where {{value}} is the `name` field of a `StorageBucket` resource.</summary>
+    /// <summary>A reference to an externally-managed StorageBucket resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a StorageBucket resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a StorageBucket resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -118,16 +121,19 @@ public partial class V1beta1LoggingLogSinkSpecDestinationStorageBucketRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecDestination
 {
+    /// <summary>DatasetRef is a reference to a BigQueryDataset.</summary>
     [JsonPropertyName("bigQueryDatasetRef")]
     public V1beta1LoggingLogSinkSpecDestinationBigQueryDatasetRef? BigQueryDatasetRef { get; set; }
 
-    /// <summary>Only `external` field is supported to configure the reference.</summary>
+    /// <summary>LoggingLogBucketRef is a reference to a LoggingLogBucket.</summary>
     [JsonPropertyName("loggingLogBucketRef")]
     public V1beta1LoggingLogSinkSpecDestinationLoggingLogBucketRef? LoggingLogBucketRef { get; set; }
 
+    /// <summary>PubSubTopicRef is a reference to a PubSubTopic.</summary>
     [JsonPropertyName("pubSubTopicRef")]
     public V1beta1LoggingLogSinkSpecDestinationPubSubTopicRef? PubSubTopicRef { get; set; }
 
+    /// <summary>StorageBucketRef is a reference to a StorageBucket.</summary>
     [JsonPropertyName("storageBucketRef")]
     public V1beta1LoggingLogSinkSpecDestinationStorageBucketRef? StorageBucketRef { get; set; }
 }
@@ -153,74 +159,65 @@ public partial class V1beta1LoggingLogSinkSpecExclusions
     public required string Name { get; set; }
 }
 
-/// <summary>
-/// The folder in which to create the sink. Only one of projectRef,
-/// folderRef, or organizationRef may be specified.
-/// </summary>
+/// <summary>Immutable. The folder in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecFolderRef
 {
-    /// <summary>Allowed value: The `folderId` field of a `Folder` resource.</summary>
+    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The &apos;name&apos; field of a &apos;Folder&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of a &apos;Folder&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The organization in which to create the sink. Only one of projectRef,
-/// folderRef, or organizationRef may be specified.
-/// </summary>
+/// <summary>Immutable. The organization in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecOrganizationRef
 {
-    /// <summary>Allowed value: The `name` field of an `Organization` resource.</summary>
+    /// <summary>The &apos;name&apos; field of an organization, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The &apos;name&apos; field of an &apos;Organization&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The &apos;namespace&apos; field of an &apos;Organization&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The project in which to create the sink. Only one of projectRef,
-/// folderRef, or organizationRef may be specified.
-/// </summary>
+/// <summary>Immutable. The project in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>LoggingLogSinkSpec defines the desired state of LoggingLogSink</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpec
 {
-    /// <summary>Options that affect sinks exporting data to BigQuery.</summary>
     [JsonPropertyName("bigqueryOptions")]
     public V1beta1LoggingLogSinkSpecBigqueryOptions? BigqueryOptions { get; set; }
 
@@ -243,10 +240,7 @@ public partial class V1beta1LoggingLogSinkSpec
     [JsonPropertyName("filter")]
     public string? Filter { get; set; }
 
-    /// <summary>
-    /// The folder in which to create the sink. Only one of projectRef,
-    /// folderRef, or organizationRef may be specified.
-    /// </summary>
+    /// <summary>Immutable. The folder in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.</summary>
     [JsonPropertyName("folderRef")]
     public V1beta1LoggingLogSinkSpecFolderRef? FolderRef { get; set; }
 
@@ -254,17 +248,11 @@ public partial class V1beta1LoggingLogSinkSpec
     [JsonPropertyName("includeChildren")]
     public bool? IncludeChildren { get; set; }
 
-    /// <summary>
-    /// The organization in which to create the sink. Only one of projectRef,
-    /// folderRef, or organizationRef may be specified.
-    /// </summary>
+    /// <summary>Immutable. The organization in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.</summary>
     [JsonPropertyName("organizationRef")]
     public V1beta1LoggingLogSinkSpecOrganizationRef? OrganizationRef { get; set; }
 
-    /// <summary>
-    /// The project in which to create the sink. Only one of projectRef,
-    /// folderRef, or organizationRef may be specified.
-    /// </summary>
+    /// <summary>Immutable. The project in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.</summary>
     [JsonPropertyName("projectRef")]
     public V1beta1LoggingLogSinkSpecProjectRef? ProjectRef { get; set; }
 
@@ -302,23 +290,25 @@ public partial class V1beta1LoggingLogSinkStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>LoggingLogSinkStatus defines the config connector machine state of LoggingLogSink</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1LoggingLogSinkStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The identity associated with this sink. This identity must be granted write access to the configured destination.</summary>
     [JsonPropertyName("writerIdentity")]
     public string? WriterIdentity { get; set; }
 }
 
+/// <summary>LoggingLogSink is the Schema for the LoggingLogSink API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -340,9 +330,11 @@ public partial class V1beta1LoggingLogSink : IKubernetesObject<V1ObjectMeta>, IS
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>LoggingLogSinkSpec defines the desired state of LoggingLogSink</summary>
     [JsonPropertyName("spec")]
     public required V1beta1LoggingLogSinkSpec Spec { get; set; }
 
+    /// <summary>LoggingLogSinkStatus defines the config connector machine state of LoggingLogSink</summary>
     [JsonPropertyName("status")]
     public V1beta1LoggingLogSinkStatus? Status { get; set; }
 }

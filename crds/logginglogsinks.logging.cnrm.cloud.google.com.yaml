@@ -15,6 +15,7 @@ spec:
     kind: LoggingLogSink
     categories:
     - gcp
+    listKind: LoggingLogSinkList
     plural: logginglogsinks
     shortNames:
     - gcplogginglogsink
@@ -42,19 +43,20 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: LoggingLogSink is the Schema for the LoggingLogSink API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: LoggingLogSinkSpec defines the desired state of LoggingLogSink
             properties:
               bigqueryOptions:
-                description: Options that affect sinks exporting data to BigQuery.
                 properties:
                   usePartitionedTables:
                     description: Whether to use BigQuery's partition tables. By default, Logging creates dated tables based on the log entries' timestamps, e.g. syslog_20170523. With partitioned tables the date suffix is no longer present and special query syntax has to be used instead. In both cases, tables are sharded based on UTC timezone.
@@ -77,6 +79,7 @@ spec:
                   - storageBucketRef
                 properties:
                   bigQueryDatasetRef:
+                    description: DatasetRef is a reference to a BigQueryDataset.
                     oneOf:
                     - not:
                         required:
@@ -93,17 +96,17 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: string of the format `bigquery.googleapis.com/projects/{{project}}/datasets/{{value}}`, where {{value}} is the `name` field of a `BigQueryDataset` resource.'
+                        description: A reference to an externally-managed BigQueryDataset resource. Should be in the format "projects/{{projectID}}/datasets/{{datasetID}}".
                         type: string
                       name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        description: The name of a BigQueryDataset resource.
                         type: string
                       namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        description: The namespace of a BigQueryDataset resource.
                         type: string
                     type: object
                   loggingLogBucketRef:
-                    description: Only `external` field is supported to configure the reference.
+                    description: LoggingLogBucketRef is a reference to a LoggingLogBucket.
                     oneOf:
                     - not:
                         required:
@@ -120,16 +123,17 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: string of the format `logging.googleapis.com/projects/{{project}}/locations/{{location}}/buckets/{{value}}`, where {{value}} is the `name` field of a `LoggingLogBucket` resource.'
+                        description: A reference to an externally managed LoggingLogBucket resource. Should be in the format "projects/{{projectID}}/locations/{{location}}/buckets/{{bucketID}}".
                         type: string
                       name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        description: The name of a LoggingLogBucket resource.
                         type: string
                       namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        description: The namespace of a LoggingLogBucket resource.
                         type: string
                     type: object
                   pubSubTopicRef:
+                    description: PubSubTopicRef is a reference to a PubSubTopic.
                     oneOf:
                     - not:
                         required:
@@ -146,16 +150,17 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: string of the format `pubsub.googleapis.com/projects/{{project}}/topics/{{value}}`, where {{value}} is the `name` field of a `PubSubTopic` resource.'
+                        description: A reference to an externally managed PubSubTopic resource. Should be in the format "projects/{{projectID}}/topics/{{topicID}}".
                         type: string
                       name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        description: The name of a PubSubTopic resource.
                         type: string
                       namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        description: The namespace of a PubSubTopic resource.
                         type: string
                     type: object
                   storageBucketRef:
+                    description: StorageBucketRef is a reference to a StorageBucket.
                     oneOf:
                     - not:
                         required:
@@ -172,13 +177,13 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: string of the format `storage.googleapis.com/{{value}}`, where {{value}} is the `name` field of a `StorageBucket` resource.'
+                        description: A reference to an externally-managed StorageBucket resource.
                         type: string
                       name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        description: The name of a StorageBucket resource.
                         type: string
                       namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        description: The namespace of a StorageBucket resource.
                         type: string
                     type: object
                 type: object
@@ -210,9 +215,7 @@ spec:
                 description: The filter to apply when exporting logs. Only log entries that match the filter are exported.
                 type: string
               folderRef:
-                description: |-
-                  The folder in which to create the sink. Only one of projectRef,
-                  folderRef, or organizationRef may be specified.
+                description: Immutable. The folder in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.
                 oneOf:
                 - not:
                     required:
@@ -229,22 +232,20 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `folderId` field of a `Folder` resource.'
+                    description: The 'name' field of a folder, when not managed by Config Connector.
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The 'name' field of a 'Folder' resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The 'namespace' field of a 'Folder' resource.
                     type: string
                 type: object
               includeChildren:
                 description: Immutable. Whether or not to include children organizations in the sink export. If true, logs associated with child projects are also exported; otherwise only logs relating to the provided organization are included.
                 type: boolean
               organizationRef:
-                description: |-
-                  The organization in which to create the sink. Only one of projectRef,
-                  folderRef, or organizationRef may be specified.
+                description: Immutable. The organization in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.
                 oneOf:
                 - not:
                     required:
@@ -261,19 +262,17 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `name` field of an `Organization` resource.'
+                    description: The 'name' field of an organization, when not managed by Config Connector.
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The 'name' field of an 'Organization' resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The 'namespace' field of an 'Organization' resource.
                     type: string
                 type: object
               projectRef:
-                description: |-
-                  The project in which to create the sink. Only one of projectRef,
-                  folderRef, or organizationRef may be specified.
+                description: Immutable. The project in which to create the sink. Only one of projectRef, folderRef, or organizationRef may be specified.
                 oneOf:
                 - not:
                     required:
@@ -290,13 +289,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `name` field of a `Project` resource.'
+                    description: The `projectID` field of a project, when not managed by Config Connector.
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The `name` field of a `Project` resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The `namespace` field of a `Project` resource.
                     type: string
                 type: object
               resourceID:
@@ -309,9 +308,10 @@ spec:
             - destination
             type: object
           status:
+            description: LoggingLogSinkStatus defines the config connector machine state of LoggingLogSink
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the object's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -333,6 +333,7 @@ spec:
                 type: array
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
               writerIdentity:
                 description: The identity associated with this sink. This identity must be granted write access to the configured destination.
@@ -345,9 +346,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
