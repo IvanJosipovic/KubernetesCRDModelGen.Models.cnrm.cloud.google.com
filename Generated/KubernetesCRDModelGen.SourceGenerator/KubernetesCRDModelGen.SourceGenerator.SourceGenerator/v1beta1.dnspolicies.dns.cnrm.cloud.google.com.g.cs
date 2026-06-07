@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.dns.cnrm.cloud.google.com;
+/// <summary>DNSPolicy is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -39,11 +40,7 @@ public partial class V1beta1DNSPolicyList : IKubernetesObject<V1ListMeta>, IItem
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSPolicySpecAlternativeNameServerConfigTargetNameServers
 {
-    /// <summary>
-    /// Forwarding path for this TargetNameServer. If unset or &apos;default&apos; Cloud DNS will make forwarding
-    /// decision based on address ranges, i.e. RFC1918 addresses go to the VPC, Non-RFC1918 addresses go
-    /// to the Internet. When set to &apos;private&apos;, Cloud DNS will always send queries through VPC for this target Possible values: [&quot;default&quot;, &quot;private&quot;].
-    /// </summary>
+    /// <summary>Forwarding path for this TargetNameServer. If unset or &apos;default&apos; Cloud DNS will make forwarding decision based on address ranges, i.e. RFC1918 addresses go to the VPC, Non-RFC1918 addresses go to the Internet. When set to &apos;private&apos;, Cloud DNS will always send queries through VPC for this target Possible values: [&quot;default&quot;, &quot;private&quot;].</summary>
     [JsonPropertyName("forwardingPath")]
     public string? ForwardingPath { get; set; }
 
@@ -52,20 +49,12 @@ public partial class V1beta1DNSPolicySpecAlternativeNameServerConfigTargetNameSe
     public required string Ipv4Address { get; set; }
 }
 
-/// <summary>
-/// Sets an alternative name server for the associated networks.
-/// When specified, all DNS queries are forwarded to a name server that you choose.
-/// Names such as .internal are not available when an alternative name server is specified.
-/// </summary>
+/// <summary>Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSPolicySpecAlternativeNameServerConfig
 {
-    /// <summary>
-    /// Sets an alternative name server for the associated networks. When specified,
-    /// all DNS queries are forwarded to a name server that you choose. Names such as .internal
-    /// are not available when an alternative name server is specified.
-    /// </summary>
+    /// <summary>Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.</summary>
     [JsonPropertyName("targetNameServers")]
     public required IList<V1beta1DNSPolicySpecAlternativeNameServerConfigTargetNameServers> TargetNameServers { get; set; }
 }
@@ -75,15 +64,15 @@ public partial class V1beta1DNSPolicySpecAlternativeNameServerConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSPolicySpecNetworksNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -101,11 +90,7 @@ public partial class V1beta1DNSPolicySpecNetworks
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSPolicySpec
 {
-    /// <summary>
-    /// Sets an alternative name server for the associated networks.
-    /// When specified, all DNS queries are forwarded to a name server that you choose.
-    /// Names such as .internal are not available when an alternative name server is specified.
-    /// </summary>
+    /// <summary>Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.</summary>
     [JsonPropertyName("alternativeNameServerConfig")]
     public V1beta1DNSPolicySpecAlternativeNameServerConfig? AlternativeNameServerConfig { get; set; }
 
@@ -113,19 +98,11 @@ public partial class V1beta1DNSPolicySpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Allows networks bound to this policy to receive DNS queries sent
-    /// by VMs or applications over VPN connections. When enabled, a
-    /// virtual IP address will be allocated from each of the sub-networks
-    /// that are bound to this policy.
-    /// </summary>
+    /// <summary>Allows networks bound to this policy to receive DNS queries sent by VMs or applications over VPN connections. When enabled, a virtual IP address will be allocated from each of the sub-networks that are bound to this policy.</summary>
     [JsonPropertyName("enableInboundForwarding")]
     public bool? EnableInboundForwarding { get; set; }
 
-    /// <summary>
-    /// Controls whether logging is enabled for the networks bound to this policy.
-    /// Defaults to no logging if not set.
-    /// </summary>
+    /// <summary>Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.</summary>
     [JsonPropertyName("enableLogging")]
     public bool? EnableLogging { get; set; }
 
@@ -167,15 +144,16 @@ public partial class V1beta1DNSPolicyStatusConditions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSPolicyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the DNSPolicy&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1DNSPolicyStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>DNSPolicy is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
