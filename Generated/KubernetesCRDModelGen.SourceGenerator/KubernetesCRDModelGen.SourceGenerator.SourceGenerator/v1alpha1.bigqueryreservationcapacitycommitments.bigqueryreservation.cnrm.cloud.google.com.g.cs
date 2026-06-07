@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.bigqueryreservation.cnrm.cloud.google.com;
+/// <summary>BigQueryReservationCapacityCommitment is the Schema for the BigQueryReservationCapacityCommitment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,19 +41,20 @@ public partial class V1alpha1BigQueryReservationCapacityCommitmentList : IKubern
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryReservationCapacityCommitmentSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>BigQueryReservationCapacityCommitmentSpec defines the desired state of BigQueryReservationCapacityCommitment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryReservationCapacityCommitmentSpec
@@ -65,10 +67,7 @@ public partial class V1alpha1BigQueryReservationCapacityCommitmentSpec
     [JsonPropertyName("enforceSingleAdminProjectPerOrg")]
     public string? EnforceSingleAdminProjectPerOrg { get; set; }
 
-    /// <summary>
-    /// Immutable. The geographic location where the transfer config should reside.
-    /// Examples: US, EU, asia-northeast1. The default value is US.
-    /// </summary>
+    /// <summary>The location of this resource.</summary>
     [JsonPropertyName("location")]
     public required string Location { get; set; }
 
@@ -84,13 +83,13 @@ public partial class V1alpha1BigQueryReservationCapacityCommitmentSpec
     [JsonPropertyName("renewalPlan")]
     public string? RenewalPlan { get; set; }
 
-    /// <summary>Immutable. Optional. The capacityCommitmentId of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
+    /// <summary>The BigQueryReservationCapacityCommitment name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
     /// <summary>Immutable. Number of slots in this commitment.</summary>
     [JsonPropertyName("slotCount")]
-    public required int SlotCount { get; set; }
+    public required long SlotCount { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -118,6 +117,7 @@ public partial class V1alpha1BigQueryReservationCapacityCommitmentStatusConditio
     public string? Type { get; set; }
 }
 
+/// <summary>BigQueryReservationCapacityCommitmentStatus defines the config connector machine state of BigQueryReservationCapacityCommitment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BigQueryReservationCapacityCommitmentStatus
@@ -130,7 +130,7 @@ public partial class V1alpha1BigQueryReservationCapacityCommitmentStatus
     [JsonPropertyName("commitmentStartTime")]
     public string? CommitmentStartTime { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the BigQueryReservationCapacityCommitment&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1BigQueryReservationCapacityCommitmentStatusConditions>? Conditions { get; set; }
 
@@ -140,13 +140,14 @@ public partial class V1alpha1BigQueryReservationCapacityCommitmentStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>State of the commitment.</summary>
     [JsonPropertyName("state")]
     public string? State { get; set; }
 }
 
+/// <summary>BigQueryReservationCapacityCommitment is the Schema for the BigQueryReservationCapacityCommitment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -168,9 +169,11 @@ public partial class V1alpha1BigQueryReservationCapacityCommitment : IKubernetes
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>BigQueryReservationCapacityCommitmentSpec defines the desired state of BigQueryReservationCapacityCommitment</summary>
     [JsonPropertyName("spec")]
     public required V1alpha1BigQueryReservationCapacityCommitmentSpec Spec { get; set; }
 
+    /// <summary>BigQueryReservationCapacityCommitmentStatus defines the config connector machine state of BigQueryReservationCapacityCommitment</summary>
     [JsonPropertyName("status")]
     public V1alpha1BigQueryReservationCapacityCommitmentStatus? Status { get; set; }
 }
