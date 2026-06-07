@@ -218,7 +218,7 @@ public partial class V1beta1MonitoringUptimeCheckConfigSpecTcpCheck
 {
     /// <summary>The TCP port on the server against which to run the check. Will be combined with host (specified within the `monitored_resource`) to construct the full URL. Required.</summary>
     [JsonPropertyName("port")]
-    public required long Port { get; set; }
+    public required int Port { get; set; }
 }
 
 /// <summary>MonitoringUptimeCheckConfigSpec defines the desired state of MonitoringUptimeCheckConfig</summary>
