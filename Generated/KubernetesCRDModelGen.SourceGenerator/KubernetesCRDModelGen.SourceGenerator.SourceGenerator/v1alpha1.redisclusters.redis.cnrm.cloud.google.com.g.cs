@@ -86,6 +86,51 @@ public partial class V1alpha1RedisClusterSpecAutomatedBackupConfig
     public string? Retention { get; set; }
 }
 
+/// <summary>Start time of the window in UTC.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1RedisClusterSpecMaintenancePolicyWeeklyMaintenanceWindowStartTime
+{
+    /// <summary>Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value &quot;24:00:00&quot; for scenarios like business closing time.</summary>
+    [JsonPropertyName("hours")]
+    public int? Hours { get; set; }
+
+    /// <summary>Minutes of hour of day. Must be from 0 to 59.</summary>
+    [JsonPropertyName("minutes")]
+    public int? Minutes { get; set; }
+
+    /// <summary>Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.</summary>
+    [JsonPropertyName("nanos")]
+    public int? Nanos { get; set; }
+
+    /// <summary>Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.</summary>
+    [JsonPropertyName("seconds")]
+    public int? Seconds { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1RedisClusterSpecMaintenancePolicyWeeklyMaintenanceWindow
+{
+    /// <summary>Allows to define schedule that runs specified day of the week.</summary>
+    [JsonPropertyName("day")]
+    public string? Day { get; set; }
+
+    /// <summary>Start time of the window in UTC.</summary>
+    [JsonPropertyName("startTime")]
+    public V1alpha1RedisClusterSpecMaintenancePolicyWeeklyMaintenanceWindowStartTime? StartTime { get; set; }
+}
+
+/// <summary>Optional. ClusterMaintenancePolicy determines when to allow or deny updates.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1RedisClusterSpecMaintenancePolicy
+{
+    /// <summary>Optional. Maintenance window that is applied to resources covered by this policy. Minimum 1. For the current version, the maximum number of weekly_maintenance_window is expected to be one.</summary>
+    [JsonPropertyName("weeklyMaintenanceWindow")]
+    public IList<V1alpha1RedisClusterSpecMaintenancePolicyWeeklyMaintenanceWindow>? WeeklyMaintenanceWindow { get; set; }
+}
+
 /// <summary>Optional. AOF configuration. This field will be ignored if mode is not AOF.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -212,6 +257,10 @@ public partial class V1alpha1RedisClusterSpec
     [JsonPropertyName("location")]
     public required string Location { get; set; }
 
+    /// <summary>Optional. ClusterMaintenancePolicy determines when to allow or deny updates.</summary>
+    [JsonPropertyName("maintenancePolicy")]
+    public V1alpha1RedisClusterSpecMaintenancePolicy? MaintenancePolicy { get; set; }
+
     /// <summary>Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.</summary>
     [JsonPropertyName("nodeType")]
     public string? NodeType { get; set; }
@@ -305,6 +354,34 @@ public partial class V1alpha1RedisClusterStatusObservedStateDiscoveryEndpoints
     public V1alpha1RedisClusterStatusObservedStateDiscoveryEndpointsPscConfig? PscConfig { get; set; }
 }
 
+/// <summary>Optional. ClusterMaintenancePolicy determines when to allow or deny updates.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1RedisClusterStatusObservedStateMaintenancePolicy
+{
+    /// <summary>Output only. The time when the policy was created i.e. Maintenance Window or Deny Period was assigned.</summary>
+    [JsonPropertyName("createTime")]
+    public string? CreateTime { get; set; }
+
+    /// <summary>Output only. The time when the policy was updated i.e. Maintenance Window or Deny Period was updated.</summary>
+    [JsonPropertyName("updateTime")]
+    public string? UpdateTime { get; set; }
+}
+
+/// <summary>Output only. ClusterMaintenanceSchedule Output only Published maintenance schedule.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1RedisClusterStatusObservedStateMaintenanceSchedule
+{
+    /// <summary>Output only. The end time of any upcoming scheduled maintenance for this instance.</summary>
+    [JsonPropertyName("endTime")]
+    public string? EndTime { get; set; }
+
+    /// <summary>Output only. The start time of any upcoming scheduled maintenance for this instance.</summary>
+    [JsonPropertyName("startTime")]
+    public string? StartTime { get; set; }
+}
+
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1RedisClusterStatusObservedStatePscConnections
@@ -370,6 +447,14 @@ public partial class V1alpha1RedisClusterStatusObservedState
     /// <summary>Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.</summary>
     [JsonPropertyName("discoveryEndpoints")]
     public IList<V1alpha1RedisClusterStatusObservedStateDiscoveryEndpoints>? DiscoveryEndpoints { get; set; }
+
+    /// <summary>Optional. ClusterMaintenancePolicy determines when to allow or deny updates.</summary>
+    [JsonPropertyName("maintenancePolicy")]
+    public V1alpha1RedisClusterStatusObservedStateMaintenancePolicy? MaintenancePolicy { get; set; }
+
+    /// <summary>Output only. ClusterMaintenanceSchedule Output only Published maintenance schedule.</summary>
+    [JsonPropertyName("maintenanceSchedule")]
+    public V1alpha1RedisClusterStatusObservedStateMaintenanceSchedule? MaintenanceSchedule { get; set; }
 
     /// <summary>Output only. Precise value of redis memory size in GB for the entire cluster.</summary>
     [JsonPropertyName("preciseSizeGb")]
