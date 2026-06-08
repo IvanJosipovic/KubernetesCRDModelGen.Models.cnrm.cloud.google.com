@@ -210,6 +210,51 @@ public partial class V1alpha1MemorystoreInstanceSpecEndpoints
     public IList<V1alpha1MemorystoreInstanceSpecEndpointsConnections>? Connections { get; set; }
 }
 
+/// <summary>Optional. Start time of the window in UTC.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceSpecMaintenancePolicyWeeklyMaintenanceWindowStartTime
+{
+    /// <summary>Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value &quot;24:00:00&quot; for scenarios like business closing time.</summary>
+    [JsonPropertyName("hours")]
+    public int? Hours { get; set; }
+
+    /// <summary>Minutes of hour of day. Must be from 0 to 59.</summary>
+    [JsonPropertyName("minutes")]
+    public int? Minutes { get; set; }
+
+    /// <summary>Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.</summary>
+    [JsonPropertyName("nanos")]
+    public int? Nanos { get; set; }
+
+    /// <summary>Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.</summary>
+    [JsonPropertyName("seconds")]
+    public int? Seconds { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceSpecMaintenancePolicyWeeklyMaintenanceWindow
+{
+    /// <summary>Optional. Allows to define schedule that runs specified day of the week.</summary>
+    [JsonPropertyName("day")]
+    public string? Day { get; set; }
+
+    /// <summary>Optional. Start time of the window in UTC.</summary>
+    [JsonPropertyName("startTime")]
+    public V1alpha1MemorystoreInstanceSpecMaintenancePolicyWeeklyMaintenanceWindowStartTime? StartTime { get; set; }
+}
+
+/// <summary>Optional. The maintenance policy for the instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceSpecMaintenancePolicy
+{
+    /// <summary>Optional. Maintenance window that is applied to resources covered by this policy. Minimum 1. For the current version, the maximum number of weekly_window is expected to be one.</summary>
+    [JsonPropertyName("weeklyMaintenanceWindow")]
+    public IList<V1alpha1MemorystoreInstanceSpecMaintenancePolicyWeeklyMaintenanceWindow>? WeeklyMaintenanceWindow { get; set; }
+}
+
 /// <summary>Optional. AOF configuration. This field will be ignored if mode is not AOF.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -328,6 +373,10 @@ public partial class V1alpha1MemorystoreInstanceSpec
     /// <summary>Immutable.</summary>
     [JsonPropertyName("location")]
     public required string Location { get; set; }
+
+    /// <summary>Optional. The maintenance policy for the instance.</summary>
+    [JsonPropertyName("maintenancePolicy")]
+    public V1alpha1MemorystoreInstanceSpecMaintenancePolicy? MaintenancePolicy { get; set; }
 
     /// <summary>Optional. The maintenance version of the instance.</summary>
     [JsonPropertyName("maintenanceVersion")]
@@ -548,6 +597,34 @@ public partial class V1alpha1MemorystoreInstanceStatusObservedStateEndpoints
     public IList<V1alpha1MemorystoreInstanceStatusObservedStateEndpointsConnections>? Connections { get; set; }
 }
 
+/// <summary>Output only. User-defined weekly maintenance windows in which space is reserved for maintenance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateMaintenancePolicy
+{
+    /// <summary>Output only. The time when the policy was created.</summary>
+    [JsonPropertyName("createTime")]
+    public string? CreateTime { get; set; }
+
+    /// <summary>Output only. The time when the policy was updated.</summary>
+    [JsonPropertyName("updateTime")]
+    public string? UpdateTime { get; set; }
+}
+
+/// <summary>Output only. Upcoming maintenance schedule.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateMaintenanceSchedule
+{
+    /// <summary>Output only. The end time of any upcoming scheduled maintenance for this instance.</summary>
+    [JsonPropertyName("endTime")]
+    public string? EndTime { get; set; }
+
+    /// <summary>Output only. The start time of any upcoming scheduled maintenance for this instance.</summary>
+    [JsonPropertyName("startTime")]
+    public string? StartTime { get; set; }
+}
+
 /// <summary>Output only. Configuration of individual nodes of the instance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -619,6 +696,14 @@ public partial class V1alpha1MemorystoreInstanceStatusObservedState
     /// <summary>Optional. Endpoints for the instance.</summary>
     [JsonPropertyName("endpoints")]
     public IList<V1alpha1MemorystoreInstanceStatusObservedStateEndpoints>? Endpoints { get; set; }
+
+    /// <summary>Output only. User-defined weekly maintenance windows in which space is reserved for maintenance.</summary>
+    [JsonPropertyName("maintenancePolicy")]
+    public V1alpha1MemorystoreInstanceStatusObservedStateMaintenancePolicy? MaintenancePolicy { get; set; }
+
+    /// <summary>Output only. Upcoming maintenance schedule.</summary>
+    [JsonPropertyName("maintenanceSchedule")]
+    public V1alpha1MemorystoreInstanceStatusObservedStateMaintenanceSchedule? MaintenanceSchedule { get; set; }
 
     /// <summary>Output only. Configuration of individual nodes of the instance.</summary>
     [JsonPropertyName("nodeConfig")]
