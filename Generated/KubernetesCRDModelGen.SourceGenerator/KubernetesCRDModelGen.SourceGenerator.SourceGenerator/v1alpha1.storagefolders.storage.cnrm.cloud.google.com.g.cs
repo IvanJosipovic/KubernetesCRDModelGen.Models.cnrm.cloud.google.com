@@ -63,7 +63,7 @@ public partial class V1alpha1StorageFolderSpecProjectRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1StorageFolderSpecStoragebucketRef
 {
-    /// <summary>A reference to an externally-managed StorageBucket resource.</summary>
+    /// <summary>A reference to an externally managed StorageBucket resource. Should be in the format &quot;projects/{{projectID}}/buckets/{{bucketID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
