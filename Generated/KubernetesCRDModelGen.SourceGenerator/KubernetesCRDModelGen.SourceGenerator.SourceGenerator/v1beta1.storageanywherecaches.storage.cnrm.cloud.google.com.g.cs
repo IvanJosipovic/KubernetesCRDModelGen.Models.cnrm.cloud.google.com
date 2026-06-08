@@ -52,7 +52,7 @@ public enum V1beta1StorageAnywhereCacheSpecAdmissionPolicyEnum
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1StorageAnywhereCacheSpecBucketRef
 {
-    /// <summary>A reference to an externally-managed StorageBucket resource.</summary>
+    /// <summary>A reference to an externally managed StorageBucket resource. Should be in the format &quot;projects/{{projectID}}/buckets/{{bucketID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 

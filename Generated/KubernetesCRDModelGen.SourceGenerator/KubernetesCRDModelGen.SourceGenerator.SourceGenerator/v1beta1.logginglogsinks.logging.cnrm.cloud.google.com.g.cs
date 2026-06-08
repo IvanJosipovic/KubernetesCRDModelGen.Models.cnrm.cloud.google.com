@@ -99,12 +99,12 @@ public partial class V1beta1LoggingLogSinkSpecDestinationPubSubTopicRef
     public string? Namespace { get; set; }
 }
 
-/// <summary>StorageBucketRef is a reference to a StorageBucket.</summary>
+/// <summary>StorageBucketRef is a reference to a GCP StorageBucket.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogSinkSpecDestinationStorageBucketRef
 {
-    /// <summary>A reference to an externally-managed StorageBucket resource.</summary>
+    /// <summary>A reference to an externally managed StorageBucket resource. Should be in the format &quot;projects/{{projectID}}/buckets/{{bucketID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -133,7 +133,7 @@ public partial class V1beta1LoggingLogSinkSpecDestination
     [JsonPropertyName("pubSubTopicRef")]
     public V1beta1LoggingLogSinkSpecDestinationPubSubTopicRef? PubSubTopicRef { get; set; }
 
-    /// <summary>StorageBucketRef is a reference to a StorageBucket.</summary>
+    /// <summary>StorageBucketRef is a reference to a GCP StorageBucket.</summary>
     [JsonPropertyName("storageBucketRef")]
     public V1beta1LoggingLogSinkSpecDestinationStorageBucketRef? StorageBucketRef { get; set; }
 }
