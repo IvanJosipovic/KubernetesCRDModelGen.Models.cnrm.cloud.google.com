@@ -86,6 +86,24 @@ public partial class V1beta1RedisClusterSpecAutomatedBackupConfig
     public string? Retention { get; set; }
 }
 
+/// <summary>Optional. The KMS key name to encrypt data at rest.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterSpecKmsKeyRef
+{
+    /// <summary>A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The `name` of a `KMSCryptoKey` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The `namespace` of a `KMSCryptoKey` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
 /// <summary>Start time of the window in UTC.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -253,6 +271,10 @@ public partial class V1beta1RedisClusterSpec
     [JsonPropertyName("deletionProtectionEnabled")]
     public bool? DeletionProtectionEnabled { get; set; }
 
+    /// <summary>Optional. The KMS key name to encrypt data at rest.</summary>
+    [JsonPropertyName("kmsKeyRef")]
+    public V1beta1RedisClusterSpecKmsKeyRef? KmsKeyRef { get; set; }
+
     /// <summary>Immutable. Location of the resource.</summary>
     [JsonPropertyName("location")]
     public required string Location { get; set; }
@@ -354,6 +376,28 @@ public partial class V1beta1RedisClusterStatusObservedStateDiscoveryEndpoints
     public V1beta1RedisClusterStatusObservedStateDiscoveryEndpointsPscConfig? PscConfig { get; set; }
 }
 
+/// <summary>Output only. Encryption information for the client to retrieve.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterStatusObservedStateEncryptionInfo
+{
+    /// <summary>Output only. Type of encryption.</summary>
+    [JsonPropertyName("encryptionType")]
+    public string? EncryptionType { get; set; }
+
+    /// <summary>Output only. The state of the primary version of the KMS key perceived by the system. This field is not populated in backups.</summary>
+    [JsonPropertyName("kmsKeyPrimaryState")]
+    public string? KmsKeyPrimaryState { get; set; }
+
+    /// <summary>Output only. KMS key versions that are being used to protect the data at-rest.</summary>
+    [JsonPropertyName("kmsKeyVersions")]
+    public IList<string>? KmsKeyVersions { get; set; }
+
+    /// <summary>Output only. The most recent time when the encryption info was updated.</summary>
+    [JsonPropertyName("lastUpdateTime")]
+    public string? LastUpdateTime { get; set; }
+}
+
 /// <summary>Optional. ClusterMaintenancePolicy determines when to allow or deny updates.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -447,6 +491,10 @@ public partial class V1beta1RedisClusterStatusObservedState
     /// <summary>Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.</summary>
     [JsonPropertyName("discoveryEndpoints")]
     public IList<V1beta1RedisClusterStatusObservedStateDiscoveryEndpoints>? DiscoveryEndpoints { get; set; }
+
+    /// <summary>Output only. Encryption information for the client to retrieve.</summary>
+    [JsonPropertyName("encryptionInfo")]
+    public V1beta1RedisClusterStatusObservedStateEncryptionInfo? EncryptionInfo { get; set; }
 
     /// <summary>Optional. ClusterMaintenancePolicy determines when to allow or deny updates.</summary>
     [JsonPropertyName("maintenancePolicy")]
