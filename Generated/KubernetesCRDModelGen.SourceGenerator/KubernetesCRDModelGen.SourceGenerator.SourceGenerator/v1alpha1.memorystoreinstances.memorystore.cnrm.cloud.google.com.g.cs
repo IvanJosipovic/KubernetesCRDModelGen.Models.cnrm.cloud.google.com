@@ -210,6 +210,24 @@ public partial class V1alpha1MemorystoreInstanceSpecEndpoints
     public IList<V1alpha1MemorystoreInstanceSpecEndpointsConnections>? Connections { get; set; }
 }
 
+/// <summary>Optional. The KMS key reference for the instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceSpecKmsKeyRef
+{
+    /// <summary>A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The `name` of a `KMSCryptoKey` resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The `namespace` of a `KMSCryptoKey` resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
 /// <summary>Optional. Start time of the window in UTC.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -365,6 +383,10 @@ public partial class V1alpha1MemorystoreInstanceSpec
     /// <summary>Optional. Immutable. Engine version of the instance.</summary>
     [JsonPropertyName("engineVersion")]
     public string? EngineVersion { get; set; }
+
+    /// <summary>Optional. The KMS key reference for the instance.</summary>
+    [JsonPropertyName("kmsKeyRef")]
+    public V1alpha1MemorystoreInstanceSpecKmsKeyRef? KmsKeyRef { get; set; }
 
     /// <summary>Optional. Labels to represent user-provided metadata.</summary>
     [JsonPropertyName("labels")]
@@ -545,6 +567,28 @@ public partial class V1alpha1MemorystoreInstanceStatusObservedStateCrossInstance
     public IList<V1alpha1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigSecondaryInstances>? SecondaryInstances { get; set; }
 }
 
+/// <summary>Output only. Encryption information for the instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1MemorystoreInstanceStatusObservedStateEncryptionInfo
+{
+    /// <summary>Output only. Type of encryption.</summary>
+    [JsonPropertyName("encryptionType")]
+    public string? EncryptionType { get; set; }
+
+    /// <summary>Output only. The state of the primary KMS key.</summary>
+    [JsonPropertyName("kmsKeyPrimaryState")]
+    public string? KmsKeyPrimaryState { get; set; }
+
+    /// <summary>Output only. KMS key versions that are being used to protect the instance.</summary>
+    [JsonPropertyName("kmsKeyVersions")]
+    public IList<string>? KmsKeyVersions { get; set; }
+
+    /// <summary>Output only. Latest update timestamp of the encryption info.</summary>
+    [JsonPropertyName("lastUpdateTime")]
+    public string? LastUpdateTime { get; set; }
+}
+
 /// <summary>Detailed information of a PSC connection that is created through service connectivity automation.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -692,6 +736,10 @@ public partial class V1alpha1MemorystoreInstanceStatusObservedState
     /// <summary>Output only. The current version of the maintenance schedule.</summary>
     [JsonPropertyName("effectiveMaintenanceVersion")]
     public string? EffectiveMaintenanceVersion { get; set; }
+
+    /// <summary>Output only. Encryption information for the instance.</summary>
+    [JsonPropertyName("encryptionInfo")]
+    public V1alpha1MemorystoreInstanceStatusObservedStateEncryptionInfo? EncryptionInfo { get; set; }
 
     /// <summary>Optional. Endpoints for the instance.</summary>
     [JsonPropertyName("endpoints")]
