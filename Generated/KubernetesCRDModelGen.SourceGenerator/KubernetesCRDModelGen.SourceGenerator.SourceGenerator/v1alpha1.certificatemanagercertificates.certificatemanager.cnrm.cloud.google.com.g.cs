@@ -57,16 +57,20 @@ public partial class V1alpha1CertificateManagerCertificateSpecManagedAuthorizati
     public string? State { get; set; }
 }
 
+/// <summary>CertificateManagerDNSAuthorizationRef is a reference to a GCP CertificateManagerDNSAuthorization.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CertificateManagerCertificateSpecManagedDnsAuthorizationsRefs
 {
+    /// <summary>A reference to an externally managed CertificateManagerDNSAuthorization resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/dnsAuthorizations/{{dnsAuthorizationID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
+    /// <summary>The name of a CertificateManagerDNSAuthorization resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
+    /// <summary>The namespace of a CertificateManagerDNSAuthorization resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -82,12 +86,15 @@ public partial class V1alpha1CertificateManagerCertificateSpecManagedDnsAuthoriz
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1CertificateManagerCertificateSpecManagedIssuanceConfigRef
 {
+    /// <summary>A reference to an externally managed CertificateManagerCertificateIssuanceConfig resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/certificateIssuanceConfigs/{{certificateIssuanceConfigID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
+    /// <summary>The name of a CertificateManagerCertificateIssuanceConfig resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
+    /// <summary>The namespace of a CertificateManagerCertificateIssuanceConfig resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
