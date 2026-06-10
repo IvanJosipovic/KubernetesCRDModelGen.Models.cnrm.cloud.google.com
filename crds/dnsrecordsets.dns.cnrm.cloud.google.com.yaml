@@ -15,6 +15,7 @@ spec:
     kind: DNSRecordSet
     categories:
     - gcp
+    listKind: DNSRecordSetList
     plural: dnsrecordsets
     shortNames:
     - gcpdnsrecordset
@@ -42,25 +43,20 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: DNSRecordSet is the Schema for the dns API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
-            oneOf:
-            - required:
-              - rrdatas
-            - required:
-              - rrdatasRefs
-            - required:
-              - routingPolicy
             properties:
               managedZoneRef:
+                description: DNSManagedZoneRef is a reference to a DNSManagedZone.
                 oneOf:
                 - not:
                     required:
@@ -77,13 +73,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `name` field of a `DNSManagedZone` resource.'
+                    description: A reference to an externally managed DNSManagedZone resource. Should be in the format "projects/{{projectID}}/managedZones/{{zone_number}}".
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a DNSManagedZone resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace of a DNSManagedZone resource.
                     type: string
                 type: object
               name:
@@ -123,13 +119,13 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `address` field of a `ComputeAddress` resource.'
+                                        description: The ComputeAddress selflink in the form "projects/{{project}}/regions/{{region}}/addresses/{{name}}" when not managed by Config Connector.
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: The `name` field of a `ComputeAddress` resource.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: The `namespace` field of a `ComputeAddress` resource.
                                         type: string
                                     type: object
                                   ipProtocol:
@@ -139,6 +135,7 @@ spec:
                                     description: 'The type of load balancer. This value is case-sensitive. Possible values: ["regionalL4ilb", "regionalL7ilb", "globalL7ilb"].'
                                     type: string
                                   networkRef:
+                                    description: ComputeNetworkRef is a reference to a GCP ComputeNetwork.
                                     oneOf:
                                     - not:
                                         required:
@@ -155,19 +152,20 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `selfLink` field of a `ComputeNetwork` resource.'
+                                        description: A reference to an externally managed ComputeNetwork resource. Should be in the format "projects/{{projectID}}/global/networks/{{networkID}}".
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: The name of a ComputeNetwork resource.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: The namespace of a ComputeNetwork resource.
                                         type: string
                                     type: object
                                   port:
                                     description: The configured port of the load balancer.
                                     type: string
                                   projectRef:
+                                    description: ProjectRef is a reference to a GCP Project.
                                     oneOf:
                                     - not:
                                         required:
@@ -184,13 +182,13 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `name` field of a `Project` resource.'
+                                        description: The `projectID` field of a project, when not managed by Config Connector.
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: The `name` field of a `Project` resource.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: The `namespace` field of a `Project` resource.
                                         type: string
                                     type: object
                                   regionRef:
@@ -210,13 +208,13 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `location` field of a `ComputeForwardingRule` resource.'
+                                        description: The compute region name, when not managed by Config Connector.
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: Name of a ComputeRegion object.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: Namespace of a ComputeRegion object
                                         type: string
                                     type: object
                                 required:
@@ -242,15 +240,12 @@ spec:
                                 - external
                               required:
                               - name
-                              - kind
                             - not:
                                 anyOf:
                                 - required:
                                   - name
                                 - required:
                                   - namespace
-                                - required:
-                                  - kind
                               required:
                               - external
                             properties:
@@ -303,13 +298,13 @@ spec:
                                           - external
                                         properties:
                                           external:
-                                            description: 'Allowed value: The `address` field of a `ComputeAddress` resource.'
+                                            description: The ComputeAddress selflink in the form "projects/{{project}}/regions/{{region}}/addresses/{{name}}" when not managed by Config Connector.
                                             type: string
                                           name:
-                                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                            description: The `name` field of a `ComputeAddress` resource.
                                             type: string
                                           namespace:
-                                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                            description: The `namespace` field of a `ComputeAddress` resource.
                                             type: string
                                         type: object
                                       ipProtocol:
@@ -319,6 +314,7 @@ spec:
                                         description: 'The type of load balancer. This value is case-sensitive. Possible values: ["regionalL4ilb", "regionalL7ilb", "globalL7ilb"].'
                                         type: string
                                       networkRef:
+                                        description: ComputeNetworkRef is a reference to a GCP ComputeNetwork.
                                         oneOf:
                                         - not:
                                             required:
@@ -335,19 +331,20 @@ spec:
                                           - external
                                         properties:
                                           external:
-                                            description: 'Allowed value: The `selfLink` field of a `ComputeNetwork` resource.'
+                                            description: A reference to an externally managed ComputeNetwork resource. Should be in the format "projects/{{projectID}}/global/networks/{{networkID}}".
                                             type: string
                                           name:
-                                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                            description: The name of a ComputeNetwork resource.
                                             type: string
                                           namespace:
-                                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                            description: The namespace of a ComputeNetwork resource.
                                             type: string
                                         type: object
                                       port:
                                         description: The configured port of the load balancer.
                                         type: string
                                       projectRef:
+                                        description: ProjectRef is a reference to a GCP Project.
                                         oneOf:
                                         - not:
                                             required:
@@ -364,13 +361,13 @@ spec:
                                           - external
                                         properties:
                                           external:
-                                            description: 'Allowed value: The `name` field of a `Project` resource.'
+                                            description: The `projectID` field of a project, when not managed by Config Connector.
                                             type: string
                                           name:
-                                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                            description: The `name` field of a `Project` resource.
                                             type: string
                                           namespace:
-                                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                            description: The `namespace` field of a `Project` resource.
                                             type: string
                                         type: object
                                       regionRef:
@@ -390,13 +387,13 @@ spec:
                                           - external
                                         properties:
                                           external:
-                                            description: 'Allowed value: The `location` field of a `ComputeForwardingRule` resource.'
+                                            description: The compute region name, when not managed by Config Connector.
                                             type: string
                                           name:
-                                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                            description: Name of a ComputeRegion object.
                                             type: string
                                           namespace:
-                                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                            description: Namespace of a ComputeRegion object
                                             type: string
                                         type: object
                                     required:
@@ -433,6 +430,9 @@ spec:
                                 properties:
                                   external:
                                     description: 'Allowed value: The `address` field of a `ComputeAddress` resource.'
+                                    type: string
+                                  kind:
+                                    description: 'Kind of the referent. Allowed values: ComputeAddress'
                                     type: string
                                   name:
                                     description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
@@ -473,13 +473,13 @@ spec:
                                     - external
                                   properties:
                                     external:
-                                      description: 'Allowed value: The `address` field of a `ComputeAddress` resource.'
+                                      description: The ComputeAddress selflink in the form "projects/{{project}}/regions/{{region}}/addresses/{{name}}" when not managed by Config Connector.
                                       type: string
                                     name:
-                                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                      description: The `name` field of a `ComputeAddress` resource.
                                       type: string
                                     namespace:
-                                      description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                      description: The `namespace` field of a `ComputeAddress` resource.
                                       type: string
                                   type: object
                                 ipProtocol:
@@ -489,6 +489,7 @@ spec:
                                   description: 'The type of load balancer. This value is case-sensitive. Possible values: ["regionalL4ilb", "regionalL7ilb", "globalL7ilb"].'
                                   type: string
                                 networkRef:
+                                  description: ComputeNetworkRef is a reference to a GCP ComputeNetwork.
                                   oneOf:
                                   - not:
                                       required:
@@ -505,19 +506,20 @@ spec:
                                     - external
                                   properties:
                                     external:
-                                      description: 'Allowed value: The `selfLink` field of a `ComputeNetwork` resource.'
+                                      description: A reference to an externally managed ComputeNetwork resource. Should be in the format "projects/{{projectID}}/global/networks/{{networkID}}".
                                       type: string
                                     name:
-                                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                      description: The name of a ComputeNetwork resource.
                                       type: string
                                     namespace:
-                                      description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                      description: The namespace of a ComputeNetwork resource.
                                       type: string
                                   type: object
                                 port:
                                   description: The configured port of the load balancer.
                                   type: string
                                 projectRef:
+                                  description: ProjectRef is a reference to a GCP Project.
                                   oneOf:
                                   - not:
                                       required:
@@ -534,13 +536,13 @@ spec:
                                     - external
                                   properties:
                                     external:
-                                      description: 'Allowed value: The `name` field of a `Project` resource.'
+                                      description: The `projectID` field of a project, when not managed by Config Connector.
                                       type: string
                                     name:
-                                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                      description: The `name` field of a `Project` resource.
                                       type: string
                                     namespace:
-                                      description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                      description: The `namespace` field of a `Project` resource.
                                       type: string
                                   type: object
                                 regionRef:
@@ -560,13 +562,13 @@ spec:
                                     - external
                                   properties:
                                     external:
-                                      description: 'Allowed value: The `location` field of a `ComputeForwardingRule` resource.'
+                                      description: The compute region name, when not managed by Config Connector.
                                       type: string
                                     name:
-                                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                      description: Name of a ComputeRegion object.
                                       type: string
                                     namespace:
-                                      description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                      description: Namespace of a ComputeRegion object
                                       type: string
                                   type: object
                               required:
@@ -616,13 +618,13 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `address` field of a `ComputeAddress` resource.'
+                                        description: The ComputeAddress selflink in the form "projects/{{project}}/regions/{{region}}/addresses/{{name}}" when not managed by Config Connector.
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: The `name` field of a `ComputeAddress` resource.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: The `namespace` field of a `ComputeAddress` resource.
                                         type: string
                                     type: object
                                   ipProtocol:
@@ -632,6 +634,7 @@ spec:
                                     description: 'The type of load balancer. This value is case-sensitive. Possible values: ["regionalL4ilb", "regionalL7ilb", "globalL7ilb"].'
                                     type: string
                                   networkRef:
+                                    description: ComputeNetworkRef is a reference to a GCP ComputeNetwork.
                                     oneOf:
                                     - not:
                                         required:
@@ -648,19 +651,20 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `selfLink` field of a `ComputeNetwork` resource.'
+                                        description: A reference to an externally managed ComputeNetwork resource. Should be in the format "projects/{{projectID}}/global/networks/{{networkID}}".
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: The name of a ComputeNetwork resource.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: The namespace of a ComputeNetwork resource.
                                         type: string
                                     type: object
                                   port:
                                     description: The configured port of the load balancer.
                                     type: string
                                   projectRef:
+                                    description: ProjectRef is a reference to a GCP Project.
                                     oneOf:
                                     - not:
                                         required:
@@ -677,13 +681,13 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `name` field of a `Project` resource.'
+                                        description: The `projectID` field of a project, when not managed by Config Connector.
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: The `name` field of a `Project` resource.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: The `namespace` field of a `Project` resource.
                                         type: string
                                     type: object
                                   regionRef:
@@ -703,13 +707,13 @@ spec:
                                       - external
                                     properties:
                                       external:
-                                        description: 'Allowed value: The `location` field of a `ComputeForwardingRule` resource.'
+                                        description: The compute region name, when not managed by Config Connector.
                                         type: string
                                       name:
-                                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                        description: Name of a ComputeRegion object.
                                         type: string
                                       namespace:
-                                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                        description: Namespace of a ComputeRegion object
                                         type: string
                                     type: object
                                 required:
@@ -732,15 +736,12 @@ spec:
                                 - external
                               required:
                               - name
-                              - kind
                             - not:
                                 anyOf:
                                 - required:
                                   - name
                                 - required:
                                   - namespace
-                                - required:
-                                  - kind
                               required:
                               - external
                             properties:
@@ -779,15 +780,12 @@ spec:
                       - external
                     required:
                     - name
-                    - kind
                   - not:
                       anyOf:
                       - required:
                         - name
                       - required:
                         - namespace
-                      - required:
-                        - kind
                     required:
                     - external
                   properties:
@@ -807,6 +805,7 @@ spec:
                 type: array
               ttl:
                 description: The time-to-live of this record set (seconds).
+                format: int64
                 type: integer
               type:
                 description: The DNS record set type.
@@ -819,7 +818,7 @@ spec:
           status:
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the DNSRecordSet's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -841,6 +840,7 @@ spec:
                 type: array
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
             type: object
         required:
@@ -850,9 +850,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
