@@ -86,20 +86,20 @@ public partial class V1alpha1VertexAIDataLabelingJobSpecActiveLearningConfig
     public V1alpha1VertexAIDataLabelingJobSpecActiveLearningConfigTrainingConfig? TrainingConfig { get; set; }
 }
 
-/// <summary>VertexAIDatasetRef is a reference to a VertexAIDataset resource.</summary>
+/// <summary>VertexAIDatasetRef is a reference to a VertexAIDataset.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1VertexAIDataLabelingJobSpecDatasetRefs
 {
-    /// <summary>If provided, must be in the format `projects/[projectId]/locations/[location]/datasets/[datasetId]`.</summary>
+    /// <summary>A reference to an externally managed VertexAIDataset resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/datasets/{{datasetID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `metadata.name` field of a `VertexAIDataset` resource.</summary>
+    /// <summary>The name of a VertexAIDataset resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `metadata.namespace` field of a `VertexAIDataset` resource.</summary>
+    /// <summary>The namespace of a VertexAIDataset resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
