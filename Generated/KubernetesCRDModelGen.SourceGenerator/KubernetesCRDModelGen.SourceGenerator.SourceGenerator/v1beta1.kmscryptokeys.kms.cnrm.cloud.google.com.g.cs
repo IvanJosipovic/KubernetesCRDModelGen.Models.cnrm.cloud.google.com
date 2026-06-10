@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.kms.cnrm.cloud.google.com;
+/// <summary>KMSCryptoKey is the Schema for the KMSCryptoKey API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,15 +41,15 @@ public partial class V1beta1KMSCryptoKeyList : IKubernetesObject<V1ListMeta>, II
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1KMSCryptoKeySpecKeyRingRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSKeyRing` resource.</summary>
+    /// <summary>A reference to an externally managed KMSKeyRing. Should be in the format `projects/{{projectId}}/locations/{{location}}/keyRings/{{keyRingId}}`.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` of a `KMSKeyRing` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` of a `KMSKeyRing` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -58,10 +59,7 @@ public partial class V1beta1KMSCryptoKeySpecKeyRingRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1KMSCryptoKeySpecVersionTemplate
 {
-    /// <summary>
-    /// The algorithm to use when creating a version based on this template.
-    /// See the [algorithm reference](https://cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm) for possible inputs.
-    /// </summary>
+    /// <summary>The algorithm to use when creating a version based on this template. See the [algorithm reference](https://cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm) for possible inputs.</summary>
     [JsonPropertyName("algorithm")]
     public required string Algorithm { get; set; }
 
@@ -70,14 +68,12 @@ public partial class V1beta1KMSCryptoKeySpecVersionTemplate
     public string? ProtectionLevel { get; set; }
 }
 
+/// <summary>KMSCryptoKeySpec defines the desired state of KMSCryptoKey</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1KMSCryptoKeySpec
 {
-    /// <summary>
-    /// Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
-    /// If not specified at creation time, the default duration is 24 hours.
-    /// </summary>
+    /// <summary>Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 24 hours.</summary>
     [JsonPropertyName("destroyScheduledDuration")]
     public string? DestroyScheduledDuration { get; set; }
 
@@ -89,12 +85,7 @@ public partial class V1beta1KMSCryptoKeySpec
     [JsonPropertyName("keyRingRef")]
     public required V1beta1KMSCryptoKeySpecKeyRingRef KeyRingRef { get; set; }
 
-    /// <summary>
-    /// Immutable. The immutable purpose of this CryptoKey. See the
-    /// [purpose reference](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys#CryptoKeyPurpose)
-    /// for possible inputs.
-    /// Default value is &quot;ENCRYPT_DECRYPT&quot;.
-    /// </summary>
+    /// <summary>Immutable. The immutable purpose of this CryptoKey. See the [purpose reference](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys#CryptoKeyPurpose) for possible inputs. Default value is &quot;ENCRYPT_DECRYPT&quot;.</summary>
     [JsonPropertyName("purpose")]
     public string? Purpose { get; set; }
 
@@ -102,19 +93,11 @@ public partial class V1beta1KMSCryptoKeySpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// Every time this period passes, generate a new CryptoKeyVersion and set it as the primary.
-    /// The first rotation will take place after the specified period. The rotation period has
-    /// the format of a decimal number with up to 9 fractional digits, followed by the
-    /// letter &apos;s&apos; (seconds). It must be greater than a day (ie, 86400).
-    /// </summary>
+    /// <summary>Every time this period passes, generate a new CryptoKeyVersion and set it as the primary. The first rotation will take place after the specified period. The rotation period has the format of a decimal number with up to 9 fractional digits, followed by the letter &apos;s&apos; (seconds). It must be greater than a day (ie, 86400).</summary>
     [JsonPropertyName("rotationPeriod")]
     public string? RotationPeriod { get; set; }
 
-    /// <summary>
-    /// Immutable. If set to true, the request will create a CryptoKey without any CryptoKeyVersions.
-    /// You must use the &apos;google_kms_key_ring_import_job&apos; resource to import the CryptoKeyVersion.
-    /// </summary>
+    /// <summary>Immutable. If set to true, the request will create a CryptoKey without any CryptoKeyVersions. You must use the &apos;google_kms_key_ring_import_job&apos; resource to import the CryptoKeyVersion.</summary>
     [JsonPropertyName("skipInitialVersionCreation")]
     public bool? SkipInitialVersionCreation { get; set; }
 
@@ -148,23 +131,25 @@ public partial class V1beta1KMSCryptoKeyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>KMSCryptoKeyStatus defines the config connector machine state of KMSCryptoKey</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1KMSCryptoKeyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1KMSCryptoKeyStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The self link of the created key in the format projects/{project}/locations/{location}/keyRings/{keyRingName}/cryptoKeys/{name}.</summary>
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>KMSCryptoKey is the Schema for the KMSCryptoKey API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -186,9 +171,11 @@ public partial class V1beta1KMSCryptoKey : IKubernetesObject<V1ObjectMeta>, ISpe
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>KMSCryptoKeySpec defines the desired state of KMSCryptoKey</summary>
     [JsonPropertyName("spec")]
     public required V1beta1KMSCryptoKeySpec Spec { get; set; }
 
+    /// <summary>KMSCryptoKeyStatus defines the config connector machine state of KMSCryptoKey</summary>
     [JsonPropertyName("status")]
     public V1beta1KMSCryptoKeyStatus? Status { get; set; }
 }

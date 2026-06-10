@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.dns.cnrm.cloud.google.com;
+/// <summary>DNSResponsePolicy is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -39,11 +40,7 @@ public partial class V1alpha1DNSResponsePolicyList : IKubernetesObject<V1ListMet
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DNSResponsePolicySpecGkeClusters
 {
-    /// <summary>
-    /// The resource name of the cluster to bind this ManagedZone to.
-    /// This should be specified in the format like
-    /// &apos;projects/*/locations/*/clusters/*&apos;.
-    /// </summary>
+    /// <summary>The resource name of the cluster to bind this ManagedZone to. This should be specified in the format like &apos;projects/* /locations/* /clusters/*&apos;.</summary>
     [JsonPropertyName("gkeClusterName")]
     public required string GkeClusterName { get; set; }
 }
@@ -52,11 +49,7 @@ public partial class V1alpha1DNSResponsePolicySpecGkeClusters
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DNSResponsePolicySpecNetworks
 {
-    /// <summary>
-    /// The fully qualified URL of the VPC network to bind to.
-    /// This should be formatted like
-    /// &apos;https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}&apos;.
-    /// </summary>
+    /// <summary>The fully qualified URL of the VPC network to bind to. This should be formatted like &apos;https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}&apos;.</summary>
     [JsonPropertyName("networkUrl")]
     public required string NetworkUrl { get; set; }
 }
@@ -66,15 +59,15 @@ public partial class V1alpha1DNSResponsePolicySpecNetworks
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DNSResponsePolicySpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -133,15 +126,16 @@ public partial class V1alpha1DNSResponsePolicyStatusConditions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DNSResponsePolicyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the DNSResponsePolicy&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1DNSResponsePolicyStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>DNSResponsePolicy is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
