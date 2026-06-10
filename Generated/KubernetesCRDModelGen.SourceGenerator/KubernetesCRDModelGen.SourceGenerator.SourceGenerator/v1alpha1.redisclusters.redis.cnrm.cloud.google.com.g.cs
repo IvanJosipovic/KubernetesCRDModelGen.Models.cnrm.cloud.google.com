@@ -455,6 +455,19 @@ public partial class V1alpha1RedisClusterStatusObservedStatePscConnections
     public string? ServiceAttachment { get; set; }
 }
 
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1RedisClusterStatusObservedStatePscServiceAttachments
+{
+    /// <summary>Output only. Type of a PSC connection targeting this service attachment.</summary>
+    [JsonPropertyName("connectionType")]
+    public string? ConnectionType { get; set; }
+
+    /// <summary>Output only. Service attachment URI which your self-created PscConnection should use as target</summary>
+    [JsonPropertyName("serviceAttachment")]
+    public string? ServiceAttachment { get; set; }
+}
+
 /// <summary>Describes ongoing update on the cluster when cluster state is UPDATING.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -511,6 +524,10 @@ public partial class V1alpha1RedisClusterStatusObservedState
     /// <summary>Output only. PSC connections for discovery of the cluster topology and accessing the cluster.</summary>
     [JsonPropertyName("pscConnections")]
     public IList<V1alpha1RedisClusterStatusObservedStatePscConnections>? PscConnections { get; set; }
+
+    /// <summary>Output only. Service attachment details to configure Psc connections.</summary>
+    [JsonPropertyName("pscServiceAttachments")]
+    public IList<V1alpha1RedisClusterStatusObservedStatePscServiceAttachments>? PscServiceAttachments { get; set; }
 
     /// <summary>Output only. Redis memory size in GB for the entire cluster rounded up to the next integer.</summary>
     [JsonPropertyName("sizeGb")]
