@@ -41,15 +41,15 @@ public partial class V1beta1KMSCryptoKeyList : IKubernetesObject<V1ListMeta>, II
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1KMSCryptoKeySpecKeyRingRef
 {
-    /// <summary>A reference to an externally managed KMSKeyRing. Should be in the format `projects/{{projectId}}/locations/{{location}}/keyRings/{{keyRingId}}`.</summary>
+    /// <summary>A reference to an externally managed KMSKeyRing resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/keyRings/{{keyRingID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` of a `KMSKeyRing` resource.</summary>
+    /// <summary>The name of a KMSKeyRing resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` of a `KMSKeyRing` resource.</summary>
+    /// <summary>The namespace of a KMSKeyRing resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
