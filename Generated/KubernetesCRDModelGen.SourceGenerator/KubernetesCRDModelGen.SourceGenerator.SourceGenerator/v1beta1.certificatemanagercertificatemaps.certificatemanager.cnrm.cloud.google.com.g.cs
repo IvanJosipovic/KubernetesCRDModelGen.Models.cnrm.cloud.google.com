@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.certificatemanager.cnrm.cloud.google.com;
+/// <summary>CertificateManagerCertificateMap is the Schema for the CertificateManagerCertificateMap API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,19 +41,20 @@ public partial class V1beta1CertificateManagerCertificateMapList : IKubernetesOb
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>CertificateManagerCertificateMapSpec defines the desired state of CertificateManagerCertificateMap</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapSpec
@@ -65,7 +67,7 @@ public partial class V1beta1CertificateManagerCertificateMapSpec
     [JsonPropertyName("projectRef")]
     public required V1beta1CertificateManagerCertificateMapSpecProjectRef ProjectRef { get; set; }
 
-    /// <summary>Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
+    /// <summary>The CertificateManagerCertificateMap name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 }
@@ -95,6 +97,7 @@ public partial class V1beta1CertificateManagerCertificateMapStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>CertificateMap_GclbTarget_IPConfigObservedState defines the IpConfigs</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapStatusGclbTargetsIpConfigs
@@ -103,69 +106,56 @@ public partial class V1beta1CertificateManagerCertificateMapStatusGclbTargetsIpC
     [JsonPropertyName("ipAddress")]
     public string? IpAddress { get; set; }
 
-    /// <summary>A list of ports.</summary>
+    /// <summary>Ports.</summary>
     [JsonPropertyName("ports")]
     public IList<int>? Ports { get; set; }
 }
 
+/// <summary>CertificateMap_GclbTargetObservedState defines the GclbTargets</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapStatusGclbTargets
 {
-    /// <summary>An IP configuration where this Certificate Map is serving.</summary>
+    /// <summary>IP configurations for this Target Stage.</summary>
     [JsonPropertyName("ipConfigs")]
     public IList<V1beta1CertificateManagerCertificateMapStatusGclbTargetsIpConfigs>? IpConfigs { get; set; }
 
-    /// <summary>
-    /// Proxy name must be in the format projects/*/locations/*/targetHttpsProxies/*.
-    /// This field is part of a union field &apos;target_proxy&apos;: Only one of &apos;targetHttpsProxy&apos; or
-    /// &apos;targetSslProxy&apos; may be set.
-    /// </summary>
+    /// <summary>A HTTPS proxy serving as GCLB target.</summary>
     [JsonPropertyName("targetHttpsProxy")]
     public string? TargetHttpsProxy { get; set; }
 
-    /// <summary>
-    /// Proxy name must be in the format projects/*/locations/*/targetSslProxies/*.
-    /// This field is part of a union field &apos;target_proxy&apos;: Only one of &apos;targetHttpsProxy&apos; or
-    /// &apos;targetSslProxy&apos; may be set.
-    /// </summary>
+    /// <summary>A SSL proxy serving as GCLB target.</summary>
     [JsonPropertyName("targetSslProxy")]
     public string? TargetSslProxy { get; set; }
 }
 
+/// <summary>CertificateManagerCertificateMapStatus defines the config connector machine state of CertificateManagerCertificateMap</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1CertificateManagerCertificateMapStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// Creation timestamp of a Certificate Map. Timestamp is in RFC3339 UTC &quot;Zulu&quot; format,
-    /// accurate to nanoseconds with up to nine fractional digits.
-    /// Examples: &quot;2014-10-02T15:01:23Z&quot; and &quot;2014-10-02T15:01:23.045123456Z&quot;.
-    /// </summary>
+    /// <summary>Output only. The creation timestamp of a Certificate Map.</summary>
     [JsonPropertyName("createTime")]
     public string? CreateTime { get; set; }
 
-    /// <summary>A list of target proxies that use this Certificate Map.</summary>
+    /// <summary>Output only. A list of GCLB targets which use this Certificate Map.</summary>
     [JsonPropertyName("gclbTargets")]
     public IList<V1beta1CertificateManagerCertificateMapStatusGclbTargets>? GclbTargets { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
-    /// <summary>
-    /// Update timestamp of a Certificate Map. Timestamp is in RFC3339 UTC &quot;Zulu&quot; format,
-    /// accurate to nanoseconds with up to nine fractional digits.
-    /// Examples: &quot;2014-10-02T15:01:23Z&quot; and &quot;2014-10-02T15:01:23.045123456Z&quot;.
-    /// </summary>
+    /// <summary>Output only. The update timestamp of a Certificate Map.</summary>
     [JsonPropertyName("updateTime")]
     public string? UpdateTime { get; set; }
 }
 
+/// <summary>CertificateManagerCertificateMap is the Schema for the CertificateManagerCertificateMap API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -187,9 +177,11 @@ public partial class V1beta1CertificateManagerCertificateMap : IKubernetesObject
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>CertificateManagerCertificateMapSpec defines the desired state of CertificateManagerCertificateMap</summary>
     [JsonPropertyName("spec")]
     public required V1beta1CertificateManagerCertificateMapSpec Spec { get; set; }
 
+    /// <summary>CertificateManagerCertificateMapStatus defines the config connector machine state of CertificateManagerCertificateMap</summary>
     [JsonPropertyName("status")]
     public V1beta1CertificateManagerCertificateMapStatus? Status { get; set; }
 }
