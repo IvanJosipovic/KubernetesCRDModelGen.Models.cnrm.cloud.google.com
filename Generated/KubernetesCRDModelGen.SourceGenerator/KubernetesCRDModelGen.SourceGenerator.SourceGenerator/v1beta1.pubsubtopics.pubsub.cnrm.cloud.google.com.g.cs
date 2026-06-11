@@ -64,19 +64,20 @@ public partial class V1beta1PubSubTopicSpecMessageStoragePolicy
     public required IList<string> AllowedPersistenceRegions { get; set; }
 }
 
+/// <summary>PubSubSchemaRef is a reference to a PubSubSchema.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1PubSubTopicSpecSchemaSettingsSchemaRef
 {
-    /// <summary>Allowed value: string of the format `projects/{{project}}/schemas/{{value}}`, where {{value}} is the `name` field of a `PubSubSchema` resource.</summary>
+    /// <summary>A reference to an externally managed PubSubSchema resource. Should be in the format &quot;projects/{{projectID}}/schemas/{{schemaID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a PubSubSchema resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a PubSubSchema resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -90,6 +91,7 @@ public partial class V1beta1PubSubTopicSpecSchemaSettings
     [JsonPropertyName("encoding")]
     public string? Encoding { get; set; }
 
+    /// <summary>PubSubSchemaRef is a reference to a PubSubSchema.</summary>
     [JsonPropertyName("schemaRef")]
     public required V1beta1PubSubTopicSpecSchemaSettingsSchemaRef SchemaRef { get; set; }
 }
