@@ -58,7 +58,7 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecCertificateManagerCertifi
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetHTTPSProxySpecCertificateMapRef
 {
-    /// <summary>Allowed value: string of the format `//certificatemanager.googleapis.com/projects/{{project}}/locations/global/certificateMaps/{{value}}`, where {{value}} is the `name` field of a `CertificateManagerCertificateMap` resource.</summary>
+    /// <summary>A reference to an externally managed CertificateManagerCertificateMap resource. Should be in the format &quot;projects/{{projectID}}/locations/global/certificateMaps/{{certificateMapID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
