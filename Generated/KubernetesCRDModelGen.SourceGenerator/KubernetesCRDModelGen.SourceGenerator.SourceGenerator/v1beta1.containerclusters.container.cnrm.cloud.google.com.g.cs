@@ -611,15 +611,15 @@ public partial class V1beta1ContainerClusterSpecIdentityServiceConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecIpAllocationPolicyAdditionalIpRangesConfigsSubnetworkRef
 {
-    /// <summary>The ComputeSubnetwork selflink of form &quot;projects/{{project}}/regions/{{region}}/subnetworks/{{name}}&quot;, when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -1587,15 +1587,15 @@ public partial class V1beta1ContainerClusterSpecPrivateClusterConfigMasterGlobal
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecPrivateClusterConfigPrivateEndpointSubnetworkRef
 {
-    /// <summary>The ComputeSubnetwork selflink of form &quot;projects/{{project}}/regions/{{region}}/subnetworks/{{name}}&quot;, when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -1724,19 +1724,20 @@ public partial class V1beta1ContainerClusterSpecServiceExternalIpsConfig
     public required bool Enabled { get; set; }
 }
 
+/// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerClusterSpecSubnetworkRef
 {
-    /// <summary>The ComputeSubnetwork selflink of form &quot;projects/{{project}}/regions/{{region}}/subnetworks/{{name}}&quot;, when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -2008,6 +2009,7 @@ public partial class V1beta1ContainerClusterSpec
     [JsonPropertyName("serviceExternalIpsConfig")]
     public V1beta1ContainerClusterSpecServiceExternalIpsConfig? ServiceExternalIpsConfig { get; set; }
 
+    /// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
     [JsonPropertyName("subnetworkRef")]
     public V1beta1ContainerClusterSpecSubnetworkRef? SubnetworkRef { get; set; }
 
