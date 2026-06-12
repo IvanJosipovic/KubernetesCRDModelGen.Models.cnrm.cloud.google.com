@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeInstance is the Schema for the ComputeInstance API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -46,11 +47,11 @@ public partial class V1beta1ComputeInstanceSpecAdvancedMachineFeatures
 
     /// <summary>The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.</summary>
     [JsonPropertyName("threadsPerCore")]
-    public int? ThreadsPerCore { get; set; }
+    public long? ThreadsPerCore { get; set; }
 
     /// <summary>The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance\&apos;s nominal CPU count and the underlying platform\&apos;s SMT width.</summary>
     [JsonPropertyName("visibleCoreCount")]
-    public int? VisibleCoreCount { get; set; }
+    public long? VisibleCoreCount { get; set; }
 }
 
 /// <summary>Reference to a value with the given key in the given Secret in the resource&apos;s namespace.</summary>
@@ -95,7 +96,7 @@ public partial class V1beta1ComputeInstanceSpecAttachedDiskDiskEncryptionKeyRaw
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecAttachedDiskKmsKeyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -112,7 +113,7 @@ public partial class V1beta1ComputeInstanceSpecAttachedDiskKmsKeyRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecAttachedDiskSourceDiskRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeDisk` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -195,7 +196,7 @@ public partial class V1beta1ComputeInstanceSpecBootDiskDiskEncryptionKeyRaw
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecBootDiskInitializeParamsSourceImageRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeImage` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -223,7 +224,7 @@ public partial class V1beta1ComputeInstanceSpecBootDiskInitializeParams
 
     /// <summary>Immutable. The size of the image in gigabytes.</summary>
     [JsonPropertyName("size")]
-    public int? Size { get; set; }
+    public long? Size { get; set; }
 
     /// <summary>Immutable. The image from which to initialize this disk.</summary>
     [JsonPropertyName("sourceImageRef")]
@@ -238,7 +239,7 @@ public partial class V1beta1ComputeInstanceSpecBootDiskInitializeParams
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecBootDiskKmsKeyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -256,7 +257,7 @@ public partial class V1beta1ComputeInstanceSpecBootDiskKmsKeyRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecBootDiskSourceDiskRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeDisk` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -322,7 +323,7 @@ public partial class V1beta1ComputeInstanceSpecGuestAccelerator
 {
     /// <summary>Immutable. The number of the guest accelerator cards exposed to this instance.</summary>
     [JsonPropertyName("count")]
-    public required int Count { get; set; }
+    public required long Count { get; set; }
 
     /// <summary>Immutable. The accelerator type resource exposed to this instance. E.g. nvidia-tesla-t4.</summary>
     [JsonPropertyName("type")]
@@ -333,7 +334,7 @@ public partial class V1beta1ComputeInstanceSpecGuestAccelerator
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecInstanceTemplateRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeInstanceTemplate` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -361,7 +362,7 @@ public partial class V1beta1ComputeInstanceSpecMetadata
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecNetworkInterfaceAccessConfigNatIpRef
 {
-    /// <summary>Allowed value: The `address` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -432,11 +433,11 @@ public partial class V1beta1ComputeInstanceSpecNetworkInterfaceIpv6AccessConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecNetworkInterfaceNetworkIpRef
 {
-    /// <summary>Allowed value: The `address` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Kind of the referent. Allowed values: ComputeAddress</summary>
+    /// <summary>Kind of the referent.</summary>
     [JsonPropertyName("kind")]
     public string? Kind { get; set; }
 
@@ -453,7 +454,7 @@ public partial class V1beta1ComputeInstanceSpecNetworkInterfaceNetworkIpRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecNetworkInterfaceNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -470,7 +471,7 @@ public partial class V1beta1ComputeInstanceSpecNetworkInterfaceNetworkRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecNetworkInterfaceSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -497,7 +498,7 @@ public partial class V1beta1ComputeInstanceSpecNetworkInterface
 
     /// <summary>The prefix length of the primary internal IPv6 range.</summary>
     [JsonPropertyName("internalIpv6PrefixLength")]
-    public int? InternalIpv6PrefixLength { get; set; }
+    public long? InternalIpv6PrefixLength { get; set; }
 
     /// <summary>An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.</summary>
     [JsonPropertyName("ipv6AccessConfig")]
@@ -531,7 +532,7 @@ public partial class V1beta1ComputeInstanceSpecNetworkInterface
 
     /// <summary>Immutable. The networking queue count that&apos;s specified by users for the network interface. Both Rx and Tx queues will be set to this number. It will be empty if not specified.</summary>
     [JsonPropertyName("queueCount")]
-    public int? QueueCount { get; set; }
+    public long? QueueCount { get; set; }
 
     /// <summary>The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used.</summary>
     [JsonPropertyName("stackType")]
@@ -597,7 +598,7 @@ public partial class V1beta1ComputeInstanceSpecReservationAffinity
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecResourcePolicies
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeResourcePolicy` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -610,31 +611,18 @@ public partial class V1beta1ComputeInstanceSpecResourcePolicies
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// Immutable. Specifies the maximum amount of time a Local Ssd Vm should wait while
-///   recovery of the Local Ssd state is attempted. Its value should be in
-///   between 0 and 168 hours with hour granularity and the default value being 1
-///   hour.
-/// </summary>
+/// <summary>Immutable. Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecSchedulingLocalSsdRecoveryTimeout
 {
-    /// <summary>
-    /// Immutable. Span of time that&apos;s a fraction of a second at nanosecond
-    /// resolution. Durations less than one second are represented
-    /// with a 0 seconds field and a positive nanos field. Must
-    /// be from 0 to 999,999,999 inclusive.
-    /// </summary>
+    /// <summary>Immutable. Span of time that&apos;s a fraction of a second at nanosecond resolution. Durations less than one second are represented with a 0 seconds field and a positive nanos field. Must be from 0 to 999,999,999 inclusive.</summary>
     [JsonPropertyName("nanos")]
-    public int? Nanos { get; set; }
+    public long? Nanos { get; set; }
 
-    /// <summary>
-    /// Immutable. Span of time at a resolution of a second.
-    /// Must be from 0 to 315,576,000,000 inclusive.
-    /// </summary>
+    /// <summary>Immutable. Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive.</summary>
     [JsonPropertyName("seconds")]
-    public required int Seconds { get; set; }
+    public required long Seconds { get; set; }
 }
 
 /// <summary>Immutable. The timeout for new network connections to hosts.</summary>
@@ -642,21 +630,13 @@ public partial class V1beta1ComputeInstanceSpecSchedulingLocalSsdRecoveryTimeout
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecSchedulingMaxRunDuration
 {
-    /// <summary>
-    /// Immutable. Span of time that&apos;s a fraction of a second at nanosecond
-    /// resolution. Durations less than one second are represented
-    /// with a 0 seconds field and a positive nanos field. Must
-    /// be from 0 to 999,999,999 inclusive.
-    /// </summary>
+    /// <summary>Immutable. Span of time that&apos;s a fraction of a second at nanosecond resolution. Durations less than one second are represented with a 0 seconds field and a positive nanos field. Must be from 0 to 999,999,999 inclusive.</summary>
     [JsonPropertyName("nanos")]
-    public int? Nanos { get; set; }
+    public long? Nanos { get; set; }
 
-    /// <summary>
-    /// Immutable. Span of time at a resolution of a second.
-    /// Must be from 0 to 315,576,000,000 inclusive.
-    /// </summary>
+    /// <summary>Immutable. Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive.</summary>
     [JsonPropertyName("seconds")]
-    public required int Seconds { get; set; }
+    public required long Seconds { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -680,12 +660,7 @@ public partial class V1beta1ComputeInstanceSpecScheduling
     [JsonPropertyName("instanceTerminationAction")]
     public string? InstanceTerminationAction { get; set; }
 
-    /// <summary>
-    /// Immutable. Specifies the maximum amount of time a Local Ssd Vm should wait while
-    ///   recovery of the Local Ssd state is attempted. Its value should be in
-    ///   between 0 and 168 hours with hour granularity and the default value being 1
-    ///   hour.
-    /// </summary>
+    /// <summary>Immutable. Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.</summary>
     [JsonPropertyName("localSsdRecoveryTimeout")]
     public V1beta1ComputeInstanceSpecSchedulingLocalSsdRecoveryTimeout? LocalSsdRecoveryTimeout { get; set; }
 
@@ -698,7 +673,7 @@ public partial class V1beta1ComputeInstanceSpecScheduling
     public V1beta1ComputeInstanceSpecSchedulingMaxRunDuration? MaxRunDuration { get; set; }
 
     [JsonPropertyName("minNodeCpus")]
-    public int? MinNodeCpus { get; set; }
+    public long? MinNodeCpus { get; set; }
 
     [JsonPropertyName("nodeAffinities")]
     public IList<V1beta1ComputeInstanceSpecSchedulingNodeAffinities>? NodeAffinities { get; set; }
@@ -726,14 +701,14 @@ public partial class V1beta1ComputeInstanceSpecScratchDisk
 
     /// <summary>Immutable. The size of the disk in gigabytes. One of 375 or 3000.</summary>
     [JsonPropertyName("size")]
-    public int? Size { get; set; }
+    public long? Size { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpecServiceAccountServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -777,6 +752,7 @@ public partial class V1beta1ComputeInstanceSpecShieldedInstanceConfig
     public bool? EnableVtpm { get; set; }
 }
 
+/// <summary>ComputeInstanceSpec defines the desired state of ComputeInstance</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceSpec
@@ -916,11 +892,12 @@ public partial class V1beta1ComputeInstanceStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeInstanceStatus defines the config connector machine state of ComputeInstance</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeInstance&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeInstanceStatusConditions>? Conditions { get; set; }
 
@@ -928,12 +905,7 @@ public partial class V1beta1ComputeInstanceStatus
     [JsonPropertyName("cpuPlatform")]
     public string? CpuPlatform { get; set; }
 
-    /// <summary>
-    /// 
-    /// 					Current status of the instance.
-    /// 					This could be one of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
-    /// 					For more information about the status of the instance, see [Instance life cycle](https://cloud.google.com/compute/docs/instances/instance-life-cycle).
-    /// </summary>
+    /// <summary>Current status of the instance. This could be one of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see [Instance life cycle](https://cloud.google.com/compute/docs/instances/instance-life-cycle).</summary>
     [JsonPropertyName("currentStatus")]
     public string? CurrentStatus { get; set; }
 
@@ -951,7 +923,7 @@ public partial class V1beta1ComputeInstanceStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The URI of the created resource.</summary>
     [JsonPropertyName("selfLink")]
@@ -962,6 +934,7 @@ public partial class V1beta1ComputeInstanceStatus
     public string? TagsFingerprint { get; set; }
 }
 
+/// <summary>ComputeInstance is the Schema for the ComputeInstance API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -983,9 +956,11 @@ public partial class V1beta1ComputeInstance : IKubernetesObject<V1ObjectMeta>, I
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeInstanceSpec defines the desired state of ComputeInstance</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeInstanceSpec Spec { get; set; }
 
+    /// <summary>ComputeInstanceStatus defines the config connector machine state of ComputeInstance</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeInstanceStatus? Status { get; set; }
 }
