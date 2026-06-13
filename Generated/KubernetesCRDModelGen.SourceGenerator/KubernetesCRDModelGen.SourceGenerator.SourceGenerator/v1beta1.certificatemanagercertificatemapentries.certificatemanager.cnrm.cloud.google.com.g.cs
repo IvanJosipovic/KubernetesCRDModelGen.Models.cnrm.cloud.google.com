@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.certificatemanager.cnrm.cloud.google.com;
+/// <summary>CertificateManagerCertificateMapEntry is the Schema for the CertificateManagerCertificateMapEntry API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,24 +36,20 @@ public partial class V1beta1CertificateManagerCertificateMapEntryList : IKuberne
     public required IList<V1beta1CertificateManagerCertificateMapEntry> Items { get; set; }
 }
 
-/// <summary>
-/// A set of Certificates defines for the given hostname.
-/// There can be defined up to fifteen certificates in each Certificate Map Entry.
-/// Each certificate must match pattern projects/*/locations/*/certificates/*.
-/// </summary>
+/// <summary>CertificateManagerCertificateRef is a reference to a CertificateManagerCertificate.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapEntrySpecCertificatesRefs
 {
-    /// <summary>Allowed value: string of the format `projects/{{project}}/locations/{{location}}/certificates/{{value}}`, where {{value}} is the `name` field of a `CertificateManagerCertificate` resource.</summary>
+    /// <summary>A reference to an externally managed CertificateManagerCertificate resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/certificates/{{certificateID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a CertificateManagerCertificate resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a CertificateManagerCertificate resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -62,15 +59,15 @@ public partial class V1beta1CertificateManagerCertificateMapEntrySpecCertificate
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapEntrySpecMapRef
 {
-    /// <summary>Allowed value: The `name` field of a `CertificateManagerCertificateMap` resource.</summary>
+    /// <summary>A reference to an externally managed CertificateManagerCertificateMap resource. Should be in the format &quot;projects/{{projectID}}/locations/global/certificateMaps/{{certificateMapID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a CertificateManagerCertificateMap resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a CertificateManagerCertificateMap resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -80,23 +77,25 @@ public partial class V1beta1CertificateManagerCertificateMapEntrySpecMapRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapEntrySpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>CertificateManagerCertificateMapEntrySpec defines the desired state of CertificateManagerCertificateMapEntry</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapEntrySpec
 {
+    /// <summary>Immutable. A list of references to CertificateManagerCertificate resources that will be associated with this map entry.</summary>
     [JsonPropertyName("certificatesRefs")]
     public required IList<V1beta1CertificateManagerCertificateMapEntrySpecCertificatesRefs> CertificatesRefs { get; set; }
 
@@ -104,11 +103,7 @@ public partial class V1beta1CertificateManagerCertificateMapEntrySpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Immutable. A Hostname (FQDN, e.g. example.com) or a wildcard hostname expression (*.example.com)
-    /// for a set of hostnames with common suffix. Used as Server Name Indication (SNI) for
-    /// selecting a proper certificate.
-    /// </summary>
+    /// <summary>Immutable. A Hostname (FQDN, e.g. example.com) or a wildcard hostname expression (*.example.com) for a set of hostnames with common suffix. Used as Server Name Indication (SNI) for selecting a proper certificate.</summary>
     [JsonPropertyName("hostname")]
     public string? Hostname { get; set; }
 
@@ -154,39 +149,33 @@ public partial class V1beta1CertificateManagerCertificateMapEntryStatusCondition
     public string? Type { get; set; }
 }
 
+/// <summary>CertificateManagerCertificateMapEntryStatus defines the config connector machine state of CertificateManagerCertificateMapEntry</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1CertificateManagerCertificateMapEntryStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the CertificateManagerCertificateMapEntry&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1CertificateManagerCertificateMapEntryStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// Creation timestamp of a Certificate Map Entry. Timestamp in RFC3339 UTC &quot;Zulu&quot; format,
-    /// with nanosecond resolution and up to nine fractional digits.
-    /// Examples: &quot;2014-10-02T15:01:23Z&quot; and &quot;2014-10-02T15:01:23.045123456Z&quot;.
-    /// </summary>
+    /// <summary>Creation timestamp of a Certificate Map Entry. Timestamp in RFC3339 UTC &quot;Zulu&quot; format, with nanosecond resolution and up to nine fractional digits. Examples: &quot;2014-10-02T15:01:23Z&quot; and &quot;2014-10-02T15:01:23.045123456Z&quot;.</summary>
     [JsonPropertyName("createTime")]
     public string? CreateTime { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>A serving state of this Certificate Map Entry.</summary>
     [JsonPropertyName("state")]
     public string? State { get; set; }
 
-    /// <summary>
-    /// Update timestamp of a Certificate Map Entry. Timestamp in RFC3339 UTC &quot;Zulu&quot; format,
-    /// with nanosecond resolution and up to nine fractional digits.
-    /// Examples: &quot;2014-10-02T15:01:23Z&quot; and &quot;2014-10-02T15:01:23.045123456Z&quot;.
-    /// </summary>
+    /// <summary>Update timestamp of a Certificate Map Entry. Timestamp in RFC3339 UTC &quot;Zulu&quot; format, with nanosecond resolution and up to nine fractional digits. Examples: &quot;2014-10-02T15:01:23Z&quot; and &quot;2014-10-02T15:01:23.045123456Z&quot;.</summary>
     [JsonPropertyName("updateTime")]
     public string? UpdateTime { get; set; }
 }
 
+/// <summary>CertificateManagerCertificateMapEntry is the Schema for the CertificateManagerCertificateMapEntry API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -208,9 +197,11 @@ public partial class V1beta1CertificateManagerCertificateMapEntry : IKubernetesO
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>CertificateManagerCertificateMapEntrySpec defines the desired state of CertificateManagerCertificateMapEntry</summary>
     [JsonPropertyName("spec")]
     public required V1beta1CertificateManagerCertificateMapEntrySpec Spec { get; set; }
 
+    /// <summary>CertificateManagerCertificateMapEntryStatus defines the config connector machine state of CertificateManagerCertificateMapEntry</summary>
     [JsonPropertyName("status")]
     public V1beta1CertificateManagerCertificateMapEntryStatus? Status { get; set; }
 }
