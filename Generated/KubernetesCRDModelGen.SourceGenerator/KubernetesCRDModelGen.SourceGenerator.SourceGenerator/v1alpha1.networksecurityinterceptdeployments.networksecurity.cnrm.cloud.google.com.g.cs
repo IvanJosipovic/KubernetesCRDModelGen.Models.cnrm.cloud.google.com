@@ -41,15 +41,15 @@ public partial class V1alpha1NetworkSecurityInterceptDeploymentList : IKubernete
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1NetworkSecurityInterceptDeploymentSpecForwardingRuleRef
 {
-    /// <summary>The ComputeForwardingRule selflink in the form &quot;projects/{{project}}/regions/{{region}}/forwardingRules/{{name}}&quot; when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeForwardingRule resource. Should be in the format &quot;projects/{{projectID}}/global/forwardingRules/{{forwardingRuleID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/forwardingRules/{{forwardingRuleID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The name field of a ComputeForwardingRule resource.</summary>
+    /// <summary>The name of a ComputeForwardingRule resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The namespace field of a ComputeForwardingRule resource.</summary>
+    /// <summary>The namespace of a ComputeForwardingRule resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
