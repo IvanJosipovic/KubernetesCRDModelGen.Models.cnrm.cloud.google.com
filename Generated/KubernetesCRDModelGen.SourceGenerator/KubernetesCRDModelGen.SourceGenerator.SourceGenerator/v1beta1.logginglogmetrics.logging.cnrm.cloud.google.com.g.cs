@@ -105,19 +105,19 @@ public partial class V1beta1LoggingLogMetricSpecBucketOptions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogMetricSpecLoggingLogBucketRef
 {
-    /// <summary>The external name of the referenced resource</summary>
+    /// <summary>A reference to an externally managed LoggingLogBucket resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/buckets/{{bucketID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Kind of the referent.</summary>
+    /// <summary>The kind of the LoggingLogBucket resource.</summary>
     [JsonPropertyName("kind")]
     public string? Kind { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a LoggingLogBucket resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a LoggingLogBucket resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
