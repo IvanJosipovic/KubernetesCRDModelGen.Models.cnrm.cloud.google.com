@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeNetworkPeering is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,40 +36,43 @@ public partial class V1beta1ComputeNetworkPeeringList : IKubernetesObject<V1List
     public required IList<V1beta1ComputeNetworkPeering> Items { get; set; }
 }
 
+/// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkPeeringSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkPeeringSpecPeerNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeNetworkPeeringSpec defines the desired state of ComputeNetworkPeering</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkPeeringSpec
@@ -89,9 +93,11 @@ public partial class V1beta1ComputeNetworkPeeringSpec
     [JsonPropertyName("importSubnetRoutesWithPublicIp")]
     public bool? ImportSubnetRoutesWithPublicIp { get; set; }
 
+    /// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
     [JsonPropertyName("networkRef")]
     public required V1beta1ComputeNetworkPeeringSpecNetworkRef NetworkRef { get; set; }
 
+    /// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
     [JsonPropertyName("peerNetworkRef")]
     public required V1beta1ComputeNetworkPeeringSpecPeerNetworkRef PeerNetworkRef { get; set; }
 
@@ -129,17 +135,18 @@ public partial class V1beta1ComputeNetworkPeeringStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeNetworkPeeringStatus defines the config connector machine state of ComputeNetworkPeering</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkPeeringStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeNetworkPeering&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeNetworkPeeringStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>State for the peering, either ACTIVE or INACTIVE. The peering is ACTIVE when there&apos;s a matching configuration in the peer network.</summary>
     [JsonPropertyName("state")]
@@ -150,6 +157,7 @@ public partial class V1beta1ComputeNetworkPeeringStatus
     public string? StateDetails { get; set; }
 }
 
+/// <summary>ComputeNetworkPeering is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -171,9 +179,11 @@ public partial class V1beta1ComputeNetworkPeering : IKubernetesObject<V1ObjectMe
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeNetworkPeeringSpec defines the desired state of ComputeNetworkPeering</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeNetworkPeeringSpec Spec { get; set; }
 
+    /// <summary>ComputeNetworkPeeringStatus defines the config connector machine state of ComputeNetworkPeering</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeNetworkPeeringStatus? Status { get; set; }
 }
