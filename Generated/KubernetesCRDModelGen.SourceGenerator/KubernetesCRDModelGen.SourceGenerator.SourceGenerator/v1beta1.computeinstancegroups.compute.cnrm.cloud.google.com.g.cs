@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeInstanceGroup is the Schema for the ComputeInstanceGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,19 +36,20 @@ public partial class V1beta1ComputeInstanceGroupList : IKubernetesObject<V1ListM
     public required IList<V1beta1ComputeInstanceGroup> Items { get; set; }
 }
 
+/// <summary>InstanceRef is a reference to a ComputeInstance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceGroupSpecInstances
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeInstance` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeInstance resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/instances/{{instanceID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeInstance resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeInstance resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -65,23 +67,25 @@ public partial class V1beta1ComputeInstanceGroupSpecNamedPort
     public required int Port { get; set; }
 }
 
+/// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceGroupSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeInstanceGroupSpec defines the desired state of ComputeInstanceGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceGroupSpec
@@ -97,6 +101,7 @@ public partial class V1beta1ComputeInstanceGroupSpec
     [JsonPropertyName("namedPort")]
     public IList<V1beta1ComputeInstanceGroupSpecNamedPort>? NamedPort { get; set; }
 
+    /// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
     [JsonPropertyName("networkRef")]
     public V1beta1ComputeInstanceGroupSpecNetworkRef? NetworkRef { get; set; }
 
@@ -134,17 +139,18 @@ public partial class V1beta1ComputeInstanceGroupStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeInstanceGroupStatus defines the config connector machine state of ComputeInstanceGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInstanceGroupStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeInstanceGroupStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The URI of the created resource.</summary>
     [JsonPropertyName("selfLink")]
@@ -152,9 +158,10 @@ public partial class V1beta1ComputeInstanceGroupStatus
 
     /// <summary>The number of instances in the group.</summary>
     [JsonPropertyName("size")]
-    public int? Size { get; set; }
+    public long? Size { get; set; }
 }
 
+/// <summary>ComputeInstanceGroup is the Schema for the ComputeInstanceGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -176,9 +183,11 @@ public partial class V1beta1ComputeInstanceGroup : IKubernetesObject<V1ObjectMet
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeInstanceGroupSpec defines the desired state of ComputeInstanceGroup</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeInstanceGroupSpec Spec { get; set; }
 
+    /// <summary>ComputeInstanceGroupStatus defines the config connector machine state of ComputeInstanceGroup</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeInstanceGroupStatus? Status { get; set; }
 }
