@@ -54,19 +54,20 @@ public partial class V1beta1ComputeForwardingRuleSpecBackendServiceRef
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeForwardingRuleSpecIpAddressAddressRef
 {
-    /// <summary>The ComputeAddress selflink in the form &quot;projects/{{project}}/regions/{{region}}/addresses/{{name}}&quot; when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -96,6 +97,7 @@ public partial class V1beta1ComputeForwardingRuleSpecIpAddressAddressRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeForwardingRuleSpecIpAddress
 {
+    /// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
     [JsonPropertyName("addressRef")]
     public V1beta1ComputeForwardingRuleSpecIpAddressAddressRef? AddressRef { get; set; }
 

@@ -69,15 +69,15 @@ public partial class V1beta1ComputeNodeGroupSpecMaintenanceWindow
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNodeGroupSpecNodeTemplateRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNodeTemplate` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNodeTemplate resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/nodeTemplates/{{nodeTemplateID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNodeTemplate resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNodeTemplate resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

@@ -54,19 +54,20 @@ public partial class V1beta1DNSRecordSetSpecManagedZoneRef
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancersIpAddressRef
 {
-    /// <summary>The ComputeAddress selflink in the form &quot;projects/{{project}}/regions/{{region}}/addresses/{{name}}&quot; when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -128,6 +129,7 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargets
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancers
 {
+    /// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
     [JsonPropertyName("ipAddressRef")]
     public required V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancersIpAddressRef IpAddressRef { get; set; }
 
@@ -202,19 +204,20 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyGeo
     public IList<V1beta1DNSRecordSetSpecRoutingPolicyGeoRrdatasRefs>? RrdatasRefs { get; set; }
 }
 
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancersIpAddressRef
 {
-    /// <summary>The ComputeAddress selflink in the form &quot;projects/{{project}}/regions/{{region}}/addresses/{{name}}&quot; when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -276,6 +279,7 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoH
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancers
 {
+    /// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
     [JsonPropertyName("ipAddressRef")]
     public required V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancersIpAddressRef IpAddressRef { get; set; }
 
@@ -350,19 +354,20 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeo
     public IList<V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoRrdatasRefs>? RrdatasRefs { get; set; }
 }
 
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancersIpAddressRef
 {
-    /// <summary>The ComputeAddress selflink in the form &quot;projects/{{project}}/regions/{{region}}/addresses/{{name}}&quot; when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -424,6 +429,7 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimaryInt
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancers
 {
+    /// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
     [JsonPropertyName("ipAddressRef")]
     public required V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancersIpAddressRef IpAddressRef { get; set; }
 
@@ -483,19 +489,20 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackup
     public double? TrickleRatio { get; set; }
 }
 
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancersIpAddressRef
 {
-    /// <summary>The ComputeAddress selflink in the form &quot;projects/{{project}}/regions/{{region}}/addresses/{{name}}&quot; when not managed by Config Connector.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeAddress` resource.</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -557,6 +564,7 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargets
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancers
 {
+    /// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
     [JsonPropertyName("ipAddressRef")]
     public required V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancersIpAddressRef IpAddressRef { get; set; }
 
