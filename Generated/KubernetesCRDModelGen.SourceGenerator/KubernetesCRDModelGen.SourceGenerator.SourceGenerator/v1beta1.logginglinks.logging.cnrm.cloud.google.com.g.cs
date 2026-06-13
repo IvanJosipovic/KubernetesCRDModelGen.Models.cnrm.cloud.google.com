@@ -45,6 +45,10 @@ public partial class V1beta1LoggingLinkSpecLoggingLogBucketRef
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
+    /// <summary>The kind of the LoggingLogBucket resource.</summary>
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
     /// <summary>The name of a LoggingLogBucket resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
