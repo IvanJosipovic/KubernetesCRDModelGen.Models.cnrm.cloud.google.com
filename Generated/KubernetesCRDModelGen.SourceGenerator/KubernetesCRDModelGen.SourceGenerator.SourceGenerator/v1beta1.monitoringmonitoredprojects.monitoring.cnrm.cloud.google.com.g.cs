@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.monitoring.cnrm.cloud.google.com;
+/// <summary>MonitoringMonitoredProject is the Schema for the monitoring API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,6 +36,7 @@ public partial class V1beta1MonitoringMonitoredProjectList : IKubernetesObject<V
     public required IList<V1beta1MonitoringMonitoredProject> Items { get; set; }
 }
 
+/// <summary>MonitoringMonitoredProjectSpec defines the desired state of MonitoringMonitoredProject</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringMonitoredProjectSpec
@@ -73,11 +75,12 @@ public partial class V1beta1MonitoringMonitoredProjectStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>MonitoringMonitoredProjectStatus defines the config connector machine state of MonitoringMonitoredProject</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringMonitoredProjectStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the MonitoringMonitoredProject&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1MonitoringMonitoredProjectStatusConditions>? Conditions { get; set; }
 
@@ -87,9 +90,10 @@ public partial class V1beta1MonitoringMonitoredProjectStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>MonitoringMonitoredProject is the Schema for the monitoring API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -111,9 +115,11 @@ public partial class V1beta1MonitoringMonitoredProject : IKubernetesObject<V1Obj
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>MonitoringMonitoredProjectSpec defines the desired state of MonitoringMonitoredProject</summary>
     [JsonPropertyName("spec")]
     public required V1beta1MonitoringMonitoredProjectSpec Spec { get; set; }
 
+    /// <summary>MonitoringMonitoredProjectStatus defines the config connector machine state of MonitoringMonitoredProject</summary>
     [JsonPropertyName("status")]
     public V1beta1MonitoringMonitoredProjectStatus? Status { get; set; }
 }
