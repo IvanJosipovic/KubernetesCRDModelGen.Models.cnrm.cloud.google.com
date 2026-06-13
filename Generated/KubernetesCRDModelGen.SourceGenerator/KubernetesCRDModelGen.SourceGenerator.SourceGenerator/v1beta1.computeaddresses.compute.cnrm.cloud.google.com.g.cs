@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeAddress is the Schema for the ComputeAddress API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,69 +36,52 @@ public partial class V1beta1ComputeAddressList : IKubernetesObject<V1ListMeta>, 
     public required IList<V1beta1ComputeAddress> Items { get; set; }
 }
 
-/// <summary>
-/// The network in which to reserve the address. If global, the address
-/// must be within the RFC1918 IP space. The network cannot be deleted
-/// if there are any reserved IP ranges referring to it. This field can
-/// only be used with INTERNAL type with the VPC_PEERING and
-/// IPSEC_INTERCONNECT purposes.
-/// </summary>
+/// <summary>The network in which to reserve the address. If global, the address must be within the RFC1918 IP space. The network cannot be deleted if there are any reserved IP ranges referring to it. This field can only be used with INTERNAL type with the VPC_PEERING and IPSEC_INTERCONNECT purposes.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeAddressSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The subnetwork in which to reserve the address. If an IP address is
-/// specified, it must be within the subnetwork&apos;s IP range.  This field
-/// can only be used with INTERNAL type with GCE_ENDPOINT/DNS_RESOLVER
-/// purposes.
-/// </summary>
+/// <summary>The subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork&apos;s IP range.  This field can only be used with INTERNAL type with GCE_ENDPOINT/DNS_RESOLVER purposes.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeAddressSpecSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeAddressSpec defines the desired state of ComputeAddress</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeAddressSpec
 {
-    /// <summary>
-    /// Immutable. The static external IP address represented by this resource.
-    /// The IP address must be inside the specified subnetwork,
-    /// if any. Set by the API if undefined.
-    /// </summary>
+    /// <summary>Immutable. The static external IP address represented by this resource. The IP address must be inside the specified subnetwork, if any. Set by the API if undefined.</summary>
     [JsonPropertyName("address")]
     public string? Address { get; set; }
 
-    /// <summary>
-    /// Immutable. The type of address to reserve.
-    /// Note: if you set this argument&apos;s value as &apos;INTERNAL&apos; you need to leave the &apos;network_tier&apos; argument unset in that resource block. Default value: &quot;EXTERNAL&quot; Possible values: [&quot;INTERNAL&quot;, &quot;EXTERNAL&quot;].
-    /// </summary>
+    /// <summary>Immutable. The type of address to reserve. Note: if you set this argument&apos;s value as &apos;INTERNAL&apos; you need to leave the &apos;network_tier&apos; argument unset in that resource block. Default value: &quot;EXTERNAL&quot; Possible values: [&quot;INTERNAL&quot;, &quot;EXTERNAL&quot;].</summary>
     [JsonPropertyName("addressType")]
     public string? AddressType { get; set; }
 
@@ -109,11 +93,7 @@ public partial class V1beta1ComputeAddressSpec
     [JsonPropertyName("ipVersion")]
     public string? IpVersion { get; set; }
 
-    /// <summary>
-    /// Immutable. The endpoint type of this address, which should be VM or NETLB. This is
-    /// used for deciding which type of endpoint this address can be used after
-    /// the external IPv6 address reservation. Possible values: [&quot;VM&quot;, &quot;NETLB&quot;].
-    /// </summary>
+    /// <summary>Immutable. The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation. Possible values: [&quot;VM&quot;, &quot;NETLB&quot;].</summary>
     [JsonPropertyName("ipv6EndpointType")]
     public string? Ipv6EndpointType { get; set; }
 
@@ -121,21 +101,11 @@ public partial class V1beta1ComputeAddressSpec
     [JsonPropertyName("location")]
     public required string Location { get; set; }
 
-    /// <summary>
-    /// The network in which to reserve the address. If global, the address
-    /// must be within the RFC1918 IP space. The network cannot be deleted
-    /// if there are any reserved IP ranges referring to it. This field can
-    /// only be used with INTERNAL type with the VPC_PEERING and
-    /// IPSEC_INTERCONNECT purposes.
-    /// </summary>
+    /// <summary>The network in which to reserve the address. If global, the address must be within the RFC1918 IP space. The network cannot be deleted if there are any reserved IP ranges referring to it. This field can only be used with INTERNAL type with the VPC_PEERING and IPSEC_INTERCONNECT purposes.</summary>
     [JsonPropertyName("networkRef")]
     public V1beta1ComputeAddressSpecNetworkRef? NetworkRef { get; set; }
 
-    /// <summary>
-    /// Immutable. The networking tier used for configuring this address. If this field is not
-    /// specified, it is assumed to be PREMIUM.
-    /// This argument should not be used when configuring Internal addresses, because [network tier cannot be set for internal traffic; it&apos;s always Premium](https://cloud.google.com/network-tiers/docs/overview). Possible values: [&quot;PREMIUM&quot;, &quot;STANDARD&quot;].
-    /// </summary>
+    /// <summary>Immutable. The networking tier used for configuring this address. If this field is not specified, it is assumed to be PREMIUM. This argument should not be used when configuring Internal addresses, because [network tier cannot be set for internal traffic; it&apos;s always Premium](https://cloud.google.com/network-tiers/docs/overview). Possible values: [&quot;PREMIUM&quot;, &quot;STANDARD&quot;].</summary>
     [JsonPropertyName("networkTier")]
     public string? NetworkTier { get; set; }
 
@@ -162,7 +132,6 @@ public partial class V1beta1ComputeAddressSpec
     /// configure Private Service Connect. Only global internal addresses can use
     /// this purpose.
     /// 
-    /// 
     /// This should only be set when using an Internal address.
     /// </summary>
     [JsonPropertyName("purpose")]
@@ -172,12 +141,7 @@ public partial class V1beta1ComputeAddressSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// The subnetwork in which to reserve the address. If an IP address is
-    /// specified, it must be within the subnetwork&apos;s IP range.  This field
-    /// can only be used with INTERNAL type with GCE_ENDPOINT/DNS_RESOLVER
-    /// purposes.
-    /// </summary>
+    /// <summary>The subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork&apos;s IP range.  This field can only be used with INTERNAL type with GCE_ENDPOINT/DNS_RESOLVER purposes.</summary>
     [JsonPropertyName("subnetworkRef")]
     public V1beta1ComputeAddressSpecSubnetworkRef? SubnetworkRef { get; set; }
 }
@@ -207,25 +171,22 @@ public partial class V1beta1ComputeAddressStatusConditions
     public string? Type { get; set; }
 }
 
-/// <summary>The observed state of the underlying GCP resource.</summary>
+/// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeAddressStatusObservedState
 {
-    /// <summary>
-    /// Immutable. The static external IP address represented by this resource.
-    /// The IP address must be inside the specified subnetwork,
-    /// if any. Set by the API if undefined.
-    /// </summary>
+    /// <summary>Immutable. The static external IP address represented by this resource. The IP address must be inside the specified subnetwork, if any. Set by the API if undefined.</summary>
     [JsonPropertyName("address")]
     public string? Address { get; set; }
 }
 
+/// <summary>ComputeAddressStatus defines the config connector machine state of ComputeAddress</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeAddressStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeAddressStatusConditions>? Conditions { get; set; }
 
@@ -233,18 +194,15 @@ public partial class V1beta1ComputeAddressStatus
     [JsonPropertyName("creationTimestamp")]
     public string? CreationTimestamp { get; set; }
 
-    /// <summary>
-    /// The fingerprint used for optimistic locking of this resource.  Used
-    /// internally during updates.
-    /// </summary>
+    /// <summary>The fingerprint used for optimistic locking of this resource. Used internally during updates.</summary>
     [JsonPropertyName("labelFingerprint")]
     public string? LabelFingerprint { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
-    /// <summary>The observed state of the underlying GCP resource.</summary>
+    /// <summary>ObservedState is the state of the resource as most recently observed in GCP.</summary>
     [JsonPropertyName("observedState")]
     public V1beta1ComputeAddressStatusObservedState? ObservedState { get; set; }
 
@@ -256,6 +214,7 @@ public partial class V1beta1ComputeAddressStatus
     public IList<string>? Users { get; set; }
 }
 
+/// <summary>ComputeAddress is the Schema for the ComputeAddress API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -277,9 +236,11 @@ public partial class V1beta1ComputeAddress : IKubernetesObject<V1ObjectMeta>, IS
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeAddressSpec defines the desired state of ComputeAddress</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeAddressSpec Spec { get; set; }
 
+    /// <summary>ComputeAddressStatus defines the config connector machine state of ComputeAddress</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeAddressStatus? Status { get; set; }
 }
