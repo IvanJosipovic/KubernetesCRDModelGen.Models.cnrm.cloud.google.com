@@ -41,7 +41,7 @@ public partial class V1beta1BackupDRBackupPlanAssociationList : IKubernetesObjec
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BackupDRBackupPlanAssociationSpecBackupPlanRef
 {
-    /// <summary>A reference to an externally managed BackupDRBackupPlan resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/backupplans/{{backupplanID}}&quot;.</summary>
+    /// <summary>A reference to an externally managed BackupDRBackupPlan resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/backupPlans/{{backupplanID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
