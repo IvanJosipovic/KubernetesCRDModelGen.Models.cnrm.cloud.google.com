@@ -89,6 +89,17 @@ spec:
                       type: string
                     diskEncryptionKeyRaw:
                       description: A 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to encrypt this disk. Only one of kms_key_self_link and disk_encryption_key_raw may be set.
+                      oneOf:
+                      - not:
+                          required:
+                          - valueFrom
+                        required:
+                        - value
+                      - not:
+                          required:
+                          - value
+                        required:
+                        - valueFrom
                       properties:
                         value:
                           description: Value of the field. Cannot be used if 'valueFrom' is specified.
@@ -184,6 +195,17 @@ spec:
                     type: string
                   diskEncryptionKeyRaw:
                     description: Immutable. A 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to encrypt this disk. Only one of kms_key_self_link and disk_encryption_key_raw may be set.
+                    oneOf:
+                    - not:
+                        required:
+                        - valueFrom
+                      required:
+                      - value
+                    - not:
+                        required:
+                        - value
+                      required:
+                      - valueFrom
                     properties:
                       value:
                         description: Value of the field. Cannot be used if 'valueFrom' is specified.
