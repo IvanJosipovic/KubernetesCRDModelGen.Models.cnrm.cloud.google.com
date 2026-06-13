@@ -77,7 +77,7 @@ spec:
                       - external
                     properties:
                       external:
-                        description: A reference to an externally managed ComputeDisk resource. Should be in the format "projects/{{project}}/zones/{{zone}}/disks/{{name}}".
+                        description: A reference to an externally managed ComputeDisk resource. Should be in the format "projects/{{projectID}}/zones/{{zone}}/disks/{{diskID}}" or "projects/{{projectID}}/regions/{{region}}/disks/{{diskID}}".
                         type: string
                       name:
                         description: The name of a ComputeDisk resource.
@@ -426,7 +426,7 @@ spec:
                   - external
                 properties:
                   external:
-                    description: A reference to an externally managed ComputeDisk resource. Should be in the format "projects/{{project}}/zones/{{zone}}/disks/{{name}}".
+                    description: A reference to an externally managed ComputeDisk resource. Should be in the format "projects/{{projectID}}/zones/{{zone}}/disks/{{diskID}}" or "projects/{{projectID}}/regions/{{region}}/disks/{{diskID}}".
                     type: string
                   name:
                     description: The name of a ComputeDisk resource.

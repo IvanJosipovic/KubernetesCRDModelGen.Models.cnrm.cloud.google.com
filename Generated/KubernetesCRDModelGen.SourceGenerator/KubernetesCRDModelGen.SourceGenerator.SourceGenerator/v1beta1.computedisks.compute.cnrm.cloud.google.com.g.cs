@@ -41,7 +41,7 @@ public partial class V1beta1ComputeDiskList : IKubernetesObject<V1ListMeta>, IIt
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeDiskSpecAsyncPrimaryDiskDiskRef
 {
-    /// <summary>A reference to an externally managed ComputeDisk resource. Should be in the format &quot;projects/{{project}}/zones/{{zone}}/disks/{{name}}&quot;.</summary>
+    /// <summary>A reference to an externally managed ComputeDisk resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/disks/{{diskID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/disks/{{diskID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -301,7 +301,7 @@ public partial class V1beta1ComputeDiskSpecSnapshotRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeDiskSpecSourceDiskRef
 {
-    /// <summary>A reference to an externally managed ComputeDisk resource. Should be in the format &quot;projects/{{project}}/zones/{{zone}}/disks/{{name}}&quot;.</summary>
+    /// <summary>A reference to an externally managed ComputeDisk resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/disks/{{diskID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/disks/{{diskID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
