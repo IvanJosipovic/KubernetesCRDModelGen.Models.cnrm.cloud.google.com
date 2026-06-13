@@ -105,6 +105,73 @@ public partial class V1beta1StorageBucketSpecEncryption
     public required V1beta1StorageBucketSpecEncryptionKmsKeyRef KmsKeyRef { get; set; }
 }
 
+/// <summary>The public network IP address ranges that can access the bucket and its data.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1StorageBucketSpecIpFilterPublicNetworkSource
+{
+    /// <summary>The list of public IPv4, IPv6 cidr ranges that are allowed to access the bucket.</summary>
+    [JsonPropertyName("allowedIpCidrRanges")]
+    public required IList<string> AllowedIpCidrRanges { get; set; }
+}
+
+/// <summary>The VPC network that can access the bucket.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1StorageBucketSpecIpFilterVpcNetworkSourcesNetworkRef
+{
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The name of a ComputeNetwork resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1StorageBucketSpecIpFilterVpcNetworkSources
+{
+    /// <summary>The list of public or private IPv4 and IPv6 CIDR ranges that can access the bucket.</summary>
+    [JsonPropertyName("allowedIpCidrRanges")]
+    public required IList<string> AllowedIpCidrRanges { get; set; }
+
+    /// <summary>The VPC network that can access the bucket.</summary>
+    [JsonPropertyName("networkRef")]
+    public required V1beta1StorageBucketSpecIpFilterVpcNetworkSourcesNetworkRef NetworkRef { get; set; }
+}
+
+/// <summary>The bucket IP filtering configuration.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1StorageBucketSpecIpFilter
+{
+    /// <summary>Whether to allow all service agents to access the bucket regardless of the IP filter configuration.</summary>
+    [JsonPropertyName("allowAllServiceAgentAccess")]
+    public bool? AllowAllServiceAgentAccess { get; set; }
+
+    /// <summary>Whether to allow cross-org VPCs in the bucket&apos;s IP filter configuration.</summary>
+    [JsonPropertyName("allowCrossOrgVpcs")]
+    public bool? AllowCrossOrgVpcs { get; set; }
+
+    /// <summary>The mode of the IP filter. Valid values are &apos;Enabled&apos; and &apos;Disabled&apos;.</summary>
+    [JsonPropertyName("mode")]
+    public required string Mode { get; set; }
+
+    /// <summary>The public network IP address ranges that can access the bucket and its data.</summary>
+    [JsonPropertyName("publicNetworkSource")]
+    public V1beta1StorageBucketSpecIpFilterPublicNetworkSource? PublicNetworkSource { get; set; }
+
+    /// <summary>The list of VPC networks that can access the bucket.</summary>
+    [JsonPropertyName("vpcNetworkSources")]
+    public IList<V1beta1StorageBucketSpecIpFilterVpcNetworkSources>? VpcNetworkSources { get; set; }
+}
+
 /// <summary>The Lifecycle Rule&apos;s action configuration. A single block of this type is supported.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -272,6 +339,10 @@ public partial class V1beta1StorageBucketSpec
     /// <summary>The bucket&apos;s encryption configuration.</summary>
     [JsonPropertyName("encryption")]
     public V1beta1StorageBucketSpecEncryption? Encryption { get; set; }
+
+    /// <summary>The bucket IP filtering configuration.</summary>
+    [JsonPropertyName("ipFilter")]
+    public V1beta1StorageBucketSpecIpFilter? IpFilter { get; set; }
 
     /// <summary>The bucket&apos;s Lifecycle Rules configuration.</summary>
     [JsonPropertyName("lifecycleRule")]
