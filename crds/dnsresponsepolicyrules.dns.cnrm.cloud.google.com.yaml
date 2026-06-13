@@ -15,6 +15,7 @@ spec:
     kind: DNSResponsePolicyRule
     categories:
     - gcp
+    listKind: DNSResponsePolicyRuleList
     plural: dnsresponsepolicyrules
     shortNames:
     - gcpdnsresponsepolicyrule
@@ -42,12 +43,13 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: DNSResponsePolicyRule is the Schema for the dns API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
@@ -60,9 +62,7 @@ spec:
                 description: The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
                 type: string
               localData:
-                description: |-
-                  Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;
-                  in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.
+                description: Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name; in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.
                 properties:
                   localDatas:
                     description: All resource record sets for this selector, one per resource record type. The name must match the dns_name.
@@ -77,9 +77,8 @@ spec:
                             type: string
                           type: array
                         ttl:
-                          description: |-
-                            Number of seconds that this ResourceRecordSet can be cached by
-                            resolvers.
+                          description: Number of seconds that this ResourceRecordSet can be cached by resolvers.
+                          format: int64
                           type: integer
                         type:
                           description: 'One of valid DNS resource types. Possible values: ["A", "AAAA", "CAA", "CNAME", "DNSKEY", "DS", "HTTPS", "IPSECVPNKEY", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "SSHFP", "SVCB", "TLSA", "TXT"].'
@@ -110,13 +109,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `name` field of a `Project` resource.'
+                    description: The `projectID` field of a project, when not managed by Config Connector.
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The `name` field of a `Project` resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The `namespace` field of a `Project` resource.
                     type: string
                 type: object
               resourceID:
@@ -133,7 +132,7 @@ spec:
           status:
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the DNSResponsePolicyRule's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -155,6 +154,7 @@ spec:
                 type: array
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
             type: object
         required:
@@ -164,9 +164,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []

@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.dns.cnrm.cloud.google.com;
+/// <summary>DNSResponsePolicyRule is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -47,22 +48,16 @@ public partial class V1alpha1DNSResponsePolicyRuleSpecLocalDataLocalDatas
     [JsonPropertyName("rrdatas")]
     public IList<string>? Rrdatas { get; set; }
 
-    /// <summary>
-    /// Number of seconds that this ResourceRecordSet can be cached by
-    /// resolvers.
-    /// </summary>
+    /// <summary>Number of seconds that this ResourceRecordSet can be cached by resolvers.</summary>
     [JsonPropertyName("ttl")]
-    public int? Ttl { get; set; }
+    public long? Ttl { get; set; }
 
     /// <summary>One of valid DNS resource types. Possible values: [&quot;A&quot;, &quot;AAAA&quot;, &quot;CAA&quot;, &quot;CNAME&quot;, &quot;DNSKEY&quot;, &quot;DS&quot;, &quot;HTTPS&quot;, &quot;IPSECVPNKEY&quot;, &quot;MX&quot;, &quot;NAPTR&quot;, &quot;NS&quot;, &quot;PTR&quot;, &quot;SOA&quot;, &quot;SPF&quot;, &quot;SRV&quot;, &quot;SSHFP&quot;, &quot;SVCB&quot;, &quot;TLSA&quot;, &quot;TXT&quot;].</summary>
     [JsonPropertyName("type")]
     public required string Type { get; set; }
 }
 
-/// <summary>
-/// Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;
-/// in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.
-/// </summary>
+/// <summary>Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name; in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DNSResponsePolicyRuleSpecLocalData
@@ -77,15 +72,15 @@ public partial class V1alpha1DNSResponsePolicyRuleSpecLocalData
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DNSResponsePolicyRuleSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -102,10 +97,7 @@ public partial class V1alpha1DNSResponsePolicyRuleSpec
     [JsonPropertyName("dnsName")]
     public required string DnsName { get; set; }
 
-    /// <summary>
-    /// Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;
-    /// in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.
-    /// </summary>
+    /// <summary>Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name; in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.</summary>
     [JsonPropertyName("localData")]
     public V1alpha1DNSResponsePolicyRuleSpecLocalData? LocalData { get; set; }
 
@@ -151,15 +143,16 @@ public partial class V1alpha1DNSResponsePolicyRuleStatusConditions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DNSResponsePolicyRuleStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the DNSResponsePolicyRule&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1DNSResponsePolicyRuleStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>DNSResponsePolicyRule is the Schema for the dns API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
