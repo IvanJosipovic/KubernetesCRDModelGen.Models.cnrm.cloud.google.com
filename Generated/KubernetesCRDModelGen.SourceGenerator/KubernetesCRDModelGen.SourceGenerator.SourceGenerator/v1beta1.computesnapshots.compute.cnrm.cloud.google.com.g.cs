@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeSnapshot is the Schema for the ComputeSnapshot API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,28 +41,25 @@ public partial class V1beta1ComputeSnapshotList : IKubernetesObject<V1ListMeta>,
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyKmsKeyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>A reference to an externally managed KMSCryptoKey resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/keyRings/{{keyring}}/cryptoKeys/{{cryptokey}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a KMSCryptoKey resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a KMSCryptoKey resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The service account used for the encryption request for the given KMS key.
-/// If absent, the Compute Engine Service Agent service account is used.
-/// </summary>
+/// <summary>The service account used for the encryption request for the given KMS key. If absent, the Compute Engine Service Agent service account is used.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyKmsKeyServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The `email` field of an `IAMServiceAccount` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -98,10 +96,7 @@ public partial class V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyRawKeyValueF
     public V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyRawKeyValueFromSecretKeyRef? SecretKeyRef { get; set; }
 }
 
-/// <summary>
-/// Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in
-/// RFC 4648 base64 to either encrypt or decrypt this resource.
-/// </summary>
+/// <summary>Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyRawKey
@@ -138,37 +133,25 @@ public partial class V1beta1ComputeSnapshotSpecSnapshotEncryptionKey
     [JsonPropertyName("kmsKeyRef")]
     public V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyKmsKeyRef? KmsKeyRef { get; set; }
 
-    /// <summary>
-    /// The service account used for the encryption request for the given KMS key.
-    /// If absent, the Compute Engine Service Agent service account is used.
-    /// </summary>
+    /// <summary>The service account used for the encryption request for the given KMS key. If absent, the Compute Engine Service Agent service account is used.</summary>
     [JsonPropertyName("kmsKeyServiceAccountRef")]
     public V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyKmsKeyServiceAccountRef? KmsKeyServiceAccountRef { get; set; }
 
-    /// <summary>
-    /// Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in
-    /// RFC 4648 base64 to either encrypt or decrypt this resource.
-    /// </summary>
+    /// <summary>Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.</summary>
     [JsonPropertyName("rawKey")]
     public V1beta1ComputeSnapshotSpecSnapshotEncryptionKeyRawKey? RawKey { get; set; }
 
-    /// <summary>
-    /// The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied
-    /// encryption key that protects this resource.
-    /// </summary>
+    /// <summary>The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.</summary>
     [JsonPropertyName("sha256")]
     public string? Sha256 { get; set; }
 }
 
-/// <summary>
-/// The service account used for the encryption request for the given KMS key.
-/// If absent, the Compute Engine Service Agent service account is used.
-/// </summary>
+/// <summary>The service account used for the encryption request for the given KMS key. If absent, the Compute Engine Service Agent service account is used.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyKmsKeyServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The `email` field of an `IAMServiceAccount` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -205,10 +188,7 @@ public partial class V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyRawKeyValu
     public V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyRawKeyValueFromSecretKeyRef? SecretKeyRef { get; set; }
 }
 
-/// <summary>
-/// Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in
-/// RFC 4648 base64 to either encrypt or decrypt this resource.
-/// </summary>
+/// <summary>Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyRawKey
@@ -222,26 +202,16 @@ public partial class V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyRawKey
     public V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyRawKeyValueFrom? ValueFrom { get; set; }
 }
 
-/// <summary>
-/// Immutable. The customer-supplied encryption key of the source snapshot. Required
-/// if the source snapshot is protected by a customer-supplied encryption
-/// key.
-/// </summary>
+/// <summary>Immutable. The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpecSourceDiskEncryptionKey
 {
-    /// <summary>
-    /// The service account used for the encryption request for the given KMS key.
-    /// If absent, the Compute Engine Service Agent service account is used.
-    /// </summary>
+    /// <summary>The service account used for the encryption request for the given KMS key. If absent, the Compute Engine Service Agent service account is used.</summary>
     [JsonPropertyName("kmsKeyServiceAccountRef")]
     public V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyKmsKeyServiceAccountRef? KmsKeyServiceAccountRef { get; set; }
 
-    /// <summary>
-    /// Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in
-    /// RFC 4648 base64 to either encrypt or decrypt this resource.
-    /// </summary>
+    /// <summary>Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.</summary>
     [JsonPropertyName("rawKey")]
     public V1beta1ComputeSnapshotSpecSourceDiskEncryptionKeyRawKey? RawKey { get; set; }
 }
@@ -251,31 +221,25 @@ public partial class V1beta1ComputeSnapshotSpecSourceDiskEncryptionKey
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpecSourceDiskRef
 {
-    /// <summary>Allowed value: The `name` field of a `ComputeDisk` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeDisk resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/disks/{{diskID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/disks/{{diskID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeDisk resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeDisk resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeSnapshotSpec defines the desired state of ComputeSnapshot</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotSpec
 {
-    /// <summary>
-    /// Immutable. Creates the new snapshot in the snapshot chain labeled with the
-    /// specified name. The chain name must be 1-63 characters long and
-    /// comply with RFC1035. This is an uncommon option only for advanced
-    /// service owners who needs to create separate snapshot chains, for
-    /// example, for chargeback tracking.  When you describe your snapshot
-    /// resource, this field is visible only if it has a non-empty value.
-    /// </summary>
+    /// <summary>Immutable. Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking.  When you describe your snapshot resource, this field is visible only if it has a non-empty value.</summary>
     [JsonPropertyName("chainName")]
     public string? ChainName { get; set; }
 
@@ -305,11 +269,7 @@ public partial class V1beta1ComputeSnapshotSpec
     [JsonPropertyName("snapshotEncryptionKey")]
     public V1beta1ComputeSnapshotSpecSnapshotEncryptionKey? SnapshotEncryptionKey { get; set; }
 
-    /// <summary>
-    /// Immutable. The customer-supplied encryption key of the source snapshot. Required
-    /// if the source snapshot is protected by a customer-supplied encryption
-    /// key.
-    /// </summary>
+    /// <summary>Immutable. The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.</summary>
     [JsonPropertyName("sourceDiskEncryptionKey")]
     public V1beta1ComputeSnapshotSpecSourceDiskEncryptionKey? SourceDiskEncryptionKey { get; set; }
 
@@ -351,11 +311,12 @@ public partial class V1beta1ComputeSnapshotStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeSnapshotStatus defines the config connector machine state of ComputeSnapshot</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSnapshotStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeSnapshot&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeSnapshotStatusConditions>? Conditions { get; set; }
 
@@ -365,44 +326,33 @@ public partial class V1beta1ComputeSnapshotStatus
 
     /// <summary>Size of the snapshot, specified in GB.</summary>
     [JsonPropertyName("diskSizeGb")]
-    public int? DiskSizeGb { get; set; }
+    public long? DiskSizeGb { get; set; }
 
-    /// <summary>
-    /// The fingerprint used for optimistic locking of this resource. Used
-    /// internally during updates.
-    /// </summary>
+    /// <summary>The fingerprint used for optimistic locking of this resource. Used internally during updates.</summary>
     [JsonPropertyName("labelFingerprint")]
     public string? LabelFingerprint { get; set; }
 
-    /// <summary>
-    /// A list of public visible licenses that apply to this snapshot. This
-    /// can be because the original image had licenses attached (such as a
-    /// Windows image).  snapshotEncryptionKey nested object Encrypts the
-    /// snapshot using a customer-supplied encryption key.
-    /// </summary>
+    /// <summary>A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).  snapshotEncryptionKey nested object Encrypts the snapshot using a customer-supplied encryption key.</summary>
     [JsonPropertyName("licenses")]
     public IList<string>? Licenses { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 
     /// <summary>The unique identifier for the resource.</summary>
     [JsonPropertyName("snapshotId")]
-    public int? SnapshotId { get; set; }
+    public long? SnapshotId { get; set; }
 
-    /// <summary>
-    /// A size of the storage used by the snapshot. As snapshots share
-    /// storage, this number is expected to change with snapshot
-    /// creation/deletion.
-    /// </summary>
+    /// <summary>A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.</summary>
     [JsonPropertyName("storageBytes")]
-    public int? StorageBytes { get; set; }
+    public long? StorageBytes { get; set; }
 }
 
+/// <summary>ComputeSnapshot is the Schema for the ComputeSnapshot API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -424,9 +374,11 @@ public partial class V1beta1ComputeSnapshot : IKubernetesObject<V1ObjectMeta>, I
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeSnapshotSpec defines the desired state of ComputeSnapshot</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeSnapshotSpec Spec { get; set; }
 
+    /// <summary>ComputeSnapshotStatus defines the config connector machine state of ComputeSnapshot</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeSnapshotStatus? Status { get; set; }
 }
