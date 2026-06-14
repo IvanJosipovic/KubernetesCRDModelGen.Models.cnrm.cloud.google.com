@@ -15,6 +15,7 @@ spec:
     kind: ComputeSnapshot
     categories:
     - gcp
+    listKind: ComputeSnapshotList
     plural: computesnapshots
     shortNames:
     - gcpcomputesnapshot
@@ -42,25 +43,21 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: ComputeSnapshot is the Schema for the ComputeSnapshot API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: ComputeSnapshotSpec defines the desired state of ComputeSnapshot
             properties:
               chainName:
-                description: |-
-                  Immutable. Creates the new snapshot in the snapshot chain labeled with the
-                  specified name. The chain name must be 1-63 characters long and
-                  comply with RFC1035. This is an uncommon option only for advanced
-                  service owners who needs to create separate snapshot chains, for
-                  example, for chargeback tracking.  When you describe your snapshot
-                  resource, this field is visible only if it has a non-empty value.
+                description: Immutable. Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking.  When you describe your snapshot resource, this field is visible only if it has a non-empty value.
                 type: string
               description:
                 description: Immutable. An optional description of this resource.
@@ -102,19 +99,17 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.'
+                        description: A reference to an externally managed KMSCryptoKey resource. Should be in the format "projects/{{projectID}}/locations/{{location}}/keyRings/{{keyring}}/cryptoKeys/{{cryptokey}}".
                         type: string
                       name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        description: The name of a KMSCryptoKey resource.
                         type: string
                       namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        description: The namespace of a KMSCryptoKey resource.
                         type: string
                     type: object
                   kmsKeyServiceAccountRef:
-                    description: |-
-                      The service account used for the encryption request for the given KMS key.
-                      If absent, the Compute Engine Service Agent service account is used.
+                    description: The service account used for the encryption request for the given KMS key. If absent, the Compute Engine Service Agent service account is used.
                     oneOf:
                     - not:
                         required:
@@ -131,7 +126,7 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: The `email` field of an `IAMServiceAccount` resource.'
+                        description: The `email` field of an `IAMServiceAccount` resource.
                         type: string
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
@@ -141,9 +136,7 @@ spec:
                         type: string
                     type: object
                   rawKey:
-                    description: |-
-                      Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in
-                      RFC 4648 base64 to either encrypt or decrypt this resource.
+                    description: Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
                     oneOf:
                     - not:
                         required:
@@ -172,27 +165,20 @@ spec:
                                 description: Name of the Secret to extract a value from.
                                 type: string
                             required:
-                            - name
                             - key
+                            - name
                             type: object
                         type: object
                     type: object
                   sha256:
-                    description: |-
-                      The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied
-                      encryption key that protects this resource.
+                    description: The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
                     type: string
                 type: object
               sourceDiskEncryptionKey:
-                description: |-
-                  Immutable. The customer-supplied encryption key of the source snapshot. Required
-                  if the source snapshot is protected by a customer-supplied encryption
-                  key.
+                description: Immutable. The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
                 properties:
                   kmsKeyServiceAccountRef:
-                    description: |-
-                      The service account used for the encryption request for the given KMS key.
-                      If absent, the Compute Engine Service Agent service account is used.
+                    description: The service account used for the encryption request for the given KMS key. If absent, the Compute Engine Service Agent service account is used.
                     oneOf:
                     - not:
                         required:
@@ -209,7 +195,7 @@ spec:
                       - external
                     properties:
                       external:
-                        description: 'Allowed value: The `email` field of an `IAMServiceAccount` resource.'
+                        description: The `email` field of an `IAMServiceAccount` resource.
                         type: string
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
@@ -219,9 +205,7 @@ spec:
                         type: string
                     type: object
                   rawKey:
-                    description: |-
-                      Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in
-                      RFC 4648 base64 to either encrypt or decrypt this resource.
+                    description: Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
                     oneOf:
                     - not:
                         required:
@@ -250,8 +234,8 @@ spec:
                                 description: Name of the Secret to extract a value from.
                                 type: string
                             required:
-                            - name
                             - key
+                            - name
                             type: object
                         type: object
                     type: object
@@ -274,13 +258,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `name` field of a `ComputeDisk` resource.'
+                    description: A reference to an externally managed ComputeDisk resource. Should be in the format "projects/{{projectID}}/zones/{{zone}}/disks/{{diskID}}" or "projects/{{projectID}}/regions/{{region}}/disks/{{diskID}}".
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a ComputeDisk resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace of a ComputeDisk resource.
                     type: string
                 type: object
               storageLocations:
@@ -295,9 +279,10 @@ spec:
             - sourceDiskRef
             type: object
           status:
+            description: ComputeSnapshotStatus defines the config connector machine state of ComputeSnapshot
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the ComputeSnapshot's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -322,34 +307,29 @@ spec:
                 type: string
               diskSizeGb:
                 description: Size of the snapshot, specified in GB.
+                format: int64
                 type: integer
               labelFingerprint:
-                description: |-
-                  The fingerprint used for optimistic locking of this resource. Used
-                  internally during updates.
+                description: The fingerprint used for optimistic locking of this resource. Used internally during updates.
                 type: string
               licenses:
-                description: |-
-                  A list of public visible licenses that apply to this snapshot. This
-                  can be because the original image had licenses attached (such as a
-                  Windows image).  snapshotEncryptionKey nested object Encrypts the
-                  snapshot using a customer-supplied encryption key.
+                description: A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).  snapshotEncryptionKey nested object Encrypts the snapshot using a customer-supplied encryption key.
                 items:
                   type: string
                 type: array
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
               selfLink:
                 type: string
               snapshotId:
                 description: The unique identifier for the resource.
+                format: int64
                 type: integer
               storageBytes:
-                description: |-
-                  A size of the storage used by the snapshot. As snapshots share
-                  storage, this number is expected to change with snapshot
-                  creation/deletion.
+                description: A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
+                format: int64
                 type: integer
             type: object
         required:
@@ -359,9 +339,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
