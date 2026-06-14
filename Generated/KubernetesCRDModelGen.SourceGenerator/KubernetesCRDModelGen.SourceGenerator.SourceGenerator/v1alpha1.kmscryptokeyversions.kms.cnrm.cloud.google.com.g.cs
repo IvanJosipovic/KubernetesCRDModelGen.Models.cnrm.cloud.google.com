@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.kms.cnrm.cloud.google.com;
+/// <summary>KMSCryptoKeyVersion is the Schema for the kms API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,14 +36,12 @@ public partial class V1alpha1KMSCryptoKeyVersionList : IKubernetesObject<V1ListM
     public required IList<V1alpha1KMSCryptoKeyVersion> Items { get; set; }
 }
 
+/// <summary>KMSCryptoKeyVersionSpec defines the desired state of KMSCryptoKeyVersion</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1KMSCryptoKeyVersionSpec
 {
-    /// <summary>
-    /// Immutable. The name of the cryptoKey associated with the CryptoKeyVersions.
-    /// Format: &apos; &apos;projects/{{project}}/locations/{{location}}/keyRings/{{keyring}}/cryptoKeys/{{cryptoKey}}&apos; &apos;.
-    /// </summary>
+    /// <summary>Immutable. The name of the cryptoKey associated with the CryptoKeyVersions. Format: &apos; &apos;projects/{{project}}/locations/{{location}}/keyRings/{{keyring}}/cryptoKeys/{{cryptoKey}}&apos; &apos;.</summary>
     [JsonPropertyName("cryptoKey")]
     public required string CryptoKey { get; set; }
 
@@ -141,14 +140,11 @@ public partial class V1alpha1KMSCryptoKeyVersionStatus
     [JsonPropertyName("algorithm")]
     public string? Algorithm { get; set; }
 
-    /// <summary>
-    /// Statement that was generated and signed by the HSM at key creation time. Use this statement to verify attributes of the key as stored on the HSM, independently of Google.
-    /// Only provided for key versions with protectionLevel HSM.
-    /// </summary>
+    /// <summary>Statement that was generated and signed by the HSM at key creation time. Use this statement to verify attributes of the key as stored on the HSM, independently of Google. Only provided for key versions with protectionLevel HSM.</summary>
     [JsonPropertyName("attestation")]
     public IList<V1alpha1KMSCryptoKeyVersionStatusAttestation>? Attestation { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the KMSCryptoKeyVersion&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1KMSCryptoKeyVersionStatusConditions>? Conditions { get; set; }
 
@@ -162,13 +158,14 @@ public partial class V1alpha1KMSCryptoKeyVersionStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The ProtectionLevel describing how crypto operations are performed with this CryptoKeyVersion.</summary>
     [JsonPropertyName("protectionLevel")]
     public string? ProtectionLevel { get; set; }
 }
 
+/// <summary>KMSCryptoKeyVersion is the Schema for the kms API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -190,6 +187,7 @@ public partial class V1alpha1KMSCryptoKeyVersion : IKubernetesObject<V1ObjectMet
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>KMSCryptoKeyVersionSpec defines the desired state of KMSCryptoKeyVersion</summary>
     [JsonPropertyName("spec")]
     public required V1alpha1KMSCryptoKeyVersionSpec Spec { get; set; }
 
