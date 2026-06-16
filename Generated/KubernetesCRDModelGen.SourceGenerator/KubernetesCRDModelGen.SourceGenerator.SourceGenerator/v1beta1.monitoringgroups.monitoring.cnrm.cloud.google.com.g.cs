@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.monitoring.cnrm.cloud.google.com;
+/// <summary>MonitoringGroup is the Schema for the MonitoringGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,23 +36,20 @@ public partial class V1beta1MonitoringGroupList : IKubernetesObject<V1ListMeta>,
     public required IList<V1beta1MonitoringGroup> Items { get; set; }
 }
 
+/// <summary>MonitoringGroupRef is a reference to a GCP MonitoringGroup.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringGroupSpecParentRef
 {
-    /// <summary>
-    /// The name of the group&apos;s parent, if it has one. The format is: projects/ For groups with no parent, `parent_name` is the empty string, ``.
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `MonitoringGroup` resource (format: `projects/{{project}}/groups/{{name}}`).
-    /// </summary>
+    /// <summary>A reference to an externally managed MonitoringGroup resource. Should be in the format &quot;projects/{{projectID}}/groups/{{groupID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a MonitoringGroup resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a MonitoringGroup resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -61,23 +59,20 @@ public partial class V1beta1MonitoringGroupSpecParentRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringGroupSpecProjectRef
 {
-    /// <summary>
-    /// The project of the group
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).
-    /// </summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>MonitoringGroupSpec defines the desired state of MonitoringGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringGroupSpec
@@ -94,6 +89,7 @@ public partial class V1beta1MonitoringGroupSpec
     [JsonPropertyName("isCluster")]
     public bool? IsCluster { get; set; }
 
+    /// <summary>MonitoringGroupRef is a reference to a GCP MonitoringGroup.</summary>
     [JsonPropertyName("parentRef")]
     public V1beta1MonitoringGroupSpecParentRef? ParentRef { get; set; }
 
@@ -131,19 +127,21 @@ public partial class V1beta1MonitoringGroupStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>MonitoringGroupStatus defines the config connector machine state of MonitoringGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringGroupStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1MonitoringGroupStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>MonitoringGroup is the Schema for the MonitoringGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -165,9 +163,11 @@ public partial class V1beta1MonitoringGroup : IKubernetesObject<V1ObjectMeta>, I
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>MonitoringGroupSpec defines the desired state of MonitoringGroup</summary>
     [JsonPropertyName("spec")]
     public required V1beta1MonitoringGroupSpec Spec { get; set; }
 
+    /// <summary>MonitoringGroupStatus defines the config connector machine state of MonitoringGroup</summary>
     [JsonPropertyName("status")]
     public V1beta1MonitoringGroupStatus? Status { get; set; }
 }
