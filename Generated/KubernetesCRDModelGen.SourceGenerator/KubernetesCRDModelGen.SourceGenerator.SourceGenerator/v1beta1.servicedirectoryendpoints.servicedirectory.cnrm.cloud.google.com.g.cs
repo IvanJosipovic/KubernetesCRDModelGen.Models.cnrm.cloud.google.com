@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.servicedirectory.cnrm.cloud.google.com;
+/// <summary>ServiceDirectoryEndpoint is the Schema for the ServiceDirectoryEndpoint API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,92 +36,74 @@ public partial class V1beta1ServiceDirectoryEndpointList : IKubernetesObject<V1L
     public required IList<V1beta1ServiceDirectoryEndpoint> Items { get; set; }
 }
 
+/// <summary>Optional. The ComputeAddress resource whose IP address this endpoint uses.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceDirectoryEndpointSpecAddressRef
 {
-    /// <summary>Allowed value: The `address` field of a `ComputeAddress` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// Only the `external` field is supported to configure the reference.
-/// 
-/// Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
-/// projects/&lt;project number&gt;/locations/global/networks/*.
-/// 
-/// The project must be specified by project number (project id is rejected). Incorrectly formatted networks are
-/// rejected, but no other validation is performed on this field (ex. network or project existence,
-/// reachability, or permissions).
-/// </summary>
+/// <summary>Optional. The ComputeNetwork resource representing the GCE network of this endpoint.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceDirectoryEndpointSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>The ServiceDirectoryService that this endpoint belongs to.</summary>
+/// <summary>Required. The ServiceDirectoryService that this endpoint belongs to.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceDirectoryEndpointSpecServiceRef
 {
-    /// <summary>Allowed value: The `name` field of a `ServiceDirectoryService` resource.</summary>
+    /// <summary>A reference to an externally managed ServiceDirectoryService resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/namespaces/{{namespaceID}}/services/{{serviceID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ServiceDirectoryService resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ServiceDirectoryService resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ServiceDirectoryEndpointSpec defines the desired state of ServiceDirectoryEndpoint</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceDirectoryEndpointSpec
 {
+    /// <summary>Optional. The ComputeAddress resource whose IP address this endpoint uses.</summary>
     [JsonPropertyName("addressRef")]
     public V1beta1ServiceDirectoryEndpointSpecAddressRef? AddressRef { get; set; }
 
-    /// <summary>
-    /// Only the `external` field is supported to configure the reference.
-    /// 
-    /// Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
-    /// projects/&lt;project number&gt;/locations/global/networks/*.
-    /// 
-    /// The project must be specified by project number (project id is rejected). Incorrectly formatted networks are
-    /// rejected, but no other validation is performed on this field (ex. network or project existence,
-    /// reachability, or permissions).
-    /// </summary>
+    /// <summary>Optional. The ComputeNetwork resource representing the GCE network of this endpoint.</summary>
     [JsonPropertyName("networkRef")]
     public V1beta1ServiceDirectoryEndpointSpecNetworkRef? NetworkRef { get; set; }
 
-    /// <summary>
-    /// Port that the endpoint is running on, must be in the
-    /// range of [0, 65535]. If unspecified, the default is 0.
-    /// </summary>
+    /// <summary>Optional. Port that the endpoint is running on, must be in the range of [0, 65535]. If unspecified, the default is 0.</summary>
     [JsonPropertyName("port")]
     public int? Port { get; set; }
 
@@ -128,7 +111,7 @@ public partial class V1beta1ServiceDirectoryEndpointSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>The ServiceDirectoryService that this endpoint belongs to.</summary>
+    /// <summary>Required. The ServiceDirectoryService that this endpoint belongs to.</summary>
     [JsonPropertyName("serviceRef")]
     public required V1beta1ServiceDirectoryEndpointSpecServiceRef ServiceRef { get; set; }
 }
@@ -158,26 +141,25 @@ public partial class V1beta1ServiceDirectoryEndpointStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ServiceDirectoryEndpointStatus defines the config connector machine state of ServiceDirectoryEndpoint</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ServiceDirectoryEndpointStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ServiceDirectoryEndpointStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// The resource name for the endpoint in the format
-    /// &apos;projects/*/locations/*/namespaces/*/services/*/endpoints/*&apos;.
-    /// </summary>
+    /// <summary>The resource name for the endpoint in the format &apos;projects/*/locations/*/namespaces/*/services/*/endpoints/*&apos;.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>ServiceDirectoryEndpoint is the Schema for the ServiceDirectoryEndpoint API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -199,9 +181,11 @@ public partial class V1beta1ServiceDirectoryEndpoint : IKubernetesObject<V1Objec
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ServiceDirectoryEndpointSpec defines the desired state of ServiceDirectoryEndpoint</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ServiceDirectoryEndpointSpec Spec { get; set; }
 
+    /// <summary>ServiceDirectoryEndpointStatus defines the config connector machine state of ServiceDirectoryEndpoint</summary>
     [JsonPropertyName("status")]
     public V1beta1ServiceDirectoryEndpointStatus? Status { get; set; }
 }
