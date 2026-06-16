@@ -283,7 +283,7 @@ public partial class V1beta1ComputeDiskSpecResourcePolicies
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeDiskSpecSnapshotRef
 {
-    /// <summary>A reference to an externally managed ComputeSnapshot resource. Should be in the format &quot;projects/{{project}}/global/snapshots/{{name}}&quot;.</summary>
+    /// <summary>A reference to an externally managed ComputeSnapshot resource. Should be in the format &quot;projects/{{projectID}}/global/snapshots/{{snapshotID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/snapshots/{{snapshotID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
