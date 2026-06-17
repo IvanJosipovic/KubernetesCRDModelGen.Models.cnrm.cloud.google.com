@@ -86,6 +86,93 @@ public partial class V1beta1RedisClusterSpecAutomatedBackupConfig
     public string? Retention { get; set; }
 }
 
+/// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterSpecCrossClusterReplicationConfigPrimaryClusterClusterRef
+{
+    /// <summary>A reference to an externally managed RedisCluster resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/clusters/{{clusterID}}&quot;.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The name of a RedisCluster resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a RedisCluster resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+/// <summary>
+/// Details of the primary cluster that is used as the replication source for
+///  this secondary cluster.
+/// 
+///  This field is only set for a secondary cluster.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterSpecCrossClusterReplicationConfigPrimaryCluster
+{
+    /// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+    [JsonPropertyName("clusterRef")]
+    public V1beta1RedisClusterSpecCrossClusterReplicationConfigPrimaryClusterClusterRef? ClusterRef { get; set; }
+}
+
+/// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterSpecCrossClusterReplicationConfigSecondaryClustersClusterRef
+{
+    /// <summary>A reference to an externally managed RedisCluster resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/clusters/{{clusterID}}&quot;.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The name of a RedisCluster resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a RedisCluster resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterSpecCrossClusterReplicationConfigSecondaryClusters
+{
+    /// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+    [JsonPropertyName("clusterRef")]
+    public V1beta1RedisClusterSpecCrossClusterReplicationConfigSecondaryClustersClusterRef? ClusterRef { get; set; }
+}
+
+/// <summary>Optional. Cross cluster replication config.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterSpecCrossClusterReplicationConfig
+{
+    /// <summary>The role of the cluster in cross cluster replication.</summary>
+    [JsonPropertyName("clusterRole")]
+    public string? ClusterRole { get; set; }
+
+    /// <summary>
+    /// Details of the primary cluster that is used as the replication source for
+    ///  this secondary cluster.
+    /// 
+    ///  This field is only set for a secondary cluster.
+    /// </summary>
+    [JsonPropertyName("primaryCluster")]
+    public V1beta1RedisClusterSpecCrossClusterReplicationConfigPrimaryCluster? PrimaryCluster { get; set; }
+
+    /// <summary>
+    /// List of secondary clusters that are replicating from this primary cluster.
+    /// 
+    ///  This field is only set for a primary cluster.
+    /// </summary>
+    [JsonPropertyName("secondaryClusters")]
+    public IList<V1beta1RedisClusterSpecCrossClusterReplicationConfigSecondaryClusters>? SecondaryClusters { get; set; }
+}
+
 /// <summary>Optional. The KMS key name to encrypt data at rest.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -267,6 +354,10 @@ public partial class V1beta1RedisClusterSpec
     [JsonPropertyName("automatedBackupConfig")]
     public V1beta1RedisClusterSpecAutomatedBackupConfig? AutomatedBackupConfig { get; set; }
 
+    /// <summary>Optional. Cross cluster replication config.</summary>
+    [JsonPropertyName("crossClusterReplicationConfig")]
+    public V1beta1RedisClusterSpecCrossClusterReplicationConfig? CrossClusterReplicationConfig { get; set; }
+
     /// <summary>Optional. The delete operation will fail when the value is set to true.</summary>
     [JsonPropertyName("deletionProtectionEnabled")]
     public bool? DeletionProtectionEnabled { get; set; }
@@ -347,6 +438,132 @@ public partial class V1beta1RedisClusterStatusConditions
     /// <summary>Type is the type of the condition.</summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
+}
+
+/// <summary>Output only. The primary cluster that acts as the source of replication for the secondary clusters.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigMembershipPrimaryCluster
+{
+    /// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+    [JsonPropertyName("cluster")]
+    public string? Cluster { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote cluster.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigMembershipSecondaryClusters
+{
+    /// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+    [JsonPropertyName("cluster")]
+    public string? Cluster { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote cluster.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+/// <summary>
+/// Output only. An output only view of all the member clusters participating
+///  in the cross cluster replication. This view will be provided by every
+///  member cluster irrespective of its cluster role(primary or secondary).
+/// 
+///  A primary cluster can provide information about all the secondary clusters
+///  replicating from it. However, a secondary cluster only knows about the
+///  primary cluster from which it is replicating. However, for scenarios, where
+///  the primary cluster is unavailable(e.g. regional outage), a GetCluster
+///  request can be sent to any other member cluster and this field will list
+///  all the member clusters participating in cross cluster replication.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigMembership
+{
+    /// <summary>Output only. The primary cluster that acts as the source of replication for the secondary clusters.</summary>
+    [JsonPropertyName("primaryCluster")]
+    public V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigMembershipPrimaryCluster? PrimaryCluster { get; set; }
+
+    /// <summary>Output only. The list of secondary clusters replicating from the primary cluster.</summary>
+    [JsonPropertyName("secondaryClusters")]
+    public IList<V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigMembershipSecondaryClusters>? SecondaryClusters { get; set; }
+}
+
+/// <summary>
+/// Details of the primary cluster that is used as the replication source for
+///  this secondary cluster.
+/// 
+///  This field is only set for a secondary cluster.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigPrimaryCluster
+{
+    /// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+    [JsonPropertyName("cluster")]
+    public string? Cluster { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote cluster.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigSecondaryClusters
+{
+    /// <summary>The full resource path of the remote cluster in the format: projects/&lt;project&gt;/locations/&lt;region&gt;/clusters/&lt;cluster-id&gt;</summary>
+    [JsonPropertyName("cluster")]
+    public string? Cluster { get; set; }
+
+    /// <summary>Output only. The unique identifier of the remote cluster.</summary>
+    [JsonPropertyName("uid")]
+    public string? Uid { get; set; }
+}
+
+/// <summary>Output only. Cross cluster replication config.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfig
+{
+    /// <summary>
+    /// Output only. An output only view of all the member clusters participating
+    ///  in the cross cluster replication. This view will be provided by every
+    ///  member cluster irrespective of its cluster role(primary or secondary).
+    /// 
+    ///  A primary cluster can provide information about all the secondary clusters
+    ///  replicating from it. However, a secondary cluster only knows about the
+    ///  primary cluster from which it is replicating. However, for scenarios, where
+    ///  the primary cluster is unavailable(e.g. regional outage), a GetCluster
+    ///  request can be sent to any other member cluster and this field will list
+    ///  all the member clusters participating in cross cluster replication.
+    /// </summary>
+    [JsonPropertyName("membership")]
+    public V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigMembership? Membership { get; set; }
+
+    /// <summary>
+    /// Details of the primary cluster that is used as the replication source for
+    ///  this secondary cluster.
+    /// 
+    ///  This field is only set for a secondary cluster.
+    /// </summary>
+    [JsonPropertyName("primaryCluster")]
+    public V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigPrimaryCluster? PrimaryCluster { get; set; }
+
+    /// <summary>
+    /// List of secondary clusters that are replicating from this primary cluster.
+    /// 
+    ///  This field is only set for a primary cluster.
+    /// </summary>
+    [JsonPropertyName("secondaryClusters")]
+    public IList<V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfigSecondaryClusters>? SecondaryClusters { get; set; }
+
+    /// <summary>Output only. The last time cross cluster replication config was updated.</summary>
+    [JsonPropertyName("updateTime")]
+    public string? UpdateTime { get; set; }
 }
 
 /// <summary>Output only. Customer configuration for where the endpoint is created and accessed from.</summary>
@@ -500,6 +717,10 @@ public partial class V1beta1RedisClusterStatusObservedState
     /// <summary>Output only. The timestamp associated with the cluster creation request.</summary>
     [JsonPropertyName("createTime")]
     public string? CreateTime { get; set; }
+
+    /// <summary>Output only. Cross cluster replication config.</summary>
+    [JsonPropertyName("crossClusterReplicationConfig")]
+    public V1beta1RedisClusterStatusObservedStateCrossClusterReplicationConfig? CrossClusterReplicationConfig { get; set; }
 
     /// <summary>Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.</summary>
     [JsonPropertyName("discoveryEndpoints")]
