@@ -470,6 +470,184 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionPromethe
     public string? RuleGroup { get; set; }
 }
 
+/// <summary>A test that uses an alerting result in a boolean column produced by the SQL query.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlBooleanTest
+{
+    /// <summary>
+    /// The name of the column containing the boolean value. If the value in a row is
+    /// NULL, that row is ignored.
+    /// </summary>
+    [JsonPropertyName("column")]
+    public required string Column { get; set; }
+}
+
+/// <summary>
+/// The time of day (in UTC) at which the query should run. If left
+/// unspecified, the server picks an arbitrary time of day and runs
+/// the query at the same time each day.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDailyExecutionTime
+{
+    /// <summary>
+    /// Hours of a day in 24 hour format. Must be greater than or equal
+    /// to 0 and typically must be less than or equal to 23. An API may
+    /// choose to allow the value &quot;24:00:00&quot; for scenarios like business
+    /// closing time.
+    /// </summary>
+    [JsonPropertyName("hours")]
+    public int? Hours { get; set; }
+
+    /// <summary>
+    /// Minutes of an hour. Must be greater than or equal to 0 and
+    /// less than or equal to 59.
+    /// </summary>
+    [JsonPropertyName("minutes")]
+    public int? Minutes { get; set; }
+
+    /// <summary>
+    /// Fractions of seconds, in nanoseconds. Must be greater than or
+    /// equal to 0 and less than or equal to 999,999,999.
+    /// </summary>
+    [JsonPropertyName("nanos")]
+    public int? Nanos { get; set; }
+
+    /// <summary>
+    /// Seconds of a minute. Must be greater than or equal to 0 and
+    /// typically must be less than or equal to 59. An API may allow the
+    /// value 60 if it allows leap-seconds.
+    /// </summary>
+    [JsonPropertyName("seconds")]
+    public int? Seconds { get; set; }
+}
+
+/// <summary>Used to schedule the query to run every so many days.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDaily
+{
+    /// <summary>
+    /// The time of day (in UTC) at which the query should run. If left
+    /// unspecified, the server picks an arbitrary time of day and runs
+    /// the query at the same time each day.
+    /// </summary>
+    [JsonPropertyName("executionTime")]
+    public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDailyExecutionTime? ExecutionTime { get; set; }
+
+    /// <summary>
+    /// The number of days between runs. Must be greater than or equal
+    /// to 1 day and less than or equal to 30 days.
+    /// </summary>
+    [JsonPropertyName("periodicity")]
+    public required int Periodicity { get; set; }
+}
+
+/// <summary>Used to schedule the query to run every so many hours.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlHourly
+{
+    /// <summary>
+    /// The number of minutes after the hour (in UTC) to run the query.
+    /// Must be greater than or equal to 0 minutes and less than or equal to
+    /// 59 minutes.  If left unspecified, then an arbitrary offset is used.
+    /// </summary>
+    [JsonPropertyName("minuteOffset")]
+    public int? MinuteOffset { get; set; }
+
+    /// <summary>
+    /// Number of hours between runs. The interval must be greater than or
+    /// equal to 1 hour and less than or equal to 48 hours.
+    /// </summary>
+    [JsonPropertyName("periodicity")]
+    public required int Periodicity { get; set; }
+}
+
+/// <summary>Used to schedule the query to run every so many minutes.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlMinutes
+{
+    /// <summary>
+    /// Number of minutes between runs. The interval must be greater than or
+    /// equal to 5 minutes and less than or equal to 1440 minutes.
+    /// </summary>
+    [JsonPropertyName("periodicity")]
+    public required int Periodicity { get; set; }
+}
+
+/// <summary>A test that checks if the number of rows in the result set violates some threshold.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlRowCountTest
+{
+    /// <summary>
+    /// The comparison to apply between the time series
+    /// (indicated by filter and aggregation) and the
+    /// threshold (indicated by threshold_value). The
+    /// comparison is applied on each time series, with
+    /// the time series on the left-hand side and the
+    /// threshold on the right-hand side.
+    /// 
+    /// The Cloud Monitoring API only supports
+    /// &apos;COMPARISON_LT&apos; and &apos;COMPARISON_GT&apos; for SQL
+    /// row-count thresholds; the other values are kept
+    /// in the schema for backward compatibility with
+    /// imported state but will be rejected by the API.
+    /// See
+    /// https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.alertPolicies#MetricThreshold. Possible values: [&quot;COMPARISON_GT&quot;, &quot;COMPARISON_GE&quot;, &quot;COMPARISON_LT&quot;, &quot;COMPARISON_LE&quot;, &quot;COMPARISON_EQ&quot;, &quot;COMPARISON_NE&quot;].
+    /// </summary>
+    [JsonPropertyName("comparison")]
+    public required string Comparison { get; set; }
+
+    /// <summary>The value against which to compare the row count.</summary>
+    [JsonPropertyName("threshold")]
+    public required int Threshold { get; set; }
+}
+
+/// <summary>
+/// A condition that allows alerting policies to be defined using GoogleSQL.
+/// SQL conditions examine a sliding window of logs using GoogleSQL.
+/// Alert policies with SQL conditions may incur additional billing.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSql
+{
+    /// <summary>A test that uses an alerting result in a boolean column produced by the SQL query.</summary>
+    [JsonPropertyName("booleanTest")]
+    public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlBooleanTest? BooleanTest { get; set; }
+
+    /// <summary>Used to schedule the query to run every so many days.</summary>
+    [JsonPropertyName("daily")]
+    public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDaily? Daily { get; set; }
+
+    /// <summary>Used to schedule the query to run every so many hours.</summary>
+    [JsonPropertyName("hourly")]
+    public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlHourly? Hourly { get; set; }
+
+    /// <summary>Used to schedule the query to run every so many minutes.</summary>
+    [JsonPropertyName("minutes")]
+    public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlMinutes? Minutes { get; set; }
+
+    /// <summary>
+    /// The Log Analytics SQL query to run, as a string.  The query must
+    /// conform to the required shape. Specifically, the query must not try to
+    /// filter the input by time.  A filter will automatically be applied
+    /// to filter the input so that the query receives all rows received
+    /// since the last time the query was run.
+    /// </summary>
+    [JsonPropertyName("query")]
+    public required string Query { get; set; }
+
+    /// <summary>A test that checks if the number of rows in the result set violates some threshold.</summary>
+    [JsonPropertyName("rowCountTest")]
+    public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlRowCountTest? RowCountTest { get; set; }
+}
+
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdAggregations
@@ -911,6 +1089,14 @@ public partial class V1beta1MonitoringAlertPolicySpecConditions
     /// </summary>
     [JsonPropertyName("conditionPrometheusQueryLanguage")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionPrometheusQueryLanguage? ConditionPrometheusQueryLanguage { get; set; }
+
+    /// <summary>
+    /// A condition that allows alerting policies to be defined using GoogleSQL.
+    /// SQL conditions examine a sliding window of logs using GoogleSQL.
+    /// Alert policies with SQL conditions may incur additional billing.
+    /// </summary>
+    [JsonPropertyName("conditionSql")]
+    public V1beta1MonitoringAlertPolicySpecConditionsConditionSql? ConditionSql { get; set; }
 
     /// <summary>
     /// A condition that compares a time series against a
