@@ -298,7 +298,7 @@ public partial class V1beta1PrivateCACAPoolSpecIssuancePolicyIdentityConstraints
     [JsonPropertyName("allowSubjectAltNamesPassthrough")]
     public bool? AllowSubjectAltNamesPassthrough { get; set; }
 
-    /// <summary>Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject] will be discarded.</summary>
+    /// <summary>Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate request into the signed certificate. Otherwise, the requested Subject will be discarded.</summary>
     [JsonPropertyName("allowSubjectPassthrough")]
     public bool? AllowSubjectPassthrough { get; set; }
 
