@@ -73,9 +73,17 @@ public partial class V1alpha1DocumentAIProcessorVersionSpecKmsKeyNameRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1DocumentAIProcessorVersionSpecKmsKeyVersionNameRef
 {
-    /// <summary>A reference to an externally managed cryptoKeyVersion. Should be in the format `projects/{{kms_project_id}}/locations/{{region}}/keyRings/{{key_ring_id}}/cryptoKeys/{{key}}/cryptoKeyVersions/{{version}}`.</summary>
+    /// <summary>A reference to an externally managed KMSCryptoKeyVersion resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/keyRings/{{keyring}}/cryptoKeys/{{cryptokey}}/cryptoKeyVersions/{{cryptokeyversion}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
+
+    /// <summary>The name of a KMSCryptoKeyVersion resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a KMSCryptoKeyVersion resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
 }
 
 /// <summary>ProcessorRef is a reference to a DocumentAIProcessor.</summary>
