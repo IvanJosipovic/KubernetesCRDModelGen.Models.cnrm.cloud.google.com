@@ -35,6 +35,50 @@ public partial class V1beta1ComputeURLMapList : IKubernetesObject<V1ListMeta>, I
     public required IList<V1beta1ComputeURLMap> Items { get; set; }
 }
 
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeURLMapSpecDefaultCustomErrorResponsePolicyErrorResponseRule
+{
+    [JsonPropertyName("matchResponseCodes")]
+    public IList<string>? MatchResponseCodes { get; set; }
+
+    [JsonPropertyName("overrideResponseCode")]
+    public int? OverrideResponseCode { get; set; }
+
+    [JsonPropertyName("path")]
+    public string? Path { get; set; }
+}
+
+/// <summary>The full or partial URL to the BackendBucket resource that contains the custom error content.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeURLMapSpecDefaultCustomErrorResponsePolicyErrorServiceRef
+{
+    /// <summary>Allowed value: The `selfLink` field of a `ComputeBackendBucket` resource.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeURLMapSpecDefaultCustomErrorResponsePolicy
+{
+    [JsonPropertyName("errorResponseRule")]
+    public IList<V1beta1ComputeURLMapSpecDefaultCustomErrorResponsePolicyErrorResponseRule>? ErrorResponseRule { get; set; }
+
+    /// <summary>The full or partial URL to the BackendBucket resource that contains the custom error content.</summary>
+    [JsonPropertyName("errorServiceRef")]
+    public V1beta1ComputeURLMapSpecDefaultCustomErrorResponsePolicyErrorServiceRef? ErrorServiceRef { get; set; }
+}
+
 /// <summary>
 /// The specification for allowing client side cross-origin requests. Please see
 /// [W3C Recommendation for Cross Origin Resource Sharing](https://www.w3.org/TR/cors/).
@@ -736,6 +780,50 @@ public partial class V1beta1ComputeURLMapSpecHostRule
     /// </summary>
     [JsonPropertyName("pathMatcher")]
     public required string PathMatcher { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeURLMapSpecPathMatcherDefaultCustomErrorResponsePolicyErrorResponseRule
+{
+    [JsonPropertyName("matchResponseCodes")]
+    public IList<string>? MatchResponseCodes { get; set; }
+
+    [JsonPropertyName("overrideResponseCode")]
+    public int? OverrideResponseCode { get; set; }
+
+    [JsonPropertyName("path")]
+    public string? Path { get; set; }
+}
+
+/// <summary>The full or partial URL to the BackendBucket resource that contains the custom error content.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeURLMapSpecPathMatcherDefaultCustomErrorResponsePolicyErrorServiceRef
+{
+    /// <summary>Allowed value: The `selfLink` field of a `ComputeBackendBucket` resource.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeURLMapSpecPathMatcherDefaultCustomErrorResponsePolicy
+{
+    [JsonPropertyName("errorResponseRule")]
+    public IList<V1beta1ComputeURLMapSpecPathMatcherDefaultCustomErrorResponsePolicyErrorResponseRule>? ErrorResponseRule { get; set; }
+
+    /// <summary>The full or partial URL to the BackendBucket resource that contains the custom error content.</summary>
+    [JsonPropertyName("errorServiceRef")]
+    public V1beta1ComputeURLMapSpecPathMatcherDefaultCustomErrorResponsePolicyErrorServiceRef? ErrorServiceRef { get; set; }
 }
 
 /// <summary>
@@ -3129,6 +3217,9 @@ public partial class V1beta1ComputeURLMapSpecPathMatcherRouteRules
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeURLMapSpecPathMatcher
 {
+    [JsonPropertyName("defaultCustomErrorResponsePolicy")]
+    public V1beta1ComputeURLMapSpecPathMatcherDefaultCustomErrorResponsePolicy? DefaultCustomErrorResponsePolicy { get; set; }
+
     /// <summary>
     /// defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs
     /// advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request
@@ -3281,6 +3372,9 @@ public partial class V1beta1ComputeURLMapSpecTest
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeURLMapSpec
 {
+    [JsonPropertyName("defaultCustomErrorResponsePolicy")]
+    public V1beta1ComputeURLMapSpecDefaultCustomErrorResponsePolicy? DefaultCustomErrorResponsePolicy { get; set; }
+
     /// <summary>
     /// defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices.
     /// Only one of defaultRouteAction or defaultUrlRedirect must be set.

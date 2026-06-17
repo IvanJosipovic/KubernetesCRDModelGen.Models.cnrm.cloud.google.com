@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.iap.cnrm.cloud.google.com;
+/// <summary>IAPBrand is the Schema for the IAPBrand API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,6 +36,7 @@ public partial class V1beta1IAPBrandList : IKubernetesObject<V1ListMeta>, IItems
     public required IList<V1beta1IAPBrand> Items { get; set; }
 }
 
+/// <summary>IAPBrandSpec defines the desired state of IAPBrand</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPBrandSpec
@@ -77,23 +79,25 @@ public partial class V1beta1IAPBrandStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>IAPBrandStatus defines the config connector machine state of IAPBrand</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPBrandStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1IAPBrandStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>Output only. Whether the brand is only intended for usage inside the G Suite organization only.</summary>
     [JsonPropertyName("orgInternalOnly")]
     public bool? OrgInternalOnly { get; set; }
 }
 
+/// <summary>IAPBrand is the Schema for the IAPBrand API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -115,9 +119,11 @@ public partial class V1beta1IAPBrand : IKubernetesObject<V1ObjectMeta>, ISpec<V1
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>IAPBrandSpec defines the desired state of IAPBrand</summary>
     [JsonPropertyName("spec")]
     public V1beta1IAPBrandSpec? Spec { get; set; }
 
+    /// <summary>IAPBrandStatus defines the config connector machine state of IAPBrand</summary>
     [JsonPropertyName("status")]
     public V1beta1IAPBrandStatus? Status { get; set; }
 }

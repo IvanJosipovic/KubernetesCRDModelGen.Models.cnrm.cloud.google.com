@@ -36,31 +36,31 @@ public partial class V1beta1IAPSettingsList : IKubernetesObject<V1ListMeta>, IIt
     public required IList<V1beta1IAPSettings> Items { get; set; }
 }
 
-/// <summary>Settings to configure and enable allowed domains.</summary>
+/// <summary>Optional. Settings to configure and enable allowed domains.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecAccessSettingsAllowedDomainsSettings
 {
-    /// <summary>List of trusted domains.</summary>
+    /// <summary>Optional. List of trusted domains.</summary>
     [JsonPropertyName("domains")]
     public IList<string>? Domains { get; set; }
 
-    /// <summary>Configuration for customers to opt in for the feature.</summary>
+    /// <summary>Optional. Configuration for customers to opt in for the feature.</summary>
     [JsonPropertyName("enable")]
     public bool? Enable { get; set; }
 }
 
-/// <summary>Configuration to allow cross-origin requests via IAP.</summary>
+/// <summary>Optional. Configuration to allow cross-origin requests via IAP.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecAccessSettingsCorsSettings
 {
-    /// <summary>Configuration to allow HTTP OPTIONS calls to skip authorization. If undefined, IAP will not apply any special logic to OPTIONS requests.</summary>
+    /// <summary>Configuration to allow HTTP `OPTIONS` calls to skip authentication and authorization. If undefined, IAP will not apply any special logic to `OPTIONS` requests.</summary>
     [JsonPropertyName("allowHTTPOptions")]
     public bool? AllowHTTPOptions { get; set; }
 }
 
-/// <summary>GCIP claims and endpoint configurations for 3p identity providers.</summary>
+/// <summary>Optional. GCIP claims and endpoint configurations for 3p identity providers.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecAccessSettingsGcipSettings
@@ -74,7 +74,7 @@ public partial class V1beta1IAPSettingsSpecAccessSettingsGcipSettings
     public IList<string>? TenantIDs { get; set; }
 }
 
-/// <summary>Settings to configure IAP&apos;s OAuth behavior.</summary>
+/// <summary>Optional. Settings to configure IAP&apos;s OAuth behavior.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecAccessSettingsOauthSettings
@@ -83,25 +83,25 @@ public partial class V1beta1IAPSettingsSpecAccessSettingsOauthSettings
     [JsonPropertyName("loginHint")]
     public string? LoginHint { get; set; }
 
-    /// <summary>List of OAuth client IDs allowed to programmatically authenticate with IAP.</summary>
+    /// <summary>Optional. List of client ids allowed to use IAP programmatically.</summary>
     [JsonPropertyName("programmaticClients")]
     public IList<string>? ProgrammaticClients { get; set; }
 }
 
-/// <summary>Settings to configure reauthentication policies in IAP.</summary>
+/// <summary>Optional. Settings to configure reauthentication policies in IAP.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecAccessSettingsReauthSettings
 {
-    /// <summary>Reauth session lifetime, how long before a user has to reauthenticate again.</summary>
+    /// <summary>Optional. Reauth session lifetime, how long before a user has to reauthenticate again.</summary>
     [JsonPropertyName("maxAge")]
     public string? MaxAge { get; set; }
 
-    /// <summary>Reauth method requested.</summary>
+    /// <summary>Optional. Reauth method requested.</summary>
     [JsonPropertyName("method")]
     public string? Method { get; set; }
 
-    /// <summary>How IAP determines the effective policy in cases of hierarchial policies. Policies are merged from higher in the hierarchy to lower in the hierarchy.</summary>
+    /// <summary>Optional. How IAP determines the effective policy in cases of hierarchical policies. Policies are merged from higher in the hierarchy to lower in the hierarchy.</summary>
     [JsonPropertyName("policyType")]
     public string? PolicyType { get; set; }
 }
@@ -111,23 +111,23 @@ public partial class V1beta1IAPSettingsSpecAccessSettingsReauthSettings
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecAccessSettings
 {
-    /// <summary>Settings to configure and enable allowed domains.</summary>
+    /// <summary>Optional. Settings to configure and enable allowed domains.</summary>
     [JsonPropertyName("allowedDomainsSettings")]
     public V1beta1IAPSettingsSpecAccessSettingsAllowedDomainsSettings? AllowedDomainsSettings { get; set; }
 
-    /// <summary>Configuration to allow cross-origin requests via IAP.</summary>
+    /// <summary>Optional. Configuration to allow cross-origin requests via IAP.</summary>
     [JsonPropertyName("corsSettings")]
     public V1beta1IAPSettingsSpecAccessSettingsCorsSettings? CorsSettings { get; set; }
 
-    /// <summary>GCIP claims and endpoint configurations for 3p identity providers.</summary>
+    /// <summary>Optional. GCIP claims and endpoint configurations for 3p identity providers.</summary>
     [JsonPropertyName("gcipSettings")]
     public V1beta1IAPSettingsSpecAccessSettingsGcipSettings? GcipSettings { get; set; }
 
-    /// <summary>Settings to configure IAP&apos;s OAuth behavior.</summary>
+    /// <summary>Optional. Settings to configure IAP&apos;s OAuth behavior.</summary>
     [JsonPropertyName("oauthSettings")]
     public V1beta1IAPSettingsSpecAccessSettingsOauthSettings? OauthSettings { get; set; }
 
-    /// <summary>Settings to configure reauthentication policies in IAP.</summary>
+    /// <summary>Optional. Settings to configure reauthentication policies in IAP.</summary>
     [JsonPropertyName("reauthSettings")]
     public V1beta1IAPSettingsSpecAccessSettingsReauthSettings? ReauthSettings { get; set; }
 }
@@ -204,7 +204,7 @@ public partial class V1beta1IAPSettingsSpecAppEngineRef
     public V1beta1IAPSettingsSpecAppEngineRefVersionRef? VersionRef { get; set; }
 }
 
-/// <summary>Customization for Access Denied page.</summary>
+/// <summary>Optional. Customization for Access Denied page.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecApplicationSettingsAccessDeniedPageSettings
@@ -222,19 +222,19 @@ public partial class V1beta1IAPSettingsSpecApplicationSettingsAccessDeniedPageSe
     public bool? RemediationTokenGenerationEnabled { get; set; }
 }
 
-/// <summary>Settings to configure attribute propagation.</summary>
+/// <summary>Optional. Settings to configure attribute propagation.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecApplicationSettingsAttributePropagationSettings
 {
-    /// <summary>Whether the provided attribute propagation settings should be evaluated on user requests. If set to true, attributes returned from the expression will be propagated in the set output credentials.</summary>
+    /// <summary>Optional. Whether the provided attribute propagation settings should be evaluated on user requests. If set to true, attributes returned from the expression will be propagated in the set output credentials.</summary>
     [JsonPropertyName("enable")]
     public bool? Enable { get; set; }
 
     /// <summary>
-    /// Raw string CEL expression. Must return a list of attributes. A maximum of
-    ///  45 attributes can be selected. Expressions can select different attribute
-    ///  types from `attributes`: `attributes.saml_attributes`,
+    /// Optional. Raw string CEL expression. Must return a list of attributes. A
+    ///  maximum of 45 attributes can be selected. Expressions can select different
+    ///  attribute types from `attributes`: `attributes.saml_attributes`,
     ///  `attributes.iap_attributes`. The following functions are supported:
     /// 
     ///   - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -264,12 +264,12 @@ public partial class V1beta1IAPSettingsSpecApplicationSettingsAttributePropagati
     [JsonPropertyName("expression")]
     public string? Expression { get; set; }
 
-    /// <summary>Which output credentials attributes selected by the CEL expression should be propagated in. All attributes will be fully duplicated in each selected output credential.</summary>
+    /// <summary>Optional. Which output credentials attributes selected by the CEL expression should be propagated in. All attributes will be fully duplicated in each selected output credential.</summary>
     [JsonPropertyName("outputCredentials")]
     public IList<string>? OutputCredentials { get; set; }
 }
 
-/// <summary>Settings to configure IAP&apos;s behavior for a service mesh.</summary>
+/// <summary>Optional. Settings to configure IAP&apos;s behavior for a service mesh.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecApplicationSettingsCsmSettings
@@ -284,11 +284,11 @@ public partial class V1beta1IAPSettingsSpecApplicationSettingsCsmSettings
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAPSettingsSpecApplicationSettings
 {
-    /// <summary>Customization for Access Denied page.</summary>
+    /// <summary>Optional. Customization for Access Denied page.</summary>
     [JsonPropertyName("accessDeniedPageSettings")]
     public V1beta1IAPSettingsSpecApplicationSettingsAccessDeniedPageSettings? AccessDeniedPageSettings { get; set; }
 
-    /// <summary>Settings to configure attribute propagation.</summary>
+    /// <summary>Optional. Settings to configure attribute propagation.</summary>
     [JsonPropertyName("attributePropagationSettings")]
     public V1beta1IAPSettingsSpecApplicationSettingsAttributePropagationSettings? AttributePropagationSettings { get; set; }
 
@@ -296,7 +296,7 @@ public partial class V1beta1IAPSettingsSpecApplicationSettings
     [JsonPropertyName("cookieDomain")]
     public string? CookieDomain { get; set; }
 
-    /// <summary>Settings to configure IAP&apos;s behavior for a service mesh.</summary>
+    /// <summary>Optional. Settings to configure IAP&apos;s behavior for a service mesh.</summary>
     [JsonPropertyName("csmSettings")]
     public V1beta1IAPSettingsSpecApplicationSettingsCsmSettings? CsmSettings { get; set; }
 }
