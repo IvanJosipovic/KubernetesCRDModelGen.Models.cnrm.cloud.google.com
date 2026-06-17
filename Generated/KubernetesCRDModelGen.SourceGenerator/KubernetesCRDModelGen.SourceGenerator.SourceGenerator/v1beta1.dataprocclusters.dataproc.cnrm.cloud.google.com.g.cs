@@ -578,12 +578,12 @@ public partial class V1beta1DataprocClusterSpecConfigSecondaryWorkerConfig
     public string? Preemptibility { get; set; }
 }
 
-/// <summary>Immutable. Optional. Identity related configuration, including service account based secure multi-tenancy user mappings.</summary>
+/// <summary>Optional. Identity related configuration, including service account based secure multi-tenancy user mappings.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataprocClusterSpecConfigSecurityConfigIdentityConfig
 {
-    /// <summary>Immutable. Required. Map of user to service account.</summary>
+    /// <summary>Required. Map of user to service account.</summary>
     [JsonPropertyName("userServiceAccountMapping")]
     public required IDictionary<string, string> UserServiceAccountMapping { get; set; }
 }
@@ -676,12 +676,12 @@ public partial class V1beta1DataprocClusterSpecConfigSecurityConfigKerberosConfi
     public string? TruststorePassword { get; set; }
 }
 
-/// <summary>Immutable. Optional. Security settings for the cluster.</summary>
+/// <summary>Optional. Security settings for the cluster.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataprocClusterSpecConfigSecurityConfig
 {
-    /// <summary>Immutable. Optional. Identity related configuration, including service account based secure multi-tenancy user mappings.</summary>
+    /// <summary>Optional. Identity related configuration, including service account based secure multi-tenancy user mappings.</summary>
     [JsonPropertyName("identityConfig")]
     public V1beta1DataprocClusterSpecConfigSecurityConfigIdentityConfig? IdentityConfig { get; set; }
 
@@ -843,7 +843,7 @@ public partial class V1beta1DataprocClusterSpecConfigWorkerConfig
     public string? Preemptibility { get; set; }
 }
 
-/// <summary>Immutable. The cluster config. Note that Dataproc may set default values, and values may change when clusters are updated.</summary>
+/// <summary>The cluster config. Note that Dataproc may set default values, and values may change when clusters are updated.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataprocClusterSpecConfig
@@ -888,7 +888,7 @@ public partial class V1beta1DataprocClusterSpecConfig
     [JsonPropertyName("secondaryWorkerConfig")]
     public V1beta1DataprocClusterSpecConfigSecondaryWorkerConfig? SecondaryWorkerConfig { get; set; }
 
-    /// <summary>Immutable. Optional. Security settings for the cluster.</summary>
+    /// <summary>Optional. Security settings for the cluster.</summary>
     [JsonPropertyName("securityConfig")]
     public V1beta1DataprocClusterSpecConfigSecurityConfig? SecurityConfig { get; set; }
 
@@ -1256,7 +1256,7 @@ public partial class V1beta1DataprocClusterSpecVirtualClusterConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DataprocClusterSpec
 {
-    /// <summary>Immutable. The cluster config. Note that Dataproc may set default values, and values may change when clusters are updated.</summary>
+    /// <summary>The cluster config. Note that Dataproc may set default values, and values may change when clusters are updated.</summary>
     [JsonPropertyName("config")]
     public V1beta1DataprocClusterSpecConfig? Config { get; set; }
 
