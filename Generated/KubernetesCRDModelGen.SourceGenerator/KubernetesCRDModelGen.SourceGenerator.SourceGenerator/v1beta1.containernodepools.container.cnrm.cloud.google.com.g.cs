@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.container.cnrm.cloud.google.com;
+/// <summary>ContainerNodePool is the Schema for the ContainerNodePool API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,95 +36,96 @@ public partial class V1beta1ContainerNodePoolList : IKubernetesObject<V1ListMeta
     public required IList<V1beta1ContainerNodePool> Items { get; set; }
 }
 
-/// <summary>Configuration required by cluster autoscaler to adjust the size of the node pool to the current cluster usage. To disable autoscaling, set minNodeCount and maxNodeCount to 0.</summary>
+/// <summary>Autoscaler configuration for this NodePool. Autoscaler is enabled only if a valid configuration is present.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecAutoscaling
 {
-    /// <summary>Location policy specifies the algorithm used when scaling-up the node pool. &quot;BALANCED&quot; - Is a best effort policy that aims to balance the sizes of available zones. &quot;ANY&quot; - Instructs the cluster autoscaler to prioritize utilization of unused reservations, and reduces preemption risk for Spot VMs.</summary>
+    /// <summary>Location policy used when scaling up a nodepool.</summary>
     [JsonPropertyName("locationPolicy")]
     public string? LocationPolicy { get; set; }
 
-    /// <summary>Maximum number of nodes per zone in the node pool. Must be &gt;= min_node_count. Cannot be used with total limits.</summary>
+    /// <summary>Maximum number of nodes for one location in the node pool. Must be &gt;= min_node_count. There has to be enough quota to scale up the cluster.</summary>
     [JsonPropertyName("maxNodeCount")]
     public int? MaxNodeCount { get; set; }
 
-    /// <summary>Minimum number of nodes per zone in the node pool. Must be &gt;=0 and &lt;= max_node_count. Cannot be used with total limits.</summary>
+    /// <summary>Minimum number of nodes for one location in the node pool. Must be greater than or equal to 0 and less than or equal to max_node_count.</summary>
     [JsonPropertyName("minNodeCount")]
     public int? MinNodeCount { get; set; }
 
-    /// <summary>Maximum number of all nodes in the node pool. Must be &gt;= total_min_node_count. Cannot be used with per zone limits.</summary>
+    /// <summary>Maximum number of nodes in the node pool. Must be greater than or equal to total_min_node_count. There has to be enough quota to scale up the cluster. The total_*_node_count fields are mutually exclusive with the *_node_count fields.</summary>
     [JsonPropertyName("totalMaxNodeCount")]
     public int? TotalMaxNodeCount { get; set; }
 
-    /// <summary>Minimum number of all nodes in the node pool. Must be &gt;=0 and &lt;= total_max_node_count. Cannot be used with per zone limits.</summary>
+    /// <summary>Minimum number of nodes in the node pool. Must be greater than or equal to 0 and less than or equal to total_max_node_count. The total_*_node_count fields are mutually exclusive with the *_node_count fields.</summary>
     [JsonPropertyName("totalMinNodeCount")]
     public int? TotalMinNodeCount { get; set; }
 }
 
+/// <summary>The GKE cluster this node pool belongs to.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecClusterRef
 {
-    /// <summary>Allowed value: The `name` field of a `ContainerCluster` resource.</summary>
+    /// <summary>The GKE cluster. Valid formats: `projects/{projectID}/locations/{location}/clusters/{clusterID}` `projects/{projectID}/zones/{zone}/clusters/{clusterID}`</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>Name of the project resource. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names */</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>Namespace of the project resource. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/ */</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>Node management configuration, wherein auto-repair and auto-upgrade is configured.</summary>
+/// <summary>NodeManagement configuration for this NodePool.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecManagement
 {
-    /// <summary>Whether the nodes will be automatically repaired.</summary>
+    /// <summary>A flag that specifies whether the node auto-repair is enabled for the node pool. If enabled, the nodes in this node pool will be monitored and, if they fail health checks too many times, an automatic repair action will be triggered.</summary>
     [JsonPropertyName("autoRepair")]
     public bool? AutoRepair { get; set; }
 
-    /// <summary>Whether the nodes will be automatically upgraded.</summary>
+    /// <summary>A flag that specifies whether node auto-upgrade is enabled for the node pool. If enabled, node auto-upgrade helps keep the nodes in your node pool up to date with the latest release version of Kubernetes.</summary>
     [JsonPropertyName("autoUpgrade")]
     public bool? AutoUpgrade { get; set; }
 }
 
-/// <summary>Immutable. Name of the VPC where the additional interface belongs.</summary>
+/// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfigAdditionalNodeNetworkConfigsNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>Immutable. Name of the subnetwork where the additional interface belongs.</summary>
+/// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfigAdditionalNodeNetworkConfigsSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -132,29 +134,29 @@ public partial class V1beta1ContainerNodePoolSpecNetworkConfigAdditionalNodeNetw
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfigAdditionalNodeNetworkConfigs
 {
-    /// <summary>Immutable. Name of the VPC where the additional interface belongs.</summary>
+    /// <summary>ComputeNetworkRef is a reference to a GCP ComputeNetwork.</summary>
     [JsonPropertyName("networkRef")]
     public V1beta1ContainerNodePoolSpecNetworkConfigAdditionalNodeNetworkConfigsNetworkRef? NetworkRef { get; set; }
 
-    /// <summary>Immutable. Name of the subnetwork where the additional interface belongs.</summary>
+    /// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
     [JsonPropertyName("subnetworkRef")]
     public V1beta1ContainerNodePoolSpecNetworkConfigAdditionalNodeNetworkConfigsSubnetworkRef? SubnetworkRef { get; set; }
 }
 
-/// <summary>Immutable. Name of the subnetwork where the additional pod network belongs.</summary>
+/// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfigAdditionalPodNetworkConfigsSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -163,20 +165,20 @@ public partial class V1beta1ContainerNodePoolSpecNetworkConfigAdditionalPodNetwo
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfigAdditionalPodNetworkConfigs
 {
-    /// <summary>Immutable. The maximum number of pods per node which use this pod network.</summary>
+    /// <summary>The maximum number of pods per node which use this pod network.</summary>
     [JsonPropertyName("maxPodsPerNode")]
     public int? MaxPodsPerNode { get; set; }
 
-    /// <summary>Immutable. The name of the secondary range on the subnet which provides IP address for this pod range.</summary>
+    /// <summary>The name of the secondary range on the subnet which provides IP address for this pod range.</summary>
     [JsonPropertyName("secondaryPodRange")]
     public string? SecondaryPodRange { get; set; }
 
-    /// <summary>Immutable. Name of the subnetwork where the additional pod network belongs.</summary>
+    /// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
     [JsonPropertyName("subnetworkRef")]
     public V1beta1ContainerNodePoolSpecNetworkConfigAdditionalPodNetworkConfigsSubnetworkRef? SubnetworkRef { get; set; }
 }
 
-/// <summary>Immutable. Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited.</summary>
+/// <summary>[PRIVATE FIELD] Pod CIDR size overprovisioning config for the nodepool. Pod CIDR size per node depends on max_pods_per_node. By default, the value of max_pods_per_node is rounded off to next power of 2 and we then double that to get the size of pod CIDR block per node. Example: max_pods_per_node of 30 would result in 64 IPs (/26). This config can disable the doubling of IPs (we still round off to next power of 2) Example: max_pods_per_node of 30 will result in 32 IPs (/27) when overprovisioning is disabled.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfigPodCidrOverprovisionConfig
@@ -185,20 +187,20 @@ public partial class V1beta1ContainerNodePoolSpecNetworkConfigPodCidrOverprovisi
     public required bool Disabled { get; set; }
 }
 
-/// <summary>Immutable. The subnetwork path for the node pool. Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}. If not set, the provider/API will choose the subnetwork (e.g. based on IP utilization) and report it here.</summary>
+/// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfigSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -208,35 +210,35 @@ public partial class V1beta1ContainerNodePoolSpecNetworkConfigSubnetworkRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNetworkConfig
 {
-    /// <summary>Immutable. We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface.</summary>
+    /// <summary>We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface.</summary>
     [JsonPropertyName("additionalNodeNetworkConfigs")]
     public IList<V1beta1ContainerNodePoolSpecNetworkConfigAdditionalNodeNetworkConfigs>? AdditionalNodeNetworkConfigs { get; set; }
 
-    /// <summary>Immutable. We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node.</summary>
+    /// <summary>We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node.</summary>
     [JsonPropertyName("additionalPodNetworkConfigs")]
     public IList<V1beta1ContainerNodePoolSpecNetworkConfigAdditionalPodNetworkConfigs>? AdditionalPodNetworkConfigs { get; set; }
 
-    /// <summary>Immutable. Whether to create a new range for pod IPs in this node pool. Defaults are provided for pod_range and pod_ipv4_cidr_block if they are not specified.</summary>
+    /// <summary>Input only. Whether to create a new range for pod IPs in this node pool. Defaults are provided for `pod_range` and `pod_ipv4_cidr_block` if they are not specified. If neither `create_pod_range` or `pod_range` are specified, the cluster-level default (`ip_allocation_policy.cluster_ipv4_cidr_block`) is used. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created.</summary>
     [JsonPropertyName("createPodRange")]
     public bool? CreatePodRange { get; set; }
 
-    /// <summary>Whether nodes have internal IP addresses only.</summary>
+    /// <summary>Whether nodes have internal IP addresses only. If enable_private_nodes is not specified, then the value is derived from [Cluster.NetworkConfig.default_enable_private_nodes].</summary>
     [JsonPropertyName("enablePrivateNodes")]
     public bool? EnablePrivateNodes { get; set; }
 
-    /// <summary>Immutable. Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited.</summary>
+    /// <summary>[PRIVATE FIELD] Pod CIDR size overprovisioning config for the nodepool. Pod CIDR size per node depends on max_pods_per_node. By default, the value of max_pods_per_node is rounded off to next power of 2 and we then double that to get the size of pod CIDR block per node. Example: max_pods_per_node of 30 would result in 64 IPs (/26). This config can disable the doubling of IPs (we still round off to next power of 2) Example: max_pods_per_node of 30 will result in 32 IPs (/27) when overprovisioning is disabled.</summary>
     [JsonPropertyName("podCidrOverprovisionConfig")]
     public V1beta1ContainerNodePoolSpecNetworkConfigPodCidrOverprovisionConfig? PodCidrOverprovisionConfig { get; set; }
 
-    /// <summary>Immutable. The IP address range for pod IPs in this node pool. Only applicable if create_pod_range is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) to pick a specific range to use.</summary>
+    /// <summary>The IP address range for pod IPs in this node pool. Only applicable if `create_pod_range` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. `10.96.0.0/14`) to pick a specific range to use. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created.</summary>
     [JsonPropertyName("podIpv4CidrBlock")]
     public string? PodIpv4CidrBlock { get; set; }
 
-    /// <summary>Immutable. The ID of the secondary range for pod IPs. If create_pod_range is true, this ID is used for the new range. If create_pod_range is false, uses an existing secondary range with this ID.</summary>
+    /// <summary>The ID of the secondary range for pod IPs. If `create_pod_range` is true, this ID is used for the new range. If `create_pod_range` is false, uses an existing secondary range with this ID. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created.</summary>
     [JsonPropertyName("podRange")]
     public string? PodRange { get; set; }
 
-    /// <summary>Immutable. The subnetwork path for the node pool. Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}. If not set, the provider/API will choose the subnetwork (e.g. based on IP utilization) and report it here.</summary>
+    /// <summary>ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.</summary>
     [JsonPropertyName("subnetworkRef")]
     public V1beta1ContainerNodePoolSpecNetworkConfigSubnetworkRef? SubnetworkRef { get; set; }
 }
@@ -255,19 +257,20 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfigAdvancedMachineFeatur
     public int? ThreadsPerCore { get; set; }
 }
 
+/// <summary>Immutable. Cryptographic key used to encrypt the boot disk.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNodeConfigBootDiskKMSCryptoKeyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>A reference to an externally managed KMSCryptoKey. Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` of a `KMSCryptoKey` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -325,7 +328,7 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfigFastSocket
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNodeConfigGcfsConfig
 {
-    /// <summary>Immutable. Whether or not GCFS is enabled.</summary>
+    /// <summary>Whether or not GCFS is enabled.</summary>
     [JsonPropertyName("enabled")]
     public required bool Enabled { get; set; }
 }
@@ -445,24 +448,20 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfigLocalNvmeSsdBlockConf
     public required int LocalSsdCount { get; set; }
 }
 
-/// <summary>
-/// Immutable. Setting this field will assign instances
-/// of this pool to run on the specified node group. This is useful
-/// for running workloads on sole tenant nodes.
-/// </summary>
+/// <summary>Immutable. Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNodeConfigNodeGroupRef
 {
-    /// <summary>Allowed value: The `name` field of a `ComputeNodeGroup` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNodeGroup resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/nodeGroups/{{nodeGroupID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNodeGroup resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNodeGroup resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -499,7 +498,7 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfigSandboxConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNodeConfigServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The `email` field of an `IAMServiceAccount` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -575,7 +574,7 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfigTaint
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNodeConfigWindowsNodeConfig
 {
-    /// <summary>os_version specifies the Windows Server release version to be used on the node.</summary>
+    /// <summary>Operating system version of the Windows nodes.</summary>
     [JsonPropertyName("osVersion")]
     public string? OsVersion { get; set; }
 }
@@ -594,7 +593,7 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfigWorkloadMetadataConfi
     public string? NodeMetadata { get; set; }
 }
 
-/// <summary>Immutable. The configuration of the nodepool.</summary>
+/// <summary>The node configuration of the pool.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecNodeConfig
@@ -603,6 +602,7 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfig
     [JsonPropertyName("advancedMachineFeatures")]
     public V1beta1ContainerNodePoolSpecNodeConfigAdvancedMachineFeatures? AdvancedMachineFeatures { get; set; }
 
+    /// <summary>Immutable. Cryptographic key used to encrypt the boot disk.</summary>
     [JsonPropertyName("bootDiskKMSCryptoKeyRef")]
     public V1beta1ContainerNodePoolSpecNodeConfigBootDiskKMSCryptoKeyRef? BootDiskKMSCryptoKeyRef { get; set; }
 
@@ -654,7 +654,7 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfig
     [JsonPropertyName("kubeletConfig")]
     public V1beta1ContainerNodePoolSpecNodeConfigKubeletConfig? KubeletConfig { get; set; }
 
-    /// <summary>The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.</summary>
+    /// <summary>Immutable. The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.</summary>
     [JsonPropertyName("labels")]
     public IDictionary<string, string>? Labels { get; set; }
 
@@ -686,11 +686,7 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfig
     [JsonPropertyName("minCpuPlatform")]
     public string? MinCpuPlatform { get; set; }
 
-    /// <summary>
-    /// Immutable. Setting this field will assign instances
-    /// of this pool to run on the specified node group. This is useful
-    /// for running workloads on sole tenant nodes.
-    /// </summary>
+    /// <summary>Immutable. Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.</summary>
     [JsonPropertyName("nodeGroupRef")]
     public V1beta1ContainerNodePoolSpecNodeConfigNodeGroupRef? NodeGroupRef { get; set; }
 
@@ -746,43 +742,43 @@ public partial class V1beta1ContainerNodePoolSpecNodeConfig
     public V1beta1ContainerNodePoolSpecNodeConfigWorkloadMetadataConfig? WorkloadMetadataConfig { get; set; }
 }
 
-/// <summary>Immutable. If set, refers to the name of a custom resource policy supplied by the user. The resource policy must be in the same project and region as the node pool. If not found, InvalidArgument error is returned.</summary>
+/// <summary>If set, refers to the name of a custom resource policy supplied by the user. The resource policy must be in the same project and region as the node pool. If not found, InvalidArgument error is returned.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecPlacementPolicyPolicyNameRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeResourcePolicy` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeResourcePolicy resource. Should be in the format &quot;projects/{project}/regions/{region}/resourcePolicies/{resourcePolicy}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeResourcePolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeResourcePolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>Immutable. Specifies the node placement policy.</summary>
+/// <summary>Specifies the node placement policy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecPlacementPolicy
 {
-    /// <summary>Immutable. If set, refers to the name of a custom resource policy supplied by the user. The resource policy must be in the same project and region as the node pool. If not found, InvalidArgument error is returned.</summary>
+    /// <summary>If set, refers to the name of a custom resource policy supplied by the user. The resource policy must be in the same project and region as the node pool. If not found, InvalidArgument error is returned.</summary>
     [JsonPropertyName("policyNameRef")]
     public V1beta1ContainerNodePoolSpecPlacementPolicyPolicyNameRef? PolicyNameRef { get; set; }
 
-    /// <summary>TPU placement topology for pod slice node pool. https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies.</summary>
+    /// <summary>Optional. TPU placement topology for pod slice node pool.</summary>
     [JsonPropertyName("tpuTopology")]
     public string? TpuTopology { get; set; }
 
-    /// <summary>Type defines the type of placement policy.</summary>
+    /// <summary>The type of placement.</summary>
     [JsonPropertyName("type")]
     public required string Type { get; set; }
 }
 
-/// <summary>Standard rollout policy is the default policy for blue-green.</summary>
+/// <summary>Standard policy for the blue-green upgrade.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy
@@ -791,16 +787,16 @@ public partial class V1beta1ContainerNodePoolSpecUpgradeSettingsBlueGreenSetting
     [JsonPropertyName("batchNodeCount")]
     public int? BatchNodeCount { get; set; }
 
-    /// <summary>Percentage of the blue pool nodes to drain in a batch.</summary>
+    /// <summary>Percentage of the bool pool nodes to drain in a batch. The range of this field should be (0.0, 1.0].</summary>
     [JsonPropertyName("batchPercentage")]
     public double? BatchPercentage { get; set; }
 
-    /// <summary>Soak time after each batch gets drained.</summary>
+    /// <summary>Soak time after each batch gets drained. A duration in seconds with up to nine fractional digits, ending with &apos;s&apos;. Example: &quot;3.5s&quot;.</summary>
     [JsonPropertyName("batchSoakDuration")]
     public string? BatchSoakDuration { get; set; }
 }
 
-/// <summary>Settings for BlueGreen node pool upgrade.</summary>
+/// <summary>Settings for blue-green upgrade strategy.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecUpgradeSettingsBlueGreenSettings
@@ -809,45 +805,47 @@ public partial class V1beta1ContainerNodePoolSpecUpgradeSettingsBlueGreenSetting
     [JsonPropertyName("nodePoolSoakDuration")]
     public string? NodePoolSoakDuration { get; set; }
 
-    /// <summary>Standard rollout policy is the default policy for blue-green.</summary>
+    /// <summary>Standard policy for the blue-green upgrade.</summary>
     [JsonPropertyName("standardRolloutPolicy")]
     public required V1beta1ContainerNodePoolSpecUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy StandardRolloutPolicy { get; set; }
 }
 
-/// <summary>Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20.</summary>
+/// <summary>Upgrade settings control disruption and speed of the upgrade.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpecUpgradeSettings
 {
-    /// <summary>Settings for BlueGreen node pool upgrade.</summary>
+    /// <summary>Settings for blue-green upgrade strategy.</summary>
     [JsonPropertyName("blueGreenSettings")]
     public V1beta1ContainerNodePoolSpecUpgradeSettingsBlueGreenSettings? BlueGreenSettings { get; set; }
 
-    /// <summary>The number of additional nodes that can be added to the node pool during an upgrade. Increasing max_surge raises the number of nodes that can be upgraded simultaneously. Can be set to 0 or greater.</summary>
+    /// <summary>The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process.</summary>
     [JsonPropertyName("maxSurge")]
     public int? MaxSurge { get; set; }
 
-    /// <summary>The number of nodes that can be simultaneously unavailable during an upgrade. Increasing max_unavailable raises the number of nodes that can be upgraded in parallel. Can be set to 0 or greater.</summary>
+    /// <summary>The maximum number of nodes that can be simultaneously unavailable during the upgrade process. A node is considered available if its status is Ready.</summary>
     [JsonPropertyName("maxUnavailable")]
     public int? MaxUnavailable { get; set; }
 
-    /// <summary>Update strategy for the given nodepool.</summary>
+    /// <summary>Update strategy of the node pool.</summary>
     [JsonPropertyName("strategy")]
     public string? Strategy { get; set; }
 }
 
+/// <summary>ContainerNodePoolSpec defines the desired state of ContainerNodePool</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolSpec
 {
-    /// <summary>Configuration required by cluster autoscaler to adjust the size of the node pool to the current cluster usage. To disable autoscaling, set minNodeCount and maxNodeCount to 0.</summary>
+    /// <summary>Autoscaler configuration for this NodePool. Autoscaler is enabled only if a valid configuration is present.</summary>
     [JsonPropertyName("autoscaling")]
     public V1beta1ContainerNodePoolSpecAutoscaling? Autoscaling { get; set; }
 
+    /// <summary>The GKE cluster this node pool belongs to.</summary>
     [JsonPropertyName("clusterRef")]
     public required V1beta1ContainerNodePoolSpecClusterRef ClusterRef { get; set; }
 
-    /// <summary>Immutable. The initial number of nodes for the pool. In regional or multi-zonal clusters, this is the number of nodes per zone. Changing this will force recreation of the resource.</summary>
+    /// <summary>The initial node count for the pool. You must ensure that your Compute Engine resource quota is sufficient for this number of instances. You must also have available firewall and routes quota.</summary>
     [JsonPropertyName("initialNodeCount")]
     public int? InitialNodeCount { get; set; }
 
@@ -855,11 +853,11 @@ public partial class V1beta1ContainerNodePoolSpec
     [JsonPropertyName("location")]
     public required string Location { get; set; }
 
-    /// <summary>Node management configuration, wherein auto-repair and auto-upgrade is configured.</summary>
+    /// <summary>NodeManagement configuration for this NodePool.</summary>
     [JsonPropertyName("management")]
     public V1beta1ContainerNodePoolSpecManagement? Management { get; set; }
 
-    /// <summary>Immutable. The maximum number of pods per node in this node pool. Note that this does not work on node pools which are &quot;route-based&quot; - that is, node pools belonging to clusters that do not have IP Aliasing enabled.</summary>
+    /// <summary>The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.</summary>
     [JsonPropertyName("maxPodsPerNode")]
     public int? MaxPodsPerNode { get; set; }
 
@@ -871,19 +869,19 @@ public partial class V1beta1ContainerNodePoolSpec
     [JsonPropertyName("networkConfig")]
     public V1beta1ContainerNodePoolSpecNetworkConfig? NetworkConfig { get; set; }
 
-    /// <summary>Immutable. The configuration of the nodepool.</summary>
+    /// <summary>The node configuration of the pool.</summary>
     [JsonPropertyName("nodeConfig")]
     public V1beta1ContainerNodePoolSpecNodeConfig? NodeConfig { get; set; }
 
-    /// <summary>The number of nodes per instance group. This field can be used to update the number of nodes per instance group but should not be used alongside autoscaling.</summary>
+    /// <summary>The node count of the pool.</summary>
     [JsonPropertyName("nodeCount")]
     public int? NodeCount { get; set; }
 
-    /// <summary>The list of zones in which the node pool&apos;s nodes should be located. Nodes must be in the region of their regional cluster or in the same region as their cluster&apos;s zone for zonal clusters. If unspecified, the cluster-level node_locations will be used.</summary>
+    /// <summary>The list of Google Compute Engine zones in which the NodePool&apos;s nodes should be located.</summary>
     [JsonPropertyName("nodeLocations")]
     public IList<string>? NodeLocations { get; set; }
 
-    /// <summary>Immutable. Specifies the node placement policy.</summary>
+    /// <summary>Specifies the node placement policy.</summary>
     [JsonPropertyName("placementPolicy")]
     public V1beta1ContainerNodePoolSpecPlacementPolicy? PlacementPolicy { get; set; }
 
@@ -891,10 +889,11 @@ public partial class V1beta1ContainerNodePoolSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20.</summary>
+    /// <summary>Upgrade settings control disruption and speed of the upgrade.</summary>
     [JsonPropertyName("upgradeSettings")]
     public V1beta1ContainerNodePoolSpecUpgradeSettings? UpgradeSettings { get; set; }
 
+    /// <summary>The version of Kubernetes running on this NodePool&apos;s nodes.</summary>
     [JsonPropertyName("version")]
     public string? Version { get; set; }
 }
@@ -933,11 +932,12 @@ public partial class V1beta1ContainerNodePoolStatusObservedState
     public string? Version { get; set; }
 }
 
+/// <summary>ContainerNodePoolStatus defines the config connector machine state of ContainerNodePool</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ContainerNodePool&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ContainerNodePoolStatusConditions>? Conditions { get; set; }
 
@@ -951,7 +951,7 @@ public partial class V1beta1ContainerNodePoolStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The observed state of the underlying GCP resource.</summary>
     [JsonPropertyName("observedState")]
@@ -961,6 +961,7 @@ public partial class V1beta1ContainerNodePoolStatus
     public string? Operation { get; set; }
 }
 
+/// <summary>ContainerNodePool is the Schema for the ContainerNodePool API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -982,9 +983,11 @@ public partial class V1beta1ContainerNodePool : IKubernetesObject<V1ObjectMeta>,
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ContainerNodePoolSpec defines the desired state of ContainerNodePool</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ContainerNodePoolSpec Spec { get; set; }
 
+    /// <summary>ContainerNodePoolStatus defines the config connector machine state of ContainerNodePool</summary>
     [JsonPropertyName("status")]
     public V1beta1ContainerNodePoolStatus? Status { get; set; }
 }
