@@ -36,6 +36,30 @@ public partial class V1beta1ComputeAddressList : IKubernetesObject<V1ListMeta>, 
     public required IList<V1beta1ComputeAddress> Items { get; set; }
 }
 
+/// <summary>
+/// Immutable. The PublicDelegatedPrefix IP collection from which to
+/// reserve the address. Only external IPv4 addresses can use this.
+/// 
+/// Warning: Since ComputePublicDelegatedPrefix is not yet supported as a Config Connector resource,
+/// only the &apos;external&apos; field of this reference can be used.
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ComputeAddressSpecIpCollectionRef
+{
+    /// <summary>A reference to an externally managed ComputePublicDelegatedPrefix resource. Should be in the format &quot;projects/{{projectID}}/global/publicDelegatedPrefixes/{{publicDelegatedPrefixID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/publicDelegatedPrefixes/{{publicDelegatedPrefixID}}&quot;.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The name of a ComputePublicDelegatedPrefix resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a ComputePublicDelegatedPrefix resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
 /// <summary>The network in which to reserve the address. If global, the address must be within the RFC1918 IP space. The network cannot be deleted if there are any reserved IP ranges referring to it. This field can only be used with INTERNAL type with the VPC_PEERING and IPSEC_INTERCONNECT purposes.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -88,6 +112,16 @@ public partial class V1beta1ComputeAddressSpec
     /// <summary>Immutable. An optional description of this resource.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
+
+    /// <summary>
+    /// Immutable. The PublicDelegatedPrefix IP collection from which to
+    /// reserve the address. Only external IPv4 addresses can use this.
+    /// 
+    /// Warning: Since ComputePublicDelegatedPrefix is not yet supported as a Config Connector resource,
+    /// only the &apos;external&apos; field of this reference can be used.
+    /// </summary>
+    [JsonPropertyName("ipCollectionRef")]
+    public V1beta1ComputeAddressSpecIpCollectionRef? IpCollectionRef { get; set; }
 
     /// <summary>Immutable. The IP Version that will be used by this address. The default value is &apos;IPV4&apos;. Possible values: [&quot;IPV4&quot;, &quot;IPV6&quot;].</summary>
     [JsonPropertyName("ipVersion")]
