@@ -76,6 +76,14 @@ public partial class V1alpha1DataplexEntryTypeSpecRequiredAspectsTypeRef
     /// <summary>A reference to an externally managed DataplexAspectType resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/aspectTypes/{{aspecttypeID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
+
+    /// <summary>The name of a DataplexAspectType resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a DataplexAspectType resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
