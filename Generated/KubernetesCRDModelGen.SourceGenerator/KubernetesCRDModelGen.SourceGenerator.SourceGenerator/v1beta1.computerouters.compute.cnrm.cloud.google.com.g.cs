@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeRouter is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -43,10 +44,7 @@ public partial class V1beta1ComputeRouterSpecBgpAdvertisedIpRanges
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// The IP range to advertise. The value must be a
-    /// CIDR-formatted string.
-    /// </summary>
+    /// <summary>The IP range to advertise. The value must be a CIDR-formatted string.</summary>
     [JsonPropertyName("range")]
     public required string Range { get; set; }
 }
@@ -72,24 +70,13 @@ public partial class V1beta1ComputeRouterSpecBgp
     [JsonPropertyName("advertisedGroups")]
     public IList<string>? AdvertisedGroups { get; set; }
 
-    /// <summary>
-    /// User-specified list of individual IP ranges to advertise in
-    /// custom mode. This field can only be populated if advertiseMode
-    /// is CUSTOM and is advertised to all peers of the router. These IP
-    /// ranges will be advertised in addition to any specified groups.
-    /// Leave this field blank to advertise no custom IP ranges.
-    /// </summary>
+    /// <summary>User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertiseMode is CUSTOM and is advertised to all peers of the router. These IP ranges will be advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.</summary>
     [JsonPropertyName("advertisedIpRanges")]
     public IList<V1beta1ComputeRouterSpecBgpAdvertisedIpRanges>? AdvertisedIpRanges { get; set; }
 
-    /// <summary>
-    /// Local BGP Autonomous System Number (ASN). Must be an RFC6996
-    /// private ASN, either 16-bit or 32-bit. The value will be fixed for
-    /// this router resource. All VPN tunnels that link to this router
-    /// will have the same local ASN.
-    /// </summary>
+    /// <summary>Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.</summary>
     [JsonPropertyName("asn")]
-    public required int Asn { get; set; }
+    public required long Asn { get; set; }
 
     /// <summary>
     /// The interval in seconds between BGP keepalive messages that are sent
@@ -104,7 +91,7 @@ public partial class V1beta1ComputeRouterSpecBgp
     /// The default is 20.
     /// </summary>
     [JsonPropertyName("keepaliveInterval")]
-    public int? KeepaliveInterval { get; set; }
+    public long? KeepaliveInterval { get; set; }
 }
 
 /// <summary>A reference to the network to which this router belongs.</summary>
@@ -112,19 +99,20 @@ public partial class V1beta1ComputeRouterSpecBgp
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeRouterSpec defines the desired state of ComputeRouter</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterSpec
@@ -137,10 +125,7 @@ public partial class V1beta1ComputeRouterSpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Immutable. Indicates if a router is dedicated for use with encrypted VLAN
-    /// attachments (interconnectAttachments).
-    /// </summary>
+    /// <summary>Immutable. Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).</summary>
     [JsonPropertyName("encryptedInterconnectRouter")]
     public bool? EncryptedInterconnectRouter { get; set; }
 
@@ -182,11 +167,12 @@ public partial class V1beta1ComputeRouterStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeRouterStatus defines the config connector machine state of ComputeRouter</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeRouter&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeRouterStatusConditions>? Conditions { get; set; }
 
@@ -196,12 +182,13 @@ public partial class V1beta1ComputeRouterStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeRouter is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -223,9 +210,11 @@ public partial class V1beta1ComputeRouter : IKubernetesObject<V1ObjectMeta>, ISp
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeRouterSpec defines the desired state of ComputeRouter</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeRouterSpec Spec { get; set; }
 
+    /// <summary>ComputeRouterStatus defines the config connector machine state of ComputeRouter</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeRouterStatus? Status { get; set; }
 }
