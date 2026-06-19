@@ -112,7 +112,7 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecSslCertificates
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetHTTPSProxySpecSslPolicyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSSLPolicy` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSSLPolicy resource. Should be in the format &quot;projects/{{projectID}}/global/sslPolicies/{{sslPolicyID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/sslPolicies/{{sslPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
