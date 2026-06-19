@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.monitoring.cnrm.cloud.google.com;
+/// <summary>MonitoringAlertPolicy is the Schema for the monitoring API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -39,12 +40,7 @@ public partial class V1beta1MonitoringAlertPolicyList : IKubernetesObject<V1List
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecAlertStrategyNotificationChannelStrategy
 {
-    /// <summary>
-    /// The notification channels that these settings apply to. Each of these
-    /// correspond to the name field in one of the NotificationChannel objects
-    /// referenced in the notification_channels field of this AlertPolicy. The format is
-    /// &apos;projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]&apos;.
-    /// </summary>
+    /// <summary>The notification channels that these settings apply to. Each of these correspond to the name field in one of the NotificationChannel objects referenced in the notification_channels field of this AlertPolicy. The format is &apos;projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]&apos;.</summary>
     [JsonPropertyName("notificationChannelNames")]
     public IList<string>? NotificationChannelNames { get; set; }
 
@@ -53,10 +49,7 @@ public partial class V1beta1MonitoringAlertPolicySpecAlertStrategyNotificationCh
     public string? RenotifyInterval { get; set; }
 }
 
-/// <summary>
-/// Required for alert policies with a LogMatch condition.
-/// This limit is not implemented for alert policies that are not log-based.
-/// </summary>
+/// <summary>Required for alert policies with a LogMatch condition. This limit is not implemented for alert policies that are not log-based.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecAlertStrategyNotificationRateLimit
@@ -75,17 +68,11 @@ public partial class V1beta1MonitoringAlertPolicySpecAlertStrategy
     [JsonPropertyName("autoClose")]
     public string? AutoClose { get; set; }
 
-    /// <summary>
-    /// Control over how the notification channels in &apos;notification_channels&apos;
-    /// are notified when this alert fires, on a per-channel basis.
-    /// </summary>
+    /// <summary>Control over how the notification channels in &apos;notification_channels&apos; are notified when this alert fires, on a per-channel basis.</summary>
     [JsonPropertyName("notificationChannelStrategy")]
     public IList<V1beta1MonitoringAlertPolicySpecAlertStrategyNotificationChannelStrategy>? NotificationChannelStrategy { get; set; }
 
-    /// <summary>
-    /// Required for alert policies with a LogMatch condition.
-    /// This limit is not implemented for alert policies that are not log-based.
-    /// </summary>
+    /// <summary>Required for alert policies with a LogMatch condition. This limit is not implemented for alert policies that are not log-based.</summary>
     [JsonPropertyName("notificationRateLimit")]
     public V1beta1MonitoringAlertPolicySpecAlertStrategyNotificationRateLimit? NotificationRateLimit { get; set; }
 }
@@ -94,194 +81,60 @@ public partial class V1beta1MonitoringAlertPolicySpecAlertStrategy
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionAbsentAggregations
 {
-    /// <summary>
-    /// The alignment period for per-time
-    /// series alignment. If present,
-    /// alignmentPeriod must be at least
-    /// 60 seconds. After per-time series
-    /// alignment, each time series will
-    /// contain data points only on the
-    /// period boundaries. If
-    /// perSeriesAligner is not specified
-    /// or equals ALIGN_NONE, then this
-    /// field is ignored. If
-    /// perSeriesAligner is specified and
-    /// does not equal ALIGN_NONE, then
-    /// this field must be defined;
-    /// otherwise an error is returned.
-    /// </summary>
+    /// <summary>The alignment period for per-time series alignment. If present, alignmentPeriod must be at least 60 seconds. After per-time series alignment, each time series will contain data points only on the period boundaries. If perSeriesAligner is not specified or equals ALIGN_NONE, then this field is ignored. If perSeriesAligner is specified and does not equal ALIGN_NONE, then this field must be defined; otherwise an error is returned.</summary>
     [JsonPropertyName("alignmentPeriod")]
     public string? AlignmentPeriod { get; set; }
 
-    /// <summary>
-    /// The approach to be used to combine
-    /// time series. Not all reducer
-    /// functions may be applied to all
-    /// time series, depending on the
-    /// metric type and the value type of
-    /// the original time series.
-    /// Reduction may change the metric
-    /// type of value type of the time
-    /// series.Time series data must be
-    /// aligned in order to perform cross-
-    /// time series reduction. If
-    /// crossSeriesReducer is specified,
-    /// then perSeriesAligner must be
-    /// specified and not equal ALIGN_NONE
-    /// and alignmentPeriod must be
-    /// specified; otherwise, an error is
-    /// returned. Possible values: [&quot;REDUCE_NONE&quot;, &quot;REDUCE_MEAN&quot;, &quot;REDUCE_MIN&quot;, &quot;REDUCE_MAX&quot;, &quot;REDUCE_SUM&quot;, &quot;REDUCE_STDDEV&quot;, &quot;REDUCE_COUNT&quot;, &quot;REDUCE_COUNT_TRUE&quot;, &quot;REDUCE_COUNT_FALSE&quot;, &quot;REDUCE_FRACTION_TRUE&quot;, &quot;REDUCE_PERCENTILE_99&quot;, &quot;REDUCE_PERCENTILE_95&quot;, &quot;REDUCE_PERCENTILE_50&quot;, &quot;REDUCE_PERCENTILE_05&quot;].
-    /// </summary>
+    /// <summary>The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross- time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned. Possible values: [&quot;REDUCE_NONE&quot;, &quot;REDUCE_MEAN&quot;, &quot;REDUCE_MIN&quot;, &quot;REDUCE_MAX&quot;, &quot;REDUCE_SUM&quot;, &quot;REDUCE_STDDEV&quot;, &quot;REDUCE_COUNT&quot;, &quot;REDUCE_COUNT_TRUE&quot;, &quot;REDUCE_COUNT_FALSE&quot;, &quot;REDUCE_FRACTION_TRUE&quot;, &quot;REDUCE_PERCENTILE_99&quot;, &quot;REDUCE_PERCENTILE_95&quot;, &quot;REDUCE_PERCENTILE_50&quot;, &quot;REDUCE_PERCENTILE_05&quot;].</summary>
     [JsonPropertyName("crossSeriesReducer")]
     public string? CrossSeriesReducer { get; set; }
 
-    /// <summary>
-    /// The set of fields to preserve when
-    /// crossSeriesReducer is specified.
-    /// The groupByFields determine how
-    /// the time series are partitioned
-    /// into subsets prior to applying the
-    /// aggregation function. Each subset
-    /// contains time series that have the
-    /// same value for each of the
-    /// grouping fields. Each individual
-    /// time series is a member of exactly
-    /// one subset. The crossSeriesReducer
-    /// is applied to each subset of time
-    /// series. It is not possible to
-    /// reduce across different resource
-    /// types, so this field implicitly
-    /// contains resource.type. Fields not
-    /// specified in groupByFields are
-    /// aggregated away. If groupByFields
-    /// is not specified and all the time
-    /// series have the same resource
-    /// type, then the time series are
-    /// aggregated into a single output
-    /// time series. If crossSeriesReducer
-    /// is not defined, this field is
-    /// ignored.
-    /// </summary>
+    /// <summary>The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.</summary>
     [JsonPropertyName("groupByFields")]
     public IList<string>? GroupByFields { get; set; }
 
-    /// <summary>
-    /// The approach to be used to align
-    /// individual time series. Not all
-    /// alignment functions may be applied
-    /// to all time series, depending on
-    /// the metric type and value type of
-    /// the original time series.
-    /// Alignment may change the metric
-    /// type or the value type of the time
-    /// series.Time series data must be
-    /// aligned in order to perform cross-
-    /// time series reduction. If
-    /// crossSeriesReducer is specified,
-    /// then perSeriesAligner must be
-    /// specified and not equal ALIGN_NONE
-    /// and alignmentPeriod must be
-    /// specified; otherwise, an error is
-    /// returned. Possible values: [&quot;ALIGN_NONE&quot;, &quot;ALIGN_DELTA&quot;, &quot;ALIGN_RATE&quot;, &quot;ALIGN_INTERPOLATE&quot;, &quot;ALIGN_NEXT_OLDER&quot;, &quot;ALIGN_MIN&quot;, &quot;ALIGN_MAX&quot;, &quot;ALIGN_MEAN&quot;, &quot;ALIGN_COUNT&quot;, &quot;ALIGN_SUM&quot;, &quot;ALIGN_STDDEV&quot;, &quot;ALIGN_COUNT_TRUE&quot;, &quot;ALIGN_COUNT_FALSE&quot;, &quot;ALIGN_FRACTION_TRUE&quot;, &quot;ALIGN_PERCENTILE_99&quot;, &quot;ALIGN_PERCENTILE_95&quot;, &quot;ALIGN_PERCENTILE_50&quot;, &quot;ALIGN_PERCENTILE_05&quot;, &quot;ALIGN_PERCENT_CHANGE&quot;].
-    /// </summary>
+    /// <summary>The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross- time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned. Possible values: [&quot;ALIGN_NONE&quot;, &quot;ALIGN_DELTA&quot;, &quot;ALIGN_RATE&quot;, &quot;ALIGN_INTERPOLATE&quot;, &quot;ALIGN_NEXT_OLDER&quot;, &quot;ALIGN_MIN&quot;, &quot;ALIGN_MAX&quot;, &quot;ALIGN_MEAN&quot;, &quot;ALIGN_COUNT&quot;, &quot;ALIGN_SUM&quot;, &quot;ALIGN_STDDEV&quot;, &quot;ALIGN_COUNT_TRUE&quot;, &quot;ALIGN_COUNT_FALSE&quot;, &quot;ALIGN_FRACTION_TRUE&quot;, &quot;ALIGN_PERCENTILE_99&quot;, &quot;ALIGN_PERCENTILE_95&quot;, &quot;ALIGN_PERCENTILE_50&quot;, &quot;ALIGN_PERCENTILE_05&quot;, &quot;ALIGN_PERCENT_CHANGE&quot;].</summary>
     [JsonPropertyName("perSeriesAligner")]
     public string? PerSeriesAligner { get; set; }
 }
 
-/// <summary>
-/// The number/percent of time series for which
-/// the comparison must hold in order for the
-/// condition to trigger. If unspecified, then
-/// the condition will trigger if the comparison
-/// is true for any of the time series that have
-/// been identified by filter and aggregations.
-/// </summary>
+/// <summary>The number/percent of time series for which the comparison must hold in order for the condition to trigger. If unspecified, then the condition will trigger if the comparison is true for any of the time series that have been identified by filter and aggregations.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionAbsentTrigger
 {
-    /// <summary>
-    /// The absolute number of time series
-    /// that must fail the predicate for the
-    /// condition to be triggered.
-    /// </summary>
+    /// <summary>The absolute number of time series that must fail the predicate for the condition to be triggered.</summary>
     [JsonPropertyName("count")]
-    public int? Count { get; set; }
+    public long? Count { get; set; }
 
-    /// <summary>
-    /// The percentage of time series that
-    /// must fail the predicate for the
-    /// condition to be triggered.
-    /// </summary>
+    /// <summary>The percentage of time series that must fail the predicate for the condition to be triggered.</summary>
     [JsonPropertyName("percent")]
     public double? Percent { get; set; }
 }
 
-/// <summary>
-/// A condition that checks that a time series
-/// continues to receive new data points.
-/// </summary>
+/// <summary>A condition that checks that a time series continues to receive new data points.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionAbsent
 {
-    /// <summary>
-    /// Specifies the alignment of data points in
-    /// individual time series as well as how to
-    /// combine the retrieved time series together
-    /// (such as when aggregating multiple streams
-    /// on each resource to a single stream for each
-    /// resource or when aggregating streams across
-    /// all members of a group of resources).
-    /// Multiple aggregations are applied in the
-    /// order specified.
-    /// </summary>
+    /// <summary>Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resources). Multiple aggregations are applied in the order specified.</summary>
     [JsonPropertyName("aggregations")]
     public IList<V1beta1MonitoringAlertPolicySpecConditionsConditionAbsentAggregations>? Aggregations { get; set; }
 
-    /// <summary>
-    /// The amount of time that a time series must
-    /// fail to report new data to be considered
-    /// failing. Currently, only values that are a
-    /// multiple of a minute--e.g. 60s, 120s, or 300s
-    /// --are supported.
-    /// </summary>
+    /// <summary>The amount of time that a time series must fail to report new data to be considered failing. Currently, only values that are a multiple of a minute--e.g. 60s, 120s, or 300s --are supported.</summary>
     [JsonPropertyName("duration")]
     public required string Duration { get; set; }
 
-    /// <summary>
-    /// A filter that identifies which time series
-    /// should be compared with the threshold.The
-    /// filter is similar to the one that is
-    /// specified in the
-    /// MetricService.ListTimeSeries request (that
-    /// call is useful to verify the time series
-    /// that will be retrieved / processed) and must
-    /// specify the metric type and optionally may
-    /// contain restrictions on resource type,
-    /// resource labels, and metric labels. This
-    /// field may not exceed 2048 Unicode characters
-    /// in length.
-    /// </summary>
+    /// <summary>A filter that identifies which time series should be compared with the threshold.The filter is similar to the one that is specified in the MetricService.ListTimeSeries request (that call is useful to verify the time series that will be retrieved / processed) and must specify the metric type and optionally may contain restrictions on resource type, resource labels, and metric labels. This field may not exceed 2048 Unicode characters in length.</summary>
     [JsonPropertyName("filter")]
     public string? Filter { get; set; }
 
-    /// <summary>
-    /// The number/percent of time series for which
-    /// the comparison must hold in order for the
-    /// condition to trigger. If unspecified, then
-    /// the condition will trigger if the comparison
-    /// is true for any of the time series that have
-    /// been identified by filter and aggregations.
-    /// </summary>
+    /// <summary>The number/percent of time series for which the comparison must hold in order for the condition to trigger. If unspecified, then the condition will trigger if the comparison is true for any of the time series that have been identified by filter and aggregations.</summary>
     [JsonPropertyName("trigger")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionAbsentTrigger? Trigger { get; set; }
 }
 
-/// <summary>
-/// A condition that checks for log messages matching given constraints.
-/// If set, no other conditions can be present.
-/// </summary>
+/// <summary>A condition that checks for log messages matching given constraints. If set, no other conditions can be present.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionMatchedLog
@@ -290,46 +143,21 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionMatchedL
     [JsonPropertyName("filter")]
     public required string Filter { get; set; }
 
-    /// <summary>
-    /// A map from a label key to an extractor expression, which is used to
-    /// extract the value for this label key. Each entry in this map is
-    /// a specification for how data should be extracted from log entries that
-    /// match filter. Each combination of extracted values is treated as
-    /// a separate rule for the purposes of triggering notifications.
-    /// Label keys and corresponding values can be used in notifications
-    /// generated by this condition.
-    /// </summary>
+    /// <summary>A map from a label key to an extractor expression, which is used to extract the value for this label key. Each entry in this map is a specification for how data should be extracted from log entries that match filter. Each combination of extracted values is treated as a separate rule for the purposes of triggering notifications. Label keys and corresponding values can be used in notifications generated by this condition.</summary>
     [JsonPropertyName("labelExtractors")]
     public IDictionary<string, string>? LabelExtractors { get; set; }
 }
 
-/// <summary>
-/// The number/percent of time series for which
-/// the comparison must hold in order for the
-/// condition to trigger. If unspecified, then
-/// the condition will trigger if the comparison
-/// is true for any of the time series that have
-/// been identified by filter and aggregations,
-/// or by the ratio, if denominator_filter and
-/// denominator_aggregations are specified.
-/// </summary>
+/// <summary>The number/percent of time series for which the comparison must hold in order for the condition to trigger. If unspecified, then the condition will trigger if the comparison is true for any of the time series that have been identified by filter and aggregations, or by the ratio, if denominator_filter and denominator_aggregations are specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionMonitoringQueryLanguageTrigger
 {
-    /// <summary>
-    /// The absolute number of time series
-    /// that must fail the predicate for the
-    /// condition to be triggered.
-    /// </summary>
+    /// <summary>The absolute number of time series that must fail the predicate for the condition to be triggered.</summary>
     [JsonPropertyName("count")]
-    public int? Count { get; set; }
+    public long? Count { get; set; }
 
-    /// <summary>
-    /// The percentage of time series that
-    /// must fail the predicate for the
-    /// condition to be triggered.
-    /// </summary>
+    /// <summary>The percentage of time series that must fail the predicate for the condition to be triggered.</summary>
     [JsonPropertyName("percent")]
     public double? Percent { get; set; }
 }
@@ -339,31 +167,11 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionMonitori
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionMonitoringQueryLanguage
 {
-    /// <summary>
-    /// The amount of time that a time series must
-    /// violate the threshold to be considered
-    /// failing. Currently, only values that are a
-    /// multiple of a minute--e.g., 0, 60, 120, or
-    /// 300 seconds--are supported. If an invalid
-    /// value is given, an error will be returned.
-    /// When choosing a duration, it is useful to
-    /// keep in mind the frequency of the underlying
-    /// time series data (which may also be affected
-    /// by any alignments specified in the
-    /// aggregations field); a good duration is long
-    /// enough so that a single outlier does not
-    /// generate spurious alerts, but short enough
-    /// that unhealthy states are detected and
-    /// alerted on quickly.
-    /// </summary>
+    /// <summary>The amount of time that a time series must violate the threshold to be considered failing. Currently, only values that are a multiple of a minute--e.g., 0, 60, 120, or 300 seconds--are supported. If an invalid value is given, an error will be returned. When choosing a duration, it is useful to keep in mind the frequency of the underlying time series data (which may also be affected by any alignments specified in the aggregations field); a good duration is long enough so that a single outlier does not generate spurious alerts, but short enough that unhealthy states are detected and alerted on quickly.</summary>
     [JsonPropertyName("duration")]
     public required string Duration { get; set; }
 
-    /// <summary>
-    /// A condition control that determines how
-    /// metric-threshold conditions are evaluated when
-    /// data stops arriving. Possible values: [&quot;EVALUATION_MISSING_DATA_INACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_ACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_NO_OP&quot;].
-    /// </summary>
+    /// <summary>A condition control that determines how metric-threshold conditions are evaluated when data stops arriving. Possible values: [&quot;EVALUATION_MISSING_DATA_INACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_ACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_NO_OP&quot;].</summary>
     [JsonPropertyName("evaluationMissingData")]
     public string? EvaluationMissingData { get; set; }
 
@@ -371,16 +179,7 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionMonitori
     [JsonPropertyName("query")]
     public required string Query { get; set; }
 
-    /// <summary>
-    /// The number/percent of time series for which
-    /// the comparison must hold in order for the
-    /// condition to trigger. If unspecified, then
-    /// the condition will trigger if the comparison
-    /// is true for any of the time series that have
-    /// been identified by filter and aggregations,
-    /// or by the ratio, if denominator_filter and
-    /// denominator_aggregations are specified.
-    /// </summary>
+    /// <summary>The number/percent of time series for which the comparison must hold in order for the condition to trigger. If unspecified, then the condition will trigger if the comparison is true for any of the time series that have been identified by filter and aggregations, or by the ratio, if denominator_filter and denominator_aggregations are specified.</summary>
     [JsonPropertyName("trigger")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionMonitoringQueryLanguageTrigger? Trigger { get; set; }
 }
@@ -414,22 +213,11 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionPromethe
     [JsonPropertyName("alertRule")]
     public string? AlertRule { get; set; }
 
-    /// <summary>
-    /// Alerts are considered firing once their PromQL expression evaluated
-    /// to be &quot;true&quot; for this long. Alerts whose PromQL expression was not
-    /// evaluated to be &quot;true&quot; for long enough are considered pending. The
-    /// default value is zero. Must be zero or positive.
-    /// </summary>
+    /// <summary>Alerts are considered firing once their PromQL expression evaluated to be &quot;true&quot; for this long. Alerts whose PromQL expression was not evaluated to be &quot;true&quot; for long enough are considered pending. The default value is zero. Must be zero or positive.</summary>
     [JsonPropertyName("duration")]
     public string? Duration { get; set; }
 
-    /// <summary>
-    /// How often this rule should be evaluated. Must be a positive multiple
-    /// of 30 seconds or missing. The default value is 30 seconds. If this
-    /// PrometheusQueryLanguageCondition was generated from a Prometheus
-    /// alerting rule, then this value should be taken from the enclosing
-    /// rule group.
-    /// </summary>
+    /// <summary>How often this rule should be evaluated. Must be a positive multiple of 30 seconds or missing. The default value is 30 seconds. If this PrometheusQueryLanguageCondition was generated from a Prometheus alerting rule, then this value should be taken from the enclosing rule group.</summary>
     [JsonPropertyName("evaluationInterval")]
     public string? EvaluationInterval { get; set; }
 
@@ -445,11 +233,7 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionPromethe
     [JsonPropertyName("labels")]
     public IDictionary<string, string>? Labels { get; set; }
 
-    /// <summary>
-    /// The PromQL expression to evaluate. Every evaluation cycle this
-    /// expression is evaluated at the current time, and all resultant time
-    /// series become pending/firing alerts. This field must not be empty.
-    /// </summary>
+    /// <summary>The PromQL expression to evaluate. Every evaluation cycle this expression is evaluated at the current time, and all resultant time series become pending/firing alerts. This field must not be empty.</summary>
     [JsonPropertyName("query")]
     public required string Query { get; set; }
 
@@ -470,180 +254,116 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionPromethe
     public string? RuleGroup { get; set; }
 }
 
-/// <summary>A test that uses an alerting result in a boolean column produced by the SQL query.</summary>
+/// <summary>Test the boolean value in the indicated column.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlBooleanTest
 {
-    /// <summary>
-    /// The name of the column containing the boolean value. If the value in a row is
-    /// NULL, that row is ignored.
-    /// </summary>
+    /// <summary>The name of the column containing the boolean value.</summary>
     [JsonPropertyName("column")]
     public required string Column { get; set; }
 }
 
-/// <summary>
-/// The time of day (in UTC) at which the query should run. If left
-/// unspecified, the server picks an arbitrary time of day and runs
-/// the query at the same time each day.
-/// </summary>
+/// <summary>The time of day (in UTC) at which the query should run.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDailyExecutionTime
 {
-    /// <summary>
-    /// Hours of a day in 24 hour format. Must be greater than or equal
-    /// to 0 and typically must be less than or equal to 23. An API may
-    /// choose to allow the value &quot;24:00:00&quot; for scenarios like business
-    /// closing time.
-    /// </summary>
+    /// <summary>Hours of day in 24 hour format.</summary>
     [JsonPropertyName("hours")]
     public int? Hours { get; set; }
 
-    /// <summary>
-    /// Minutes of an hour. Must be greater than or equal to 0 and
-    /// less than or equal to 59.
-    /// </summary>
+    /// <summary>Minutes of hour of day.</summary>
     [JsonPropertyName("minutes")]
     public int? Minutes { get; set; }
 
-    /// <summary>
-    /// Fractions of seconds, in nanoseconds. Must be greater than or
-    /// equal to 0 and less than or equal to 999,999,999.
-    /// </summary>
+    /// <summary>Fractions of seconds in nanoseconds.</summary>
     [JsonPropertyName("nanos")]
     public int? Nanos { get; set; }
 
-    /// <summary>
-    /// Seconds of a minute. Must be greater than or equal to 0 and
-    /// typically must be less than or equal to 59. An API may allow the
-    /// value 60 if it allows leap-seconds.
-    /// </summary>
+    /// <summary>Seconds of minutes of the time.</summary>
     [JsonPropertyName("seconds")]
     public int? Seconds { get; set; }
 }
 
-/// <summary>Used to schedule the query to run every so many days.</summary>
+/// <summary>Schedule the query to execute every so many days.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDaily
 {
-    /// <summary>
-    /// The time of day (in UTC) at which the query should run. If left
-    /// unspecified, the server picks an arbitrary time of day and runs
-    /// the query at the same time each day.
-    /// </summary>
+    /// <summary>The time of day (in UTC) at which the query should run.</summary>
     [JsonPropertyName("executionTime")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDailyExecutionTime? ExecutionTime { get; set; }
 
-    /// <summary>
-    /// The number of days between runs. Must be greater than or equal
-    /// to 1 day and less than or equal to 30 days.
-    /// </summary>
+    /// <summary>The number of days between runs.</summary>
     [JsonPropertyName("periodicity")]
     public required int Periodicity { get; set; }
 }
 
-/// <summary>Used to schedule the query to run every so many hours.</summary>
+/// <summary>Schedule the query to execute every so many hours.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlHourly
 {
-    /// <summary>
-    /// The number of minutes after the hour (in UTC) to run the query.
-    /// Must be greater than or equal to 0 minutes and less than or equal to
-    /// 59 minutes.  If left unspecified, then an arbitrary offset is used.
-    /// </summary>
+    /// <summary>The number of minutes after the hour (in UTC) to run the query.</summary>
     [JsonPropertyName("minuteOffset")]
     public int? MinuteOffset { get; set; }
 
-    /// <summary>
-    /// Number of hours between runs. The interval must be greater than or
-    /// equal to 1 hour and less than or equal to 48 hours.
-    /// </summary>
+    /// <summary>Number of hours between runs.</summary>
     [JsonPropertyName("periodicity")]
     public required int Periodicity { get; set; }
 }
 
-/// <summary>Used to schedule the query to run every so many minutes.</summary>
+/// <summary>Schedule the query to execute every so many minutes.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlMinutes
 {
-    /// <summary>
-    /// Number of minutes between runs. The interval must be greater than or
-    /// equal to 5 minutes and less than or equal to 1440 minutes.
-    /// </summary>
+    /// <summary>Number of minutes between runs.</summary>
     [JsonPropertyName("periodicity")]
     public required int Periodicity { get; set; }
 }
 
-/// <summary>A test that checks if the number of rows in the result set violates some threshold.</summary>
+/// <summary>Test the row count against a threshold.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSqlRowCountTest
 {
-    /// <summary>
-    /// The comparison to apply between the time series
-    /// (indicated by filter and aggregation) and the
-    /// threshold (indicated by threshold_value). The
-    /// comparison is applied on each time series, with
-    /// the time series on the left-hand side and the
-    /// threshold on the right-hand side.
-    /// 
-    /// The Cloud Monitoring API only supports
-    /// &apos;COMPARISON_LT&apos; and &apos;COMPARISON_GT&apos; for SQL
-    /// row-count thresholds; the other values are kept
-    /// in the schema for backward compatibility with
-    /// imported state but will be rejected by the API.
-    /// See
-    /// https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.alertPolicies#MetricThreshold. Possible values: [&quot;COMPARISON_GT&quot;, &quot;COMPARISON_GE&quot;, &quot;COMPARISON_LT&quot;, &quot;COMPARISON_LE&quot;, &quot;COMPARISON_EQ&quot;, &quot;COMPARISON_NE&quot;].
-    /// </summary>
+    /// <summary>The comparison to apply between the number of rows returned by the query and the threshold.</summary>
     [JsonPropertyName("comparison")]
     public required string Comparison { get; set; }
 
     /// <summary>The value against which to compare the row count.</summary>
     [JsonPropertyName("threshold")]
-    public required int Threshold { get; set; }
+    public required long Threshold { get; set; }
 }
 
-/// <summary>
-/// A condition that allows alerting policies to be defined using GoogleSQL.
-/// SQL conditions examine a sliding window of logs using GoogleSQL.
-/// Alert policies with SQL conditions may incur additional billing.
-/// </summary>
+/// <summary>A condition that allows alerting policies to be defined using GoogleSQL.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSql
 {
-    /// <summary>A test that uses an alerting result in a boolean column produced by the SQL query.</summary>
+    /// <summary>Test the boolean value in the indicated column.</summary>
     [JsonPropertyName("booleanTest")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlBooleanTest? BooleanTest { get; set; }
 
-    /// <summary>Used to schedule the query to run every so many days.</summary>
+    /// <summary>Schedule the query to execute every so many days.</summary>
     [JsonPropertyName("daily")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlDaily? Daily { get; set; }
 
-    /// <summary>Used to schedule the query to run every so many hours.</summary>
+    /// <summary>Schedule the query to execute every so many hours.</summary>
     [JsonPropertyName("hourly")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlHourly? Hourly { get; set; }
 
-    /// <summary>Used to schedule the query to run every so many minutes.</summary>
+    /// <summary>Schedule the query to execute every so many minutes.</summary>
     [JsonPropertyName("minutes")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlMinutes? Minutes { get; set; }
 
-    /// <summary>
-    /// The Log Analytics SQL query to run, as a string.  The query must
-    /// conform to the required shape. Specifically, the query must not try to
-    /// filter the input by time.  A filter will automatically be applied
-    /// to filter the input so that the query receives all rows received
-    /// since the last time the query was run.
-    /// </summary>
+    /// <summary>The Log Analytics SQL query to run, as a string.</summary>
     [JsonPropertyName("query")]
     public required string Query { get; set; }
 
-    /// <summary>A test that checks if the number of rows in the result set violates some threshold.</summary>
+    /// <summary>Test the row count against a threshold.</summary>
     [JsonPropertyName("rowCountTest")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionSqlRowCountTest? RowCountTest { get; set; }
 }
@@ -652,96 +372,19 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionSql
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdAggregations
 {
-    /// <summary>
-    /// The alignment period for per-time
-    /// series alignment. If present,
-    /// alignmentPeriod must be at least
-    /// 60 seconds. After per-time series
-    /// alignment, each time series will
-    /// contain data points only on the
-    /// period boundaries. If
-    /// perSeriesAligner is not specified
-    /// or equals ALIGN_NONE, then this
-    /// field is ignored. If
-    /// perSeriesAligner is specified and
-    /// does not equal ALIGN_NONE, then
-    /// this field must be defined;
-    /// otherwise an error is returned.
-    /// </summary>
+    /// <summary>The alignment period for per-time series alignment. If present, alignmentPeriod must be at least 60 seconds. After per-time series alignment, each time series will contain data points only on the period boundaries. If perSeriesAligner is not specified or equals ALIGN_NONE, then this field is ignored. If perSeriesAligner is specified and does not equal ALIGN_NONE, then this field must be defined; otherwise an error is returned.</summary>
     [JsonPropertyName("alignmentPeriod")]
     public string? AlignmentPeriod { get; set; }
 
-    /// <summary>
-    /// The approach to be used to combine
-    /// time series. Not all reducer
-    /// functions may be applied to all
-    /// time series, depending on the
-    /// metric type and the value type of
-    /// the original time series.
-    /// Reduction may change the metric
-    /// type of value type of the time
-    /// series.Time series data must be
-    /// aligned in order to perform cross-
-    /// time series reduction. If
-    /// crossSeriesReducer is specified,
-    /// then perSeriesAligner must be
-    /// specified and not equal ALIGN_NONE
-    /// and alignmentPeriod must be
-    /// specified; otherwise, an error is
-    /// returned. Possible values: [&quot;REDUCE_NONE&quot;, &quot;REDUCE_MEAN&quot;, &quot;REDUCE_MIN&quot;, &quot;REDUCE_MAX&quot;, &quot;REDUCE_SUM&quot;, &quot;REDUCE_STDDEV&quot;, &quot;REDUCE_COUNT&quot;, &quot;REDUCE_COUNT_TRUE&quot;, &quot;REDUCE_COUNT_FALSE&quot;, &quot;REDUCE_FRACTION_TRUE&quot;, &quot;REDUCE_PERCENTILE_99&quot;, &quot;REDUCE_PERCENTILE_95&quot;, &quot;REDUCE_PERCENTILE_50&quot;, &quot;REDUCE_PERCENTILE_05&quot;].
-    /// </summary>
+    /// <summary>The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross- time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned. Possible values: [&quot;REDUCE_NONE&quot;, &quot;REDUCE_MEAN&quot;, &quot;REDUCE_MIN&quot;, &quot;REDUCE_MAX&quot;, &quot;REDUCE_SUM&quot;, &quot;REDUCE_STDDEV&quot;, &quot;REDUCE_COUNT&quot;, &quot;REDUCE_COUNT_TRUE&quot;, &quot;REDUCE_COUNT_FALSE&quot;, &quot;REDUCE_FRACTION_TRUE&quot;, &quot;REDUCE_PERCENTILE_99&quot;, &quot;REDUCE_PERCENTILE_95&quot;, &quot;REDUCE_PERCENTILE_50&quot;, &quot;REDUCE_PERCENTILE_05&quot;].</summary>
     [JsonPropertyName("crossSeriesReducer")]
     public string? CrossSeriesReducer { get; set; }
 
-    /// <summary>
-    /// The set of fields to preserve when
-    /// crossSeriesReducer is specified.
-    /// The groupByFields determine how
-    /// the time series are partitioned
-    /// into subsets prior to applying the
-    /// aggregation function. Each subset
-    /// contains time series that have the
-    /// same value for each of the
-    /// grouping fields. Each individual
-    /// time series is a member of exactly
-    /// one subset. The crossSeriesReducer
-    /// is applied to each subset of time
-    /// series. It is not possible to
-    /// reduce across different resource
-    /// types, so this field implicitly
-    /// contains resource.type. Fields not
-    /// specified in groupByFields are
-    /// aggregated away. If groupByFields
-    /// is not specified and all the time
-    /// series have the same resource
-    /// type, then the time series are
-    /// aggregated into a single output
-    /// time series. If crossSeriesReducer
-    /// is not defined, this field is
-    /// ignored.
-    /// </summary>
+    /// <summary>The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.</summary>
     [JsonPropertyName("groupByFields")]
     public IList<string>? GroupByFields { get; set; }
 
-    /// <summary>
-    /// The approach to be used to align
-    /// individual time series. Not all
-    /// alignment functions may be applied
-    /// to all time series, depending on
-    /// the metric type and value type of
-    /// the original time series.
-    /// Alignment may change the metric
-    /// type or the value type of the time
-    /// series.Time series data must be
-    /// aligned in order to perform cross-
-    /// time series reduction. If
-    /// crossSeriesReducer is specified,
-    /// then perSeriesAligner must be
-    /// specified and not equal ALIGN_NONE
-    /// and alignmentPeriod must be
-    /// specified; otherwise, an error is
-    /// returned. Possible values: [&quot;ALIGN_NONE&quot;, &quot;ALIGN_DELTA&quot;, &quot;ALIGN_RATE&quot;, &quot;ALIGN_INTERPOLATE&quot;, &quot;ALIGN_NEXT_OLDER&quot;, &quot;ALIGN_MIN&quot;, &quot;ALIGN_MAX&quot;, &quot;ALIGN_MEAN&quot;, &quot;ALIGN_COUNT&quot;, &quot;ALIGN_SUM&quot;, &quot;ALIGN_STDDEV&quot;, &quot;ALIGN_COUNT_TRUE&quot;, &quot;ALIGN_COUNT_FALSE&quot;, &quot;ALIGN_FRACTION_TRUE&quot;, &quot;ALIGN_PERCENTILE_99&quot;, &quot;ALIGN_PERCENTILE_95&quot;, &quot;ALIGN_PERCENTILE_50&quot;, &quot;ALIGN_PERCENTILE_05&quot;, &quot;ALIGN_PERCENT_CHANGE&quot;].
-    /// </summary>
+    /// <summary>The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross- time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned. Possible values: [&quot;ALIGN_NONE&quot;, &quot;ALIGN_DELTA&quot;, &quot;ALIGN_RATE&quot;, &quot;ALIGN_INTERPOLATE&quot;, &quot;ALIGN_NEXT_OLDER&quot;, &quot;ALIGN_MIN&quot;, &quot;ALIGN_MAX&quot;, &quot;ALIGN_MEAN&quot;, &quot;ALIGN_COUNT&quot;, &quot;ALIGN_SUM&quot;, &quot;ALIGN_STDDEV&quot;, &quot;ALIGN_COUNT_TRUE&quot;, &quot;ALIGN_COUNT_FALSE&quot;, &quot;ALIGN_FRACTION_TRUE&quot;, &quot;ALIGN_PERCENTILE_99&quot;, &quot;ALIGN_PERCENTILE_95&quot;, &quot;ALIGN_PERCENTILE_50&quot;, &quot;ALIGN_PERCENTILE_05&quot;, &quot;ALIGN_PERCENT_CHANGE&quot;].</summary>
     [JsonPropertyName("perSeriesAligner")]
     public string? PerSeriesAligner { get; set; }
 }
@@ -750,308 +393,89 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThreshol
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdDenominatorAggregations
 {
-    /// <summary>
-    /// The alignment period for per-time
-    /// series alignment. If present,
-    /// alignmentPeriod must be at least
-    /// 60 seconds. After per-time series
-    /// alignment, each time series will
-    /// contain data points only on the
-    /// period boundaries. If
-    /// perSeriesAligner is not specified
-    /// or equals ALIGN_NONE, then this
-    /// field is ignored. If
-    /// perSeriesAligner is specified and
-    /// does not equal ALIGN_NONE, then
-    /// this field must be defined;
-    /// otherwise an error is returned.
-    /// </summary>
+    /// <summary>The alignment period for per-time series alignment. If present, alignmentPeriod must be at least 60 seconds. After per-time series alignment, each time series will contain data points only on the period boundaries. If perSeriesAligner is not specified or equals ALIGN_NONE, then this field is ignored. If perSeriesAligner is specified and does not equal ALIGN_NONE, then this field must be defined; otherwise an error is returned.</summary>
     [JsonPropertyName("alignmentPeriod")]
     public string? AlignmentPeriod { get; set; }
 
-    /// <summary>
-    /// The approach to be used to combine
-    /// time series. Not all reducer
-    /// functions may be applied to all
-    /// time series, depending on the
-    /// metric type and the value type of
-    /// the original time series.
-    /// Reduction may change the metric
-    /// type of value type of the time
-    /// series.Time series data must be
-    /// aligned in order to perform cross-
-    /// time series reduction. If
-    /// crossSeriesReducer is specified,
-    /// then perSeriesAligner must be
-    /// specified and not equal ALIGN_NONE
-    /// and alignmentPeriod must be
-    /// specified; otherwise, an error is
-    /// returned. Possible values: [&quot;REDUCE_NONE&quot;, &quot;REDUCE_MEAN&quot;, &quot;REDUCE_MIN&quot;, &quot;REDUCE_MAX&quot;, &quot;REDUCE_SUM&quot;, &quot;REDUCE_STDDEV&quot;, &quot;REDUCE_COUNT&quot;, &quot;REDUCE_COUNT_TRUE&quot;, &quot;REDUCE_COUNT_FALSE&quot;, &quot;REDUCE_FRACTION_TRUE&quot;, &quot;REDUCE_PERCENTILE_99&quot;, &quot;REDUCE_PERCENTILE_95&quot;, &quot;REDUCE_PERCENTILE_50&quot;, &quot;REDUCE_PERCENTILE_05&quot;].
-    /// </summary>
+    /// <summary>The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross- time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned. Possible values: [&quot;REDUCE_NONE&quot;, &quot;REDUCE_MEAN&quot;, &quot;REDUCE_MIN&quot;, &quot;REDUCE_MAX&quot;, &quot;REDUCE_SUM&quot;, &quot;REDUCE_STDDEV&quot;, &quot;REDUCE_COUNT&quot;, &quot;REDUCE_COUNT_TRUE&quot;, &quot;REDUCE_COUNT_FALSE&quot;, &quot;REDUCE_FRACTION_TRUE&quot;, &quot;REDUCE_PERCENTILE_99&quot;, &quot;REDUCE_PERCENTILE_95&quot;, &quot;REDUCE_PERCENTILE_50&quot;, &quot;REDUCE_PERCENTILE_05&quot;].</summary>
     [JsonPropertyName("crossSeriesReducer")]
     public string? CrossSeriesReducer { get; set; }
 
-    /// <summary>
-    /// The set of fields to preserve when
-    /// crossSeriesReducer is specified.
-    /// The groupByFields determine how
-    /// the time series are partitioned
-    /// into subsets prior to applying the
-    /// aggregation function. Each subset
-    /// contains time series that have the
-    /// same value for each of the
-    /// grouping fields. Each individual
-    /// time series is a member of exactly
-    /// one subset. The crossSeriesReducer
-    /// is applied to each subset of time
-    /// series. It is not possible to
-    /// reduce across different resource
-    /// types, so this field implicitly
-    /// contains resource.type. Fields not
-    /// specified in groupByFields are
-    /// aggregated away. If groupByFields
-    /// is not specified and all the time
-    /// series have the same resource
-    /// type, then the time series are
-    /// aggregated into a single output
-    /// time series. If crossSeriesReducer
-    /// is not defined, this field is
-    /// ignored.
-    /// </summary>
+    /// <summary>The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.</summary>
     [JsonPropertyName("groupByFields")]
     public IList<string>? GroupByFields { get; set; }
 
-    /// <summary>
-    /// The approach to be used to align
-    /// individual time series. Not all
-    /// alignment functions may be applied
-    /// to all time series, depending on
-    /// the metric type and value type of
-    /// the original time series.
-    /// Alignment may change the metric
-    /// type or the value type of the time
-    /// series.Time series data must be
-    /// aligned in order to perform cross-
-    /// time series reduction. If
-    /// crossSeriesReducer is specified,
-    /// then perSeriesAligner must be
-    /// specified and not equal ALIGN_NONE
-    /// and alignmentPeriod must be
-    /// specified; otherwise, an error is
-    /// returned. Possible values: [&quot;ALIGN_NONE&quot;, &quot;ALIGN_DELTA&quot;, &quot;ALIGN_RATE&quot;, &quot;ALIGN_INTERPOLATE&quot;, &quot;ALIGN_NEXT_OLDER&quot;, &quot;ALIGN_MIN&quot;, &quot;ALIGN_MAX&quot;, &quot;ALIGN_MEAN&quot;, &quot;ALIGN_COUNT&quot;, &quot;ALIGN_SUM&quot;, &quot;ALIGN_STDDEV&quot;, &quot;ALIGN_COUNT_TRUE&quot;, &quot;ALIGN_COUNT_FALSE&quot;, &quot;ALIGN_FRACTION_TRUE&quot;, &quot;ALIGN_PERCENTILE_99&quot;, &quot;ALIGN_PERCENTILE_95&quot;, &quot;ALIGN_PERCENTILE_50&quot;, &quot;ALIGN_PERCENTILE_05&quot;, &quot;ALIGN_PERCENT_CHANGE&quot;].
-    /// </summary>
+    /// <summary>The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross- time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned. Possible values: [&quot;ALIGN_NONE&quot;, &quot;ALIGN_DELTA&quot;, &quot;ALIGN_RATE&quot;, &quot;ALIGN_INTERPOLATE&quot;, &quot;ALIGN_NEXT_OLDER&quot;, &quot;ALIGN_MIN&quot;, &quot;ALIGN_MAX&quot;, &quot;ALIGN_MEAN&quot;, &quot;ALIGN_COUNT&quot;, &quot;ALIGN_SUM&quot;, &quot;ALIGN_STDDEV&quot;, &quot;ALIGN_COUNT_TRUE&quot;, &quot;ALIGN_COUNT_FALSE&quot;, &quot;ALIGN_FRACTION_TRUE&quot;, &quot;ALIGN_PERCENTILE_99&quot;, &quot;ALIGN_PERCENTILE_95&quot;, &quot;ALIGN_PERCENTILE_50&quot;, &quot;ALIGN_PERCENTILE_05&quot;, &quot;ALIGN_PERCENT_CHANGE&quot;].</summary>
     [JsonPropertyName("perSeriesAligner")]
     public string? PerSeriesAligner { get; set; }
 }
 
-/// <summary>
-/// When this field is present, the &apos;MetricThreshold&apos;
-/// condition forecasts whether the time series is
-/// predicted to violate the threshold within the
-/// &apos;forecastHorizon&apos;. When this field is not set, the
-/// &apos;MetricThreshold&apos; tests the current value of the
-/// timeseries against the threshold.
-/// </summary>
+/// <summary>When this field is present, the &apos;MetricThreshold&apos; condition forecasts whether the time series is predicted to violate the threshold within the &apos;forecastHorizon&apos;. When this field is not set, the &apos;MetricThreshold&apos; tests the current value of the timeseries against the threshold.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdForecastOptions
 {
-    /// <summary>
-    /// The length of time into the future to forecast
-    /// whether a timeseries will violate the threshold.
-    /// If the predicted value is found to violate the
-    /// threshold, and the violation is observed in all
-    /// forecasts made for the Configured &apos;duration&apos;,
-    /// then the timeseries is considered to be failing.
-    /// </summary>
+    /// <summary>The length of time into the future to forecast whether a timeseries will violate the threshold. If the predicted value is found to violate the threshold, and the violation is observed in all forecasts made for the Configured &apos;duration&apos;, then the timeseries is considered to be failing.</summary>
     [JsonPropertyName("forecastHorizon")]
     public required string ForecastHorizon { get; set; }
 }
 
-/// <summary>
-/// The number/percent of time series for which
-/// the comparison must hold in order for the
-/// condition to trigger. If unspecified, then
-/// the condition will trigger if the comparison
-/// is true for any of the time series that have
-/// been identified by filter and aggregations,
-/// or by the ratio, if denominator_filter and
-/// denominator_aggregations are specified.
-/// </summary>
+/// <summary>The number/percent of time series for which the comparison must hold in order for the condition to trigger. If unspecified, then the condition will trigger if the comparison is true for any of the time series that have been identified by filter and aggregations, or by the ratio, if denominator_filter and denominator_aggregations are specified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdTrigger
 {
-    /// <summary>
-    /// The absolute number of time series
-    /// that must fail the predicate for the
-    /// condition to be triggered.
-    /// </summary>
+    /// <summary>The absolute number of time series that must fail the predicate for the condition to be triggered.</summary>
     [JsonPropertyName("count")]
-    public int? Count { get; set; }
+    public long? Count { get; set; }
 
-    /// <summary>
-    /// The percentage of time series that
-    /// must fail the predicate for the
-    /// condition to be triggered.
-    /// </summary>
+    /// <summary>The percentage of time series that must fail the predicate for the condition to be triggered.</summary>
     [JsonPropertyName("percent")]
     public double? Percent { get; set; }
 }
 
-/// <summary>
-/// A condition that compares a time series against a
-/// threshold.
-/// </summary>
+/// <summary>A condition that compares a time series against a threshold.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThreshold
 {
-    /// <summary>
-    /// Specifies the alignment of data points in
-    /// individual time series as well as how to
-    /// combine the retrieved time series together
-    /// (such as when aggregating multiple streams
-    /// on each resource to a single stream for each
-    /// resource or when aggregating streams across
-    /// all members of a group of resources).
-    /// Multiple aggregations are applied in the
-    /// order specified.This field is similar to the
-    /// one in the MetricService.ListTimeSeries
-    /// request. It is advisable to use the
-    /// ListTimeSeries method when debugging this
-    /// field.
-    /// </summary>
+    /// <summary>Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resources). Multiple aggregations are applied in the order specified.This field is similar to the one in the MetricService.ListTimeSeries request. It is advisable to use the ListTimeSeries method when debugging this field.</summary>
     [JsonPropertyName("aggregations")]
     public IList<V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdAggregations>? Aggregations { get; set; }
 
-    /// <summary>
-    /// The comparison to apply between the time
-    /// series (indicated by filter and aggregation)
-    /// and the threshold (indicated by
-    /// threshold_value). The comparison is applied
-    /// on each time series, with the time series on
-    /// the left-hand side and the threshold on the
-    /// right-hand side. Only COMPARISON_LT and
-    /// COMPARISON_GT are supported currently. Possible values: [&quot;COMPARISON_GT&quot;, &quot;COMPARISON_GE&quot;, &quot;COMPARISON_LT&quot;, &quot;COMPARISON_LE&quot;, &quot;COMPARISON_EQ&quot;, &quot;COMPARISON_NE&quot;].
-    /// </summary>
+    /// <summary>The comparison to apply between the time series (indicated by filter and aggregation) and the threshold (indicated by threshold_value). The comparison is applied on each time series, with the time series on the left-hand side and the threshold on the right-hand side. Only COMPARISON_LT and COMPARISON_GT are supported currently. Possible values: [&quot;COMPARISON_GT&quot;, &quot;COMPARISON_GE&quot;, &quot;COMPARISON_LT&quot;, &quot;COMPARISON_LE&quot;, &quot;COMPARISON_EQ&quot;, &quot;COMPARISON_NE&quot;].</summary>
     [JsonPropertyName("comparison")]
     public required string Comparison { get; set; }
 
-    /// <summary>
-    /// Specifies the alignment of data points in
-    /// individual time series selected by
-    /// denominatorFilter as well as how to combine
-    /// the retrieved time series together (such as
-    /// when aggregating multiple streams on each
-    /// resource to a single stream for each
-    /// resource or when aggregating streams across
-    /// all members of a group of resources).When
-    /// computing ratios, the aggregations and
-    /// denominator_aggregations fields must use the
-    /// same alignment period and produce time
-    /// series that have the same periodicity and
-    /// labels.This field is similar to the one in
-    /// the MetricService.ListTimeSeries request. It
-    /// is advisable to use the ListTimeSeries
-    /// method when debugging this field.
-    /// </summary>
+    /// <summary>Specifies the alignment of data points in individual time series selected by denominatorFilter as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resources).When computing ratios, the aggregations and denominator_aggregations fields must use the same alignment period and produce time series that have the same periodicity and labels.This field is similar to the one in the MetricService.ListTimeSeries request. It is advisable to use the ListTimeSeries method when debugging this field.</summary>
     [JsonPropertyName("denominatorAggregations")]
     public IList<V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdDenominatorAggregations>? DenominatorAggregations { get; set; }
 
-    /// <summary>
-    /// A filter that identifies a time series that
-    /// should be used as the denominator of a ratio
-    /// that will be compared with the threshold. If
-    /// a denominator_filter is specified, the time
-    /// series specified by the filter field will be
-    /// used as the numerator.The filter is similar
-    /// to the one that is specified in the
-    /// MetricService.ListTimeSeries request (that
-    /// call is useful to verify the time series
-    /// that will be retrieved / processed) and must
-    /// specify the metric type and optionally may
-    /// contain restrictions on resource type,
-    /// resource labels, and metric labels. This
-    /// field may not exceed 2048 Unicode characters
-    /// in length.
-    /// </summary>
+    /// <summary>A filter that identifies a time series that should be used as the denominator of a ratio that will be compared with the threshold. If a denominator_filter is specified, the time series specified by the filter field will be used as the numerator.The filter is similar to the one that is specified in the MetricService.ListTimeSeries request (that call is useful to verify the time series that will be retrieved / processed) and must specify the metric type and optionally may contain restrictions on resource type, resource labels, and metric labels. This field may not exceed 2048 Unicode characters in length.</summary>
     [JsonPropertyName("denominatorFilter")]
     public string? DenominatorFilter { get; set; }
 
-    /// <summary>
-    /// The amount of time that a time series must
-    /// violate the threshold to be considered
-    /// failing. Currently, only values that are a
-    /// multiple of a minute--e.g., 0, 60, 120, or
-    /// 300 seconds--are supported. If an invalid
-    /// value is given, an error will be returned.
-    /// When choosing a duration, it is useful to
-    /// keep in mind the frequency of the underlying
-    /// time series data (which may also be affected
-    /// by any alignments specified in the
-    /// aggregations field); a good duration is long
-    /// enough so that a single outlier does not
-    /// generate spurious alerts, but short enough
-    /// that unhealthy states are detected and
-    /// alerted on quickly.
-    /// </summary>
+    /// <summary>The amount of time that a time series must violate the threshold to be considered failing. Currently, only values that are a multiple of a minute--e.g., 0, 60, 120, or 300 seconds--are supported. If an invalid value is given, an error will be returned. When choosing a duration, it is useful to keep in mind the frequency of the underlying time series data (which may also be affected by any alignments specified in the aggregations field); a good duration is long enough so that a single outlier does not generate spurious alerts, but short enough that unhealthy states are detected and alerted on quickly.</summary>
     [JsonPropertyName("duration")]
     public required string Duration { get; set; }
 
-    /// <summary>
-    /// A condition control that determines how
-    /// metric-threshold conditions are evaluated when
-    /// data stops arriving. Possible values: [&quot;EVALUATION_MISSING_DATA_INACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_ACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_NO_OP&quot;].
-    /// </summary>
+    /// <summary>A condition control that determines how metric-threshold conditions are evaluated when data stops arriving. Possible values: [&quot;EVALUATION_MISSING_DATA_INACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_ACTIVE&quot;, &quot;EVALUATION_MISSING_DATA_NO_OP&quot;].</summary>
     [JsonPropertyName("evaluationMissingData")]
     public string? EvaluationMissingData { get; set; }
 
-    /// <summary>
-    /// A filter that identifies which time series
-    /// should be compared with the threshold.The
-    /// filter is similar to the one that is
-    /// specified in the
-    /// MetricService.ListTimeSeries request (that
-    /// call is useful to verify the time series
-    /// that will be retrieved / processed) and must
-    /// specify the metric type and optionally may
-    /// contain restrictions on resource type,
-    /// resource labels, and metric labels. This
-    /// field may not exceed 2048 Unicode characters
-    /// in length.
-    /// </summary>
+    /// <summary>A filter that identifies which time series should be compared with the threshold.The filter is similar to the one that is specified in the MetricService.ListTimeSeries request (that call is useful to verify the time series that will be retrieved / processed) and must specify the metric type and optionally may contain restrictions on resource type, resource labels, and metric labels. This field may not exceed 2048 Unicode characters in length.</summary>
     [JsonPropertyName("filter")]
     public string? Filter { get; set; }
 
-    /// <summary>
-    /// When this field is present, the &apos;MetricThreshold&apos;
-    /// condition forecasts whether the time series is
-    /// predicted to violate the threshold within the
-    /// &apos;forecastHorizon&apos;. When this field is not set, the
-    /// &apos;MetricThreshold&apos; tests the current value of the
-    /// timeseries against the threshold.
-    /// </summary>
+    /// <summary>When this field is present, the &apos;MetricThreshold&apos; condition forecasts whether the time series is predicted to violate the threshold within the &apos;forecastHorizon&apos;. When this field is not set, the &apos;MetricThreshold&apos; tests the current value of the timeseries against the threshold.</summary>
     [JsonPropertyName("forecastOptions")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdForecastOptions? ForecastOptions { get; set; }
 
-    /// <summary>
-    /// A value against which to compare the time
-    /// series.
-    /// </summary>
+    /// <summary>A value against which to compare the time series.</summary>
     [JsonPropertyName("thresholdValue")]
     public double? ThresholdValue { get; set; }
 
-    /// <summary>
-    /// The number/percent of time series for which
-    /// the comparison must hold in order for the
-    /// condition to trigger. If unspecified, then
-    /// the condition will trigger if the comparison
-    /// is true for any of the time series that have
-    /// been identified by filter and aggregations,
-    /// or by the ratio, if denominator_filter and
-    /// denominator_aggregations are specified.
-    /// </summary>
+    /// <summary>The number/percent of time series for which the comparison must hold in order for the condition to trigger. If unspecified, then the condition will trigger if the comparison is true for any of the time series that have been identified by filter and aggregations, or by the ratio, if denominator_filter and denominator_aggregations are specified.</summary>
     [JsonPropertyName("trigger")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionThresholdTrigger? Trigger { get; set; }
 }
@@ -1060,17 +484,11 @@ public partial class V1beta1MonitoringAlertPolicySpecConditionsConditionThreshol
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecConditions
 {
-    /// <summary>
-    /// A condition that checks that a time series
-    /// continues to receive new data points.
-    /// </summary>
+    /// <summary>A condition that checks that a time series continues to receive new data points.</summary>
     [JsonPropertyName("conditionAbsent")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionAbsent? ConditionAbsent { get; set; }
 
-    /// <summary>
-    /// A condition that checks for log messages matching given constraints.
-    /// If set, no other conditions can be present.
-    /// </summary>
+    /// <summary>A condition that checks for log messages matching given constraints. If set, no other conditions can be present.</summary>
     [JsonPropertyName("conditionMatchedLog")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionMatchedLog? ConditionMatchedLog { get; set; }
 
@@ -1090,89 +508,56 @@ public partial class V1beta1MonitoringAlertPolicySpecConditions
     [JsonPropertyName("conditionPrometheusQueryLanguage")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionPrometheusQueryLanguage? ConditionPrometheusQueryLanguage { get; set; }
 
-    /// <summary>
-    /// A condition that allows alerting policies to be defined using GoogleSQL.
-    /// SQL conditions examine a sliding window of logs using GoogleSQL.
-    /// Alert policies with SQL conditions may incur additional billing.
-    /// </summary>
+    /// <summary>A condition that allows alerting policies to be defined using GoogleSQL.</summary>
     [JsonPropertyName("conditionSql")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionSql? ConditionSql { get; set; }
 
-    /// <summary>
-    /// A condition that compares a time series against a
-    /// threshold.
-    /// </summary>
+    /// <summary>A condition that compares a time series against a threshold.</summary>
     [JsonPropertyName("conditionThreshold")]
     public V1beta1MonitoringAlertPolicySpecConditionsConditionThreshold? ConditionThreshold { get; set; }
 
-    /// <summary>
-    /// A short name or phrase used to identify the
-    /// condition in dashboards, notifications, and
-    /// incidents. To avoid confusion, don&apos;t use the same
-    /// display name for multiple conditions in the same
-    /// policy.
-    /// </summary>
+    /// <summary>A short name or phrase used to identify the condition in dashboards, notifications, and incidents. To avoid confusion, don&apos;t use the same display name for multiple conditions in the same policy.</summary>
     [JsonPropertyName("displayName")]
     public required string DisplayName { get; set; }
 
-    /// <summary>
-    /// The unique resource name for this condition.
-    /// Its syntax is:
-    /// projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-    /// [CONDITION_ID] is assigned by Stackdriver Monitoring when
-    /// the condition is created as part of a new or updated alerting
-    /// policy.
-    /// </summary>
+    /// <summary>The unique resource name for this condition. Its syntax is: projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID] [CONDITION_ID] is assigned by Stackdriver Monitoring when the condition is created as part of a new or updated alerting policy.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 }
 
-/// <summary>
-/// Documentation that is included with notifications and incidents related
-/// to this policy. Best practice is for the documentation to include information
-/// to help responders understand, mitigate, escalate, and correct the underlying
-/// problems detected by the alerting policy. Notification channels that have
-/// limited capacity might not show this documentation.
-/// </summary>
+/// <summary>Documentation that is included with notifications and incidents related to this policy. Best practice is for the documentation to include information to help responders understand, mitigate, escalate, and correct the underlying problems detected by the alerting policy. Notification channels that have limited capacity might not show this documentation.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecDocumentation
 {
-    /// <summary>
-    /// The text of the documentation, interpreted according to mimeType.
-    /// The content may not exceed 8,192 Unicode characters and may not
-    /// exceed more than 10,240 bytes when encoded in UTF-8 format,
-    /// whichever is smaller.
-    /// </summary>
+    /// <summary>The text of the documentation, interpreted according to mimeType. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller.</summary>
     [JsonPropertyName("content")]
     public string? Content { get; set; }
 
-    /// <summary>
-    /// The format of the content field. Presently, only the value
-    /// &quot;text/markdown&quot; is supported.
-    /// </summary>
+    /// <summary>The format of the content field. Presently, only the value &quot;text/markdown&quot; is supported.</summary>
     [JsonPropertyName("mimeType")]
     public string? MimeType { get; set; }
 }
 
-/// <summary>Identifies the notification channels to which notifications should be sent when incidents are opened or closed or when new violations occur on an already opened incident.</summary>
+/// <summary>MonitoringNotificationChannelRef is a reference to a MonitoringNotificationChannel.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpecNotificationChannels
 {
-    /// <summary>Allowed value: The `name` field of a `MonitoringNotificationChannel` resource.</summary>
+    /// <summary>A reference to an externally managed MonitoringNotificationChannel resource. Should be in the format &quot;projects/{{projectID}}/notificationChannels/{{channelID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a MonitoringNotificationChannel resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a MonitoringNotificationChannel resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>MonitoringAlertPolicySpec defines the desired state of MonitoringAlertPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicySpec
@@ -1181,38 +566,19 @@ public partial class V1beta1MonitoringAlertPolicySpec
     [JsonPropertyName("alertStrategy")]
     public V1beta1MonitoringAlertPolicySpecAlertStrategy? AlertStrategy { get; set; }
 
-    /// <summary>
-    /// How to combine the results of multiple conditions to
-    /// determine if an incident should be opened. Possible values: [&quot;AND&quot;, &quot;OR&quot;, &quot;AND_WITH_MATCHING_RESOURCE&quot;].
-    /// </summary>
+    /// <summary>How to combine the results of multiple conditions to determine if an incident should be opened. Possible values: [&quot;AND&quot;, &quot;OR&quot;, &quot;AND_WITH_MATCHING_RESOURCE&quot;].</summary>
     [JsonPropertyName("combiner")]
     public required string Combiner { get; set; }
 
-    /// <summary>
-    /// A list of conditions for the policy. The conditions are combined by
-    /// AND or OR according to the combiner field. If the combined conditions
-    /// evaluate to true, then an incident is created. A policy can have from
-    /// one to six conditions.
-    /// </summary>
+    /// <summary>A list of conditions for the policy. The conditions are combined by AND or OR according to the combiner field. If the combined conditions evaluate to true, then an incident is created. A policy can have from one to six conditions.</summary>
     [JsonPropertyName("conditions")]
     public required IList<V1beta1MonitoringAlertPolicySpecConditions> Conditions { get; set; }
 
-    /// <summary>
-    /// A short name or phrase used to identify the policy in
-    /// dashboards, notifications, and incidents. To avoid confusion, don&apos;t use
-    /// the same display name for multiple policies in the same project. The
-    /// name is limited to 512 Unicode characters.
-    /// </summary>
+    /// <summary>A short name or phrase used to identify the policy in dashboards, notifications, and incidents. To avoid confusion, don&apos;t use the same display name for multiple policies in the same project. The name is limited to 512 Unicode characters.</summary>
     [JsonPropertyName("displayName")]
     public required string DisplayName { get; set; }
 
-    /// <summary>
-    /// Documentation that is included with notifications and incidents related
-    /// to this policy. Best practice is for the documentation to include information
-    /// to help responders understand, mitigate, escalate, and correct the underlying
-    /// problems detected by the alerting policy. Notification channels that have
-    /// limited capacity might not show this documentation.
-    /// </summary>
+    /// <summary>Documentation that is included with notifications and incidents related to this policy. Best practice is for the documentation to include information to help responders understand, mitigate, escalate, and correct the underlying problems detected by the alerting policy. Notification channels that have limited capacity might not show this documentation.</summary>
     [JsonPropertyName("documentation")]
     public V1beta1MonitoringAlertPolicySpecDocumentation? Documentation { get; set; }
 
@@ -1227,11 +593,7 @@ public partial class V1beta1MonitoringAlertPolicySpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// The severity of an alert policy indicates how important
-    /// incidents generated by that policy are. The severity level will be displayed on
-    /// the Incident detail page and in notifications. Possible values: [&quot;CRITICAL&quot;, &quot;ERROR&quot;, &quot;WARNING&quot;].
-    /// </summary>
+    /// <summary>The severity of an alert policy indicates how important incidents generated by that policy are. The severity level will be displayed on the Incident detail page and in notifications. Possible values: [&quot;CRITICAL&quot;, &quot;ERROR&quot;, &quot;WARNING&quot;].</summary>
     [JsonPropertyName("severity")]
     public string? Severity { get; set; }
 }
@@ -1274,34 +636,29 @@ public partial class V1beta1MonitoringAlertPolicyStatusCreationRecord
     public string? MutatedBy { get; set; }
 }
 
+/// <summary>MonitoringAlertPolicyStatus defines the config connector machine state of MonitoringAlertPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1MonitoringAlertPolicyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the MonitoringAlertPolicy&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1MonitoringAlertPolicyStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// A read-only record of the creation of the alerting policy.
-    /// If provided in a call to create or update, this field will
-    /// be ignored.
-    /// </summary>
+    /// <summary>A read-only record of the creation of the alerting policy. If provided in a call to create or update, this field will be ignored.</summary>
     [JsonPropertyName("creationRecord")]
     public IList<V1beta1MonitoringAlertPolicyStatusCreationRecord>? CreationRecord { get; set; }
 
-    /// <summary>
-    /// The unique resource name for this policy.
-    /// Its syntax is: projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID].
-    /// </summary>
+    /// <summary>The unique resource name for this policy. Its syntax is: projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID].</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>MonitoringAlertPolicy is the Schema for the monitoring API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -1323,9 +680,11 @@ public partial class V1beta1MonitoringAlertPolicy : IKubernetesObject<V1ObjectMe
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>MonitoringAlertPolicySpec defines the desired state of MonitoringAlertPolicy</summary>
     [JsonPropertyName("spec")]
     public required V1beta1MonitoringAlertPolicySpec Spec { get; set; }
 
+    /// <summary>MonitoringAlertPolicyStatus defines the config connector machine state of MonitoringAlertPolicy</summary>
     [JsonPropertyName("status")]
     public V1beta1MonitoringAlertPolicyStatus? Status { get; set; }
 }
