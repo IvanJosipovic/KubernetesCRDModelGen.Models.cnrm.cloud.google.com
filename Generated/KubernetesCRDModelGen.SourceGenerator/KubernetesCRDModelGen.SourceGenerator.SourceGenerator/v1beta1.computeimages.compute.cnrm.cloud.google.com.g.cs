@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeImage is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,24 +36,20 @@ public partial class V1beta1ComputeImageList : IKubernetesObject<V1ListMeta>, II
     public required IList<V1beta1ComputeImage> Items { get; set; }
 }
 
-/// <summary>
-/// The source disk to create this image based on.
-/// You must provide either this property or the
-/// rawDisk.source property but not both to create an image.
-/// </summary>
+/// <summary>The source disk to create this image based on. You must provide either this property or the rawDisk.source property but not both to create an image.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecDiskRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeDisk` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeDisk resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/disks/{{diskID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/disks/{{diskID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeDisk resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeDisk resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -66,37 +63,30 @@ public partial class V1beta1ComputeImageSpecGuestOsFeatures
     public required string Type { get; set; }
 }
 
-/// <summary>
-/// The self link of the encryption key that is stored in Google Cloud
-/// KMS.
-/// </summary>
+/// <summary>The self link of the encryption key that is stored in Google Cloud KMS.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecImageEncryptionKeyKmsKeySelfLinkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `KMSCryptoKey` resource.</summary>
+    /// <summary>A reference to an externally managed KMSCryptoKey resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/keyRings/{{keyring}}/cryptoKeys/{{cryptokey}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a KMSCryptoKey resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a KMSCryptoKey resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The service account being used for the encryption request for the
-/// given KMS key. If absent, the Compute Engine default service account
-/// is used.
-/// </summary>
+/// <summary>The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecImageEncryptionKeyKmsKeyServiceAccountRef
 {
-    /// <summary>Allowed value: The `email` field of an `IAMServiceAccount` resource.</summary>
+    /// <summary>The `email` field of an `IAMServiceAccount` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -120,18 +110,11 @@ public partial class V1beta1ComputeImageSpecImageEncryptionKeyKmsKeyServiceAccou
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecImageEncryptionKey
 {
-    /// <summary>
-    /// The self link of the encryption key that is stored in Google Cloud
-    /// KMS.
-    /// </summary>
+    /// <summary>The self link of the encryption key that is stored in Google Cloud KMS.</summary>
     [JsonPropertyName("kmsKeySelfLinkRef")]
     public V1beta1ComputeImageSpecImageEncryptionKeyKmsKeySelfLinkRef? KmsKeySelfLinkRef { get; set; }
 
-    /// <summary>
-    /// The service account being used for the encryption request for the
-    /// given KMS key. If absent, the Compute Engine default service account
-    /// is used.
-    /// </summary>
+    /// <summary>The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.</summary>
     [JsonPropertyName("kmsKeyServiceAccountRef")]
     public V1beta1ComputeImageSpecImageEncryptionKeyKmsKeyServiceAccountRef? KmsKeyServiceAccountRef { get; set; }
 }
@@ -141,27 +124,15 @@ public partial class V1beta1ComputeImageSpecImageEncryptionKey
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecRawDisk
 {
-    /// <summary>
-    /// Immutable. The format used to encode and transmit the block device, which
-    /// should be TAR. This is just a container and transmission format
-    /// and not a runtime format. Provided by the client when the disk
-    /// image is created. Default value: &quot;TAR&quot; Possible values: [&quot;TAR&quot;].
-    /// </summary>
+    /// <summary>Immutable. The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created. Default value: &quot;TAR&quot; Possible values: [&quot;TAR&quot;].</summary>
     [JsonPropertyName("containerType")]
     public string? ContainerType { get; set; }
 
-    /// <summary>
-    /// Immutable. An optional SHA1 checksum of the disk image before unpackaging.
-    /// This is provided by the client when the disk image is created.
-    /// </summary>
+    /// <summary>Immutable. An optional SHA1 checksum of the disk image before unpackaging. This is provided by the client when the disk image is created.</summary>
     [JsonPropertyName("sha1")]
     public string? Sha1 { get; set; }
 
-    /// <summary>
-    /// Immutable. The full Google Cloud Storage URL where disk storage is stored
-    /// You must provide either this property or the sourceDisk property
-    /// but not both.
-    /// </summary>
+    /// <summary>Immutable. The full Google Cloud Storage URL where disk storage is stored You must provide either this property or the sourceDisk property but not both.</summary>
     [JsonPropertyName("source")]
     public required string Source { get; set; }
 }
@@ -171,15 +142,15 @@ public partial class V1beta1ComputeImageSpecRawDisk
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecSourceImageRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeImage` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeImage resource. Should be in the format &quot;projects/{{project}}/global/images/{{name}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeImage resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeImage resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -189,56 +160,41 @@ public partial class V1beta1ComputeImageSpecSourceImageRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecSourceSnapshotRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSnapshot` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSnapshot resource. Should be in the format &quot;projects/{{projectID}}/global/snapshots/{{snapshotID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/snapshots/{{snapshotID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSnapshot resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSnapshot resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeImageSpec defines the desired state of ComputeImage</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpec
 {
-    /// <summary>
-    /// Immutable. An optional description of this resource. Provide this property when
-    /// you create the resource.
-    /// </summary>
+    /// <summary>Immutable. An optional description of this resource. Provide this property when you create the resource.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// The source disk to create this image based on.
-    /// You must provide either this property or the
-    /// rawDisk.source property but not both to create an image.
-    /// </summary>
+    /// <summary>The source disk to create this image based on. You must provide either this property or the rawDisk.source property but not both to create an image.</summary>
     [JsonPropertyName("diskRef")]
     public V1beta1ComputeImageSpecDiskRef? DiskRef { get; set; }
 
     /// <summary>Immutable. Size of the image when restored onto a persistent disk (in GB).</summary>
     [JsonPropertyName("diskSizeGb")]
-    public int? DiskSizeGb { get; set; }
+    public long? DiskSizeGb { get; set; }
 
-    /// <summary>
-    /// Immutable. The name of the image family to which this image belongs. You can
-    /// create disks by specifying an image family instead of a specific
-    /// image name. The image family always returns its latest image that is
-    /// not deprecated. The name of the image family must comply with
-    /// RFC1035.
-    /// </summary>
+    /// <summary>Immutable. The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.</summary>
     [JsonPropertyName("family")]
     public string? Family { get; set; }
 
-    /// <summary>
-    /// Immutable. A list of features to enable on the guest operating system.
-    /// Applicable only for bootable images.
-    /// </summary>
+    /// <summary>Immutable. A list of features to enable on the guest operating system. Applicable only for bootable images.</summary>
     [JsonPropertyName("guestOsFeatures")]
     public IList<V1beta1ComputeImageSpecGuestOsFeatures>? GuestOsFeatures { get; set; }
 
@@ -272,11 +228,7 @@ public partial class V1beta1ComputeImageSpec
     [JsonPropertyName("sourceSnapshotRef")]
     public V1beta1ComputeImageSpecSourceSnapshotRef? SourceSnapshotRef { get; set; }
 
-    /// <summary>
-    /// Immutable. Cloud Storage bucket storage location of the image
-    /// (regional or multi-regional).
-    /// Reference link: https://cloud.google.com/compute/docs/reference/rest/v1/images.
-    /// </summary>
+    /// <summary>Immutable. Cloud Storage bucket storage location of the image (regional or multi-regional). Reference link: https://cloud.google.com/compute/docs/reference/rest/v1/images.</summary>
     [JsonPropertyName("storageLocations")]
     public IList<string>? StorageLocations { get; set; }
 }
@@ -306,18 +258,16 @@ public partial class V1beta1ComputeImageStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeImageStatus defines the config connector machine state of ComputeImage</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageStatus
 {
-    /// <summary>
-    /// Size of the image tar.gz archive stored in Google Cloud Storage (in
-    /// bytes).
-    /// </summary>
+    /// <summary>Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).</summary>
     [JsonPropertyName("archiveSizeBytes")]
-    public int? ArchiveSizeBytes { get; set; }
+    public long? ArchiveSizeBytes { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeImage&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeImageStatusConditions>? Conditions { get; set; }
 
@@ -325,21 +275,19 @@ public partial class V1beta1ComputeImageStatus
     [JsonPropertyName("creationTimestamp")]
     public string? CreationTimestamp { get; set; }
 
-    /// <summary>
-    /// The fingerprint used for optimistic locking of this resource. Used
-    /// internally during updates.
-    /// </summary>
+    /// <summary>The fingerprint used for optimistic locking of this resource. Used internally during updates.</summary>
     [JsonPropertyName("labelFingerprint")]
     public string? LabelFingerprint { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeImage is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -361,9 +309,11 @@ public partial class V1beta1ComputeImage : IKubernetesObject<V1ObjectMeta>, ISpe
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeImageSpec defines the desired state of ComputeImage</summary>
     [JsonPropertyName("spec")]
     public V1beta1ComputeImageSpec? Spec { get; set; }
 
+    /// <summary>ComputeImageStatus defines the config connector machine state of ComputeImage</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeImageStatus? Status { get; set; }
 }
