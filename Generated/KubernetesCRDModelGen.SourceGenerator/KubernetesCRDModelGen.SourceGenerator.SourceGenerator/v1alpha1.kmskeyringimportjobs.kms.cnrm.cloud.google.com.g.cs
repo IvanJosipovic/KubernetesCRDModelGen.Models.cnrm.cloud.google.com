@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.kms.cnrm.cloud.google.com;
+/// <summary>KMSKeyRingImportJob is the Schema for the kms API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -47,17 +48,11 @@ public partial class V1alpha1KMSKeyRingImportJobSpec
     [JsonPropertyName("importMethod")]
     public required string ImportMethod { get; set; }
 
-    /// <summary>
-    /// Immutable. The KeyRing that this import job belongs to.
-    /// Format: &apos; &apos;projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}&apos; &apos;.
-    /// </summary>
+    /// <summary>Immutable. The KeyRing that this import job belongs to. Format: &apos; &apos;projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}&apos; &apos;.</summary>
     [JsonPropertyName("keyRing")]
     public required string KeyRing { get; set; }
 
-    /// <summary>
-    /// Immutable. The protection level of the ImportJob. This must match the protectionLevel of the
-    /// versionTemplate on the CryptoKey you attempt to import into. Possible values: [&quot;SOFTWARE&quot;, &quot;HSM&quot;, &quot;EXTERNAL&quot;].
-    /// </summary>
+    /// <summary>Immutable. The protection level of the ImportJob. This must match the protectionLevel of the versionTemplate on the CryptoKey you attempt to import into. Possible values: [&quot;SOFTWARE&quot;, &quot;HSM&quot;, &quot;EXTERNAL&quot;].</summary>
     [JsonPropertyName("protectionLevel")]
     public required string ProtectionLevel { get; set; }
 
@@ -70,10 +65,7 @@ public partial class V1alpha1KMSKeyRingImportJobSpec
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1KMSKeyRingImportJobStatusAttestation
 {
-    /// <summary>
-    /// The attestation data provided by the HSM when the key operation was performed.
-    /// A base64-encoded string.
-    /// </summary>
+    /// <summary>The attestation data provided by the HSM when the key operation was performed. A base64-encoded string.</summary>
     [JsonPropertyName("content")]
     public string? Content { get; set; }
 
@@ -111,10 +103,7 @@ public partial class V1alpha1KMSKeyRingImportJobStatusConditions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1KMSKeyRingImportJobStatusPublicKey
 {
-    /// <summary>
-    /// The public key, encoded in PEM format. For more information, see the RFC 7468 sections
-    /// for General Considerations and Textual Encoding of Subject Public Key Info.
-    /// </summary>
+    /// <summary>The public key, encoded in PEM format. For more information, see the RFC 7468 sections for General Considerations and Textual Encoding of Subject Public Key Info.</summary>
     [JsonPropertyName("pem")]
     public string? Pem { get; set; }
 }
@@ -123,22 +112,15 @@ public partial class V1alpha1KMSKeyRingImportJobStatusPublicKey
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1KMSKeyRingImportJobStatus
 {
-    /// <summary>
-    /// Statement that was generated and signed by the key creator (for example, an HSM) at key creation time.
-    /// Use this statement to verify attributes of the key as stored on the HSM, independently of Google.
-    /// Only present if the chosen ImportMethod is one with a protection level of HSM.
-    /// </summary>
+    /// <summary>Statement that was generated and signed by the key creator (for example, an HSM) at key creation time. Use this statement to verify attributes of the key as stored on the HSM, independently of Google. Only present if the chosen ImportMethod is one with a protection level of HSM.</summary>
     [JsonPropertyName("attestation")]
     public IList<V1alpha1KMSKeyRingImportJobStatusAttestation>? Attestation { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the KMSKeyRingImportJob&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1KMSKeyRingImportJobStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// The time at which this resource is scheduled for expiration and can no longer be used.
-    /// This is in RFC3339 text format.
-    /// </summary>
+    /// <summary>The time at which this resource is scheduled for expiration and can no longer be used. This is in RFC3339 text format.</summary>
     [JsonPropertyName("expireTime")]
     public string? ExpireTime { get; set; }
 
@@ -148,7 +130,7 @@ public partial class V1alpha1KMSKeyRingImportJobStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The public key with which to wrap key material prior to import. Only returned if state is &apos;ACTIVE&apos;.</summary>
     [JsonPropertyName("publicKey")]
@@ -159,6 +141,7 @@ public partial class V1alpha1KMSKeyRingImportJobStatus
     public string? State { get; set; }
 }
 
+/// <summary>KMSKeyRingImportJob is the Schema for the kms API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
