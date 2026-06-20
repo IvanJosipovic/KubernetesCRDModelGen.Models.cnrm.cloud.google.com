@@ -78,7 +78,7 @@ public partial class V1alpha1BatchJobSpecAllocationPolicyInstancesPolicyAccelera
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BatchJobSpecAllocationPolicyInstancesPolicyBootDiskImageRef
 {
-    /// <summary>A reference to an externally managed ComputeImage resource. Should be in the format &quot;projects/{{project}}/global/images/{{name}}&quot;.</summary>
+    /// <summary>A reference to an externally managed ComputeImage resource. Should be in the format &quot;projects/{{project}}/global/images/{{name}}&quot; or &quot;projects/{{project}}/global/images/family/{{family}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -158,7 +158,7 @@ public partial class V1alpha1BatchJobSpecAllocationPolicyInstancesPolicyBootDisk
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1BatchJobSpecAllocationPolicyInstancesPolicyDisksNewDiskImageRef
 {
-    /// <summary>A reference to an externally managed ComputeImage resource. Should be in the format &quot;projects/{{project}}/global/images/{{name}}&quot;.</summary>
+    /// <summary>A reference to an externally managed ComputeImage resource. Should be in the format &quot;projects/{{project}}/global/images/{{name}}&quot; or &quot;projects/{{project}}/global/images/family/{{family}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
