@@ -130,7 +130,7 @@ public partial class V1beta1ComputeTargetHTTPSProxySpecSslPolicyRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetHTTPSProxySpecUrlMapRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeURLMap` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeURLMap resource. Should be in the format &quot;projects/{{projectID}}/global/urlMaps/{{urlMapID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/urlMaps/{{urlMapID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
