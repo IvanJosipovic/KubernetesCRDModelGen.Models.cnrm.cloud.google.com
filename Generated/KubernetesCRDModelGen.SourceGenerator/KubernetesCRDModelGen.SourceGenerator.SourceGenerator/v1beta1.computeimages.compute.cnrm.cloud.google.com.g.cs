@@ -142,7 +142,7 @@ public partial class V1beta1ComputeImageSpecRawDisk
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeImageSpecSourceImageRef
 {
-    /// <summary>A reference to an externally managed ComputeImage resource. Should be in the format &quot;projects/{{project}}/global/images/{{name}}&quot;.</summary>
+    /// <summary>A reference to an externally managed ComputeImage resource. Should be in the format &quot;projects/{{project}}/global/images/{{name}}&quot; or &quot;projects/{{project}}/global/images/family/{{family}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
