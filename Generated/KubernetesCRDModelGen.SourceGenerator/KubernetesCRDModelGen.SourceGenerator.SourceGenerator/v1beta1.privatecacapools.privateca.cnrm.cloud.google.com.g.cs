@@ -460,6 +460,10 @@ public partial class V1beta1PrivateCACAPoolStatus
     [JsonPropertyName("conditions")]
     public IList<V1beta1PrivateCACAPoolStatusConditions>? Conditions { get; set; }
 
+    /// <summary>A unique specifier for the PrivateCACAPool resource in GCP.</summary>
+    [JsonPropertyName("externalRef")]
+    public string? ExternalRef { get; set; }
+
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
     public long? ObservedGeneration { get; set; }
