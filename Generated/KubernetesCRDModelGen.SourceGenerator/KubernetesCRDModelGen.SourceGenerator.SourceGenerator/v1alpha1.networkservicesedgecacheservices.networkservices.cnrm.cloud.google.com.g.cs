@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.networkservices.cnrm.cloud.google.com;
+/// <summary>NetworkServicesEdgeCacheService is the Schema for the networkservices API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -58,15 +59,15 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecLogConfig
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -86,18 +87,18 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingHostRule
     /// 
     /// When multiple hosts are specified, hosts are matched in the following priority:
     /// 
-    ///   1. Exact domain names: &apos; &apos;www.foo.com&apos; &apos;.
-    ///   2. Suffix domain wildcards: &apos; &apos;*.foo.com&apos; &apos; or &apos; &apos;*-bar.foo.com&apos; &apos;.
-    ///   3. Prefix domain wildcards: &apos; &apos;foo.*&apos; &apos; or &apos; &apos;foo-*&apos; &apos;.
-    ///   4. Special wildcard &apos; &apos;*&apos; &apos; matching any domain.
+    /// 1. Exact domain names: &apos; &apos;www.foo.com&apos; &apos;.
+    /// 2. Suffix domain wildcards: &apos; &apos;*.foo.com&apos; &apos; or &apos; &apos;*-bar.foo.com&apos; &apos;.
+    /// 3. Prefix domain wildcards: &apos; &apos;foo.*&apos; &apos; or &apos; &apos;foo-*&apos; &apos;.
+    /// 4. Special wildcard &apos; &apos;*&apos; &apos; matching any domain.
     /// 
-    ///   Notes:
+    /// Notes:
     /// 
-    ///     The wildcard will not match the empty string. e.g. &apos; &apos;*-bar.foo.com&apos; &apos; will match &apos; &apos;baz-bar.foo.com&apos; &apos; but not &apos; &apos;-bar.foo.com&apos; &apos;. The longest wildcards match first. Only a single host in the entire service can match on &apos; &apos;*&apos; &apos;. A domain must be unique across all configured hosts within a service.
+    /// The wildcard will not match the empty string. e.g. &apos; &apos;*-bar.foo.com&apos; &apos; will match &apos; &apos;baz-bar.foo.com&apos; &apos; but not &apos; &apos;-bar.foo.com&apos; &apos;. The longest wildcards match first. Only a single host in the entire service can match on &apos; &apos;*&apos; &apos;. A domain must be unique across all configured hosts within a service.
     /// 
-    ///     Hosts are matched against the HTTP Host header, or for HTTP/2 and HTTP/3, the &quot;:authority&quot; header, from the incoming request.
+    /// Hosts are matched against the HTTP Host header, or for HTTP/2 and HTTP/3, the &quot;:authority&quot; header, from the incoming request.
     /// 
-    ///     You may specify up to 10 hosts.
+    /// You may specify up to 10 hosts.
     /// </summary>
     [JsonPropertyName("hosts")]
     public required IList<string> Hosts { get; set; }
@@ -201,10 +202,7 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingPathMatch
     [JsonPropertyName("headerName")]
     public required string HeaderName { get; set; }
 
-    /// <summary>
-    /// If set to false (default), the headerMatch is considered a match if the match criteria above are met.
-    /// If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
-    /// </summary>
+    /// <summary>If set to false (default), the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.</summary>
     [JsonPropertyName("invertMatch")]
     public bool? InvertMatch { get; set; }
 
@@ -295,17 +293,17 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingPathMatch
     /// 
     /// Only the following parameters may be copied:
     /// 
-    ///   * &apos;PathGlobs&apos;
-    ///   * &apos;paths&apos;
-    ///   * &apos;acl&apos;
-    ///   * &apos;URLPrefix&apos;
-    ///   * &apos;IPRanges&apos;
-    ///   * &apos;SessionID&apos;
-    ///   * &apos;id&apos;
-    ///   * &apos;Data&apos;
-    ///   * &apos;data&apos;
-    ///   * &apos;payload&apos;
-    ///   * &apos;Headers&apos;
+    /// * &apos;PathGlobs&apos;
+    /// * &apos;paths&apos;
+    /// * &apos;acl&apos;
+    /// * &apos;URLPrefix&apos;
+    /// * &apos;IPRanges&apos;
+    /// * &apos;SessionID&apos;
+    /// * &apos;id&apos;
+    /// * &apos;Data&apos;
+    /// * &apos;data&apos;
+    /// * &apos;payload&apos;
+    /// * &apos;Headers&apos;
     /// 
     /// You may specify up to 6 parameters to copy.  A given parameter is be copied only if the parameter exists in the verified token.  Parameter names are matched exactly as specified.  The order of the parameters does not matter.  Duplicates are not allowed.
     /// 
@@ -319,8 +317,8 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingPathMatch
     /// 
     /// The following are both valid paths to an EdgeCacheKeyset resource:
     /// 
-    ///   * &apos;projects/project/locations/global/edgeCacheKeysets/yourKeyset&apos;
-    ///   * &apos;yourKeyset&apos;
+    /// * &apos;projects/project/locations/global/edgeCacheKeysets/yourKeyset&apos;
+    /// * &apos;yourKeyset&apos;
     /// 
     /// This must be specified when the GENERATE_COOKIE or GENERATE_TOKEN_HLS_COOKIELESS actions are specified.  This field may not be specified otherwise.
     /// </summary>
@@ -395,13 +393,13 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingPathMatch
     /// Names of Cookies to include in cache keys.  The cookie name and cookie value of each cookie named will be used as part of the cache key.
     /// 
     /// Cookie names:
-    ///   - must be valid RFC 6265 &quot;cookie-name&quot; tokens
-    ///   - are case sensitive
-    ///   - cannot start with &quot;Edge-Cache-&quot; (case insensitive)
+    /// - must be valid RFC 6265 &quot;cookie-name&quot; tokens
+    /// - are case sensitive
+    /// - cannot start with &quot;Edge-Cache-&quot; (case insensitive)
     /// 
-    ///   Note that specifying several cookies, and/or cookies that have a large range of values (e.g., per-user) will dramatically impact the cache hit rate, and may result in a higher eviction rate and reduced performance.
+    /// Note that specifying several cookies, and/or cookies that have a large range of values (e.g., per-user) will dramatically impact the cache hit rate, and may result in a higher eviction rate and reduced performance.
     /// 
-    ///   You may specify up to three cookie names.
+    /// You may specify up to three cookie names.
     /// </summary>
     [JsonPropertyName("includedCookieNames")]
     public IList<string>? IncludedCookieNames { get; set; }
@@ -764,10 +762,7 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingPathMatch
     [JsonPropertyName("headerAction")]
     public V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingPathMatcherRouteRuleHeaderAction? HeaderAction { get; set; }
 
-    /// <summary>
-    /// The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates
-    /// within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
-    /// </summary>
+    /// <summary>The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.</summary>
     [JsonPropertyName("matchRule")]
     public required IList<V1alpha1NetworkServicesEdgeCacheServiceSpecRoutingPathMatcherRouteRuleMatchRule> MatchRule { get; set; }
 
@@ -927,7 +922,7 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceStatusConditions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1NetworkServicesEdgeCacheServiceStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the NetworkServicesEdgeCacheService&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1NetworkServicesEdgeCacheServiceStatusConditions>? Conditions { get; set; }
 
@@ -941,9 +936,10 @@ public partial class V1alpha1NetworkServicesEdgeCacheServiceStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>NetworkServicesEdgeCacheService is the Schema for the networkservices API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
