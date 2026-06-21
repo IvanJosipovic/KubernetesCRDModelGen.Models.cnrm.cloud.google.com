@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.bigtable.cnrm.cloud.google.com;
+/// <summary>BigtableGCPolicy is the Schema for the BigtableGCPolicy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,15 +41,15 @@ public partial class V1beta1BigtableGCPolicyList : IKubernetesObject<V1ListMeta>
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BigtableGCPolicySpecInstanceRef
 {
-    /// <summary>Allowed value: The `name` field of a `BigtableInstance` resource.</summary>
+    /// <summary>A reference to an externally managed BigtableInstance resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a BigtableInstance resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a BigtableInstance resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -59,7 +60,7 @@ public partial class V1beta1BigtableGCPolicySpecMaxAge
 {
     /// <summary>DEPRECATED. Deprecated in favor of duration. Immutable. Number of days before applying GC policy.</summary>
     [JsonPropertyName("days")]
-    public int? Days { get; set; }
+    public long? Days { get; set; }
 
     /// <summary>Immutable. Duration before applying GC policy.</summary>
     [JsonPropertyName("duration")]
@@ -72,7 +73,7 @@ public partial class V1beta1BigtableGCPolicySpecMaxVersion
 {
     /// <summary>Immutable. Number of version before applying the GC policy.</summary>
     [JsonPropertyName("number")]
-    public required int Number { get; set; }
+    public required long Number { get; set; }
 }
 
 /// <summary>The name of the table.</summary>
@@ -80,19 +81,20 @@ public partial class V1beta1BigtableGCPolicySpecMaxVersion
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BigtableGCPolicySpecTableRef
 {
-    /// <summary>Allowed value: The `name` field of a `BigtableTable` resource.</summary>
+    /// <summary>A reference to an externally managed BigtableTable resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a BigtableInstance resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a BigtableInstance resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>BigtableGCPolicySpec defines the desired state of BigtableGCPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BigtableGCPolicySpec
@@ -101,11 +103,7 @@ public partial class V1beta1BigtableGCPolicySpec
     [JsonPropertyName("columnFamily")]
     public required string ColumnFamily { get; set; }
 
-    /// <summary>
-    /// The deletion policy for the GC policy. Setting ABANDON allows the resource
-    /// 				to be abandoned rather than deleted. This is useful for GC policy as it cannot be deleted
-    /// 				in a replicated instance. Possible values are: &quot;ABANDON&quot;.
-    /// </summary>
+    /// <summary>The deletion policy for the GC policy. Setting ABANDON allows the resource to be abandoned rather than deleted. This is useful for GC policy as it cannot be deleted in a replicated instance. Possible values are: &quot;ABANDON&quot;.</summary>
     [JsonPropertyName("deletionPolicy")]
     public string? DeletionPolicy { get; set; }
 
@@ -159,19 +157,21 @@ public partial class V1beta1BigtableGCPolicyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>BigtableGCPolicyStatus defines the config connector machine state of BigtableGCPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1BigtableGCPolicyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1BigtableGCPolicyStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>BigtableGCPolicy is the Schema for the BigtableGCPolicy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -193,9 +193,11 @@ public partial class V1beta1BigtableGCPolicy : IKubernetesObject<V1ObjectMeta>, 
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>BigtableGCPolicySpec defines the desired state of BigtableGCPolicy</summary>
     [JsonPropertyName("spec")]
     public required V1beta1BigtableGCPolicySpec Spec { get; set; }
 
+    /// <summary>BigtableGCPolicyStatus defines the config connector machine state of BigtableGCPolicy</summary>
     [JsonPropertyName("status")]
     public V1beta1BigtableGCPolicyStatus? Status { get; set; }
 }
