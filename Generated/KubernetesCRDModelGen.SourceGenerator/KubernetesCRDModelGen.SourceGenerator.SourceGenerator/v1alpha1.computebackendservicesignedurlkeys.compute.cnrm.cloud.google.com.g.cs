@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeBackendServiceSignedURLKey is the Schema for the ComputeBackendServiceSignedURLKey API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,19 +36,20 @@ public partial class V1alpha1ComputeBackendServiceSignedURLKeyList : IKubernetes
     public required IList<V1alpha1ComputeBackendServiceSignedURLKey> Items { get; set; }
 }
 
+/// <summary>ComputeBackendServiceRef is a reference to a ComputeBackendService.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeBackendServiceSignedURLKeySpecBackendServiceRef
 {
-    /// <summary>Allowed value: The `name` field of a `ComputeBackendService` resource.</summary>
+    /// <summary>The value of an externally managed ComputeBackendService resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeBackendService resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeBackendService resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -76,10 +78,7 @@ public partial class V1alpha1ComputeBackendServiceSignedURLKeySpecKeyValueValueF
     public V1alpha1ComputeBackendServiceSignedURLKeySpecKeyValueValueFromSecretKeyRef? SecretKeyRef { get; set; }
 }
 
-/// <summary>
-/// Immutable. 128-bit key value used for signing the URL. The key value must be a
-/// valid RFC 4648 Section 5 base64url encoded string.
-/// </summary>
+/// <summary>Immutable. 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeBackendServiceSignedURLKeySpecKeyValue
@@ -98,30 +97,29 @@ public partial class V1alpha1ComputeBackendServiceSignedURLKeySpecKeyValue
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeBackendServiceSignedURLKeySpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeBackendServiceSignedURLKeySpec defines the desired state of ComputeBackendServiceSignedURLKey</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeBackendServiceSignedURLKeySpec
 {
+    /// <summary>ComputeBackendServiceRef is a reference to a ComputeBackendService.</summary>
     [JsonPropertyName("backendServiceRef")]
     public required V1alpha1ComputeBackendServiceSignedURLKeySpecBackendServiceRef BackendServiceRef { get; set; }
 
-    /// <summary>
-    /// Immutable. 128-bit key value used for signing the URL. The key value must be a
-    /// valid RFC 4648 Section 5 base64url encoded string.
-    /// </summary>
+    /// <summary>Immutable. 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.</summary>
     [JsonPropertyName("keyValue")]
     public required V1alpha1ComputeBackendServiceSignedURLKeySpecKeyValue KeyValue { get; set; }
 
@@ -159,19 +157,21 @@ public partial class V1alpha1ComputeBackendServiceSignedURLKeyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeBackendServiceSignedURLKeyStatus defines the config connector machine state of ComputeBackendServiceSignedURLKey</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeBackendServiceSignedURLKeyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeBackendServiceSignedURLKey&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1ComputeBackendServiceSignedURLKeyStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>ComputeBackendServiceSignedURLKey is the Schema for the ComputeBackendServiceSignedURLKey API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -193,9 +193,11 @@ public partial class V1alpha1ComputeBackendServiceSignedURLKey : IKubernetesObje
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeBackendServiceSignedURLKeySpec defines the desired state of ComputeBackendServiceSignedURLKey</summary>
     [JsonPropertyName("spec")]
     public required V1alpha1ComputeBackendServiceSignedURLKeySpec Spec { get; set; }
 
+    /// <summary>ComputeBackendServiceSignedURLKeyStatus defines the config connector machine state of ComputeBackendServiceSignedURLKey</summary>
     [JsonPropertyName("status")]
     public V1alpha1ComputeBackendServiceSignedURLKeyStatus? Status { get; set; }
 }
