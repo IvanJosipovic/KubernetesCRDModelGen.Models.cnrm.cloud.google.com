@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeAutoscaler is the Schema for the ComputeAutoscaler API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,11 +36,7 @@ public partial class V1alpha1ComputeAutoscalerList : IKubernetesObject<V1ListMet
     public required IList<V1alpha1ComputeAutoscaler> Items { get; set; }
 }
 
-/// <summary>
-/// Defines the CPU utilization policy that allows the autoscaler to
-/// scale based on the average CPU utilization of a managed instance
-/// group.
-/// </summary>
+/// <summary>Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyCpuUtilization
@@ -78,11 +75,7 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyCpuUtilizatio
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyLoadBalancingUtilization
 {
-    /// <summary>
-    /// Fraction of backend capacity utilization (set in HTTP(s) load
-    /// balancing configuration) that autoscaler should maintain. Must
-    /// be a positive float value. If not defined, the default is 0.8.
-    /// </summary>
+    /// <summary>Fraction of backend capacity utilization (set in HTTP(s) load balancing configuration) that autoscaler should maintain. Must be a positive float value. If not defined, the default is 0.8.</summary>
     [JsonPropertyName("target")]
     public required double Target { get; set; }
 }
@@ -172,10 +165,7 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyMetric
     [JsonPropertyName("target")]
     public double? Target { get; set; }
 
-    /// <summary>
-    /// Defines how target utilization value is expressed for a
-    /// Stackdriver Monitoring metric. Possible values: [&quot;GAUGE&quot;, &quot;DELTA_PER_SECOND&quot;, &quot;DELTA_PER_MINUTE&quot;].
-    /// </summary>
+    /// <summary>Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Possible values: [&quot;GAUGE&quot;, &quot;DELTA_PER_SECOND&quot;, &quot;DELTA_PER_MINUTE&quot;].</summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
 }
@@ -185,25 +175,16 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyMetric
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleDownControlMaxScaledDownReplicas
 {
-    /// <summary>
-    /// Specifies a fixed number of VM instances. This must be a positive
-    /// integer.
-    /// </summary>
+    /// <summary>Specifies a fixed number of VM instances. This must be a positive integer.</summary>
     [JsonPropertyName("fixed")]
-    public int? Fixed { get; set; }
+    public long? Fixed { get; set; }
 
-    /// <summary>
-    /// Specifies a percentage of instances between 0 to 100%, inclusive.
-    /// For example, specify 80 for 80%.
-    /// </summary>
+    /// <summary>Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.</summary>
     [JsonPropertyName("percent")]
-    public int? Percent { get; set; }
+    public long? Percent { get; set; }
 }
 
-/// <summary>
-/// Defines scale down controls to reduce the risk of response latency
-/// and outages due to abrupt scale-in events.
-/// </summary>
+/// <summary>Defines scale down controls to reduce the risk of response latency and outages due to abrupt scale-in events.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleDownControl
@@ -212,12 +193,9 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleDownCont
     [JsonPropertyName("maxScaledDownReplicas")]
     public V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleDownControlMaxScaledDownReplicas? MaxScaledDownReplicas { get; set; }
 
-    /// <summary>
-    /// How long back autoscaling should look when computing recommendations
-    /// to include directives regarding slower scale down, as described above.
-    /// </summary>
+    /// <summary>How long back autoscaling should look when computing recommendations to include directives regarding slower scale down, as described above.</summary>
     [JsonPropertyName("timeWindowSec")]
-    public int? TimeWindowSec { get; set; }
+    public long? TimeWindowSec { get; set; }
 }
 
 /// <summary>A nested object resource.</summary>
@@ -225,25 +203,16 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleDownCont
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleInControlMaxScaledInReplicas
 {
-    /// <summary>
-    /// Specifies a fixed number of VM instances. This must be a positive
-    /// integer.
-    /// </summary>
+    /// <summary>Specifies a fixed number of VM instances. This must be a positive integer.</summary>
     [JsonPropertyName("fixed")]
-    public int? Fixed { get; set; }
+    public long? Fixed { get; set; }
 
-    /// <summary>
-    /// Specifies a percentage of instances between 0 to 100%, inclusive.
-    /// For example, specify 80 for 80%.
-    /// </summary>
+    /// <summary>Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.</summary>
     [JsonPropertyName("percent")]
-    public int? Percent { get; set; }
+    public long? Percent { get; set; }
 }
 
-/// <summary>
-/// Defines scale in controls to reduce the risk of response latency
-/// and outages due to abrupt scale-in events.
-/// </summary>
+/// <summary>Defines scale in controls to reduce the risk of response latency and outages due to abrupt scale-in events.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleInControl
@@ -252,12 +221,9 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleInContro
     [JsonPropertyName("maxScaledInReplicas")]
     public V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleInControlMaxScaledInReplicas? MaxScaledInReplicas { get; set; }
 
-    /// <summary>
-    /// How long back autoscaling should look when computing recommendations
-    /// to include directives regarding slower scale down, as described above.
-    /// </summary>
+    /// <summary>How long back autoscaling should look when computing recommendations to include directives regarding slower scale down, as described above.</summary>
     [JsonPropertyName("timeWindowSec")]
-    public int? TimeWindowSec { get; set; }
+    public long? TimeWindowSec { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -274,11 +240,11 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScalingSchedu
 
     /// <summary>The duration of time intervals (in seconds) for which this scaling schedule will be running. The minimum allowed value is 300.</summary>
     [JsonPropertyName("durationSec")]
-    public required int DurationSec { get; set; }
+    public required long DurationSec { get; set; }
 
     /// <summary>Minimum number of VM instances that autoscaler will recommend in time intervals starting according to schedule.</summary>
     [JsonPropertyName("minRequiredReplicas")]
-    public required int MinRequiredReplicas { get; set; }
+    public required long MinRequiredReplicas { get; set; }
 
     [JsonPropertyName("name")]
     public required string Name { get; set; }
@@ -317,13 +283,9 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicy
     /// and time the startup process.
     /// </summary>
     [JsonPropertyName("cooldownPeriod")]
-    public int? CooldownPeriod { get; set; }
+    public long? CooldownPeriod { get; set; }
 
-    /// <summary>
-    /// Defines the CPU utilization policy that allows the autoscaler to
-    /// scale based on the average CPU utilization of a managed instance
-    /// group.
-    /// </summary>
+    /// <summary>Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.</summary>
     [JsonPropertyName("cpuUtilization")]
     public V1alpha1ComputeAutoscalerSpecAutoscalingPolicyCpuUtilization? CpuUtilization { get; set; }
 
@@ -331,43 +293,27 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicy
     [JsonPropertyName("loadBalancingUtilization")]
     public V1alpha1ComputeAutoscalerSpecAutoscalingPolicyLoadBalancingUtilization? LoadBalancingUtilization { get; set; }
 
-    /// <summary>
-    /// The maximum number of instances that the autoscaler can scale up
-    /// to. This is required when creating or updating an autoscaler. The
-    /// maximum number of replicas should not be lower than minimal number
-    /// of replicas.
-    /// </summary>
+    /// <summary>The maximum number of instances that the autoscaler can scale up to. This is required when creating or updating an autoscaler. The maximum number of replicas should not be lower than minimal number of replicas.</summary>
     [JsonPropertyName("maxReplicas")]
-    public required int MaxReplicas { get; set; }
+    public required long MaxReplicas { get; set; }
 
     /// <summary>Configuration parameters of autoscaling based on a custom metric.</summary>
     [JsonPropertyName("metric")]
     public IList<V1alpha1ComputeAutoscalerSpecAutoscalingPolicyMetric>? Metric { get; set; }
 
-    /// <summary>
-    /// The minimum number of replicas that the autoscaler can scale down
-    /// to. This cannot be less than 0. If not provided, autoscaler will
-    /// choose a default value depending on maximum number of instances
-    /// allowed.
-    /// </summary>
+    /// <summary>The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.</summary>
     [JsonPropertyName("minReplicas")]
-    public required int MinReplicas { get; set; }
+    public required long MinReplicas { get; set; }
 
     /// <summary>Defines operating mode for this policy.</summary>
     [JsonPropertyName("mode")]
     public string? Mode { get; set; }
 
-    /// <summary>
-    /// Defines scale down controls to reduce the risk of response latency
-    /// and outages due to abrupt scale-in events.
-    /// </summary>
+    /// <summary>Defines scale down controls to reduce the risk of response latency and outages due to abrupt scale-in events.</summary>
     [JsonPropertyName("scaleDownControl")]
     public V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleDownControl? ScaleDownControl { get; set; }
 
-    /// <summary>
-    /// Defines scale in controls to reduce the risk of response latency
-    /// and outages due to abrupt scale-in events.
-    /// </summary>
+    /// <summary>Defines scale in controls to reduce the risk of response latency and outages due to abrupt scale-in events.</summary>
     [JsonPropertyName("scaleInControl")]
     public V1alpha1ComputeAutoscalerSpecAutoscalingPolicyScaleInControl? ScaleInControl { get; set; }
 
@@ -381,15 +327,15 @@ public partial class V1alpha1ComputeAutoscalerSpecAutoscalingPolicy
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -411,6 +357,7 @@ public partial class V1alpha1ComputeAutoscalerSpecTargetRef
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeAutoscalerSpec defines the desired state of ComputeAutoscaler</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerSpec
@@ -471,11 +418,12 @@ public partial class V1alpha1ComputeAutoscalerStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeAutoscalerStatus defines the config connector machine state of ComputeAutoscaler</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeAutoscalerStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1ComputeAutoscalerStatusConditions>? Conditions { get; set; }
 
@@ -485,12 +433,13 @@ public partial class V1alpha1ComputeAutoscalerStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeAutoscaler is the Schema for the ComputeAutoscaler API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -512,9 +461,11 @@ public partial class V1alpha1ComputeAutoscaler : IKubernetesObject<V1ObjectMeta>
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeAutoscalerSpec defines the desired state of ComputeAutoscaler</summary>
     [JsonPropertyName("spec")]
     public required V1alpha1ComputeAutoscalerSpec Spec { get; set; }
 
+    /// <summary>ComputeAutoscalerStatus defines the config connector machine state of ComputeAutoscaler</summary>
     [JsonPropertyName("status")]
     public V1alpha1ComputeAutoscalerStatus? Status { get; set; }
 }
