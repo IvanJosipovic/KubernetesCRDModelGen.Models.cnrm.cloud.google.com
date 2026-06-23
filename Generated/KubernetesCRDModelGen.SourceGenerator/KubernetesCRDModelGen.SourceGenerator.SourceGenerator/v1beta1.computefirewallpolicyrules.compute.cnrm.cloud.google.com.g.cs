@@ -41,15 +41,15 @@ public partial class V1beta1ComputeFirewallPolicyRuleList : IKubernetesObject<V1
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeFirewallPolicyRuleSpecFirewallPolicyRef
 {
-    /// <summary>A reference to an externally managed ComputeFirewallPolicy resource. Should be in the format `locations/global/firewallPolicies/{{firewallPolicyID}}`.</summary>
+    /// <summary>A reference to an externally managed ComputeFirewallPolicy resource. Should be in the format &quot;locations/global/firewallPolicies/{{firewallPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The `name` field of a `ComputeFirewallPolicy` resource.</summary>
+    /// <summary>The name of a ComputeFirewallPolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The `namespace` field of a `ComputeFirewallPolicy` resource.</summary>
+    /// <summary>The namespace of a ComputeFirewallPolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
