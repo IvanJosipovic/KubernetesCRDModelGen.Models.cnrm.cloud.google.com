@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.recaptchaenterprise.cnrm.cloud.google.com;
+/// <summary>RecaptchaEnterpriseKey is the Schema for the RecaptchaEnterpriseKey API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -63,24 +64,20 @@ public partial class V1beta1RecaptchaEnterpriseKeySpecIosSettings
     public IList<string>? AllowedBundleIds { get; set; }
 }
 
-/// <summary>Immutable. The Project that this resource belongs to.</summary>
+/// <summary>The project that this resource belongs to.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1RecaptchaEnterpriseKeySpecProjectRef
 {
-    /// <summary>
-    /// The project for the resource
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).
-    /// </summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -139,6 +136,7 @@ public partial class V1beta1RecaptchaEnterpriseKeySpecWebSettings
     public required string IntegrationType { get; set; }
 }
 
+/// <summary>RecaptchaEnterpriseKeySpec defines the desired state of RecaptchaEnterpriseKey</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1RecaptchaEnterpriseKeySpec
@@ -155,11 +153,11 @@ public partial class V1beta1RecaptchaEnterpriseKeySpec
     [JsonPropertyName("iosSettings")]
     public V1beta1RecaptchaEnterpriseKeySpecIosSettings? IosSettings { get; set; }
 
-    /// <summary>Immutable. The Project that this resource belongs to.</summary>
+    /// <summary>The project that this resource belongs to.</summary>
     [JsonPropertyName("projectRef")]
     public required V1beta1RecaptchaEnterpriseKeySpecProjectRef ProjectRef { get; set; }
 
-    /// <summary>Immutable. Optional. The service-generated name of the resource. Used for acquisition only. Leave unset to create a new resource.</summary>
+    /// <summary>The RecaptchaEnterpriseKey name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
@@ -201,11 +199,12 @@ public partial class V1beta1RecaptchaEnterpriseKeyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>RecaptchaEnterpriseKeyStatus defines the config connector machine state of RecaptchaEnterpriseKey</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1RecaptchaEnterpriseKeyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1RecaptchaEnterpriseKeyStatusConditions>? Conditions { get; set; }
 
@@ -215,9 +214,10 @@ public partial class V1beta1RecaptchaEnterpriseKeyStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>RecaptchaEnterpriseKey is the Schema for the RecaptchaEnterpriseKey API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -239,9 +239,11 @@ public partial class V1beta1RecaptchaEnterpriseKey : IKubernetesObject<V1ObjectM
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>RecaptchaEnterpriseKeySpec defines the desired state of RecaptchaEnterpriseKey</summary>
     [JsonPropertyName("spec")]
     public required V1beta1RecaptchaEnterpriseKeySpec Spec { get; set; }
 
+    /// <summary>RecaptchaEnterpriseKeyStatus defines the config connector machine state of RecaptchaEnterpriseKey</summary>
     [JsonPropertyName("status")]
     public V1beta1RecaptchaEnterpriseKeyStatus? Status { get; set; }
 }
