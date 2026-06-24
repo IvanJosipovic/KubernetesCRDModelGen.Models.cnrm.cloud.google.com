@@ -116,11 +116,12 @@ public partial class V1beta1ComputeSecurityPolicySpecAdvancedOptionsConfig
     public IList<string>? UserIpRequestHeaders { get; set; }
 }
 
+/// <summary>RecaptchaEnterpriseKeyRef is a reference to a GCP RecaptchaEnterpriseKey.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSecurityPolicySpecRecaptchaOptionsConfigRedirectSiteKeyRef
 {
-    /// <summary>The value of an externally managed RecaptchaEnterpriseKey resource.</summary>
+    /// <summary>A reference to an externally managed RecaptchaEnterpriseKey resource. Should be in the format &quot;projects/{{projectID}}/keys/{{keyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -137,6 +138,7 @@ public partial class V1beta1ComputeSecurityPolicySpecRecaptchaOptionsConfigRedir
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSecurityPolicySpecRecaptchaOptionsConfig
 {
+    /// <summary>RecaptchaEnterpriseKeyRef is a reference to a GCP RecaptchaEnterpriseKey.</summary>
     [JsonPropertyName("redirectSiteKeyRef")]
     public required V1beta1ComputeSecurityPolicySpecRecaptchaOptionsConfigRedirectSiteKeyRef RedirectSiteKeyRef { get; set; }
 }
