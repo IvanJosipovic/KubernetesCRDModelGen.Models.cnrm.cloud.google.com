@@ -77,15 +77,15 @@ public partial class V1beta1ComputeRouterInterfaceSpecPrivateIpAddressRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterInterfaceSpecRedundantInterfaceRef
 {
-    /// <summary>Allowed value: The `name` field of a `ComputeRouterInterface` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeRouterInterface resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/routers/{{routerID}}/interfaces/{{interfaceID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeRouterInterface resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeRouterInterface resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
