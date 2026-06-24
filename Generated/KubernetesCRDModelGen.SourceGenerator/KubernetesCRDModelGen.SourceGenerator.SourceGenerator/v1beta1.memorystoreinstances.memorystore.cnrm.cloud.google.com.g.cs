@@ -119,6 +119,33 @@ public partial class V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfi
     public V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfigPrimaryInstanceInstanceRef? InstanceRef { get; set; }
 }
 
+/// <summary>Optional. The full resource path of the remote instance.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfigSecondaryInstancesInstanceRef
+{
+    /// <summary>A reference to an externally managed MemorystoreInstance resource. Should be in the format &quot;projects/{{projectID}}/locations/{{location}}/instances/{{instanceID}}&quot;.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>The name of a MemorystoreInstance resource.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The namespace of a MemorystoreInstance resource.</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfigSecondaryInstances
+{
+    /// <summary>Optional. The full resource path of the remote instance.</summary>
+    [JsonPropertyName("instanceRef")]
+    public V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfigSecondaryInstancesInstanceRef? InstanceRef { get; set; }
+}
+
 /// <summary>Optional. The cross instance replication config for the instance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -136,6 +163,15 @@ public partial class V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfi
     /// </summary>
     [JsonPropertyName("primaryInstance")]
     public V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfigPrimaryInstance? PrimaryInstance { get; set; }
+
+    /// <summary>
+    /// Optional. List of secondary instances that are replicating from this
+    ///  primary instance.
+    /// 
+    ///  This field is only set for a primary instance.
+    /// </summary>
+    [JsonPropertyName("secondaryInstances")]
+    public IList<V1beta1MemorystoreInstanceSpecCrossInstanceReplicationConfigSecondaryInstances>? SecondaryInstances { get; set; }
 }
 
 /// <summary>Required. The network where the PSC endpoints are created, in the form of projects/{project_id}/global/networks/{network_id}.</summary>
@@ -565,6 +601,10 @@ public partial class V1beta1MemorystoreInstanceStatusObservedStateCrossInstanceR
     /// </summary>
     [JsonPropertyName("secondaryInstances")]
     public IList<V1beta1MemorystoreInstanceStatusObservedStateCrossInstanceReplicationConfigSecondaryInstances>? SecondaryInstances { get; set; }
+
+    /// <summary>Output only. The last time cross instance replication config was updated.</summary>
+    [JsonPropertyName("updateTime")]
+    public string? UpdateTime { get; set; }
 }
 
 /// <summary>Output only. Encryption information for the instance.</summary>
