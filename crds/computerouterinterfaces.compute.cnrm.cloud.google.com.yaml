@@ -15,6 +15,7 @@ spec:
     kind: ComputeRouterInterface
     categories:
     - gcp
+    listKind: ComputeRouterInterfaceList
     plural: computerouterinterfaces
     shortNames:
     - gcpcomputerouterinterface
@@ -42,18 +43,21 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: ComputeRouterInterface is the Schema for the ComputeRouterInterface API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: ComputeRouterInterfaceSpec defines the desired state of ComputeRouterInterface
             properties:
               interconnectAttachmentRef:
+                description: The InterconnectAttachment this interface belongs to.
                 oneOf:
                 - not:
                     required:
@@ -83,6 +87,7 @@ spec:
                 description: Immutable. The IP address and range of the interface. The IP range must be in the RFC3927 link-local IP space. Changing this forces a new interface to be created.
                 type: string
               privateIpAddressRef:
+                description: The private IP address assigned to this interface.
                 oneOf:
                 - not:
                     required:
@@ -99,13 +104,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `address` field of a `ComputeAddress` resource.'
+                    description: A reference to an externally managed ComputeAddress resource. Should be in the format "projects/{{projectID}}/global/addresses/{{addressID}}" or "projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}".
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a ComputeAddress resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace of a ComputeAddress resource.
                     type: string
                 type: object
               redundantInterfaceRef:
@@ -142,6 +147,7 @@ spec:
                 description: Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.
                 type: string
               routerRef:
+                description: The router this interface belongs to.
                 oneOf:
                 - not:
                     required:
@@ -158,16 +164,17 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `name` field of a `ComputeRouter` resource.'
+                    description: A reference to an externally managed ComputeRouter resource. Should be in the format "projects/{{projectID}}/regions/{{region}}/routers/{{routerID}}".
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a ComputeRouter resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace of a ComputeRouter resource.
                     type: string
                 type: object
               subnetworkRef:
+                description: The subnetwork this interface belongs to.
                 oneOf:
                 - not:
                     required:
@@ -184,16 +191,17 @@ spec:
                   - external
                 properties:
                   external:
-                    description: 'Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.'
+                    description: A reference to an externally managed ComputeSubnetwork resource. Should be in the format "projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}".
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a ComputeSubnetwork resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace of a ComputeSubnetwork resource.
                     type: string
                 type: object
               vpnTunnelRef:
+                description: The VPNTunnel this interface belongs to.
                 oneOf:
                 - not:
                     required:
@@ -224,9 +232,10 @@ spec:
             - routerRef
             type: object
           status:
+            description: ComputeRouterInterfaceStatus defines the config connector machine state of ComputeRouterInterface
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the object's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -248,6 +257,7 @@ spec:
                 type: array
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
             type: object
         required:
@@ -257,9 +267,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
