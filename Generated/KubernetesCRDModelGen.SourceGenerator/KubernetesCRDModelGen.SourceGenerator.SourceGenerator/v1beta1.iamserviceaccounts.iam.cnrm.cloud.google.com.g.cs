@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.iam.cnrm.cloud.google.com;
+/// <summary>IAMServiceAccount is the Schema for the IAMServiceAccount API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,6 +36,7 @@ public partial class V1beta1IAMServiceAccountList : IKubernetesObject<V1ListMeta
     public required IList<V1beta1IAMServiceAccount> Items { get; set; }
 }
 
+/// <summary>IAMServiceAccountSpec defines the desired state of IAMServiceAccount</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAMServiceAccountSpec
@@ -81,11 +83,12 @@ public partial class V1beta1IAMServiceAccountStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>IAMServiceAccountStatus defines the config connector machine state of IAMServiceAccount</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1IAMServiceAccountStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the IAMServiceAccount&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1IAMServiceAccountStatusConditions>? Conditions { get; set; }
 
@@ -103,13 +106,14 @@ public partial class V1beta1IAMServiceAccountStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The unique id of the service account.</summary>
     [JsonPropertyName("uniqueId")]
     public string? UniqueId { get; set; }
 }
 
+/// <summary>IAMServiceAccount is the Schema for the IAMServiceAccount API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -131,9 +135,11 @@ public partial class V1beta1IAMServiceAccount : IKubernetesObject<V1ObjectMeta>,
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>IAMServiceAccountSpec defines the desired state of IAMServiceAccount</summary>
     [JsonPropertyName("spec")]
     public V1beta1IAMServiceAccountSpec? Spec { get; set; }
 
+    /// <summary>IAMServiceAccountStatus defines the config connector machine state of IAMServiceAccount</summary>
     [JsonPropertyName("status")]
     public V1beta1IAMServiceAccountStatus? Status { get; set; }
 }
