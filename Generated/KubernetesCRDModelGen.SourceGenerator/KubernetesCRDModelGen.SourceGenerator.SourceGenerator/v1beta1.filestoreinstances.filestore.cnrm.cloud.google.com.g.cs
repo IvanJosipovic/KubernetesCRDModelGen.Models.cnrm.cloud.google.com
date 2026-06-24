@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.filestore.cnrm.cloud.google.com;
+/// <summary>FilestoreInstance is the Schema for the FilestoreInstance API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -64,19 +65,15 @@ public partial class V1beta1FilestoreInstanceSpecFileSharesNfsExportOptions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FilestoreInstanceSpecFileSharesSourceBackupRef
 {
-    /// <summary>
-    /// The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`, that this file share has been restored from.
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `FilestoreBackup` resource (format: `projects/{{project}}/locations/{{location}}/backups/{{name}}`).
-    /// </summary>
+    /// <summary>A reference to an externally managed FilestoreBackup resource. Allowed value: string of the format `projects/{{project}}/locations/{{location}}/backups/{{value}}`, where {{value}} is the `name` field of a `FilestoreBackup` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a FilestoreBackup resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a FilestoreBackup resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -106,19 +103,15 @@ public partial class V1beta1FilestoreInstanceSpecFileShares
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FilestoreInstanceSpecNetworksNetworkRef
 {
-    /// <summary>
-    /// The name of the Google Compute Engine [VPC network](https://cloud.google.com/vpc/docs/vpc) to which the instance is connected.
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `ComputeNetwork` resource (format: `projects/{{project}}/global/networks/{{name}}`).
-    /// </summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -149,23 +142,20 @@ public partial class V1beta1FilestoreInstanceSpecNetworks
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FilestoreInstanceSpecProjectRef
 {
-    /// <summary>
-    /// The project for the resource
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).
-    /// </summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>FilestoreInstanceSpec defines the desired state of FilestoreInstance</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FilestoreInstanceSpec
@@ -224,11 +214,12 @@ public partial class V1beta1FilestoreInstanceStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>FilestoreInstanceStatus defines the config connector machine state of FilestoreInstance</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1FilestoreInstanceStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the FilestoreInstance&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1FilestoreInstanceStatusConditions>? Conditions { get; set; }
 
@@ -242,7 +233,7 @@ public partial class V1beta1FilestoreInstanceStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>Output only. The instance state. Possible values: STATE_UNSPECIFIED, CREATING, READY, REPAIRING, DELETING, ERROR</summary>
     [JsonPropertyName("state")]
@@ -253,6 +244,7 @@ public partial class V1beta1FilestoreInstanceStatus
     public string? StatusMessage { get; set; }
 }
 
+/// <summary>FilestoreInstance is the Schema for the FilestoreInstance API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -274,9 +266,11 @@ public partial class V1beta1FilestoreInstance : IKubernetesObject<V1ObjectMeta>,
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>FilestoreInstanceSpec defines the desired state of FilestoreInstance</summary>
     [JsonPropertyName("spec")]
     public required V1beta1FilestoreInstanceSpec Spec { get; set; }
 
+    /// <summary>FilestoreInstanceStatus defines the config connector machine state of FilestoreInstance</summary>
     [JsonPropertyName("status")]
     public V1beta1FilestoreInstanceStatus? Status { get; set; }
 }
