@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeRouterNAT is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,23 +36,20 @@ public partial class V1beta1ComputeRouterNATList : IKubernetesObject<V1ListMeta>
     public required IList<V1beta1ComputeRouterNAT> Items { get; set; }
 }
 
-/// <summary>
-/// A list of IP resources to be drained. These IPs must be valid
-/// static external IPs that have been assigned to the NAT.
-/// </summary>
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecDrainNatIps
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeAddress` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -70,20 +68,20 @@ public partial class V1beta1ComputeRouterNATSpecLogConfig
     public required string Filter { get; set; }
 }
 
-/// <summary>NAT IPs. Only valid if natIpAllocateOption is set to MANUAL_ONLY.</summary>
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecNatIps
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeAddress` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -93,60 +91,51 @@ public partial class V1beta1ComputeRouterNATSpecNatIps
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecRouterRef
 {
-    /// <summary>Allowed value: The `name` field of a `ComputeRouter` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeRouter resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/routers/{{routerID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeRouter resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeRouter resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// A list of URLs of the IP resources used for this NAT rule. These IP
-/// addresses must be valid static external IP addresses assigned to the
-/// project. This field is used for public NAT.
-/// </summary>
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecRulesActionSourceNatActiveIpsRefs
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeAddress` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// A list of URLs of the IP resources to be drained. These IPs must be
-/// valid static external IPs that have been assigned to the NAT. These
-/// IPs should be used for updating/patching a NAT rule only. This field
-/// is used for public NAT.
-/// </summary>
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecRulesActionSourceNatDrainIpsRefs
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeAddress` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -156,9 +145,11 @@ public partial class V1beta1ComputeRouterNATSpecRulesActionSourceNatDrainIpsRefs
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecRulesAction
 {
+    /// <summary>A list of URLs of the IP resources used for this NAT rule. These IP addresses must be valid static external IP addresses assigned to the project. This field is used for public NAT.</summary>
     [JsonPropertyName("sourceNatActiveIpsRefs")]
     public IList<V1beta1ComputeRouterNATSpecRulesActionSourceNatActiveIpsRefs>? SourceNatActiveIpsRefs { get; set; }
 
+    /// <summary>A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT rule only. This field is used for public NAT.</summary>
     [JsonPropertyName("sourceNatDrainIpsRefs")]
     public IList<V1beta1ComputeRouterNATSpecRulesActionSourceNatDrainIpsRefs>? SourceNatDrainIpsRefs { get; set; }
 }
@@ -192,12 +183,9 @@ public partial class V1beta1ComputeRouterNATSpecRules
     [JsonPropertyName("match")]
     public required string Match { get; set; }
 
-    /// <summary>
-    /// An integer uniquely identifying a rule in the list.
-    /// The rule number must be a positive value between 0 and 65000, and must be unique among rules within a NAT.
-    /// </summary>
+    /// <summary>An integer uniquely identifying a rule in the list. The rule number must be a positive value between 0 and 65000, and must be unique among rules within a NAT.</summary>
     [JsonPropertyName("ruleNumber")]
-    public required int RuleNumber { get; set; }
+    public required long RuleNumber { get; set; }
 }
 
 /// <summary>The subnetwork to NAT.</summary>
@@ -205,15 +193,15 @@ public partial class V1beta1ComputeRouterNATSpecRules
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecSubnetworkSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -222,21 +210,11 @@ public partial class V1beta1ComputeRouterNATSpecSubnetworkSubnetworkRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpecSubnetwork
 {
-    /// <summary>
-    /// List of the secondary ranges of the subnetwork that are allowed
-    /// to use NAT. This can be populated only if
-    /// &apos;LIST_OF_SECONDARY_IP_RANGES&apos; is one of the values in
-    /// sourceIpRangesToNat.
-    /// </summary>
+    /// <summary>List of the secondary ranges of the subnetwork that are allowed to use NAT. This can be populated only if &apos;LIST_OF_SECONDARY_IP_RANGES&apos; is one of the values in sourceIpRangesToNat.</summary>
     [JsonPropertyName("secondaryIpRangeNames")]
     public IList<string>? SecondaryIpRangeNames { get; set; }
 
-    /// <summary>
-    /// List of options for which source IPs in the subnetwork
-    /// should have NAT enabled. Supported values include:
-    /// &apos;ALL_IP_RANGES&apos;, &apos;LIST_OF_SECONDARY_IP_RANGES&apos;,
-    /// &apos;PRIMARY_IP_RANGE&apos;.
-    /// </summary>
+    /// <summary>List of options for which source IPs in the subnetwork should have NAT enabled. Supported values include: &apos;ALL_IP_RANGES&apos;, &apos;LIST_OF_SECONDARY_IP_RANGES&apos;, &apos;PRIMARY_IP_RANGE&apos;.</summary>
     [JsonPropertyName("sourceIpRangesToNat")]
     public required IList<string> SourceIpRangesToNat { get; set; }
 
@@ -245,10 +223,12 @@ public partial class V1beta1ComputeRouterNATSpecSubnetwork
     public required V1beta1ComputeRouterNATSpecSubnetworkSubnetworkRef SubnetworkRef { get; set; }
 }
 
+/// <summary>ComputeRouterNATSpec defines the desired state of ComputeRouterNAT</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATSpec
 {
+    /// <summary>A list of IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT.</summary>
     [JsonPropertyName("drainNatIps")]
     public IList<V1beta1ComputeRouterNATSpecDrainNatIps>? DrainNatIps { get; set; }
 
@@ -264,40 +244,31 @@ public partial class V1beta1ComputeRouterNATSpec
     [JsonPropertyName("enableDynamicPortAllocation")]
     public bool? EnableDynamicPortAllocation { get; set; }
 
-    /// <summary>
-    /// Specifies if endpoint independent mapping is enabled. This is enabled by default. For more information
-    /// see the [official documentation](https://cloud.google.com/nat/docs/overview#specs-rfcs).
-    /// </summary>
+    /// <summary>Specifies if endpoint independent mapping is enabled. This is enabled by default. For more information see the [official documentation](https://cloud.google.com/nat/docs/overview#specs-rfcs).</summary>
     [JsonPropertyName("enableEndpointIndependentMapping")]
     public bool? EnableEndpointIndependentMapping { get; set; }
 
     /// <summary>Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.</summary>
     [JsonPropertyName("icmpIdleTimeoutSec")]
-    public int? IcmpIdleTimeoutSec { get; set; }
+    public long? IcmpIdleTimeoutSec { get; set; }
 
     /// <summary>Configuration for logging on NAT.</summary>
     [JsonPropertyName("logConfig")]
     public V1beta1ComputeRouterNATSpecLogConfig? LogConfig { get; set; }
 
-    /// <summary>
-    /// Maximum number of ports allocated to a VM from this NAT.
-    /// This field can only be set when enableDynamicPortAllocation is enabled.
-    /// </summary>
+    /// <summary>Maximum number of ports allocated to a VM from this NAT. This field can only be set when enableDynamicPortAllocation is enabled.</summary>
     [JsonPropertyName("maxPortsPerVm")]
-    public int? MaxPortsPerVm { get; set; }
+    public long? MaxPortsPerVm { get; set; }
 
     /// <summary>Minimum number of ports allocated to a VM from this NAT.</summary>
     [JsonPropertyName("minPortsPerVm")]
-    public int? MinPortsPerVm { get; set; }
+    public long? MinPortsPerVm { get; set; }
 
-    /// <summary>
-    /// How external IPs should be allocated for this NAT. Valid values are
-    /// &apos;AUTO_ONLY&apos; for only allowing NAT IPs allocated by Google Cloud
-    /// Platform, or &apos;MANUAL_ONLY&apos; for only user-allocated NAT IP addresses. Possible values: [&quot;MANUAL_ONLY&quot;, &quot;AUTO_ONLY&quot;].
-    /// </summary>
+    /// <summary>How external IPs should be allocated for this NAT. Valid values are &apos;AUTO_ONLY&apos; for only allowing NAT IPs allocated by Google Cloud Platform, or &apos;MANUAL_ONLY&apos; for only user-allocated NAT IP addresses. Possible values: [&quot;MANUAL_ONLY&quot;, &quot;AUTO_ONLY&quot;].</summary>
     [JsonPropertyName("natIpAllocateOption")]
     public required string NatIpAllocateOption { get; set; }
 
+    /// <summary>NAT IPs. Only valid if natIpAllocateOption is set to MANUAL_ONLY.</summary>
     [JsonPropertyName("natIps")]
     public IList<V1beta1ComputeRouterNATSpecNatIps>? NatIps { get; set; }
 
@@ -317,52 +288,29 @@ public partial class V1beta1ComputeRouterNATSpec
     [JsonPropertyName("rules")]
     public IList<V1beta1ComputeRouterNATSpecRules>? Rules { get; set; }
 
-    /// <summary>
-    /// How NAT should be configured per Subnetwork.
-    /// If &apos;ALL_SUBNETWORKS_ALL_IP_RANGES&apos;, all of the
-    /// IP ranges in every Subnetwork are allowed to Nat.
-    /// If &apos;ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES&apos;, all of the primary IP
-    /// ranges in every Subnetwork are allowed to Nat.
-    /// &apos;LIST_OF_SUBNETWORKS&apos;: A list of Subnetworks are allowed to Nat
-    /// (specified in the field subnetwork below). Note that if this field
-    /// contains ALL_SUBNETWORKS_ALL_IP_RANGES or
-    /// ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any
-    /// other RouterNat section in any Router for this network in this region. Possible values: [&quot;ALL_SUBNETWORKS_ALL_IP_RANGES&quot;, &quot;ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES&quot;, &quot;LIST_OF_SUBNETWORKS&quot;].
-    /// </summary>
+    /// <summary>How NAT should be configured per Subnetwork. If &apos;ALL_SUBNETWORKS_ALL_IP_RANGES&apos;, all of the IP ranges in every Subnetwork are allowed to Nat. If &apos;ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES&apos;, all of the primary IP ranges in every Subnetwork are allowed to Nat. &apos;LIST_OF_SUBNETWORKS&apos;: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below). Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other RouterNat section in any Router for this network in this region. Possible values: [&quot;ALL_SUBNETWORKS_ALL_IP_RANGES&quot;, &quot;ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES&quot;, &quot;LIST_OF_SUBNETWORKS&quot;].</summary>
     [JsonPropertyName("sourceSubnetworkIpRangesToNat")]
     public required string SourceSubnetworkIpRangesToNat { get; set; }
 
-    /// <summary>
-    /// One or more subnetwork NAT configurations. Only used if
-    /// &apos;source_subnetwork_ip_ranges_to_nat&apos; is set to &apos;LIST_OF_SUBNETWORKS&apos;.
-    /// </summary>
+    /// <summary>One or more subnetwork NAT configurations. Only used if &apos;source_subnetwork_ip_ranges_to_nat&apos; is set to &apos;LIST_OF_SUBNETWORKS&apos;.</summary>
     [JsonPropertyName("subnetwork")]
     public IList<V1beta1ComputeRouterNATSpecSubnetwork>? Subnetwork { get; set; }
 
-    /// <summary>
-    /// Timeout (in seconds) for TCP established connections.
-    /// Defaults to 1200s if not set.
-    /// </summary>
+    /// <summary>Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set.</summary>
     [JsonPropertyName("tcpEstablishedIdleTimeoutSec")]
-    public int? TcpEstablishedIdleTimeoutSec { get; set; }
+    public long? TcpEstablishedIdleTimeoutSec { get; set; }
 
-    /// <summary>
-    /// Timeout (in seconds) for TCP connections that are in TIME_WAIT state.
-    /// Defaults to 120s if not set.
-    /// </summary>
+    /// <summary>Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.</summary>
     [JsonPropertyName("tcpTimeWaitTimeoutSec")]
-    public int? TcpTimeWaitTimeoutSec { get; set; }
+    public long? TcpTimeWaitTimeoutSec { get; set; }
 
-    /// <summary>
-    /// Timeout (in seconds) for TCP transitory connections.
-    /// Defaults to 30s if not set.
-    /// </summary>
+    /// <summary>Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set.</summary>
     [JsonPropertyName("tcpTransitoryIdleTimeoutSec")]
-    public int? TcpTransitoryIdleTimeoutSec { get; set; }
+    public long? TcpTransitoryIdleTimeoutSec { get; set; }
 
     /// <summary>Timeout (in seconds) for UDP connections. Defaults to 30s if not set.</summary>
     [JsonPropertyName("udpIdleTimeoutSec")]
-    public int? UdpIdleTimeoutSec { get; set; }
+    public long? UdpIdleTimeoutSec { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -390,19 +338,21 @@ public partial class V1beta1ComputeRouterNATStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeRouterNATStatus defines the config connector machine state of ComputeRouterNAT</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeRouterNATStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeRouterNAT&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeRouterNATStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 }
 
+/// <summary>ComputeRouterNAT is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -424,9 +374,11 @@ public partial class V1beta1ComputeRouterNAT : IKubernetesObject<V1ObjectMeta>, 
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeRouterNATSpec defines the desired state of ComputeRouterNAT</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeRouterNATSpec Spec { get; set; }
 
+    /// <summary>ComputeRouterNATStatus defines the config connector machine state of ComputeRouterNAT</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeRouterNATStatus? Status { get; set; }
 }
