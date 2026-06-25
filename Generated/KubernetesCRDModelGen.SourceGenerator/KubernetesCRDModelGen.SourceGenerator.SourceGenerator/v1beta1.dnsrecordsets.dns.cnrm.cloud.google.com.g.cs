@@ -162,9 +162,13 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargets
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargets
 {
+    /// <summary>The Internet IP addresses to be health checked.</summary>
+    [JsonPropertyName("externalEndpoints")]
+    public IList<string>? ExternalEndpoints { get; set; }
+
     /// <summary>The list of internal load balancers to health check.</summary>
     [JsonPropertyName("internalLoadBalancers")]
-    public required IList<V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancers> InternalLoadBalancers { get; set; }
+    public IList<V1beta1DNSRecordSetSpecRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancers>? InternalLoadBalancers { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -202,6 +206,23 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyGeo
 
     [JsonPropertyName("rrdatasRefs")]
     public IList<V1beta1DNSRecordSetSpecRoutingPolicyGeoRrdatasRefs>? RrdatasRefs { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1DNSRecordSetSpecRoutingPolicyHealthCheckRef
+{
+    /// <summary>The compute health check name, when not managed by Config Connector.</summary>
+    [JsonPropertyName("external")]
+    public string? External { get; set; }
+
+    /// <summary>Name of a ComputeHealthCheck object.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>Namespace of a ComputeHealthCheck object</summary>
+    [JsonPropertyName("namespace")]
+    public string? Namespace { get; set; }
 }
 
 /// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
@@ -312,9 +333,13 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoH
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets
 {
+    /// <summary>The Internet IP addresses to be health checked.</summary>
+    [JsonPropertyName("externalEndpoints")]
+    public IList<string>? ExternalEndpoints { get; set; }
+
     /// <summary>The list of internal load balancers to health check.</summary>
     [JsonPropertyName("internalLoadBalancers")]
-    public required IList<V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancers> InternalLoadBalancers { get; set; }
+    public IList<V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancers>? InternalLoadBalancers { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -462,9 +487,13 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimaryInt
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimary
 {
+    /// <summary>The Internet IP addresses to be health checked.</summary>
+    [JsonPropertyName("externalEndpoints")]
+    public IList<string>? ExternalEndpoints { get; set; }
+
     /// <summary>The list of internal load balancers to health check.</summary>
     [JsonPropertyName("internalLoadBalancers")]
-    public required IList<V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancers> InternalLoadBalancers { get; set; }
+    public IList<V1beta1DNSRecordSetSpecRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancers>? InternalLoadBalancers { get; set; }
 }
 
 /// <summary>The configuration for a primary-backup policy with global to regional failover. Queries are responded to with the global primary targets, but if none of the primary targets are healthy, then we fallback to a regional failover policy.</summary>
@@ -597,9 +626,13 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargets
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargets
 {
+    /// <summary>The Internet IP addresses to be health checked.</summary>
+    [JsonPropertyName("externalEndpoints")]
+    public IList<string>? ExternalEndpoints { get; set; }
+
     /// <summary>The list of internal load balancers to health check.</summary>
     [JsonPropertyName("internalLoadBalancers")]
-    public required IList<V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancers> InternalLoadBalancers { get; set; }
+    public IList<V1beta1DNSRecordSetSpecRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancers>? InternalLoadBalancers { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -651,6 +684,9 @@ public partial class V1beta1DNSRecordSetSpecRoutingPolicy
     /// <summary>The configuration for Geo location based routing policy.</summary>
     [JsonPropertyName("geo")]
     public IList<V1beta1DNSRecordSetSpecRoutingPolicyGeo>? Geo { get; set; }
+
+    [JsonPropertyName("healthCheckRef")]
+    public V1beta1DNSRecordSetSpecRoutingPolicyHealthCheckRef? HealthCheckRef { get; set; }
 
     /// <summary>The configuration for a primary-backup policy with global to regional failover. Queries are responded to with the global primary targets, but if none of the primary targets are healthy, then we fallback to a regional failover policy.</summary>
     [JsonPropertyName("primaryBackup")]
