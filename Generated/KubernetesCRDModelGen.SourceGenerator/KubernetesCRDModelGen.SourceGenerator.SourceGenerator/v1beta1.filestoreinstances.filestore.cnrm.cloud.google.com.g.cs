@@ -231,6 +231,10 @@ public partial class V1beta1FilestoreInstanceStatus
     [JsonPropertyName("etag")]
     public string? Etag { get; set; }
 
+    /// <summary>A unique specifier for the FilestoreInstance resource in GCP.</summary>
+    [JsonPropertyName("externalRef")]
+    public string? ExternalRef { get; set; }
+
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
     public long? ObservedGeneration { get; set; }
