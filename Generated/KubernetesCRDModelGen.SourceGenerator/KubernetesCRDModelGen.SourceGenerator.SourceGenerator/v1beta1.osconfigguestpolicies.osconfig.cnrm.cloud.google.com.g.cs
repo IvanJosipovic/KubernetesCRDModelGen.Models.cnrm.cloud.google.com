@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.osconfig.cnrm.cloud.google.com;
+/// <summary>OSConfigGuestPolicy is the Schema for the OSConfigGuestPolicy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -44,19 +45,20 @@ public partial class V1beta1OSConfigGuestPolicySpecAssignmentGroupLabels
     public IDictionary<string, string>? Labels { get; set; }
 }
 
+/// <summary>InstanceRef is a reference to a ComputeInstance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpecAssignmentInstances
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeInstance` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeInstance resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/instances/{{instanceID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeInstance resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeInstance resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -78,7 +80,18 @@ public partial class V1beta1OSConfigGuestPolicySpecAssignmentOsTypes
     public string? OsVersion { get; set; }
 }
 
-/// <summary>Specifies the VMs that are assigned this policy. This allows you to target sets or groups of VMs by different parameters such as labels, names, OS, or zones. Empty assignments will target ALL VMs underneath this policy. Conflict Management Policies that exist higher up in the resource hierarchy (closer to the Org) will override those lower down if there is a conflict. At the same level in the resource hierarchy (ie. within a project), the service will prevent the creation of multiple policies that conflict with each other. If there are multiple policies that specify the same config (eg. package, software recipe, repository, etc.), the service will ensure that no VM could potentially receive instructions from both policies. To create multiple policies that specify different versions of a package or different configs for different Operating Systems, each policy must be mutually exclusive in their targeting according to labels, OS, or other criteria. Different configs are identified for conflicts in different ways. Packages are identified by their name and the package manager(s) they target. Package repositories are identified by their unique id where applicable. Some package managers don&apos;t have a unique identifier for repositories and where that&apos;s the case, no uniqueness is validated by the service. Note that if OS Inventory is disabled, a VM will not be assigned a policy that targets by OS because the service will see this VM&apos;s OS as unknown.</summary>
+/// <summary>
+/// Required. Specifies the VM instances that are assigned to this policy. This allows
+/// you to target sets or groups of VM instances by different parameters such
+/// as labels, names, OS, or zones.
+/// 
+/// If left empty, all VM instances underneath this policy are targeted.
+/// 
+/// At the same level in the resource hierarchy (that is within a project), the
+/// service prevents the creation of multiple policies that conflict with
+/// each other. For more information, see how the service [handles assignment
+/// conflicts](/compute/docs/os-config-management/create-guest-policy#handle-conflicts).
+/// </summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpecAssignment
@@ -87,18 +100,47 @@ public partial class V1beta1OSConfigGuestPolicySpecAssignment
     [JsonPropertyName("groupLabels")]
     public IList<V1beta1OSConfigGuestPolicySpecAssignmentGroupLabels>? GroupLabels { get; set; }
 
-    /// <summary>Targets VM instances whose name starts with one of these prefixes. Like labels, this is another way to group VM instances when targeting configs, for example prefix=&quot;prod-&quot;. Only supported for project-level policies.</summary>
+    /// <summary>
+    /// Targets VM instances whose name starts with one of these prefixes.
+    /// 
+    /// Like labels, this is another way to group VM instances when targeting
+    /// configs, for example prefix=&quot;prod-&quot;.
+    /// 
+    /// Only supported for project-level policies.
+    /// </summary>
     [JsonPropertyName("instanceNamePrefixes")]
     public IList<string>? InstanceNamePrefixes { get; set; }
 
+    /// <summary>
+    /// Targets any of the instances specified. Instances are specified by their
+    /// URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
+    /// 
+    /// Instance targeting is uncommon and is supported to facilitate the
+    /// management of changes by the instance or to target specific VM instances
+    /// for development and testing.
+    /// 
+    /// Only supported for project-level policies and must reference instances
+    /// within this project.
+    /// </summary>
     [JsonPropertyName("instances")]
     public IList<V1beta1OSConfigGuestPolicySpecAssignmentInstances>? Instances { get; set; }
 
-    /// <summary>Targets VM instances matching at least one of the following OS types. VM instances must match all supplied criteria for a given OsType to be included.</summary>
+    /// <summary>
+    /// Targets VM instances matching at least one of the following OS types.
+    /// 
+    /// VM instances must match all supplied criteria for a given OsType to be
+    /// included.
+    /// </summary>
     [JsonPropertyName("osTypes")]
     public IList<V1beta1OSConfigGuestPolicySpecAssignmentOsTypes>? OsTypes { get; set; }
 
-    /// <summary>Targets instances in any of these zones. Leave empty to target instances in any zone. Zonal targeting is uncommon and is supported to facilitate the management of changes by zone.</summary>
+    /// <summary>
+    /// Targets instances in any of these zones. Leave empty to target instances
+    /// in any zone.
+    /// 
+    /// Zonal targeting is uncommon and is supported to facilitate the management
+    /// of changes by zone.
+    /// </summary>
     [JsonPropertyName("zones")]
     public IList<string>? Zones { get; set; }
 }
@@ -108,7 +150,7 @@ public partial class V1beta1OSConfigGuestPolicySpecAssignment
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpecPackageRepositoriesApt
 {
-    /// <summary>Type of archive files in this repository. The default behavior is DEB. Possible values: ARCHIVE_TYPE_UNSPECIFIED, DEB, DEB_SRC</summary>
+    /// <summary>Type of archive files in this repository. The default behavior is DEB.</summary>
     [JsonPropertyName("archiveType")]
     public string? ArchiveType { get; set; }
 
@@ -212,11 +254,21 @@ public partial class V1beta1OSConfigGuestPolicySpecPackageRepositories
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpecPackages
 {
-    /// <summary>The desired_state the agent should maintain for this package. The default is to ensure the package is installed. Possible values: DESIRED_STATE_UNSPECIFIED, INSTALLED, REMOVED</summary>
+    /// <summary>The desired_state the agent should maintain for this package. The default is to ensure the package is installed.</summary>
     [JsonPropertyName("desiredState")]
     public string? DesiredState { get; set; }
 
-    /// <summary>Type of package manager that can be used to install this package. If a system does not have the package manager, the package is not installed or removed no error message is returned. By default, or if you specify `ANY`, the agent attempts to install and remove this package using the default package manager. This is useful when creating a policy that applies to different types of systems. The default behavior is ANY. Possible values: MANAGER_UNSPECIFIED, ANY, APT, YUM, ZYPPER, GOO</summary>
+    /// <summary>
+    /// Type of package manager that can be used to install this package.
+    /// If a system does not have the package manager, the package is not
+    /// installed or removed no error message is returned. By default,
+    /// or if you specify `ANY`,
+    /// the agent attempts to install and remove this package using the default
+    /// package manager. This is useful when creating a policy that applies to
+    /// different types of systems.
+    /// 
+    /// The default behavior is ANY.
+    /// </summary>
     [JsonPropertyName("manager")]
     public string? Manager { get; set; }
 
@@ -225,23 +277,20 @@ public partial class V1beta1OSConfigGuestPolicySpecPackages
     public string? Name { get; set; }
 }
 
+/// <summary>Bucket of the Google Cloud Storage object. Given an example URL: `https://storage.googleapis.com/my-bucket/foo/bar#1234567` this value would be `my-bucket`.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpecRecipesArtifactsGcsBucketRef
 {
-    /// <summary>
-    /// Bucket of the Google Cloud Storage object. Given an example URL: `https://storage.googleapis.com/my-bucket/foo/bar#1234567` this value would be `my-bucket`.
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `StorageBucket` resource (format: `{{name}}`).
-    /// </summary>
+    /// <summary>A reference to an externally managed StorageBucket resource. Should be in the format &quot;projects/{{projectID}}/buckets/{{bucketID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a StorageBucket resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a StorageBucket resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -251,6 +300,7 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesArtifactsGcsBucketRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpecRecipesArtifactsGcs
 {
+    /// <summary>Bucket of the Google Cloud Storage object. Given an example URL: `https://storage.googleapis.com/my-bucket/foo/bar#1234567` this value would be `my-bucket`.</summary>
     [JsonPropertyName("bucketRef")]
     public V1beta1OSConfigGuestPolicySpecRecipesArtifactsGcsBucketRef? BucketRef { get; set; }
 
@@ -272,7 +322,7 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesArtifactsRemote
     [JsonPropertyName("checksum")]
     public string? Checksum { get; set; }
 
-    /// <summary>URI from which to fetch the object. It should contain both the protocol and path following the format: {protocol}://{location}.</summary>
+    /// <summary>URI from which to fetch the object. It should contain both the protocol and path following the format {protocol}://{location}.</summary>
     [JsonPropertyName("uri")]
     public string? Uri { get; set; }
 }
@@ -281,7 +331,14 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesArtifactsRemote
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpecRecipesArtifacts
 {
-    /// <summary>Defaults to false. When false, recipes are subject to validations based on the artifact type: Remote: A checksum must be specified, and only protocols with transport-layer security are permitted. GCS: An object generation number must be specified.</summary>
+    /// <summary>
+    /// Defaults to false. When false, recipes are subject to validations
+    /// based on the artifact type:
+    /// 
+    /// Remote: A checksum must be specified, and only protocols with
+    /// transport-layer security are permitted.
+    /// GCS: An object generation number must be specified.
+    /// </summary>
     [JsonPropertyName("allowInsecure")]
     public bool? AllowInsecure { get; set; }
 
@@ -307,11 +364,11 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesInstallStepsArchiveExt
     [JsonPropertyName("artifactId")]
     public string? ArtifactId { get; set; }
 
-    /// <summary>Directory to extract archive to. Defaults to `/` on Linux or `C:` on Windows.</summary>
+    /// <summary>Directory to extract archive to. Defaults to `/` on Linux or `C:\` on Windows.</summary>
     [JsonPropertyName("destination")]
     public string? Destination { get; set; }
 
-    /// <summary>Required. The type of the archive to extract. Possible values: TYPE_UNSPECIFIED, VALIDATION, DESIRED_STATE_CHECK, DESIRED_STATE_ENFORCEMENT, DESIRED_STATE_CHECK_POST_ENFORCEMENT</summary>
+    /// <summary>Required. The type of the archive to extract.</summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
 }
@@ -343,7 +400,21 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesInstallStepsFileCopy
     [JsonPropertyName("overwrite")]
     public bool? Overwrite { get; set; }
 
-    /// <summary>Consists of three octal digits which represent, in order, the permissions of the owner, group, and other users for the file (similarly to the numeric mode used in the linux chmod utility). Each digit represents a three bit number with the 4 bit corresponding to the read permissions, the 2 bit corresponds to the write bit, and the one bit corresponds to the execute permission. Default behavior is 755. Below are some examples of permissions and their associated values: read, write, and execute: 7 read and execute: 5 read and write: 6 read only: 4</summary>
+    /// <summary>
+    /// Consists of three octal digits which represent, in
+    /// order, the permissions of the owner, group, and other users for the
+    /// file (similarly to the numeric mode used in the linux chmod utility).
+    /// Each digit represents a three bit number with the 4 bit
+    /// corresponding to the read permissions, the 2 bit corresponds to the
+    /// write bit, and the one bit corresponds to the execute permission.
+    /// Default behavior is 755.
+    /// 
+    /// Below are some examples of permissions and their associated values:
+    /// read, write, and execute: 7
+    /// read and execute: 5
+    /// read and write: 6
+    /// read only: 4
+    /// </summary>
     [JsonPropertyName("permissions")]
     public string? Permissions { get; set; }
 }
@@ -407,7 +478,7 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesInstallStepsScriptRun
     [JsonPropertyName("allowedExitCodes")]
     public IList<long>? AllowedExitCodes { get; set; }
 
-    /// <summary>The script interpreter to use to run the script. If no interpreter is specified the script is executed directly, which likely only succeed for scripts with [shebang lines](https://en.wikipedia.org/wiki/Shebang_(Unix)). Possible values: INTERPRETER_UNSPECIFIED, NONE, SHELL, POWERSHELL</summary>
+    /// <summary>The script interpreter to use to run the script. If no interpreter is specified the script is executed directly, which likely only succeed for scripts with [shebang lines](https://en.wikipedia.org/wiki/Shebang_\(Unix\)).</summary>
     [JsonPropertyName("interpreter")]
     public string? Interpreter { get; set; }
 
@@ -458,11 +529,11 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesUpdateStepsArchiveExtr
     [JsonPropertyName("artifactId")]
     public string? ArtifactId { get; set; }
 
-    /// <summary>Directory to extract archive to. Defaults to `/` on Linux or `C:` on Windows.</summary>
+    /// <summary>Directory to extract archive to. Defaults to `/` on Linux or `C:\` on Windows.</summary>
     [JsonPropertyName("destination")]
     public string? Destination { get; set; }
 
-    /// <summary>Required. The type of the archive to extract. Possible values: TYPE_UNSPECIFIED, VALIDATION, DESIRED_STATE_CHECK, DESIRED_STATE_ENFORCEMENT, DESIRED_STATE_CHECK_POST_ENFORCEMENT</summary>
+    /// <summary>Required. The type of the archive to extract.</summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
 }
@@ -494,7 +565,21 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesUpdateStepsFileCopy
     [JsonPropertyName("overwrite")]
     public bool? Overwrite { get; set; }
 
-    /// <summary>Consists of three octal digits which represent, in order, the permissions of the owner, group, and other users for the file (similarly to the numeric mode used in the linux chmod utility). Each digit represents a three bit number with the 4 bit corresponding to the read permissions, the 2 bit corresponds to the write bit, and the one bit corresponds to the execute permission. Default behavior is 755. Below are some examples of permissions and their associated values: read, write, and execute: 7 read and execute: 5 read and write: 6 read only: 4</summary>
+    /// <summary>
+    /// Consists of three octal digits which represent, in
+    /// order, the permissions of the owner, group, and other users for the
+    /// file (similarly to the numeric mode used in the linux chmod utility).
+    /// Each digit represents a three bit number with the 4 bit
+    /// corresponding to the read permissions, the 2 bit corresponds to the
+    /// write bit, and the one bit corresponds to the execute permission.
+    /// Default behavior is 755.
+    /// 
+    /// Below are some examples of permissions and their associated values:
+    /// read, write, and execute: 7
+    /// read and execute: 5
+    /// read and write: 6
+    /// read only: 4
+    /// </summary>
     [JsonPropertyName("permissions")]
     public string? Permissions { get; set; }
 }
@@ -558,7 +643,7 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipesUpdateStepsScriptRun
     [JsonPropertyName("allowedExitCodes")]
     public IList<long>? AllowedExitCodes { get; set; }
 
-    /// <summary>The script interpreter to use to run the script. If no interpreter is specified the script is executed directly, which likely only succeed for scripts with [shebang lines](https://en.wikipedia.org/wiki/Shebang_(Unix)). Possible values: INTERPRETER_UNSPECIFIED, NONE, SHELL, POWERSHELL</summary>
+    /// <summary>The script interpreter to use to run the script. If no interpreter is specified the script is executed directly, which likely only succeed for scripts with [shebang lines](https://en.wikipedia.org/wiki/Shebang_\(Unix\)).</summary>
     [JsonPropertyName("interpreter")]
     public string? Interpreter { get; set; }
 
@@ -608,7 +693,18 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipes
     [JsonPropertyName("artifacts")]
     public IList<V1beta1OSConfigGuestPolicySpecRecipesArtifacts>? Artifacts { get; set; }
 
-    /// <summary>Default is INSTALLED. The desired state the agent should maintain for this recipe. INSTALLED: The software recipe is installed on the instance but won&apos;t be updated to new versions. UPDATED: The software recipe is installed on the instance. The recipe is updated to a higher version, if a higher version of the recipe is assigned to this instance. REMOVE: Remove is unsupported for software recipes and attempts to create or update a recipe to the REMOVE state is rejected. Possible values: DESIRED_STATE_UNSPECIFIED, INSTALLED, REMOVED</summary>
+    /// <summary>
+    /// Default is INSTALLED. The desired state the agent should maintain for this
+    /// recipe.
+    /// 
+    /// INSTALLED: The software recipe is installed on the instance but
+    /// won&apos;t be updated to new versions.
+    /// UPDATED: The software recipe is installed on the instance. The recipe is
+    /// updated to a higher version, if a higher version of the recipe is
+    /// assigned to this instance.
+    /// REMOVE: Remove is unsupported for software recipes and attempts to
+    /// create or update a recipe to the REMOVE state is rejected.
+    /// </summary>
     [JsonPropertyName("desiredState")]
     public string? DesiredState { get; set; }
 
@@ -616,7 +712,15 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipes
     [JsonPropertyName("installSteps")]
     public IList<V1beta1OSConfigGuestPolicySpecRecipesInstallSteps>? InstallSteps { get; set; }
 
-    /// <summary>Required. Unique identifier for the recipe. Only one recipe with a given name is installed on an instance. Names are also used to identify resources which helps to determine whether guest policies have conflicts. This means that requests to create multiple recipes with the same name and version are rejected since they could potentially have conflicting assignments.</summary>
+    /// <summary>
+    /// Required. Unique identifier for the recipe. Only one recipe with a given name is
+    /// installed on an instance.
+    /// 
+    /// Names are also used to identify resources which helps to determine whether
+    /// guest policies have conflicts. This means that requests to create multiple
+    /// recipes with the same name and version are rejected since they
+    /// could potentially have conflicting assignments.
+    /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
@@ -629,27 +733,39 @@ public partial class V1beta1OSConfigGuestPolicySpecRecipes
     public string? Version { get; set; }
 }
 
+/// <summary>OSConfigGuestPolicySpec defines the desired state of OSConfigGuestPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicySpec
 {
-    /// <summary>Specifies the VMs that are assigned this policy. This allows you to target sets or groups of VMs by different parameters such as labels, names, OS, or zones. Empty assignments will target ALL VMs underneath this policy. Conflict Management Policies that exist higher up in the resource hierarchy (closer to the Org) will override those lower down if there is a conflict. At the same level in the resource hierarchy (ie. within a project), the service will prevent the creation of multiple policies that conflict with each other. If there are multiple policies that specify the same config (eg. package, software recipe, repository, etc.), the service will ensure that no VM could potentially receive instructions from both policies. To create multiple policies that specify different versions of a package or different configs for different Operating Systems, each policy must be mutually exclusive in their targeting according to labels, OS, or other criteria. Different configs are identified for conflicts in different ways. Packages are identified by their name and the package manager(s) they target. Package repositories are identified by their unique id where applicable. Some package managers don&apos;t have a unique identifier for repositories and where that&apos;s the case, no uniqueness is validated by the service. Note that if OS Inventory is disabled, a VM will not be assigned a policy that targets by OS because the service will see this VM&apos;s OS as unknown.</summary>
+    /// <summary>
+    /// Required. Specifies the VM instances that are assigned to this policy. This allows
+    /// you to target sets or groups of VM instances by different parameters such
+    /// as labels, names, OS, or zones.
+    /// 
+    /// If left empty, all VM instances underneath this policy are targeted.
+    /// 
+    /// At the same level in the resource hierarchy (that is within a project), the
+    /// service prevents the creation of multiple policies that conflict with
+    /// each other. For more information, see how the service [handles assignment
+    /// conflicts](/compute/docs/os-config-management/create-guest-policy#handle-conflicts).
+    /// </summary>
     [JsonPropertyName("assignment")]
     public V1beta1OSConfigGuestPolicySpecAssignment? Assignment { get; set; }
 
-    /// <summary>Description of the GuestPolicy. Length of the description is limited to 1024 characters.</summary>
+    /// <summary>Description of the guest policy. Length of the description is limited to 1024 characters.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>List of package repository configurations assigned to the VM instance.</summary>
+    /// <summary>A list of package repositories to configure on the VM instance. This is done before any other configs are applied so they can use these repos. Package repositories are only configured if the corresponding package manager(s) are available.</summary>
     [JsonPropertyName("packageRepositories")]
     public IList<V1beta1OSConfigGuestPolicySpecPackageRepositories>? PackageRepositories { get; set; }
 
-    /// <summary>List of package configurations assigned to the VM instance.</summary>
+    /// <summary>The software packages to be managed by this policy.</summary>
     [JsonPropertyName("packages")]
     public IList<V1beta1OSConfigGuestPolicySpecPackages>? Packages { get; set; }
 
-    /// <summary>Optional. A list of Recipes to install on the VM.</summary>
+    /// <summary>A list of Recipes to install on the VM instance.</summary>
     [JsonPropertyName("recipes")]
     public IList<V1beta1OSConfigGuestPolicySpecRecipes>? Recipes { get; set; }
 
@@ -683,11 +799,12 @@ public partial class V1beta1OSConfigGuestPolicyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>OSConfigGuestPolicyStatus defines the config connector machine state of OSConfigGuestPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1OSConfigGuestPolicyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1OSConfigGuestPolicyStatusConditions>? Conditions { get; set; }
 
@@ -701,13 +818,14 @@ public partial class V1beta1OSConfigGuestPolicyStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>Output only. Last time this GuestPolicy was updated.</summary>
     [JsonPropertyName("updateTime")]
     public DateTime? UpdateTime { get; set; }
 }
 
+/// <summary>OSConfigGuestPolicy is the Schema for the OSConfigGuestPolicy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -729,9 +847,11 @@ public partial class V1beta1OSConfigGuestPolicy : IKubernetesObject<V1ObjectMeta
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>OSConfigGuestPolicySpec defines the desired state of OSConfigGuestPolicy</summary>
     [JsonPropertyName("spec")]
     public V1beta1OSConfigGuestPolicySpec? Spec { get; set; }
 
+    /// <summary>OSConfigGuestPolicyStatus defines the config connector machine state of OSConfigGuestPolicy</summary>
     [JsonPropertyName("status")]
     public V1beta1OSConfigGuestPolicyStatus? Status { get; set; }
 }

@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeNetworkEndpointGroup is the Schema for the ComputeNetworkEndpointGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,23 +36,20 @@ public partial class V1beta1ComputeNetworkEndpointGroupList : IKubernetesObject<
     public required IList<V1beta1ComputeNetworkEndpointGroup> Items { get; set; }
 }
 
-/// <summary>
-/// The network to which all network endpoints in the NEG belong. Uses
-/// &quot;default&quot; project network if unspecified.
-/// </summary>
+/// <summary>The network to which all network endpoints in the NEG belong. Uses &quot;default&quot; project network if unspecified.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkEndpointGroupSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -61,34 +59,29 @@ public partial class V1beta1ComputeNetworkEndpointGroupSpecNetworkRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkEndpointGroupSpecSubnetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeNetworkEndpointGroupSpec defines the desired state of ComputeNetworkEndpointGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkEndpointGroupSpec
 {
-    /// <summary>
-    /// Immutable. The default port used if the port number is not specified in the
-    /// network endpoint.
-    /// </summary>
+    /// <summary>Immutable. The default port used if the port number is not specified in the network endpoint.</summary>
     [JsonPropertyName("defaultPort")]
-    public int? DefaultPort { get; set; }
+    public long? DefaultPort { get; set; }
 
-    /// <summary>
-    /// Immutable. An optional description of this resource. Provide this property when
-    /// you create the resource.
-    /// </summary>
+    /// <summary>Immutable. An optional description of this resource. Provide this property when you create the resource.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
@@ -110,10 +103,7 @@ public partial class V1beta1ComputeNetworkEndpointGroupSpec
     [JsonPropertyName("networkEndpointType")]
     public string? NetworkEndpointType { get; set; }
 
-    /// <summary>
-    /// The network to which all network endpoints in the NEG belong. Uses
-    /// &quot;default&quot; project network if unspecified.
-    /// </summary>
+    /// <summary>The network to which all network endpoints in the NEG belong. Uses &quot;default&quot; project network if unspecified.</summary>
     [JsonPropertyName("networkRef")]
     public required V1beta1ComputeNetworkEndpointGroupSpecNetworkRef NetworkRef { get; set; }
 
@@ -151,26 +141,28 @@ public partial class V1beta1ComputeNetworkEndpointGroupStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeNetworkEndpointGroupStatus defines the config connector machine state of ComputeNetworkEndpointGroup</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeNetworkEndpointGroupStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeNetworkEndpointGroup&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeNetworkEndpointGroupStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 
     /// <summary>Number of network endpoints in the network endpoint group.</summary>
     [JsonPropertyName("size")]
-    public int? Size { get; set; }
+    public long? Size { get; set; }
 }
 
+/// <summary>ComputeNetworkEndpointGroup is the Schema for the ComputeNetworkEndpointGroup API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -192,9 +184,11 @@ public partial class V1beta1ComputeNetworkEndpointGroup : IKubernetesObject<V1Ob
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeNetworkEndpointGroupSpec defines the desired state of ComputeNetworkEndpointGroup</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeNetworkEndpointGroupSpec Spec { get; set; }
 
+    /// <summary>ComputeNetworkEndpointGroupStatus defines the config connector machine state of ComputeNetworkEndpointGroup</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeNetworkEndpointGroupStatus? Status { get; set; }
 }
