@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeHTTPSHealthCheck is the Schema for the ComputeHTTPSHealthCheck API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,50 +36,32 @@ public partial class V1beta1ComputeHTTPSHealthCheckList : IKubernetesObject<V1Li
     public required IList<V1beta1ComputeHTTPSHealthCheck> Items { get; set; }
 }
 
+/// <summary>ComputeHTTPSHealthCheckSpec defines the desired state of ComputeHTTPSHealthCheck</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeHTTPSHealthCheckSpec
 {
-    /// <summary>
-    /// How often (in seconds) to send a health check. The default value is 5
-    /// seconds.
-    /// </summary>
+    /// <summary>How often (in seconds) to send a health check. The default value is 5 seconds.</summary>
     [JsonPropertyName("checkIntervalSec")]
     public int? CheckIntervalSec { get; set; }
 
-    /// <summary>
-    /// An optional description of this resource. Provide this property when
-    /// you create the resource.
-    /// </summary>
+    /// <summary>An optional description of this resource. Provide this property when you create the resource.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// A so-far unhealthy instance will be marked healthy after this many
-    /// consecutive successes. The default value is 2.
-    /// </summary>
+    /// <summary>A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.</summary>
     [JsonPropertyName("healthyThreshold")]
     public int? HealthyThreshold { get; set; }
 
-    /// <summary>
-    /// The value of the host header in the HTTPS health check request. If
-    /// left empty (default value), the public IP on behalf of which this
-    /// health check is performed will be used.
-    /// </summary>
+    /// <summary>The value of the host header in the HTTPS health check request. If left empty (default value), the public IP on behalf of which this health check is performed will be used.</summary>
     [JsonPropertyName("host")]
     public string? Host { get; set; }
 
-    /// <summary>
-    /// The TCP port number for the HTTPS health check request.
-    /// The default value is 443.
-    /// </summary>
+    /// <summary>The TCP port number for the HTTPS health check request. The default value is 443.</summary>
     [JsonPropertyName("port")]
     public int? Port { get; set; }
 
-    /// <summary>
-    /// The request path of the HTTPS health check request.
-    /// The default value is /.
-    /// </summary>
+    /// <summary>The request path of the HTTPS health check request. The default value is /.</summary>
     [JsonPropertyName("requestPath")]
     public string? RequestPath { get; set; }
 
@@ -86,18 +69,11 @@ public partial class V1beta1ComputeHTTPSHealthCheckSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// How long (in seconds) to wait before claiming failure.
-    /// The default value is 5 seconds.  It is invalid for timeoutSec to have
-    /// greater value than checkIntervalSec.
-    /// </summary>
+    /// <summary>How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.</summary>
     [JsonPropertyName("timeoutSec")]
     public int? TimeoutSec { get; set; }
 
-    /// <summary>
-    /// A so-far healthy instance will be marked unhealthy after this many
-    /// consecutive failures. The default value is 2.
-    /// </summary>
+    /// <summary>A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.</summary>
     [JsonPropertyName("unhealthyThreshold")]
     public int? UnhealthyThreshold { get; set; }
 }
@@ -127,11 +103,12 @@ public partial class V1beta1ComputeHTTPSHealthCheckStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeHTTPSHealthCheckStatus defines the config connector machine state of ComputeHTTPSHealthCheck</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeHTTPSHealthCheckStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeHTTPSHealthCheckStatusConditions>? Conditions { get; set; }
 
@@ -141,12 +118,13 @@ public partial class V1beta1ComputeHTTPSHealthCheckStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeHTTPSHealthCheck is the Schema for the ComputeHTTPSHealthCheck API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -168,9 +146,11 @@ public partial class V1beta1ComputeHTTPSHealthCheck : IKubernetesObject<V1Object
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeHTTPSHealthCheckSpec defines the desired state of ComputeHTTPSHealthCheck</summary>
     [JsonPropertyName("spec")]
     public V1beta1ComputeHTTPSHealthCheckSpec? Spec { get; set; }
 
+    /// <summary>ComputeHTTPSHealthCheckStatus defines the config connector machine state of ComputeHTTPSHealthCheck</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeHTTPSHealthCheckStatus? Status { get; set; }
 }
