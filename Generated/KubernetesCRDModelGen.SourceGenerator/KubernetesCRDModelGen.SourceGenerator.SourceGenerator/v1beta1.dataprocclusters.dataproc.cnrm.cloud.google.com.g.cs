@@ -1507,6 +1507,10 @@ public partial class V1beta1DataprocClusterStatus
     [JsonPropertyName("config")]
     public V1beta1DataprocClusterStatusConfig? Config { get; set; }
 
+    /// <summary>A unique specifier for the DataprocCluster resource in GCP.</summary>
+    [JsonPropertyName("externalRef")]
+    public string? ExternalRef { get; set; }
+
     /// <summary>Output only. Contains cluster daemon metrics such as HDFS and YARN stats. **Beta Feature**: This report is available for testing purposes only. It may be changed before final release.</summary>
     [JsonPropertyName("metrics")]
     public V1beta1DataprocClusterStatusMetrics? Metrics { get; set; }
