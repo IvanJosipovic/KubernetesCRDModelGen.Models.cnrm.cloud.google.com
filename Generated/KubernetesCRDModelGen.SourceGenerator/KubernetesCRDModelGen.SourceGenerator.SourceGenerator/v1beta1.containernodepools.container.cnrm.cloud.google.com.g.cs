@@ -941,6 +941,10 @@ public partial class V1beta1ContainerNodePoolStatus
     [JsonPropertyName("conditions")]
     public IList<V1beta1ContainerNodePoolStatusConditions>? Conditions { get; set; }
 
+    /// <summary>A unique specifier for the ContainerNodePool resource in GCP.</summary>
+    [JsonPropertyName("externalRef")]
+    public string? ExternalRef { get; set; }
+
     /// <summary>The resource URLs of the managed instance groups associated with this node pool.</summary>
     [JsonPropertyName("instanceGroupUrls")]
     public IList<string>? InstanceGroupUrls { get; set; }
