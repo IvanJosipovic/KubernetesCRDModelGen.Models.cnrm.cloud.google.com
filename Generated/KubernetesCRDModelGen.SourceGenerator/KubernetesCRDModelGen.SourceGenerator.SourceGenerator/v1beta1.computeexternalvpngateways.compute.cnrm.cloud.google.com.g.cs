@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeExternalVPNGateway is the Schema for the ComputeExternalVPNGateway API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -39,26 +40,16 @@ public partial class V1beta1ComputeExternalVPNGatewayList : IKubernetesObject<V1
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeExternalVPNGatewaySpecInterface
 {
-    /// <summary>
-    /// Immutable. The numeric ID for this interface. Allowed values are based on the redundancy type
-    /// of this external VPN gateway
-    /// * &apos;0 - SINGLE_IP_INTERNALLY_REDUNDANT&apos;
-    /// * &apos;0, 1 - TWO_IPS_REDUNDANCY&apos;
-    /// * &apos;0, 1, 2, 3 - FOUR_IPS_REDUNDANCY&apos;.
-    /// </summary>
+    /// <summary>Immutable. The numeric ID for this interface. Allowed values are based on the redundancy type of this external VPN gateway * &apos;0 - SINGLE_IP_INTERNALLY_REDUNDANT&apos; * &apos;0, 1 - TWO_IPS_REDUNDANCY&apos; * &apos;0, 1, 2, 3 - FOUR_IPS_REDUNDANCY&apos;.</summary>
     [JsonPropertyName("id")]
-    public int? Id { get; set; }
+    public long? Id { get; set; }
 
-    /// <summary>
-    /// Immutable. IP address of the interface in the external VPN gateway.
-    /// Only IPv4 is supported. This IP address can be either from
-    /// your on-premise gateway or another Cloud provider&apos;s VPN gateway,
-    /// it cannot be an IP address from Google Compute Engine.
-    /// </summary>
+    /// <summary>Immutable. IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider&apos;s VPN gateway, it cannot be an IP address from Google Compute Engine.</summary>
     [JsonPropertyName("ipAddress")]
     public string? IpAddress { get; set; }
 }
 
+/// <summary>ComputeExternalVPNGatewaySpec defines the desired state of ComputeExternalVPNGateway</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeExternalVPNGatewaySpec
@@ -71,7 +62,7 @@ public partial class V1beta1ComputeExternalVPNGatewaySpec
     [JsonPropertyName("interface")]
     public IList<V1beta1ComputeExternalVPNGatewaySpecInterface>? Interface { get; set; }
 
-    /// <summary>Immutable. Indicates the redundancy type of this external VPN gateway Possible values: [&quot;FOUR_IPS_REDUNDANCY&quot;, &quot;SINGLE_IP_INTERNALLY_REDUNDANT&quot;, &quot;TWO_IPS_REDUNDANCY&quot;].</summary>
+    /// <summary>Immutable. Indicates the redundancy type of this external VPN gateway. Possible values: [&quot;FOUR_IPS_REDUNDANCY&quot;, &quot;SINGLE_IP_INTERNALLY_REDUNDANT&quot;, &quot;TWO_IPS_REDUNDANCY&quot;].</summary>
     [JsonPropertyName("redundancyType")]
     public string? RedundancyType { get; set; }
 
@@ -105,29 +96,29 @@ public partial class V1beta1ComputeExternalVPNGatewayStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeExternalVPNGatewayStatus defines the config connector machine state of ComputeExternalVPNGateway</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeExternalVPNGatewayStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeExternalVPNGatewayStatusConditions>? Conditions { get; set; }
 
-    /// <summary>
-    /// The fingerprint used for optimistic locking of this resource.  Used
-    /// internally during updates.
-    /// </summary>
+    /// <summary>The fingerprint used for optimistic locking of this resource. Used internally during updates.</summary>
     [JsonPropertyName("labelFingerprint")]
     public string? LabelFingerprint { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
+    /// <summary>The self link of the ComputeExternalVPNGateway.</summary>
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeExternalVPNGateway is the Schema for the ComputeExternalVPNGateway API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -149,9 +140,11 @@ public partial class V1beta1ComputeExternalVPNGateway : IKubernetesObject<V1Obje
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeExternalVPNGatewaySpec defines the desired state of ComputeExternalVPNGateway</summary>
     [JsonPropertyName("spec")]
     public V1beta1ComputeExternalVPNGatewaySpec? Spec { get; set; }
 
+    /// <summary>ComputeExternalVPNGatewayStatus defines the config connector machine state of ComputeExternalVPNGateway</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeExternalVPNGatewayStatus? Status { get; set; }
 }
