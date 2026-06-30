@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeTargetPool is the Schema for the ComputeTargetPool API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -39,7 +40,7 @@ public partial class V1beta1ComputeTargetPoolList : IKubernetesObject<V1ListMeta
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetPoolSpecBackupTargetPoolRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeTargetPool` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -56,7 +57,7 @@ public partial class V1beta1ComputeTargetPoolSpecBackupTargetPoolRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetPoolSpecHealthChecksHttpHealthCheckRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeHTTPHealthCheck` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -81,7 +82,7 @@ public partial class V1beta1ComputeTargetPoolSpecHealthChecks
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetPoolSpecInstances
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeInstance` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -99,7 +100,7 @@ public partial class V1beta1ComputeTargetPoolSpecInstances
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetPoolSpecSecurityPolicyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSecurityPolicy` resource.</summary>
+    /// <summary>The external name of the referenced resource</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -112,6 +113,7 @@ public partial class V1beta1ComputeTargetPoolSpecSecurityPolicyRef
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeTargetPoolSpec defines the desired state of ComputeTargetPool</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetPoolSpec
@@ -175,23 +177,25 @@ public partial class V1beta1ComputeTargetPoolStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeTargetPoolStatus defines the config connector machine state of ComputeTargetPool</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetPoolStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeTargetPool&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeTargetPoolStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The URI of the created resource.</summary>
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeTargetPool is the Schema for the ComputeTargetPool API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -213,9 +217,11 @@ public partial class V1beta1ComputeTargetPool : IKubernetesObject<V1ObjectMeta>,
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeTargetPoolSpec defines the desired state of ComputeTargetPool</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeTargetPoolSpec Spec { get; set; }
 
+    /// <summary>ComputeTargetPoolStatus defines the config connector machine state of ComputeTargetPool</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeTargetPoolStatus? Status { get; set; }
 }

@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeSSLCertificate is the Schema for the ComputeSSLCertificate API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -59,11 +60,7 @@ public partial class V1beta1ComputeSSLCertificateSpecCertificateValueFrom
     public V1beta1ComputeSSLCertificateSpecCertificateValueFromSecretKeyRef? SecretKeyRef { get; set; }
 }
 
-/// <summary>
-/// Immutable. The certificate in PEM format.
-/// The certificate chain must be no greater than 5 certs long.
-/// The chain must include at least one intermediate cert.
-/// </summary>
+/// <summary>Immutable. The certificate in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSSLCertificateSpecCertificate
@@ -115,15 +112,12 @@ public partial class V1beta1ComputeSSLCertificateSpecPrivateKey
     public V1beta1ComputeSSLCertificateSpecPrivateKeyValueFrom? ValueFrom { get; set; }
 }
 
+/// <summary>ComputeSSLCertificateSpec defines the desired state of ComputeSSLCertificate</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSSLCertificateSpec
 {
-    /// <summary>
-    /// Immutable. The certificate in PEM format.
-    /// The certificate chain must be no greater than 5 certs long.
-    /// The chain must include at least one intermediate cert.
-    /// </summary>
+    /// <summary>Immutable. The certificate in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.</summary>
     [JsonPropertyName("certificate")]
     public required V1beta1ComputeSSLCertificateSpecCertificate Certificate { get; set; }
 
@@ -169,15 +163,16 @@ public partial class V1beta1ComputeSSLCertificateStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeSSLCertificateStatus defines the config connector machine state of ComputeSSLCertificate</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeSSLCertificateStatus
 {
     /// <summary>The unique identifier for the resource.</summary>
     [JsonPropertyName("certificateId")]
-    public int? CertificateId { get; set; }
+    public long? CertificateId { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeSSLCertificate&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeSSLCertificateStatusConditions>? Conditions { get; set; }
 
@@ -191,12 +186,13 @@ public partial class V1beta1ComputeSSLCertificateStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeSSLCertificate is the Schema for the ComputeSSLCertificate API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -218,9 +214,11 @@ public partial class V1beta1ComputeSSLCertificate : IKubernetesObject<V1ObjectMe
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeSSLCertificateSpec defines the desired state of ComputeSSLCertificate</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeSSLCertificateSpec Spec { get; set; }
 
+    /// <summary>ComputeSSLCertificateStatus defines the config connector machine state of ComputeSSLCertificate</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeSSLCertificateStatus? Status { get; set; }
 }
