@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeTargetSSLProxy is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,83 +41,69 @@ public partial class V1beta1ComputeTargetSSLProxyList : IKubernetesObject<V1List
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetSSLProxySpecBackendServiceRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeBackendService` resource.</summary>
+    /// <summary>The value of an externally managed ComputeBackendService resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeBackendService resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeBackendService resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// A reference to the CertificateMap resource uri that identifies a
-/// certificate map associated with the given target proxy. This
-/// field can only be set for global target proxies. Accepted format is
-/// &apos;//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}&apos;.
-/// </summary>
+/// <summary>A reference to the CertificateMap resource uri that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. Accepted format is &apos;//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}&apos;.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetSSLProxySpecCertificateMapRef
 {
-    /// <summary>Allowed value: The `name` field of a `CertificateManagerCertificateMap` resource.</summary>
+    /// <summary>A reference to an externally managed CertificateManagerCertificateMap resource. Should be in the format &quot;projects/{{projectID}}/locations/global/certificateMaps/{{certificateMapID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a CertificateManagerCertificateMap resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a CertificateManagerCertificateMap resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// A list of ComputeSSLCertificate resources that are used to
-/// authenticate connections between users and the load balancer.
-/// Currently, exactly one SSL certificate must be specified.
-/// </summary>
+/// <summary>A reference to a ComputeSSLCertificate resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetSSLProxySpecSslCertificates
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSSLCertificate` resource.</summary>
+    /// <summary>Allowed value: string of the format `projects/{{project}}/global/sslCertificates/{{value}}` or `projects/{{project}}/regions/{{region}}/sslCertificates/{{value}}`, where {{value}} is the `name` field of a `ComputeSSLCertificate` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSSLCertificate resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSSLCertificate resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// A reference to the ComputeSSLPolicy resource that will be
-/// associated with the TargetSslProxy resource. If not set, the
-/// ComputeTargetSSLProxy resource will not have any SSL policy
-/// configured.
-/// </summary>
+/// <summary>A reference to the ComputeSSLPolicy resource that will be associated with the TargetSslProxy resource. If not set, the ComputeTargetSSLProxy resource will not have any SSL policy configured.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetSSLProxySpecSslPolicyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSSLPolicy` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSSLPolicy resource. Should be in the format &quot;projects/{{projectID}}/global/sslPolicies/{{sslPolicyID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/sslPolicies/{{sslPolicyID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSSLPolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSSLPolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -129,12 +116,7 @@ public partial class V1beta1ComputeTargetSSLProxySpec
     [JsonPropertyName("backendServiceRef")]
     public required V1beta1ComputeTargetSSLProxySpecBackendServiceRef BackendServiceRef { get; set; }
 
-    /// <summary>
-    /// A reference to the CertificateMap resource uri that identifies a
-    /// certificate map associated with the given target proxy. This
-    /// field can only be set for global target proxies. Accepted format is
-    /// &apos;//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}&apos;.
-    /// </summary>
+    /// <summary>A reference to the CertificateMap resource uri that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. Accepted format is &apos;//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}&apos;.</summary>
     [JsonPropertyName("certificateMapRef")]
     public V1beta1ComputeTargetSSLProxySpecCertificateMapRef? CertificateMapRef { get; set; }
 
@@ -142,10 +124,7 @@ public partial class V1beta1ComputeTargetSSLProxySpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Specifies the type of proxy header to append before sending data to
-    /// the backend. Default value: &quot;NONE&quot; Possible values: [&quot;NONE&quot;, &quot;PROXY_V1&quot;].
-    /// </summary>
+    /// <summary>Specifies the type of proxy header to append before sending data to the backend. Default value: &quot;NONE&quot; Possible values: [&quot;NONE&quot;, &quot;PROXY_V1&quot;].</summary>
     [JsonPropertyName("proxyHeader")]
     public string? ProxyHeader { get; set; }
 
@@ -156,12 +135,7 @@ public partial class V1beta1ComputeTargetSSLProxySpec
     [JsonPropertyName("sslCertificates")]
     public IList<V1beta1ComputeTargetSSLProxySpecSslCertificates>? SslCertificates { get; set; }
 
-    /// <summary>
-    /// A reference to the ComputeSSLPolicy resource that will be
-    /// associated with the TargetSslProxy resource. If not set, the
-    /// ComputeTargetSSLProxy resource will not have any SSL policy
-    /// configured.
-    /// </summary>
+    /// <summary>A reference to the ComputeSSLPolicy resource that will be associated with the TargetSslProxy resource. If not set, the ComputeTargetSSLProxy resource will not have any SSL policy configured.</summary>
     [JsonPropertyName("sslPolicyRef")]
     public V1beta1ComputeTargetSSLProxySpecSslPolicyRef? SslPolicyRef { get; set; }
 }
@@ -195,7 +169,7 @@ public partial class V1beta1ComputeTargetSSLProxyStatusConditions
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetSSLProxyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeTargetSSLProxy&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeTargetSSLProxyStatusConditions>? Conditions { get; set; }
 
@@ -205,16 +179,17 @@ public partial class V1beta1ComputeTargetSSLProxyStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The unique identifier for the resource.</summary>
     [JsonPropertyName("proxyId")]
-    public int? ProxyId { get; set; }
+    public long? ProxyId { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeTargetSSLProxy is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
