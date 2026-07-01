@@ -923,11 +923,42 @@ public partial class V1beta1ContainerNodePoolStatusConditions
     public string? Type { get; set; }
 }
 
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ContainerNodePoolStatusObservedStateNodeConfigTaint
+{
+    /// <summary>Effect for taint.</summary>
+    [JsonPropertyName("effect")]
+    public required string Effect { get; set; }
+
+    /// <summary>Key for taint.</summary>
+    [JsonPropertyName("key")]
+    public required string Key { get; set; }
+
+    /// <summary>Value for taint.</summary>
+    [JsonPropertyName("value")]
+    public required string Value { get; set; }
+}
+
+/// <summary>The observed node config of the GKE node pool.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ContainerNodePoolStatusObservedStateNodeConfig
+{
+    /// <summary>List of Kubernetes taints to be applied to each node.</summary>
+    [JsonPropertyName("taint")]
+    public IList<V1beta1ContainerNodePoolStatusObservedStateNodeConfigTaint>? Taint { get; set; }
+}
+
 /// <summary>The observed state of the underlying GCP resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ContainerNodePoolStatusObservedState
 {
+    /// <summary>The observed node config of the GKE node pool.</summary>
+    [JsonPropertyName("nodeConfig")]
+    public V1beta1ContainerNodePoolStatusObservedStateNodeConfig? NodeConfig { get; set; }
+
     [JsonPropertyName("version")]
     public string? Version { get; set; }
 }
