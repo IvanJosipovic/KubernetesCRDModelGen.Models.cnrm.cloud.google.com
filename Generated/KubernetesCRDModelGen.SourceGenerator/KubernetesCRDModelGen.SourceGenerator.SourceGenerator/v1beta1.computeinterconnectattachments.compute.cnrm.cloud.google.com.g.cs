@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeInterconnectAttachment is the Schema for the ComputeInterconnectAttachment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,98 +36,56 @@ public partial class V1beta1ComputeInterconnectAttachmentList : IKubernetesObjec
     public required IList<V1beta1ComputeInterconnectAttachment> Items { get; set; }
 }
 
-/// <summary>
-/// Immutable. The addresses that have been reserved for the
-/// interconnect attachment. Used only for interconnect attachment that
-/// has the encryption option as IPSEC.
-/// 
-/// The addresses must be RFC 1918 IP address ranges. When creating HA
-/// VPN gateway over the interconnect attachment, if the attachment is
-/// configured to use an RFC 1918 IP address, then the VPN gateway&apos;s IP
-/// address will be allocated from the IP address range specified
-/// here.
-/// 
-/// For example, if the HA VPN gateway&apos;s interface 0 is paired to this
-/// interconnect attachment, then an RFC 1918 IP address for the VPN
-/// gateway interface 0 will be allocated from the IP address specified
-/// for this interconnect attachment.
-/// 
-/// If this field is not specified for interconnect attachment that has
-/// encryption option as IPSEC, later on when creating HA VPN gateway on
-/// this interconnect attachment, the HA VPN gateway&apos;s IP address will
-/// be allocated from regional external IP address pool.
-/// </summary>
+/// <summary>ComputeAddressRef is a reference to a GCP ComputeAddress.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInterconnectAttachmentSpecIpsecInternalAddresses
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeAddress` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeAddress resource. Should be in the format &quot;projects/{{projectID}}/global/addresses/{{addressID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/addresses/{{addressID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeAddress resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeAddress resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The Cloud Router to be used for dynamic routing. This router must
-/// be in the same region as this ComputeInterconnectAttachment. The
-/// ComputeInterconnectAttachment will automatically connect the
-/// interconnect to the network &amp; region within which the Cloud Router
-/// is configured.
-/// </summary>
+/// <summary>The Cloud Router to be used for dynamic routing. This router must be in the same region as this ComputeInterconnectAttachment. The ComputeInterconnectAttachment will automatically connect the interconnect to the network &amp; region within which the Cloud Router is configured.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInterconnectAttachmentSpecRouterRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeRouter` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeRouter resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/routers/{{routerID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeRouter resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeRouter resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeInterconnectAttachmentSpec defines the desired state of ComputeInterconnectAttachment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInterconnectAttachmentSpec
 {
-    /// <summary>
-    /// Whether the VLAN attachment is enabled or disabled.  When using
-    /// PARTNER type this will Pre-Activate the interconnect attachment.
-    /// </summary>
+    /// <summary>Whether the VLAN attachment is enabled or disabled.  When using PARTNER type this will Pre-Activate the interconnect attachment.</summary>
     [JsonPropertyName("adminEnabled")]
     public bool? AdminEnabled { get; set; }
 
-    /// <summary>
-    /// Provisioned bandwidth capacity for the interconnect attachment.
-    /// For attachments of type DEDICATED, the user can set the bandwidth.
-    /// For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth.
-    /// Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED,
-    /// Defaults to BPS_10G Possible values: [&quot;BPS_50M&quot;, &quot;BPS_100M&quot;, &quot;BPS_200M&quot;, &quot;BPS_300M&quot;, &quot;BPS_400M&quot;, &quot;BPS_500M&quot;, &quot;BPS_1G&quot;, &quot;BPS_2G&quot;, &quot;BPS_5G&quot;, &quot;BPS_10G&quot;, &quot;BPS_20G&quot;, &quot;BPS_50G&quot;].
-    /// </summary>
+    /// <summary>Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, Defaults to BPS_10G Possible values: [&quot;BPS_50M&quot;, &quot;BPS_100M&quot;, &quot;BPS_200M&quot;, &quot;BPS_300M&quot;, &quot;BPS_400M&quot;, &quot;BPS_500M&quot;, &quot;BPS_1G&quot;, &quot;BPS_2G&quot;, &quot;BPS_5G&quot;, &quot;BPS_10G&quot;, &quot;BPS_20G&quot;, &quot;BPS_50G&quot;].</summary>
     [JsonPropertyName("bandwidth")]
     public string? Bandwidth { get; set; }
 
-    /// <summary>
-    /// Immutable. Up to 16 candidate prefixes that can be used to restrict the allocation
-    /// of cloudRouterIpAddress and customerRouterIpAddress for this attachment.
-    /// All prefixes must be within link-local address space (169.254.0.0/16)
-    /// and must be /29 or shorter (/28, /27, etc). Google will attempt to select
-    /// an unused /29 from the supplied candidate prefix(es). The request will
-    /// fail if all possible /29s are in use on Google&apos;s edge. If not supplied,
-    /// Google will randomly select an unused /29 from all of link-local space.
-    /// </summary>
+    /// <summary>Immutable. Up to 16 candidate prefixes that can be used to restrict the allocation of cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc). Google will attempt to select an unused /29 from the supplied candidate prefix(es). The request will fail if all possible /29s are in use on Google&apos;s edge. If not supplied, Google will randomly select an unused /29 from all of link-local space.</summary>
     [JsonPropertyName("candidateSubnets")]
     public IList<string>? CandidateSubnets { get; set; }
 
@@ -134,14 +93,7 @@ public partial class V1beta1ComputeInterconnectAttachmentSpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Immutable. Desired availability domain for the attachment. Only available for type
-    /// PARTNER, at creation time. For improved reliability, customers should
-    /// configure a pair of attachments with one per availability domain. The
-    /// selected availability domain will be provided to the Partner via the
-    /// pairing key so that the provisioned circuit will lie in the specified
-    /// domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
-    /// </summary>
+    /// <summary>Immutable. Desired availability domain for the attachment. Only available for type PARTNER, at creation time. For improved reliability, customers should configure a pair of attachments with one per availability domain. The selected availability domain will be provided to the Partner via the pairing key so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.</summary>
     [JsonPropertyName("edgeAvailabilityDomain")]
     public string? EdgeAvailabilityDomain { get; set; }
 
@@ -163,21 +115,35 @@ public partial class V1beta1ComputeInterconnectAttachmentSpec
     [JsonPropertyName("encryption")]
     public string? Encryption { get; set; }
 
-    /// <summary>
-    /// Immutable. URL of the underlying Interconnect object that this attachment&apos;s
-    /// traffic will traverse through. Required if type is DEDICATED, must not
-    /// be set if type is PARTNER.
-    /// </summary>
+    /// <summary>Immutable. URL of the underlying Interconnect object that this attachment&apos;s traffic will traverse through. Required if type is DEDICATED, must not be set if type is PARTNER.</summary>
     [JsonPropertyName("interconnect")]
     public string? Interconnect { get; set; }
 
+    /// <summary>
+    /// Immutable. The addresses that have been reserved for the
+    /// interconnect attachment. Used only for interconnect attachment that
+    /// has the encryption option as IPSEC.
+    /// 
+    /// The addresses must be RFC 1918 IP address ranges. When creating HA
+    /// VPN gateway over the interconnect attachment, if the attachment is
+    /// configured to use an RFC 1918 IP address, then the VPN gateway&apos;s IP
+    /// address will be allocated from the IP address range specified
+    /// here.
+    /// 
+    /// For example, if the HA VPN gateway&apos;s interface 0 is paired to this
+    /// interconnect attachment, then an RFC 1918 IP address for the VPN
+    /// gateway interface 0 will be allocated from the IP address specified
+    /// for this interconnect attachment.
+    /// 
+    /// If this field is not specified for interconnect attachment that has
+    /// encryption option as IPSEC, later on when creating HA VPN gateway on
+    /// this interconnect attachment, the HA VPN gateway&apos;s IP address will
+    /// be allocated from regional external IP address pool.
+    /// </summary>
     [JsonPropertyName("ipsecInternalAddresses")]
     public IList<V1beta1ComputeInterconnectAttachmentSpecIpsecInternalAddresses>? IpsecInternalAddresses { get; set; }
 
-    /// <summary>
-    /// Maximum Transmission Unit (MTU), in bytes, of packets passing through
-    /// this interconnect attachment. Currently, only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
-    /// </summary>
+    /// <summary>Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Currently, only 1440 and 1500 are allowed. If not specified, the value will default to 1440.</summary>
     [JsonPropertyName("mtu")]
     public string? Mtu { get; set; }
 
@@ -189,29 +155,17 @@ public partial class V1beta1ComputeInterconnectAttachmentSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// The Cloud Router to be used for dynamic routing. This router must
-    /// be in the same region as this ComputeInterconnectAttachment. The
-    /// ComputeInterconnectAttachment will automatically connect the
-    /// interconnect to the network &amp; region within which the Cloud Router
-    /// is configured.
-    /// </summary>
+    /// <summary>The Cloud Router to be used for dynamic routing. This router must be in the same region as this ComputeInterconnectAttachment. The ComputeInterconnectAttachment will automatically connect the interconnect to the network &amp; region within which the Cloud Router is configured.</summary>
     [JsonPropertyName("routerRef")]
     public required V1beta1ComputeInterconnectAttachmentSpecRouterRef RouterRef { get; set; }
 
-    /// <summary>
-    /// Immutable. The type of InterconnectAttachment you wish to create. Defaults to
-    /// DEDICATED. Possible values: [&quot;DEDICATED&quot;, &quot;PARTNER&quot;, &quot;PARTNER_PROVIDER&quot;].
-    /// </summary>
+    /// <summary>Immutable. The type of InterconnectAttachment you wish to create. Defaults to DEDICATED. Possible values: [&quot;DEDICATED&quot;, &quot;PARTNER&quot;, &quot;PARTNER_PROVIDER&quot;].</summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
 
-    /// <summary>
-    /// Immutable. The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. When
-    /// using PARTNER type this will be managed upstream.
-    /// </summary>
+    /// <summary>Immutable. The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. When using PARTNER type this will be managed upstream.</summary>
     [JsonPropertyName("vlanTag8021q")]
-    public int? VlanTag8021q { get; set; }
+    public long? VlanTag8021q { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -239,34 +193,26 @@ public partial class V1beta1ComputeInterconnectAttachmentStatusConditions
     public string? Type { get; set; }
 }
 
-/// <summary>
-/// Information specific to an InterconnectAttachment. This property
-/// is populated if the interconnect that this is attached to is of type DEDICATED.
-/// </summary>
+/// <summary>Information specific to an InterconnectAttachment. This property is populated if the interconnect that this is attached to is of type DEDICATED.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInterconnectAttachmentStatusPrivateInterconnectInfo
 {
-    /// <summary>
-    /// 802.1q encapsulation tag to be used for traffic between
-    /// Google and the customer, going to and from this network and region.
-    /// </summary>
+    /// <summary>802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.</summary>
     [JsonPropertyName("tag8021q")]
-    public int? Tag8021q { get; set; }
+    public long? Tag8021q { get; set; }
 }
 
+/// <summary>ComputeInterconnectAttachmentStatus defines the config connector machine state of ComputeInterconnectAttachment</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeInterconnectAttachmentStatus
 {
-    /// <summary>
-    /// IPv4 address + prefix length to be configured on Cloud Router
-    /// Interface for this interconnect attachment.
-    /// </summary>
+    /// <summary>IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.</summary>
     [JsonPropertyName("cloudRouterIpAddress")]
     public string? CloudRouterIpAddress { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeInterconnectAttachment&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeInterconnectAttachmentStatusConditions>? Conditions { get; set; }
 
@@ -274,44 +220,27 @@ public partial class V1beta1ComputeInterconnectAttachmentStatus
     [JsonPropertyName("creationTimestamp")]
     public string? CreationTimestamp { get; set; }
 
-    /// <summary>
-    /// IPv4 address + prefix length to be configured on the customer
-    /// router subinterface for this interconnect attachment.
-    /// </summary>
+    /// <summary>IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.</summary>
     [JsonPropertyName("customerRouterIpAddress")]
     public string? CustomerRouterIpAddress { get; set; }
 
-    /// <summary>
-    /// Google reference ID, to be used when raising support tickets with
-    /// Google or otherwise to debug backend connectivity issues.
-    /// </summary>
+    /// <summary>Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.</summary>
     [JsonPropertyName("googleReferenceId")]
     public string? GoogleReferenceId { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
-    /// <summary>
-    /// [Output only for type PARTNER. Not present for DEDICATED]. The opaque
-    /// identifier of an PARTNER attachment used to initiate provisioning with
-    /// a selected partner. Of the form &quot;XXXXX/region/domain&quot;.
-    /// </summary>
+    /// <summary>[Output only for type PARTNER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form &quot;XXXXX/region/domain&quot;.</summary>
     [JsonPropertyName("pairingKey")]
     public string? PairingKey { get; set; }
 
-    /// <summary>
-    /// [Output only for type PARTNER. Not present for DEDICATED]. Optional
-    /// BGP ASN for the router that should be supplied by a layer 3 Partner if
-    /// they configured BGP on behalf of the customer.
-    /// </summary>
+    /// <summary>[Output only for type PARTNER. Not present for DEDICATED]. Optional BGP ASN for the router that should be supplied by a layer 3 Partner if they configured BGP on behalf of the customer.</summary>
     [JsonPropertyName("partnerAsn")]
     public string? PartnerAsn { get; set; }
 
-    /// <summary>
-    /// Information specific to an InterconnectAttachment. This property
-    /// is populated if the interconnect that this is attached to is of type DEDICATED.
-    /// </summary>
+    /// <summary>Information specific to an InterconnectAttachment. This property is populated if the interconnect that this is attached to is of type DEDICATED.</summary>
     [JsonPropertyName("privateInterconnectInfo")]
     public V1beta1ComputeInterconnectAttachmentStatusPrivateInterconnectInfo? PrivateInterconnectInfo { get; set; }
 
@@ -323,6 +252,7 @@ public partial class V1beta1ComputeInterconnectAttachmentStatus
     public string? State { get; set; }
 }
 
+/// <summary>ComputeInterconnectAttachment is the Schema for the ComputeInterconnectAttachment API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -344,9 +274,11 @@ public partial class V1beta1ComputeInterconnectAttachment : IKubernetesObject<V1
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeInterconnectAttachmentSpec defines the desired state of ComputeInterconnectAttachment</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeInterconnectAttachmentSpec Spec { get; set; }
 
+    /// <summary>ComputeInterconnectAttachmentStatus defines the config connector machine state of ComputeInterconnectAttachment</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeInterconnectAttachmentStatus? Status { get; set; }
 }
