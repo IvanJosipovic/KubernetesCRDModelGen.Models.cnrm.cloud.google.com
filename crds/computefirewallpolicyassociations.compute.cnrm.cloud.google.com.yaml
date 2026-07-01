@@ -15,6 +15,7 @@ spec:
     kind: ComputeFirewallPolicyAssociation
     categories:
     - gcp
+    listKind: ComputeFirewallPolicyAssociationList
     plural: computefirewallpolicyassociations
     shortNames:
     - gcpcomputefirewallpolicyassociation
@@ -42,16 +43,18 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: ComputeFirewallPolicyAssociation is the Schema for the ComputeFirewallPolicyAssociation API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: ComputeFirewallPolicyAssociationSpec defines the desired state of ComputeFirewallPolicyAssociation
             properties:
               attachmentTargetRef:
                 description: Immutable.
@@ -61,15 +64,12 @@ spec:
                     - external
                   required:
                   - name
-                  - kind
                 - not:
                     anyOf:
                     - required:
                       - name
                     - required:
                       - namespace
-                    - required:
-                      - kind
                   required:
                   - external
                 properties:
@@ -85,9 +85,7 @@ spec:
                     description: 'Kind of the referent. Allowed values: Folder'
                     type: string
                   name:
-                    description: |-
-                      [WARNING] Organization not yet supported in Config Connector, use 'external' field to reference existing resources.
-                      Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                    description: "[WARNING] Organization not yet supported in Config Connector, use 'external' field to reference existing resources. Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names"
                     type: string
                   namespace:
                     description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
@@ -111,16 +109,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: |-
-                      The firewall policy ID of the association.
-
-                      Allowed value: The Google Cloud resource name of a `ComputeFirewallPolicy` resource (format: `locations/global/firewallPolicies/{{name}}`).
+                    description: A reference to an externally managed ComputeFirewallPolicy resource. Should be in the format "locations/global/firewallPolicies/{{firewallPolicyID}}".
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a ComputeFirewallPolicy resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace of a ComputeFirewallPolicy resource.
                     type: string
                 type: object
               resourceID:
@@ -131,9 +126,10 @@ spec:
             - firewallPolicyRef
             type: object
           status:
+            description: ComputeFirewallPolicyAssociationStatus defines the config connector machine state of ComputeFirewallPolicyAssociation
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the object's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -155,6 +151,7 @@ spec:
                 type: array
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
               shortName:
                 description: The short name of the firewall policy of the association.
@@ -167,9 +164,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
