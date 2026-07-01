@@ -54,6 +54,14 @@ public partial class V1alpha1AIPlatformModelSpecBaseModelSourceModelGardenSource
     /// <summary>Required. The model garden source model resource name.</summary>
     [JsonPropertyName("publicModelName")]
     public string? PublicModelName { get; set; }
+
+    /// <summary>Optional. Whether to avoid pulling the model from the HF cache.</summary>
+    [JsonPropertyName("skipHfModelCache")]
+    public bool? SkipHfModelCache { get; set; }
+
+    /// <summary>Optional. The model garden source model version ID.</summary>
+    [JsonPropertyName("versionID")]
+    public string? VersionID { get; set; }
 }
 
 /// <summary>Optional. User input field to specify the base model source. Currently it only supports specifying the Model Garden models and Genie models.</summary>
@@ -102,6 +110,79 @@ public partial class V1alpha1AIPlatformModelSpecContainerSpecHealthProbeExec
     public IList<string>? Command { get; set; }
 }
 
+/// <summary>GrpcAction probes the health of a container by sending a gRPC request.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecHealthProbeGrpc
+{
+    /// <summary>Port number of the gRPC service. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+
+    /// <summary>
+    /// Service is the name of the service to place in the gRPC
+    ///  HealthCheckRequest (see
+    ///  https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+    /// 
+    ///  If this is not specified, the default behavior is defined by gRPC.
+    /// </summary>
+    [JsonPropertyName("service")]
+    public string? Service { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecHealthProbeHttpGetHttpHeaders
+{
+    /// <summary>The header field name. This will be canonicalized upon output, so case-variant names will be understood as the same header.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The header field value</summary>
+    [JsonPropertyName("value")]
+    public string? Value { get; set; }
+}
+
+/// <summary>HttpGetAction probes the health of a container by sending an HTTP GET request.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecHealthProbeHttpGet
+{
+    /// <summary>Host name to connect to, defaults to the model serving container&apos;s IP. You probably want to set &quot;Host&quot; in httpHeaders instead.</summary>
+    [JsonPropertyName("host")]
+    public string? Host { get; set; }
+
+    /// <summary>Custom headers to set in the request. HTTP allows repeated headers.</summary>
+    [JsonPropertyName("httpHeaders")]
+    public IList<V1alpha1AIPlatformModelSpecContainerSpecHealthProbeHttpGetHttpHeaders>? HttpHeaders { get; set; }
+
+    /// <summary>Path to access on the HTTP server.</summary>
+    [JsonPropertyName("path")]
+    public string? Path { get; set; }
+
+    /// <summary>Number of the port to access on the container. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+
+    /// <summary>Scheme to use for connecting to the host. Defaults to HTTP. Acceptable values are &quot;HTTP&quot; or &quot;HTTPS&quot;.</summary>
+    [JsonPropertyName("scheme")]
+    public string? Scheme { get; set; }
+}
+
+/// <summary>TcpSocketAction probes the health of a container by opening a TCP socket connection.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecHealthProbeTcpSocket
+{
+    /// <summary>Optional: Host name to connect to, defaults to the model serving container&apos;s IP.</summary>
+    [JsonPropertyName("host")]
+    public string? Host { get; set; }
+
+    /// <summary>Number of the port to access on the container. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+}
+
 /// <summary>Immutable. Specification for Kubernetes readiness probe.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -112,6 +193,32 @@ public partial class V1alpha1AIPlatformModelSpecContainerSpecHealthProbe
     public V1alpha1AIPlatformModelSpecContainerSpecHealthProbeExec? Exec { get; set; }
 
     /// <summary>
+    /// Number of consecutive failures before the probe is considered failed.
+    ///  Defaults to 3. Minimum value is 1.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;failureThreshold&apos;.
+    /// </summary>
+    [JsonPropertyName("failureThreshold")]
+    public int? FailureThreshold { get; set; }
+
+    /// <summary>GrpcAction probes the health of a container by sending a gRPC request.</summary>
+    [JsonPropertyName("grpc")]
+    public V1alpha1AIPlatformModelSpecContainerSpecHealthProbeGrpc? Grpc { get; set; }
+
+    /// <summary>HttpGetAction probes the health of a container by sending an HTTP GET request.</summary>
+    [JsonPropertyName("httpGet")]
+    public V1alpha1AIPlatformModelSpecContainerSpecHealthProbeHttpGet? HttpGet { get; set; }
+
+    /// <summary>
+    /// Number of seconds to wait before starting the probe. Defaults to 0.
+    ///  Minimum value is 0.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;initialDelaySeconds&apos;.
+    /// </summary>
+    [JsonPropertyName("initialDelaySeconds")]
+    public int? InitialDelaySeconds { get; set; }
+
+    /// <summary>
     /// How often (in seconds) to perform the probe. Default to 10 seconds.
     ///  Minimum value is 1. Must be less than timeout_seconds.
     /// 
@@ -119,6 +226,169 @@ public partial class V1alpha1AIPlatformModelSpecContainerSpecHealthProbe
     /// </summary>
     [JsonPropertyName("periodSeconds")]
     public int? PeriodSeconds { get; set; }
+
+    /// <summary>
+    /// Number of consecutive successes before the probe is considered successful.
+    ///  Defaults to 1. Minimum value is 1.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;successThreshold&apos;.
+    /// </summary>
+    [JsonPropertyName("successThreshold")]
+    public int? SuccessThreshold { get; set; }
+
+    /// <summary>TcpSocketAction probes the health of a container by opening a TCP socket connection.</summary>
+    [JsonPropertyName("tcpSocket")]
+    public V1alpha1AIPlatformModelSpecContainerSpecHealthProbeTcpSocket? TcpSocket { get; set; }
+
+    /// <summary>
+    /// Number of seconds after which the probe times out. Defaults to 1 second.
+    ///  Minimum value is 1. Must be greater or equal to period_seconds.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;timeoutSeconds&apos;.
+    /// </summary>
+    [JsonPropertyName("timeoutSeconds")]
+    public int? TimeoutSeconds { get; set; }
+}
+
+/// <summary>ExecAction probes the health of a container by executing a command.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeExec
+{
+    /// <summary>Command is the command line to execute inside the container, the working directory for the command is root (&apos;/&apos;) in the container&apos;s filesystem. The command is simply exec&apos;d, it is not run inside a shell, so traditional shell instructions (&apos;|&apos;, etc) won&apos;t work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.</summary>
+    [JsonPropertyName("command")]
+    public IList<string>? Command { get; set; }
+}
+
+/// <summary>GrpcAction probes the health of a container by sending a gRPC request.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeGrpc
+{
+    /// <summary>Port number of the gRPC service. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+
+    /// <summary>
+    /// Service is the name of the service to place in the gRPC
+    ///  HealthCheckRequest (see
+    ///  https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+    /// 
+    ///  If this is not specified, the default behavior is defined by gRPC.
+    /// </summary>
+    [JsonPropertyName("service")]
+    public string? Service { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeHttpGetHttpHeaders
+{
+    /// <summary>The header field name. This will be canonicalized upon output, so case-variant names will be understood as the same header.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The header field value</summary>
+    [JsonPropertyName("value")]
+    public string? Value { get; set; }
+}
+
+/// <summary>HttpGetAction probes the health of a container by sending an HTTP GET request.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeHttpGet
+{
+    /// <summary>Host name to connect to, defaults to the model serving container&apos;s IP. You probably want to set &quot;Host&quot; in httpHeaders instead.</summary>
+    [JsonPropertyName("host")]
+    public string? Host { get; set; }
+
+    /// <summary>Custom headers to set in the request. HTTP allows repeated headers.</summary>
+    [JsonPropertyName("httpHeaders")]
+    public IList<V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeHttpGetHttpHeaders>? HttpHeaders { get; set; }
+
+    /// <summary>Path to access on the HTTP server.</summary>
+    [JsonPropertyName("path")]
+    public string? Path { get; set; }
+
+    /// <summary>Number of the port to access on the container. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+
+    /// <summary>Scheme to use for connecting to the host. Defaults to HTTP. Acceptable values are &quot;HTTP&quot; or &quot;HTTPS&quot;.</summary>
+    [JsonPropertyName("scheme")]
+    public string? Scheme { get; set; }
+}
+
+/// <summary>TcpSocketAction probes the health of a container by opening a TCP socket connection.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeTcpSocket
+{
+    /// <summary>Optional: Host name to connect to, defaults to the model serving container&apos;s IP.</summary>
+    [JsonPropertyName("host")]
+    public string? Host { get; set; }
+
+    /// <summary>Number of the port to access on the container. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+}
+
+/// <summary>Immutable. Specification for Kubernetes liveness probe.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecLivenessProbe
+{
+    /// <summary>ExecAction probes the health of a container by executing a command.</summary>
+    [JsonPropertyName("exec")]
+    public V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeExec? Exec { get; set; }
+
+    /// <summary>
+    /// Number of consecutive failures before the probe is considered failed.
+    ///  Defaults to 3. Minimum value is 1.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;failureThreshold&apos;.
+    /// </summary>
+    [JsonPropertyName("failureThreshold")]
+    public int? FailureThreshold { get; set; }
+
+    /// <summary>GrpcAction probes the health of a container by sending a gRPC request.</summary>
+    [JsonPropertyName("grpc")]
+    public V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeGrpc? Grpc { get; set; }
+
+    /// <summary>HttpGetAction probes the health of a container by sending an HTTP GET request.</summary>
+    [JsonPropertyName("httpGet")]
+    public V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeHttpGet? HttpGet { get; set; }
+
+    /// <summary>
+    /// Number of seconds to wait before starting the probe. Defaults to 0.
+    ///  Minimum value is 0.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;initialDelaySeconds&apos;.
+    /// </summary>
+    [JsonPropertyName("initialDelaySeconds")]
+    public int? InitialDelaySeconds { get; set; }
+
+    /// <summary>
+    /// How often (in seconds) to perform the probe. Default to 10 seconds.
+    ///  Minimum value is 1. Must be less than timeout_seconds.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;periodSeconds&apos;.
+    /// </summary>
+    [JsonPropertyName("periodSeconds")]
+    public int? PeriodSeconds { get; set; }
+
+    /// <summary>
+    /// Number of consecutive successes before the probe is considered successful.
+    ///  Defaults to 1. Minimum value is 1.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;successThreshold&apos;.
+    /// </summary>
+    [JsonPropertyName("successThreshold")]
+    public int? SuccessThreshold { get; set; }
+
+    /// <summary>TcpSocketAction probes the health of a container by opening a TCP socket connection.</summary>
+    [JsonPropertyName("tcpSocket")]
+    public V1alpha1AIPlatformModelSpecContainerSpecLivenessProbeTcpSocket? TcpSocket { get; set; }
 
     /// <summary>
     /// Number of seconds after which the probe times out. Defaults to 1 second.
@@ -149,6 +419,79 @@ public partial class V1alpha1AIPlatformModelSpecContainerSpecStartupProbeExec
     public IList<string>? Command { get; set; }
 }
 
+/// <summary>GrpcAction probes the health of a container by sending a gRPC request.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecStartupProbeGrpc
+{
+    /// <summary>Port number of the gRPC service. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+
+    /// <summary>
+    /// Service is the name of the service to place in the gRPC
+    ///  HealthCheckRequest (see
+    ///  https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+    /// 
+    ///  If this is not specified, the default behavior is defined by gRPC.
+    /// </summary>
+    [JsonPropertyName("service")]
+    public string? Service { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecStartupProbeHttpGetHttpHeaders
+{
+    /// <summary>The header field name. This will be canonicalized upon output, so case-variant names will be understood as the same header.</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>The header field value</summary>
+    [JsonPropertyName("value")]
+    public string? Value { get; set; }
+}
+
+/// <summary>HttpGetAction probes the health of a container by sending an HTTP GET request.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecStartupProbeHttpGet
+{
+    /// <summary>Host name to connect to, defaults to the model serving container&apos;s IP. You probably want to set &quot;Host&quot; in httpHeaders instead.</summary>
+    [JsonPropertyName("host")]
+    public string? Host { get; set; }
+
+    /// <summary>Custom headers to set in the request. HTTP allows repeated headers.</summary>
+    [JsonPropertyName("httpHeaders")]
+    public IList<V1alpha1AIPlatformModelSpecContainerSpecStartupProbeHttpGetHttpHeaders>? HttpHeaders { get; set; }
+
+    /// <summary>Path to access on the HTTP server.</summary>
+    [JsonPropertyName("path")]
+    public string? Path { get; set; }
+
+    /// <summary>Number of the port to access on the container. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+
+    /// <summary>Scheme to use for connecting to the host. Defaults to HTTP. Acceptable values are &quot;HTTP&quot; or &quot;HTTPS&quot;.</summary>
+    [JsonPropertyName("scheme")]
+    public string? Scheme { get; set; }
+}
+
+/// <summary>TcpSocketAction probes the health of a container by opening a TCP socket connection.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecContainerSpecStartupProbeTcpSocket
+{
+    /// <summary>Optional: Host name to connect to, defaults to the model serving container&apos;s IP.</summary>
+    [JsonPropertyName("host")]
+    public string? Host { get; set; }
+
+    /// <summary>Number of the port to access on the container. Number must be in the range 1 to 65535.</summary>
+    [JsonPropertyName("port")]
+    public int? Port { get; set; }
+}
+
 /// <summary>Immutable. Specification for Kubernetes startup probe.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -159,6 +502,32 @@ public partial class V1alpha1AIPlatformModelSpecContainerSpecStartupProbe
     public V1alpha1AIPlatformModelSpecContainerSpecStartupProbeExec? Exec { get; set; }
 
     /// <summary>
+    /// Number of consecutive failures before the probe is considered failed.
+    ///  Defaults to 3. Minimum value is 1.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;failureThreshold&apos;.
+    /// </summary>
+    [JsonPropertyName("failureThreshold")]
+    public int? FailureThreshold { get; set; }
+
+    /// <summary>GrpcAction probes the health of a container by sending a gRPC request.</summary>
+    [JsonPropertyName("grpc")]
+    public V1alpha1AIPlatformModelSpecContainerSpecStartupProbeGrpc? Grpc { get; set; }
+
+    /// <summary>HttpGetAction probes the health of a container by sending an HTTP GET request.</summary>
+    [JsonPropertyName("httpGet")]
+    public V1alpha1AIPlatformModelSpecContainerSpecStartupProbeHttpGet? HttpGet { get; set; }
+
+    /// <summary>
+    /// Number of seconds to wait before starting the probe. Defaults to 0.
+    ///  Minimum value is 0.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;initialDelaySeconds&apos;.
+    /// </summary>
+    [JsonPropertyName("initialDelaySeconds")]
+    public int? InitialDelaySeconds { get; set; }
+
+    /// <summary>
     /// How often (in seconds) to perform the probe. Default to 10 seconds.
     ///  Minimum value is 1. Must be less than timeout_seconds.
     /// 
@@ -166,6 +535,19 @@ public partial class V1alpha1AIPlatformModelSpecContainerSpecStartupProbe
     /// </summary>
     [JsonPropertyName("periodSeconds")]
     public int? PeriodSeconds { get; set; }
+
+    /// <summary>
+    /// Number of consecutive successes before the probe is considered successful.
+    ///  Defaults to 1. Minimum value is 1.
+    /// 
+    ///  Maps to Kubernetes probe argument &apos;successThreshold&apos;.
+    /// </summary>
+    [JsonPropertyName("successThreshold")]
+    public int? SuccessThreshold { get; set; }
+
+    /// <summary>TcpSocketAction probes the health of a container by opening a TCP socket connection.</summary>
+    [JsonPropertyName("tcpSocket")]
+    public V1alpha1AIPlatformModelSpecContainerSpecStartupProbeTcpSocket? TcpSocket { get; set; }
 
     /// <summary>
     /// Number of seconds after which the probe times out. Defaults to 1 second.
@@ -376,6 +758,23 @@ public partial class V1alpha1AIPlatformModelSpecContainerSpec
     public string? ImageURI { get; set; }
 
     /// <summary>
+    /// Immutable. Invoke route prefix for the custom container. &quot;/*&quot; is the only
+    ///  supported value right now. By setting this field, any non-root route on
+    ///  this model will be accessible with invoke http call eg: &quot;/invoke/foo/bar&quot;,
+    ///  however the [PredictionService.Invoke] RPC is not supported yet.
+    /// 
+    ///  Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+    ///  default to using `predict_route` if this field is not set. If this field
+    ///  is set, the Model can only be deployed to dedicated endpoint.
+    /// </summary>
+    [JsonPropertyName("invokeRoutePrefix")]
+    public string? InvokeRoutePrefix { get; set; }
+
+    /// <summary>Immutable. Specification for Kubernetes liveness probe.</summary>
+    [JsonPropertyName("livenessProbe")]
+    public V1alpha1AIPlatformModelSpecContainerSpecLivenessProbe? LivenessProbe { get; set; }
+
+    /// <summary>
     /// Immutable. List of ports to expose from the container. Vertex AI sends any
     ///  prediction requests that it receives to the first port on this list. Vertex
     ///  AI also sends
@@ -498,6 +897,10 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataInputsEnc
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
 
+    /// <summary>Represents a repeated `Value`.</summary>
+    [JsonPropertyName("listValue")]
+    public JsonNode? ListValue { get; set; }
+
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
     public string? NullValue { get; set; }
@@ -512,7 +915,7 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataInputsEnc
 
     /// <summary>Represents a structured value.</summary>
     [JsonPropertyName("structValue")]
-    public IDictionary<string, string>? StructValue { get; set; }
+    public JsonNode? StructValue { get; set; }
 }
 
 /// <summary>The domain details of the input feature value. Like min/max, original mean or standard deviation if normalized.</summary>
@@ -545,6 +948,10 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataInputsInp
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
 
+    /// <summary>Represents a repeated `Value`.</summary>
+    [JsonPropertyName("listValue")]
+    public JsonNode? ListValue { get; set; }
+
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
     public string? NullValue { get; set; }
@@ -559,7 +966,7 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataInputsInp
 
     /// <summary>Represents a structured value.</summary>
     [JsonPropertyName("structValue")]
-    public IDictionary<string, string>? StructValue { get; set; }
+    public JsonNode? StructValue { get; set; }
 }
 
 /// <summary>Visualization configurations for image explanation.</summary>
@@ -718,6 +1125,10 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataOutputsIn
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
 
+    /// <summary>Represents a repeated `Value`.</summary>
+    [JsonPropertyName("listValue")]
+    public JsonNode? ListValue { get; set; }
+
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
     public string? NullValue { get; set; }
@@ -732,7 +1143,7 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataOutputsIn
 
     /// <summary>Represents a structured value.</summary>
     [JsonPropertyName("structValue")]
-    public IDictionary<string, string>? StructValue { get; set; }
+    public JsonNode? StructValue { get; set; }
 }
 
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
@@ -829,7 +1240,7 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadata
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersExamplesExampleGCSSourceGcsSource
 {
-    /// <summary>Required. Google Cloud Storage URI(-s) to the input file(s). May contain wildcards. For more information on wildcards, see https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.</summary>
+    /// <summary>Required. Google Cloud Storage URI(-s) to the input file(s). May contain wildcards. For more information on wildcards, see https://cloud.google.com/storage/docs/wildcards.</summary>
     [JsonPropertyName("uris")]
     public IList<string>? Uris { get; set; }
 }
@@ -857,6 +1268,10 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersExample
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
 
+    /// <summary>Represents a repeated `Value`.</summary>
+    [JsonPropertyName("listValue")]
+    public JsonNode? ListValue { get; set; }
+
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
     public string? NullValue { get; set; }
@@ -871,7 +1286,7 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersExample
 
     /// <summary>Represents a structured value.</summary>
     [JsonPropertyName("structValue")]
-    public IDictionary<string, string>? StructValue { get; set; }
+    public JsonNode? StructValue { get; set; }
 }
 
 /// <summary>Simplified preset configuration, which automatically sets configuration values based on the desired query speed-precision trade-off and modality.</summary>
@@ -1025,6 +1440,35 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersIntegra
     /// </summary>
     [JsonPropertyName("stepCount")]
     public int? StepCount { get; set; }
+}
+
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndicesValues
+{
+}
+
+/// <summary>
+/// If populated, only returns attributions that have
+///  [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
+///  contained in output_indices. It must be an ndarray of integers, with the
+///  same shape of the output it&apos;s explaining.
+/// 
+///  If not populated, returns attributions for
+///  [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
+///  outputs. If neither top_k nor output_indices is populated, returns the
+///  argmax index of the outputs.
+/// 
+///  Only applicable to Models that predict multiple outputs (e,g, multi-class
+///  Models that predict multiple classes).
+/// </summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndices
+{
+    /// <summary>Repeated field of dynamically typed values.</summary>
+    [JsonPropertyName("values")]
+    public IList<V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndicesValues>? Values { get; set; }
 }
 
 /// <summary>An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. Refer to this paper for model details: https://arxiv.org/abs/1306.4265.</summary>
@@ -1182,6 +1626,23 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecParameters
     [JsonPropertyName("integratedGradientsAttribution")]
     public V1alpha1AIPlatformModelSpecExplanationSpecParametersIntegratedGradientsAttribution? IntegratedGradientsAttribution { get; set; }
 
+    /// <summary>
+    /// If populated, only returns attributions that have
+    ///  [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
+    ///  contained in output_indices. It must be an ndarray of integers, with the
+    ///  same shape of the output it&apos;s explaining.
+    /// 
+    ///  If not populated, returns attributions for
+    ///  [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
+    ///  outputs. If neither top_k nor output_indices is populated, returns the
+    ///  argmax index of the outputs.
+    /// 
+    ///  Only applicable to Models that predict multiple outputs (e,g, multi-class
+    ///  Models that predict multiple classes).
+    /// </summary>
+    [JsonPropertyName("outputIndices")]
+    public V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndices? OutputIndices { get; set; }
+
     /// <summary>An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. Refer to this paper for model details: https://arxiv.org/abs/1306.4265.</summary>
     [JsonPropertyName("sampledShapleyAttribution")]
     public V1alpha1AIPlatformModelSpecExplanationSpecParametersSampledShapleyAttribution? SampledShapleyAttribution { get; set; }
@@ -1260,6 +1721,10 @@ public partial class V1alpha1AIPlatformModelSpecMetadata
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
 
+    /// <summary>Represents a repeated `Value`.</summary>
+    [JsonPropertyName("listValue")]
+    public JsonNode? ListValue { get; set; }
+
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
     public string? NullValue { get; set; }
@@ -1274,7 +1739,7 @@ public partial class V1alpha1AIPlatformModelSpecMetadata
 
     /// <summary>Represents a structured value.</summary>
     [JsonPropertyName("structValue")]
-    public IDictionary<string, string>? StructValue { get; set; }
+    public JsonNode? StructValue { get; set; }
 }
 
 /// <summary>The schemata that describe formats of the Model&apos;s predictions and explanations as given and returned via [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].</summary>
