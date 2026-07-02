@@ -790,16 +790,6 @@ spec:
                                   boolValue:
                                     description: Represents a boolean value.
                                     type: boolean
-                                  listValue:
-                                    description: Represents a repeated `Value`.
-                                    properties:
-                                      values:
-                                        description: Repeated field of dynamically typed values.
-                                        items:
-                                          type: object
-                                        type: array
-                                    type: object
-                                    x-kubernetes-preserve-unknown-fields: true
                                   nullValue:
                                     description: Represents a null value.
                                     type: string
@@ -882,16 +872,6 @@ spec:
                                   boolValue:
                                     description: Represents a boolean value.
                                     type: boolean
-                                  listValue:
-                                    description: Represents a repeated `Value`.
-                                    properties:
-                                      values:
-                                        description: Repeated field of dynamically typed values.
-                                        items:
-                                          type: object
-                                        type: array
-                                    type: object
-                                    x-kubernetes-preserve-unknown-fields: true
                                   nullValue:
                                     description: Represents a null value.
                                     type: string
@@ -1001,16 +981,6 @@ spec:
                                 boolValue:
                                   description: Represents a boolean value.
                                   type: boolean
-                                listValue:
-                                  description: Represents a repeated `Value`.
-                                  properties:
-                                    values:
-                                      description: Repeated field of dynamically typed values.
-                                      items:
-                                        type: object
-                                      type: array
-                                  type: object
-                                  x-kubernetes-preserve-unknown-fields: true
                                 nullValue:
                                   description: Represents a null value.
                                   type: string
@@ -1068,16 +1038,6 @@ spec:
                               boolValue:
                                 description: Represents a boolean value.
                                 type: boolean
-                              listValue:
-                                description: Represents a repeated `Value`.
-                                properties:
-                                  values:
-                                    description: Repeated field of dynamically typed values.
-                                    items:
-                                      type: object
-                                    type: array
-                                type: object
-                                x-kubernetes-preserve-unknown-fields: true
                               nullValue:
                                 description: Represents a null value.
                                 type: string
@@ -1177,27 +1137,6 @@ spec:
                                Valid range of its value is [1, 100], inclusively.
                             format: int32
                             type: integer
-                        type: object
-                      outputIndices:
-                        description: |-
-                          If populated, only returns attributions that have
-                           [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
-                           contained in output_indices. It must be an ndarray of integers, with the
-                           same shape of the output it's explaining.
-
-                           If not populated, returns attributions for
-                           [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
-                           outputs. If neither top_k nor output_indices is populated, returns the
-                           argmax index of the outputs.
-
-                           Only applicable to Models that predict multiple outputs (e,g, multi-class
-                           Models that predict multiple classes).
-                        properties:
-                          values:
-                            description: Repeated field of dynamically typed values.
-                            items:
-                              type: object
-                            type: array
                         type: object
                       sampledShapleyAttribution:
                         description: 'An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. Refer to this paper for model details: https://arxiv.org/abs/1306.4265.'
@@ -1319,16 +1258,6 @@ spec:
                   boolValue:
                     description: Represents a boolean value.
                     type: boolean
-                  listValue:
-                    description: Represents a repeated `Value`.
-                    properties:
-                      values:
-                        description: Repeated field of dynamically typed values.
-                        items:
-                          type: object
-                        type: array
-                    type: object
-                    x-kubernetes-preserve-unknown-fields: true
                   nullValue:
                     description: Represents a null value.
                     type: string
