@@ -152,6 +152,15 @@ public partial class V1beta1ContainerClusterSpecAddonsConfigNetworkPolicyConfig
     public required bool Disabled { get; set; }
 }
 
+/// <summary>The status of the Parallelstore CSI driver addon, which allows the usage of Parallelstore instance as volumes. Defaults to disabled; set enabled = true to enable.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ContainerClusterSpecAddonsConfigParallelstoreCsiDriverConfig
+{
+    [JsonPropertyName("enabled")]
+    public required bool Enabled { get; set; }
+}
+
 /// <summary>The configuration for addons supported by GKE.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -204,6 +213,10 @@ public partial class V1beta1ContainerClusterSpecAddonsConfig
     /// <summary>Whether we should enable the network policy addon for the master. This must be enabled in order to enable network policy for the nodes. To enable this, you must also define a network_policy block, otherwise nothing will happen. It can only be disabled if the nodes already do not have network policies enabled. Defaults to disabled; set disabled = false to enable.</summary>
     [JsonPropertyName("networkPolicyConfig")]
     public V1beta1ContainerClusterSpecAddonsConfigNetworkPolicyConfig? NetworkPolicyConfig { get; set; }
+
+    /// <summary>The status of the Parallelstore CSI driver addon, which allows the usage of Parallelstore instance as volumes. Defaults to disabled; set enabled = true to enable.</summary>
+    [JsonPropertyName("parallelstoreCsiDriverConfig")]
+    public V1beta1ContainerClusterSpecAddonsConfigParallelstoreCsiDriverConfig? ParallelstoreCsiDriverConfig { get; set; }
 }
 
 /// <summary>Configuration for the Google Groups for GKE feature.</summary>
