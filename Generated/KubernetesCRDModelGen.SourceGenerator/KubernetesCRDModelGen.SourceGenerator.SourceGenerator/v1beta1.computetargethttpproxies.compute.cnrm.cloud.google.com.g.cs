@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeTargetHTTPProxy is the Schema for the ComputeTargetHTTPProxy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,23 +36,20 @@ public partial class V1beta1ComputeTargetHTTPProxyList : IKubernetesObject<V1Lis
     public required IList<V1beta1ComputeTargetHTTPProxy> Items { get; set; }
 }
 
-/// <summary>
-/// A reference to the ComputeURLMap resource that defines the mapping
-/// from URL to the BackendService.
-/// </summary>
+/// <summary>A reference to the ComputeURLMap resource that defines the mapping from URL to the BackendService.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetHTTPProxySpecUrlMapRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeURLMap` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeURLMap resource. Should be in the format &quot;projects/{{projectID}}/global/urlMaps/{{urlMapID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/urlMaps/{{urlMapID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeURLMap resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeURLMap resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -64,14 +62,7 @@ public partial class V1beta1ComputeTargetHTTPProxySpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Immutable. Specifies how long to keep a connection open, after completing a response,
-    /// while there is no matching traffic (in seconds). If an HTTP keepalive is
-    /// not specified, a default value (610 seconds) will be used. For Global
-    /// external HTTP(S) load balancer, the minimum allowed value is 5 seconds and
-    /// the maximum allowed value is 1200 seconds. For Global external HTTP(S)
-    /// load balancer (classic), this option is not available publicly.
-    /// </summary>
+    /// <summary>Immutable. Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keepalive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.</summary>
     [JsonPropertyName("httpKeepAliveTimeoutSec")]
     public int? HttpKeepAliveTimeoutSec { get; set; }
 
@@ -79,10 +70,7 @@ public partial class V1beta1ComputeTargetHTTPProxySpec
     [JsonPropertyName("location")]
     public required string Location { get; set; }
 
-    /// <summary>
-    /// Immutable. This field only applies when the forwarding rule that references
-    /// this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-    /// </summary>
+    /// <summary>Immutable. This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.</summary>
     [JsonPropertyName("proxyBind")]
     public bool? ProxyBind { get; set; }
 
@@ -90,10 +78,7 @@ public partial class V1beta1ComputeTargetHTTPProxySpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// A reference to the ComputeURLMap resource that defines the mapping
-    /// from URL to the BackendService.
-    /// </summary>
+    /// <summary>A reference to the ComputeURLMap resource that defines the mapping from URL to the BackendService.</summary>
     [JsonPropertyName("urlMapRef")]
     public required V1beta1ComputeTargetHTTPProxySpecUrlMapRef UrlMapRef { get; set; }
 }
@@ -123,11 +108,12 @@ public partial class V1beta1ComputeTargetHTTPProxyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeTargetHTTPProxyStatus defines the config connector machine state of ComputeTargetHTTPProxy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetHTTPProxyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeTargetHTTPProxyStatusConditions>? Conditions { get; set; }
 
@@ -137,16 +123,17 @@ public partial class V1beta1ComputeTargetHTTPProxyStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>The unique identifier for the resource.</summary>
     [JsonPropertyName("proxyId")]
-    public int? ProxyId { get; set; }
+    public long? ProxyId { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeTargetHTTPProxy is the Schema for the ComputeTargetHTTPProxy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -171,6 +158,7 @@ public partial class V1beta1ComputeTargetHTTPProxy : IKubernetesObject<V1ObjectM
     [JsonPropertyName("spec")]
     public required V1beta1ComputeTargetHTTPProxySpec Spec { get; set; }
 
+    /// <summary>ComputeTargetHTTPProxyStatus defines the config connector machine state of ComputeTargetHTTPProxy</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeTargetHTTPProxyStatus? Status { get; set; }
 }
