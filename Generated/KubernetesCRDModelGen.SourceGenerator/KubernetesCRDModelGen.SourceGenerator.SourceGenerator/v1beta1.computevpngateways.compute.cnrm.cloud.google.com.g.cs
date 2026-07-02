@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeVPNGateway is the Schema for the ComputeVPNGateway API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,30 +41,25 @@ public partial class V1beta1ComputeVPNGatewayList : IKubernetesObject<V1ListMeta
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNGatewaySpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// Immutable. When this value is present, the VPN Gateway will be used
-/// for IPsec-encrypted Cloud Interconnect; all Egress or Ingress
-/// traffic for this VPN Gateway interface will go through the specified
-/// interconnect attachment resource. Not currently available publicly.
-/// </summary>
+/// <summary>Immutable. When this value is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource. Not currently available publicly.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNGatewaySpecVpnInterfacesInterconnectAttachmentRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeInterconnectAttachment` resource.</summary>
+    /// <summary>Allowed value: The `name` field of a `ComputeInterconnectAttachment` resource.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
@@ -82,14 +78,9 @@ public partial class V1beta1ComputeVPNGatewaySpecVpnInterfaces
 {
     /// <summary>Immutable. The numeric ID of this VPN gateway interface.</summary>
     [JsonPropertyName("id")]
-    public int? Id { get; set; }
+    public long? Id { get; set; }
 
-    /// <summary>
-    /// Immutable. When this value is present, the VPN Gateway will be used
-    /// for IPsec-encrypted Cloud Interconnect; all Egress or Ingress
-    /// traffic for this VPN Gateway interface will go through the specified
-    /// interconnect attachment resource. Not currently available publicly.
-    /// </summary>
+    /// <summary>Immutable. When this value is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource. Not currently available publicly.</summary>
     [JsonPropertyName("interconnectAttachmentRef")]
     public V1beta1ComputeVPNGatewaySpecVpnInterfacesInterconnectAttachmentRef? InterconnectAttachmentRef { get; set; }
 
@@ -118,10 +109,7 @@ public partial class V1beta1ComputeVPNGatewaySpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// Immutable. The stack type for this VPN gateway to identify the IP protocols that are enabled.
-    /// If not specified, IPV4_ONLY will be used. Default value: &quot;IPV4_ONLY&quot; Possible values: [&quot;IPV4_ONLY&quot;, &quot;IPV4_IPV6&quot;].
-    /// </summary>
+    /// <summary>Immutable. The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used. Default value: &quot;IPV4_ONLY&quot; Possible values: [&quot;IPV4_ONLY&quot;, &quot;IPV4_IPV6&quot;].</summary>
     [JsonPropertyName("stackType")]
     public string? StackType { get; set; }
 
@@ -165,12 +153,13 @@ public partial class V1beta1ComputeVPNGatewayStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeVPNGateway is the Schema for the ComputeVPNGateway API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
