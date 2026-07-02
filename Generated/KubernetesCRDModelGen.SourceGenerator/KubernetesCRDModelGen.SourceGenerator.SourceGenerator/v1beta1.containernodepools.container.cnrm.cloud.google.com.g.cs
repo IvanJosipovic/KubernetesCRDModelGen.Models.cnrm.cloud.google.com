@@ -778,6 +778,16 @@ public partial class V1beta1ContainerNodePoolSpecPlacementPolicy
     public required string Type { get; set; }
 }
 
+/// <summary>Immutable. Specifies the configuration of queued provisioning.</summary>
+[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
+[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+public partial class V1beta1ContainerNodePoolSpecQueuedProvisioning
+{
+    /// <summary>Immutable. Denotes that this node pool is QRM specific, meaning nodes can be only obtained through queuing via the Cluster Autoscaler ProvisioningRequest API.</summary>
+    [JsonPropertyName("enabled")]
+    public bool? Enabled { get; set; }
+}
+
 /// <summary>Standard policy for the blue-green upgrade.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -884,6 +894,10 @@ public partial class V1beta1ContainerNodePoolSpec
     /// <summary>Specifies the node placement policy.</summary>
     [JsonPropertyName("placementPolicy")]
     public V1beta1ContainerNodePoolSpecPlacementPolicy? PlacementPolicy { get; set; }
+
+    /// <summary>Immutable. Specifies the configuration of queued provisioning.</summary>
+    [JsonPropertyName("queuedProvisioning")]
+    public V1beta1ContainerNodePoolSpecQueuedProvisioning? QueuedProvisioning { get; set; }
 
     /// <summary>Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
     [JsonPropertyName("resourceID")]
