@@ -897,10 +897,6 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataInputsEnc
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
 
-    /// <summary>Represents a repeated `Value`.</summary>
-    [JsonPropertyName("listValue")]
-    public JsonNode? ListValue { get; set; }
-
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
     public string? NullValue { get; set; }
@@ -947,10 +943,6 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataInputsInp
     /// <summary>Represents a boolean value.</summary>
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
-
-    /// <summary>Represents a repeated `Value`.</summary>
-    [JsonPropertyName("listValue")]
-    public JsonNode? ListValue { get; set; }
 
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
@@ -1125,10 +1117,6 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecMetadataOutputsIn
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
 
-    /// <summary>Represents a repeated `Value`.</summary>
-    [JsonPropertyName("listValue")]
-    public JsonNode? ListValue { get; set; }
-
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
     public string? NullValue { get; set; }
@@ -1267,10 +1255,6 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersExample
     /// <summary>Represents a boolean value.</summary>
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
-
-    /// <summary>Represents a repeated `Value`.</summary>
-    [JsonPropertyName("listValue")]
-    public JsonNode? ListValue { get; set; }
 
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
@@ -1442,35 +1426,6 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersIntegra
     public int? StepCount { get; set; }
 }
 
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndicesValues
-{
-}
-
-/// <summary>
-/// If populated, only returns attributions that have
-///  [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
-///  contained in output_indices. It must be an ndarray of integers, with the
-///  same shape of the output it&apos;s explaining.
-/// 
-///  If not populated, returns attributions for
-///  [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
-///  outputs. If neither top_k nor output_indices is populated, returns the
-///  argmax index of the outputs.
-/// 
-///  Only applicable to Models that predict multiple outputs (e,g, multi-class
-///  Models that predict multiple classes).
-/// </summary>
-[global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public partial class V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndices
-{
-    /// <summary>Repeated field of dynamically typed values.</summary>
-    [JsonPropertyName("values")]
-    public IList<V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndicesValues>? Values { get; set; }
-}
-
 /// <summary>An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. Refer to this paper for model details: https://arxiv.org/abs/1306.4265.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -1626,23 +1581,6 @@ public partial class V1alpha1AIPlatformModelSpecExplanationSpecParameters
     [JsonPropertyName("integratedGradientsAttribution")]
     public V1alpha1AIPlatformModelSpecExplanationSpecParametersIntegratedGradientsAttribution? IntegratedGradientsAttribution { get; set; }
 
-    /// <summary>
-    /// If populated, only returns attributions that have
-    ///  [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
-    ///  contained in output_indices. It must be an ndarray of integers, with the
-    ///  same shape of the output it&apos;s explaining.
-    /// 
-    ///  If not populated, returns attributions for
-    ///  [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
-    ///  outputs. If neither top_k nor output_indices is populated, returns the
-    ///  argmax index of the outputs.
-    /// 
-    ///  Only applicable to Models that predict multiple outputs (e,g, multi-class
-    ///  Models that predict multiple classes).
-    /// </summary>
-    [JsonPropertyName("outputIndices")]
-    public V1alpha1AIPlatformModelSpecExplanationSpecParametersOutputIndices? OutputIndices { get; set; }
-
     /// <summary>An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. Refer to this paper for model details: https://arxiv.org/abs/1306.4265.</summary>
     [JsonPropertyName("sampledShapleyAttribution")]
     public V1alpha1AIPlatformModelSpecExplanationSpecParametersSampledShapleyAttribution? SampledShapleyAttribution { get; set; }
@@ -1720,10 +1658,6 @@ public partial class V1alpha1AIPlatformModelSpecMetadata
     /// <summary>Represents a boolean value.</summary>
     [JsonPropertyName("boolValue")]
     public bool? BoolValue { get; set; }
-
-    /// <summary>Represents a repeated `Value`.</summary>
-    [JsonPropertyName("listValue")]
-    public JsonNode? ListValue { get; set; }
 
     /// <summary>Represents a null value.</summary>
     [JsonPropertyName("nullValue")]
