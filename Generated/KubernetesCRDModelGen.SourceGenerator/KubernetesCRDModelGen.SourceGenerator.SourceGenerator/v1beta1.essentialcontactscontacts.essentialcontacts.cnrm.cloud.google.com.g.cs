@@ -36,7 +36,7 @@ public partial class V1beta1EssentialContactsContactList : IKubernetesObject<V1L
     public required IList<V1beta1EssentialContactsContact> Items { get; set; }
 }
 
-/// <summary>FolderRef represents the Folder that this resource belongs to.</summary>
+/// <summary>The Folder that contains this resource.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1EssentialContactsContactSpecFolderRef
@@ -95,7 +95,7 @@ public partial class V1beta1EssentialContactsContactSpec
     [JsonPropertyName("email")]
     public required string Email { get; set; }
 
-    /// <summary>FolderRef represents the Folder that this resource belongs to.</summary>
+    /// <summary>The Folder that contains this resource.</summary>
     [JsonPropertyName("folderRef")]
     public V1beta1EssentialContactsContactSpecFolderRef? FolderRef { get; set; }
 

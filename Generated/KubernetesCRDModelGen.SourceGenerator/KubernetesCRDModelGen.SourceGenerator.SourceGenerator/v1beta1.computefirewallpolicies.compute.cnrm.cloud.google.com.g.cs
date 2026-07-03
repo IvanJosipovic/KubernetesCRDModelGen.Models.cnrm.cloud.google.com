@@ -41,15 +41,15 @@ public partial class V1beta1ComputeFirewallPolicyList : IKubernetesObject<V1List
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeFirewallPolicySpecFolderRef
 {
-    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector. This field must be set when &apos;name&apos; field is not set.</summary>
+    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector. The recommended format is &quot;folders/{folderID}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>The &apos;name&apos; field of a &apos;Folder&apos; resource. This field must be set when &apos;external&apos; field is not set.</summary>
+    /// <summary>The &apos;name&apos; field of a &apos;Folder&apos; resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>The &apos;namespace&apos; field of a &apos;Folder&apos; resource. If unset, the namespace is defaulted to the namespace of the referencer resource.</summary>
+    /// <summary>The &apos;namespace&apos; field of a &apos;Folder&apos; resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }

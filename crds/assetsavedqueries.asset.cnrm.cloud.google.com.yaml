@@ -239,7 +239,7 @@ spec:
                 description: The description of this saved query. This value should be fewer than 255 characters.
                 type: string
               folderRef:
-                description: FolderRef represents the Folder that this resource belongs to.
+                description: The Folder that contains this resource.
                 oneOf:
                 - not:
                     required:
@@ -585,7 +585,7 @@ spec:
                 description: The description of this saved query. This value should be fewer than 255 characters.
                 type: string
               folderRef:
-                description: FolderRef represents the Folder that this resource belongs to.
+                description: The Folder that contains this resource.
                 oneOf:
                 - not:
                     required:

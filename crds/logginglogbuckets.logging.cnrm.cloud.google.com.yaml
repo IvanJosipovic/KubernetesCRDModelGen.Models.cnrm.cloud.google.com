@@ -116,7 +116,7 @@ spec:
                   - external
                 properties:
                   external:
-                    description: The 'name' field of a folder, when not managed by Config Connector.
+                    description: The 'name' field of a folder, when not managed by Config Connector. The recommended format is "folders/{folderID}".
                     type: string
                   name:
                     description: The 'name' field of a 'Folder' resource.
