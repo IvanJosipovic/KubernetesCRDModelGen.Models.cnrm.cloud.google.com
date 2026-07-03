@@ -59,7 +59,7 @@ public partial class V1beta1LoggingLogBucketSpecBillingAccountRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1LoggingLogBucketSpecFolderRef
 {
-    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector.</summary>
+    /// <summary>The &apos;name&apos; field of a folder, when not managed by Config Connector. The recommended format is &quot;folders/{folderID}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 

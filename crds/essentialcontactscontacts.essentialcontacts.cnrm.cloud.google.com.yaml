@@ -58,7 +58,7 @@ spec:
                 description: Required. The email address to send notifications to. The email address does not need to be a Google Account.
                 type: string
               folderRef:
-                description: FolderRef represents the Folder that this resource belongs to.
+                description: The Folder that contains this resource.
                 oneOf:
                 - not:
                     required:
@@ -224,7 +224,7 @@ spec:
                 description: Required. The email address to send notifications to. The email address does not need to be a Google Account.
                 type: string
               folderRef:
-                description: FolderRef represents the Folder that this resource belongs to.
+                description: The Folder that contains this resource.
                 oneOf:
                 - not:
                     required:
