@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeTargetInstance is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,37 +41,33 @@ public partial class V1beta1ComputeTargetInstanceList : IKubernetesObject<V1List
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetInstanceSpecInstanceRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeInstance` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeInstance resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/instances/{{instanceID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeInstance resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeInstance resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The network this target instance uses to forward
-/// traffic. If not specified, the traffic will be forwarded to the network
-/// that the default network interface belongs to.
-/// </summary>
+/// <summary>The network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetInstanceSpecNetworkRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeNetwork` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -80,19 +77,20 @@ public partial class V1beta1ComputeTargetInstanceSpecNetworkRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetInstanceSpecSecurityPolicyRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeSecurityPolicy` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeSecurityPolicy resource. Should be in the format &quot;projects/{{projectID}}/global/securityPolicies/{{name}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSecurityPolicy resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSecurityPolicy resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeTargetInstanceSpec defines the desired state of ComputeTargetInstance</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetInstanceSpec
@@ -105,18 +103,11 @@ public partial class V1beta1ComputeTargetInstanceSpec
     [JsonPropertyName("instanceRef")]
     public required V1beta1ComputeTargetInstanceSpecInstanceRef InstanceRef { get; set; }
 
-    /// <summary>
-    /// Immutable. NAT option controlling how IPs are NAT&apos;ed to the instance.
-    /// Currently only NO_NAT (default value) is supported. Default value: &quot;NO_NAT&quot; Possible values: [&quot;NO_NAT&quot;].
-    /// </summary>
+    /// <summary>Immutable. NAT option controlling how IPs are NAT&apos;ed to the instance. Currently only NO_NAT (default value) is supported. Default value: &quot;NO_NAT&quot; Possible values: [&quot;NO_NAT&quot;].</summary>
     [JsonPropertyName("natPolicy")]
     public string? NatPolicy { get; set; }
 
-    /// <summary>
-    /// The network this target instance uses to forward
-    /// traffic. If not specified, the traffic will be forwarded to the network
-    /// that the default network interface belongs to.
-    /// </summary>
+    /// <summary>The network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.</summary>
     [JsonPropertyName("networkRef")]
     public V1beta1ComputeTargetInstanceSpecNetworkRef? NetworkRef { get; set; }
 
@@ -158,11 +149,12 @@ public partial class V1beta1ComputeTargetInstanceStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeTargetInstanceStatus defines the config connector machine state of ComputeTargetInstance</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetInstanceStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeTargetInstance&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeTargetInstanceStatusConditions>? Conditions { get; set; }
 
@@ -172,12 +164,13 @@ public partial class V1beta1ComputeTargetInstanceStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeTargetInstance is the Schema for the compute API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -199,9 +192,11 @@ public partial class V1beta1ComputeTargetInstance : IKubernetesObject<V1ObjectMe
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeTargetInstanceSpec defines the desired state of ComputeTargetInstance</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeTargetInstanceSpec Spec { get; set; }
 
+    /// <summary>ComputeTargetInstanceStatus defines the config connector machine state of ComputeTargetInstance</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeTargetInstanceStatus? Status { get; set; }
 }
