@@ -136,7 +136,7 @@ public partial class V1beta1ComputeReservationSpecSpecificReservationInstancePro
 {
     /// <summary>Immutable. The size of the disk in base-2 GB.</summary>
     [JsonPropertyName("diskSizeGb")]
-    public required int DiskSizeGb { get; set; }
+    public required long DiskSizeGb { get; set; }
 
     /// <summary>Immutable. The disk interface to use for attaching this disk. Default value: &quot;SCSI&quot; Possible values: [&quot;SCSI&quot;, &quot;NVME&quot;].</summary>
     [JsonPropertyName("interface")]
@@ -172,11 +172,11 @@ public partial class V1beta1ComputeReservationSpecSpecificReservation
 {
     /// <summary>The number of resources that are allocated.</summary>
     [JsonPropertyName("count")]
-    public required int Count { get; set; }
+    public required long Count { get; set; }
 
     /// <summary>How many instances are in use.</summary>
     [JsonPropertyName("inUseCount")]
-    public int? InUseCount { get; set; }
+    public long? InUseCount { get; set; }
 
     /// <summary>Immutable. The instance properties for the reservation.</summary>
     [JsonPropertyName("instanceProperties")]
