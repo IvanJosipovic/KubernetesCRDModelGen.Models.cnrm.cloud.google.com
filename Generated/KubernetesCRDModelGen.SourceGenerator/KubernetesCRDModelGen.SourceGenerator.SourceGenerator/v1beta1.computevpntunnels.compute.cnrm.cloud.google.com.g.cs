@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeVPNTunnel is the Schema for the ComputeVPNTunnel API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,45 +36,38 @@ public partial class V1beta1ComputeVPNTunnelList : IKubernetesObject<V1ListMeta>
     public required IList<V1beta1ComputeVPNTunnel> Items { get; set; }
 }
 
-/// <summary>
-/// The peer side external VPN gateway to which this VPN tunnel
-/// is connected.
-/// </summary>
+/// <summary>The peer side external VPN gateway to which this VPN tunnel is connected.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelSpecPeerExternalGatewayRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeExternalVPNGateway` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeExternalVPNGateway resource. Should be in the format &quot;projects/{{projectID}}/global/externalVpnGateways/{{externalVPNGatewayID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeExternalVPNGateway resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeExternalVPNGateway resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The peer side HA GCP VPN gateway to which this VPN tunnel is
-/// connected. If provided, the VPN tunnel will automatically use the
-/// same VPN gateway interface ID in the peer GCP VPN gateway.
-/// </summary>
+/// <summary>The peer side HA GCP VPN gateway to which this VPN tunnel is connected. If provided, the VPN tunnel will automatically use the same VPN gateway interface ID in the peer GCP VPN gateway.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelSpecPeerGCPGatewayRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeVPNGateway` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeVPNGateway resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/vpnGateways/{{vpnGatewayID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeVPNGateway resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeVPNGateway resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -83,15 +77,15 @@ public partial class V1beta1ComputeVPNTunnelSpecPeerGCPGatewayRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelSpecRouterRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeRouter` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeRouter resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/routers/{{routerID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeRouter resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeRouter resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -120,10 +114,7 @@ public partial class V1beta1ComputeVPNTunnelSpecSharedSecretValueFrom
     public V1beta1ComputeVPNTunnelSpecSharedSecretValueFromSecretKeyRef? SecretKeyRef { get; set; }
 }
 
-/// <summary>
-/// Immutable. Shared secret used to set the secure session between the Cloud VPN
-/// gateway and the peer VPN gateway.
-/// </summary>
+/// <summary>Immutable. Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelSpecSharedSecret
@@ -137,49 +128,43 @@ public partial class V1beta1ComputeVPNTunnelSpecSharedSecret
     public V1beta1ComputeVPNTunnelSpecSharedSecretValueFrom? ValueFrom { get; set; }
 }
 
-/// <summary>
-/// The ComputeTargetVPNGateway with which this VPN tunnel is
-/// associated.
-/// </summary>
+/// <summary>The ComputeTargetVPNGateway with which this VPN tunnel is associated.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelSpecTargetVPNGatewayRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeTargetVPNGateway` resource.</summary>
+    /// <summary>The ComputeTargetVPNGateway selflink in the form &quot;projects/{{project}}/regions/{{region}}/targetVpnGateways/{{name}}&quot; when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `ComputeTargetVPNGateway` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `ComputeTargetVPNGateway` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
-/// <summary>
-/// The ComputeVPNGateway with which this VPN tunnel is associated.
-/// This must be used if a High Availability VPN gateway resource is
-/// created.
-/// </summary>
+/// <summary>The ComputeVPNGateway with which this VPN tunnel is associated. This must be used if a High Availability VPN gateway resource is created.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelSpecVpnGatewayRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeVPNGateway` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeVPNGateway resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/vpnGateways/{{vpnGatewayID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeVPNGateway resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeVPNGateway resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeVPNTunnelSpec defines the desired state of ComputeVPNTunnel</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelSpec
@@ -188,39 +173,23 @@ public partial class V1beta1ComputeVPNTunnelSpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Immutable. IKE protocol version to use when establishing the VPN tunnel with
-    /// peer VPN gateway.
-    /// Acceptable IKE versions are 1 or 2. Default version is 2.
-    /// </summary>
+    /// <summary>Immutable. IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway. Acceptable IKE versions are 1 or 2. Default version is 2.</summary>
     [JsonPropertyName("ikeVersion")]
-    public int? IkeVersion { get; set; }
+    public long? IkeVersion { get; set; }
 
-    /// <summary>
-    /// Immutable. Local traffic selector to use when establishing the VPN tunnel with
-    /// peer VPN gateway. The value should be a CIDR formatted string,
-    /// for example &apos;192.168.0.0/16&apos;. The ranges should be disjoint.
-    /// Only IPv4 is supported.
-    /// </summary>
+    /// <summary>Immutable. Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The value should be a CIDR formatted string, for example &apos;192.168.0.0/16&apos;. The ranges should be disjoint. Only IPv4 is supported.</summary>
     [JsonPropertyName("localTrafficSelector")]
     public IList<string>? LocalTrafficSelector { get; set; }
 
     /// <summary>Immutable. The interface ID of the external VPN gateway to which this VPN tunnel is connected.</summary>
     [JsonPropertyName("peerExternalGatewayInterface")]
-    public int? PeerExternalGatewayInterface { get; set; }
+    public long? PeerExternalGatewayInterface { get; set; }
 
-    /// <summary>
-    /// The peer side external VPN gateway to which this VPN tunnel
-    /// is connected.
-    /// </summary>
+    /// <summary>The peer side external VPN gateway to which this VPN tunnel is connected.</summary>
     [JsonPropertyName("peerExternalGatewayRef")]
     public V1beta1ComputeVPNTunnelSpecPeerExternalGatewayRef? PeerExternalGatewayRef { get; set; }
 
-    /// <summary>
-    /// The peer side HA GCP VPN gateway to which this VPN tunnel is
-    /// connected. If provided, the VPN tunnel will automatically use the
-    /// same VPN gateway interface ID in the peer GCP VPN gateway.
-    /// </summary>
+    /// <summary>The peer side HA GCP VPN gateway to which this VPN tunnel is connected. If provided, the VPN tunnel will automatically use the same VPN gateway interface ID in the peer GCP VPN gateway.</summary>
     [JsonPropertyName("peerGCPGatewayRef")]
     public V1beta1ComputeVPNTunnelSpecPeerGCPGatewayRef? PeerGCPGatewayRef { get; set; }
 
@@ -232,12 +201,7 @@ public partial class V1beta1ComputeVPNTunnelSpec
     [JsonPropertyName("region")]
     public required string Region { get; set; }
 
-    /// <summary>
-    /// Immutable. Remote traffic selector to use when establishing the VPN tunnel with
-    /// peer VPN gateway. The value should be a CIDR formatted string,
-    /// for example &apos;192.168.0.0/16&apos;. The ranges should be disjoint.
-    /// Only IPv4 is supported.
-    /// </summary>
+    /// <summary>Immutable. Remote traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The value should be a CIDR formatted string, for example &apos;192.168.0.0/16&apos;. The ranges should be disjoint. Only IPv4 is supported.</summary>
     [JsonPropertyName("remoteTrafficSelector")]
     public IList<string>? RemoteTrafficSelector { get; set; }
 
@@ -249,29 +213,19 @@ public partial class V1beta1ComputeVPNTunnelSpec
     [JsonPropertyName("routerRef")]
     public V1beta1ComputeVPNTunnelSpecRouterRef? RouterRef { get; set; }
 
-    /// <summary>
-    /// Immutable. Shared secret used to set the secure session between the Cloud VPN
-    /// gateway and the peer VPN gateway.
-    /// </summary>
+    /// <summary>Immutable. Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.</summary>
     [JsonPropertyName("sharedSecret")]
     public required V1beta1ComputeVPNTunnelSpecSharedSecret SharedSecret { get; set; }
 
-    /// <summary>
-    /// The ComputeTargetVPNGateway with which this VPN tunnel is
-    /// associated.
-    /// </summary>
+    /// <summary>The ComputeTargetVPNGateway with which this VPN tunnel is associated.</summary>
     [JsonPropertyName("targetVPNGatewayRef")]
     public V1beta1ComputeVPNTunnelSpecTargetVPNGatewayRef? TargetVPNGatewayRef { get; set; }
 
     /// <summary>Immutable. The interface ID of the VPN gateway with which this VPN tunnel is associated.</summary>
     [JsonPropertyName("vpnGatewayInterface")]
-    public int? VpnGatewayInterface { get; set; }
+    public long? VpnGatewayInterface { get; set; }
 
-    /// <summary>
-    /// The ComputeVPNGateway with which this VPN tunnel is associated.
-    /// This must be used if a High Availability VPN gateway resource is
-    /// created.
-    /// </summary>
+    /// <summary>The ComputeVPNGateway with which this VPN tunnel is associated. This must be used if a High Availability VPN gateway resource is created.</summary>
     [JsonPropertyName("vpnGatewayRef")]
     public V1beta1ComputeVPNTunnelSpecVpnGatewayRef? VpnGatewayRef { get; set; }
 }
@@ -301,11 +255,12 @@ public partial class V1beta1ComputeVPNTunnelStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeVPNTunnelStatus defines the config connector machine state of ComputeVPNTunnel</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeVPNTunnelStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeVPNTunnel&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeVPNTunnelStatusConditions>? Conditions { get; set; }
 
@@ -317,16 +272,13 @@ public partial class V1beta1ComputeVPNTunnelStatus
     [JsonPropertyName("detailedStatus")]
     public string? DetailedStatus { get; set; }
 
-    /// <summary>
-    /// The fingerprint used for optimistic locking of this resource.  Used
-    /// internally during updates.
-    /// </summary>
+    /// <summary>The fingerprint used for optimistic locking of this resource.  Used internally during updates.</summary>
     [JsonPropertyName("labelFingerprint")]
     public string? LabelFingerprint { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
@@ -340,6 +292,7 @@ public partial class V1beta1ComputeVPNTunnelStatus
     public string? TunnelId { get; set; }
 }
 
+/// <summary>ComputeVPNTunnel is the Schema for the ComputeVPNTunnel API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -361,9 +314,11 @@ public partial class V1beta1ComputeVPNTunnel : IKubernetesObject<V1ObjectMeta>, 
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeVPNTunnelSpec defines the desired state of ComputeVPNTunnel</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeVPNTunnelSpec Spec { get; set; }
 
+    /// <summary>ComputeVPNTunnelStatus defines the config connector machine state of ComputeVPNTunnel</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeVPNTunnelStatus? Status { get; set; }
 }
