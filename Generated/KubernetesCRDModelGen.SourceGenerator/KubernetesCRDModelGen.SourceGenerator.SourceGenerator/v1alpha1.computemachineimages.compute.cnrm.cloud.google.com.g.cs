@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeMachineImage is the Schema for the computemachineimages API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,13 +36,7 @@ public partial class V1alpha1ComputeMachineImageList : IKubernetesObject<V1ListM
     public required IList<V1alpha1ComputeMachineImage> Items { get; set; }
 }
 
-/// <summary>
-/// Immutable. Encrypts the machine image using a customer-supplied encryption key.
-/// 
-/// After you encrypt a machine image with a customer-supplied key, you must
-/// provide the same key if you use the machine image later (e.g. to create a
-/// instance from the image).
-/// </summary>
+/// <summary>Immutable. Encrypts the machine image using a customer-supplied encryption key.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeMachineImageSpecMachineImageEncryptionKey
@@ -50,24 +45,15 @@ public partial class V1alpha1ComputeMachineImageSpecMachineImageEncryptionKey
     [JsonPropertyName("kmsKeyName")]
     public string? KmsKeyName { get; set; }
 
-    /// <summary>
-    /// Immutable. The service account used for the encryption request for the given KMS key.
-    /// If absent, the Compute Engine Service Agent service account is used.
-    /// </summary>
+    /// <summary>Immutable. The service account used for the encryption request for the given KMS key. If absent, the Compute Engine Service Agent service account is used.</summary>
     [JsonPropertyName("kmsKeyServiceAccount")]
     public string? KmsKeyServiceAccount { get; set; }
 
-    /// <summary>
-    /// Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in
-    /// RFC 4648 base64 to either encrypt or decrypt this resource.
-    /// </summary>
+    /// <summary>Immutable. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.</summary>
     [JsonPropertyName("rawKey")]
     public string? RawKey { get; set; }
 
-    /// <summary>
-    /// The RFC 4648 base64 encoded SHA-256 hash of the
-    /// customer-supplied encryption key that protects this resource.
-    /// </summary>
+    /// <summary>The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.</summary>
     [JsonPropertyName("sha256")]
     public string? Sha256 { get; set; }
 }
@@ -77,36 +63,38 @@ public partial class V1alpha1ComputeMachineImageSpecMachineImageEncryptionKey
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeMachineImageSpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>The source instance used to create the machine image.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeMachineImageSpecSourceInstanceRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeInstance` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeInstance resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/instances/{{instanceID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeInstance resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeInstance resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeMachineImageSpec defines the desired state of ComputeMachineImage</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeMachineImageSpec
@@ -115,20 +103,11 @@ public partial class V1alpha1ComputeMachineImageSpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// Immutable. Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process.
-    /// Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
-    /// </summary>
+    /// <summary>Immutable. Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).</summary>
     [JsonPropertyName("guestFlush")]
     public bool? GuestFlush { get; set; }
 
-    /// <summary>
-    /// Immutable. Encrypts the machine image using a customer-supplied encryption key.
-    /// 
-    /// After you encrypt a machine image with a customer-supplied key, you must
-    /// provide the same key if you use the machine image later (e.g. to create a
-    /// instance from the image).
-    /// </summary>
+    /// <summary>Immutable. Encrypts the machine image using a customer-supplied encryption key.</summary>
     [JsonPropertyName("machineImageEncryptionKey")]
     public V1alpha1ComputeMachineImageSpecMachineImageEncryptionKey? MachineImageEncryptionKey { get; set; }
 
@@ -140,6 +119,7 @@ public partial class V1alpha1ComputeMachineImageSpec
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
+    /// <summary>The source instance used to create the machine image.</summary>
     [JsonPropertyName("sourceInstanceRef")]
     public required V1alpha1ComputeMachineImageSpecSourceInstanceRef SourceInstanceRef { get; set; }
 }
@@ -169,18 +149,20 @@ public partial class V1alpha1ComputeMachineImageStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeMachineImageStatus defines the config connector machine state of ComputeMachineImage</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeMachineImageStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1ComputeMachineImageStatusConditions>? Conditions { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
+    /// <summary>Server-defined URL for the resource.</summary>
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 
@@ -189,6 +171,7 @@ public partial class V1alpha1ComputeMachineImageStatus
     public IList<string>? StorageLocations { get; set; }
 }
 
+/// <summary>ComputeMachineImage is the Schema for the computemachineimages API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -210,9 +193,11 @@ public partial class V1alpha1ComputeMachineImage : IKubernetesObject<V1ObjectMet
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeMachineImageSpec defines the desired state of ComputeMachineImage</summary>
     [JsonPropertyName("spec")]
     public required V1alpha1ComputeMachineImageSpec Spec { get; set; }
 
+    /// <summary>ComputeMachineImageStatus defines the config connector machine state of ComputeMachineImage</summary>
     [JsonPropertyName("status")]
     public V1alpha1ComputeMachineImageStatus? Status { get; set; }
 }
