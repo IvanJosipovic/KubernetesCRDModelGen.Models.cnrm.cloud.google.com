@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputePacketMirroring is the Schema for the ComputePacketMirroring API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,23 +36,20 @@ public partial class V1beta1ComputePacketMirroringList : IKubernetesObject<V1Lis
     public required IList<V1beta1ComputePacketMirroring> Items { get; set; }
 }
 
+/// <summary>The Forwarding Rule resource of type `loadBalancingScheme=INTERNAL` that will be used as collector for mirrored traffic. The specified forwarding rule must have `isMirroringCollector` set to true.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringSpecCollectorIlbUrlRef
 {
-    /// <summary>
-    /// Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
-    /// 
-    /// Allowed value: The `selfLink` field of a `ComputeForwardingRule` resource.
-    /// </summary>
+    /// <summary>A reference to an externally managed ComputeForwardingRule resource. Should be in the format &quot;projects/{{projectID}}/global/forwardingRules/{{forwardingRuleID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/forwardingRules/{{forwardingRuleID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeForwardingRule resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeForwardingRule resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -61,6 +59,7 @@ public partial class V1beta1ComputePacketMirroringSpecCollectorIlbUrlRef
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringSpecCollectorIlb
 {
+    /// <summary>The Forwarding Rule resource of type `loadBalancingScheme=INTERNAL` that will be used as collector for mirrored traffic. The specified forwarding rule must have `isMirroringCollector` set to true.</summary>
     [JsonPropertyName("urlRef")]
     public required V1beta1ComputePacketMirroringSpecCollectorIlbUrlRef UrlRef { get; set; }
 }
@@ -83,23 +82,20 @@ public partial class V1beta1ComputePacketMirroringSpecFilter
     public IList<string>? IpProtocols { get; set; }
 }
 
+/// <summary>InstanceRef is a reference to a ComputeInstance.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringSpecMirroredResourcesInstancesUrlRef
 {
-    /// <summary>
-    /// Resource URL to the virtual machine instance which is being mirrored.
-    /// 
-    /// Allowed value: The `selfLink` field of a `ComputeInstance` resource.
-    /// </summary>
+    /// <summary>A reference to an externally managed ComputeInstance resource. Should be in the format &quot;projects/{{projectID}}/zones/{{zone}}/instances/{{instanceID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeInstance resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeInstance resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -112,6 +108,7 @@ public partial class V1beta1ComputePacketMirroringSpecMirroredResourcesInstances
     [JsonPropertyName("canonicalUrl")]
     public string? CanonicalUrl { get; set; }
 
+    /// <summary>InstanceRef is a reference to a ComputeInstance.</summary>
     [JsonPropertyName("urlRef")]
     public V1beta1ComputePacketMirroringSpecMirroredResourcesInstancesUrlRef? UrlRef { get; set; }
 }
@@ -121,19 +118,15 @@ public partial class V1beta1ComputePacketMirroringSpecMirroredResourcesInstances
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringSpecMirroredResourcesSubnetworksUrlRef
 {
-    /// <summary>
-    /// Resource URL to the subnetwork for which traffic from/to all VM instances will be mirrored.
-    /// 
-    /// Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.
-    /// </summary>
+    /// <summary>A reference to an externally managed ComputeSubnetwork resource. Should be in the format &quot;projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeSubnetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -174,19 +167,15 @@ public partial class V1beta1ComputePacketMirroringSpecMirroredResources
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringSpecNetworkUrlRef
 {
-    /// <summary>
-    /// URL of the network resource.
-    /// 
-    /// Allowed value: The `selfLink` field of a `ComputeNetwork` resource.
-    /// </summary>
+    /// <summary>A reference to an externally managed ComputeNetwork resource. Should be in the format &quot;projects/{{projectID}}/global/networks/{{networkID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeNetwork resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeNetwork resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -206,23 +195,20 @@ public partial class V1beta1ComputePacketMirroringSpecNetwork
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringSpecProjectRef
 {
-    /// <summary>
-    /// The project for the resource
-    /// 
-    /// Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).
-    /// </summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputePacketMirroringSpec defines the desired state of ComputePacketMirroring</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringSpec
@@ -311,6 +297,7 @@ public partial class V1beta1ComputePacketMirroringStatusNetwork
     public string? CanonicalUrl { get; set; }
 }
 
+/// <summary>ComputePacketMirroringStatus defines the config connector machine state of ComputePacketMirroring</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputePacketMirroringStatus
@@ -318,7 +305,7 @@ public partial class V1beta1ComputePacketMirroringStatus
     [JsonPropertyName("collectorIlb")]
     public V1beta1ComputePacketMirroringStatusCollectorIlb? CollectorIlb { get; set; }
 
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputePacketMirroring&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputePacketMirroringStatusConditions>? Conditions { get; set; }
 
@@ -331,7 +318,7 @@ public partial class V1beta1ComputePacketMirroringStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     /// <summary>URI of the region where the packetMirroring resides.</summary>
     [JsonPropertyName("region")]
@@ -342,6 +329,7 @@ public partial class V1beta1ComputePacketMirroringStatus
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputePacketMirroring is the Schema for the ComputePacketMirroring API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -363,9 +351,11 @@ public partial class V1beta1ComputePacketMirroring : IKubernetesObject<V1ObjectM
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputePacketMirroringSpec defines the desired state of ComputePacketMirroring</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputePacketMirroringSpec Spec { get; set; }
 
+    /// <summary>ComputePacketMirroringStatus defines the config connector machine state of ComputePacketMirroring</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputePacketMirroringStatus? Status { get; set; }
 }
