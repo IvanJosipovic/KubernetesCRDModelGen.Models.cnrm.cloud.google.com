@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeTargetGRPCProxy is the Schema for the ComputeTargetGRPCProxy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -35,58 +36,42 @@ public partial class V1beta1ComputeTargetGRPCProxyList : IKubernetesObject<V1Lis
     public required IList<V1beta1ComputeTargetGRPCProxy> Items { get; set; }
 }
 
-/// <summary>
-/// The UrlMap resource that defines the mapping from URL to the BackendService.
-/// The protocol field in the BackendService must be set to GRPC.
-/// </summary>
+/// <summary>The UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetGRPCProxySpecUrlMapRef
 {
-    /// <summary>Allowed value: The `selfLink` field of a `ComputeURLMap` resource.</summary>
+    /// <summary>A reference to an externally managed ComputeURLMap resource. Should be in the format &quot;projects/{{projectID}}/global/urlMaps/{{urlMapID}}&quot; or &quot;projects/{{projectID}}/regions/{{region}}/urlMaps/{{urlMapID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a ComputeURLMap resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a ComputeURLMap resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeTargetGRPCProxySpec defines the desired state of ComputeTargetGRPCProxy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetGRPCProxySpec
 {
-    /// <summary>An optional description of this resource.</summary>
+    /// <summary>Immutable. An optional description of this resource.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>Immutable. Optional. The name of the resource. Used for creation and acquisition. When unset, the value of `metadata.name` is used as the default.</summary>
+    /// <summary>The ComputeTargetGRPCProxy name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
 
-    /// <summary>
-    /// The UrlMap resource that defines the mapping from URL to the BackendService.
-    /// The protocol field in the BackendService must be set to GRPC.
-    /// </summary>
+    /// <summary>The UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.</summary>
     [JsonPropertyName("urlMapRef")]
     public V1beta1ComputeTargetGRPCProxySpecUrlMapRef? UrlMapRef { get; set; }
 
-    /// <summary>
-    /// Immutable. If true, indicates that the BackendServices referenced by
-    /// the urlMap may be accessed by gRPC applications without using
-    /// a sidecar proxy. This will enable configuration checks on urlMap
-    /// and its referenced BackendServices to not allow unsupported features.
-    /// A gRPC application must use &quot;xds:///&quot; scheme in the target URI
-    /// of the service it is connecting to. If false, indicates that the
-    /// BackendServices referenced by the urlMap will be accessed by gRPC
-    /// applications via a sidecar proxy. In this case, a gRPC application
-    /// must not use &quot;xds:///&quot; scheme in the target URI of the service
-    /// it is connecting to.
-    /// </summary>
+    /// <summary>Immutable. If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use &quot;xds:///&quot; scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use &quot;xds:///&quot; scheme in the target URI of the service it is connecting to.</summary>
     [JsonPropertyName("validateForProxyless")]
     public bool? ValidateForProxyless { get; set; }
 }
@@ -116,11 +101,12 @@ public partial class V1beta1ComputeTargetGRPCProxyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeTargetGRPCProxyStatus defines the config connector machine state of ComputeTargetGRPCProxy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeTargetGRPCProxyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeTargetGRPCProxyStatusConditions>? Conditions { get; set; }
 
@@ -128,22 +114,15 @@ public partial class V1beta1ComputeTargetGRPCProxyStatus
     [JsonPropertyName("creationTimestamp")]
     public string? CreationTimestamp { get; set; }
 
-    /// <summary>
-    /// Fingerprint of this resource. A hash of the contents stored in
-    /// this object. This field is used in optimistic locking. This field
-    /// will be ignored when inserting a TargetGrpcProxy. An up-to-date
-    /// fingerprint must be provided in order to patch/update the
-    /// TargetGrpcProxy; otherwise, the request will fail with error
-    /// 412 conditionNotMet. To see the latest fingerprint, make a get()
-    /// request to retrieve the TargetGrpcProxy. A base64-encoded string.
-    /// </summary>
+    /// <summary>Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy. A base64-encoded string.</summary>
     [JsonPropertyName("fingerprint")]
     public string? Fingerprint { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
+    /// <summary>Server-defined URL for the resource.</summary>
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 
@@ -152,6 +131,7 @@ public partial class V1beta1ComputeTargetGRPCProxyStatus
     public string? SelfLinkWithId { get; set; }
 }
 
+/// <summary>ComputeTargetGRPCProxy is the Schema for the ComputeTargetGRPCProxy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -173,9 +153,11 @@ public partial class V1beta1ComputeTargetGRPCProxy : IKubernetesObject<V1ObjectM
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeTargetGRPCProxySpec defines the desired state of ComputeTargetGRPCProxy</summary>
     [JsonPropertyName("spec")]
     public V1beta1ComputeTargetGRPCProxySpec? Spec { get; set; }
 
+    /// <summary>ComputeTargetGRPCProxyStatus defines the config connector machine state of ComputeTargetGRPCProxy</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeTargetGRPCProxyStatus? Status { get; set; }
 }
