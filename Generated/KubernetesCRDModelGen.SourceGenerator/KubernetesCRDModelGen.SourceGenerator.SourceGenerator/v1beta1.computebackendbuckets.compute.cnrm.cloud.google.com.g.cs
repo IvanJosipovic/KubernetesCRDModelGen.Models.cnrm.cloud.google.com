@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeBackendBucket is the Schema for the ComputeBackendBucket API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,15 +41,15 @@ public partial class V1beta1ComputeBackendBucketList : IKubernetesObject<V1ListM
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeBackendBucketSpecBucketRef
 {
-    /// <summary>Allowed value: The `name` field of a `StorageBucket` resource.</summary>
+    /// <summary>A reference to an externally managed StorageBucket resource. Should be in the format &quot;projects/{{projectID}}/buckets/{{bucketID}}&quot;.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The name of a StorageBucket resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The namespace of a StorageBucket resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
@@ -67,18 +68,11 @@ public partial class V1beta1ComputeBackendBucketSpecCdnPolicyBypassCacheOnReques
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeBackendBucketSpecCdnPolicyCacheKeyPolicy
 {
-    /// <summary>
-    /// Allows HTTP request headers (by name) to be used in the
-    /// cache key.
-    /// </summary>
+    /// <summary>Allows HTTP request headers (by name) to be used in the cache key.</summary>
     [JsonPropertyName("includeHttpHeaders")]
     public IList<string>? IncludeHttpHeaders { get; set; }
 
-    /// <summary>
-    /// Names of query string parameters to include in cache keys.
-    /// Default parameters are always included. &apos; &amp; &apos; and &apos;=&apos; will
-    /// be percent encoded and not treated as delimiters.
-    /// </summary>
+    /// <summary>Names of query string parameters to include in cache keys.</summary>
     [JsonPropertyName("queryStringWhitelist")]
     public IList<string>? QueryStringWhitelist { get; set; }
 }
@@ -87,17 +81,11 @@ public partial class V1beta1ComputeBackendBucketSpecCdnPolicyCacheKeyPolicy
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeBackendBucketSpecCdnPolicyNegativeCachingPolicy
 {
-    /// <summary>
-    /// The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 308, 404, 405, 410, 421, 451 and 501
-    /// can be specified as values, and you cannot specify a status code more than once.
-    /// </summary>
+    /// <summary>The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 308, 404, 405, 410, 421, 451 and 501 can be specified as values, and you cannot specify a status code more than once.</summary>
     [JsonPropertyName("code")]
     public int? Code { get; set; }
 
-    /// <summary>
-    /// The TTL (in seconds) for which to cache responses with the corresponding status code. The maximum allowed value is 1800s
-    /// (30 minutes), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
-    /// </summary>
+    /// <summary>The TTL (in seconds) for which to cache responses with the corresponding status code.</summary>
     [JsonPropertyName("ttl")]
     public int? Ttl { get; set; }
 }
@@ -115,10 +103,7 @@ public partial class V1beta1ComputeBackendBucketSpecCdnPolicy
     [JsonPropertyName("cacheKeyPolicy")]
     public V1beta1ComputeBackendBucketSpecCdnPolicyCacheKeyPolicy? CacheKeyPolicy { get; set; }
 
-    /// <summary>
-    /// Specifies the cache setting for all responses from this backend.
-    /// The possible values are: USE_ORIGIN_HEADERS, FORCE_CACHE_ALL and CACHE_ALL_STATIC Possible values: [&quot;USE_ORIGIN_HEADERS&quot;, &quot;FORCE_CACHE_ALL&quot;, &quot;CACHE_ALL_STATIC&quot;].
-    /// </summary>
+    /// <summary>Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS, FORCE_CACHE_ALL and CACHE_ALL_STATIC.</summary>
     [JsonPropertyName("cacheMode")]
     public string? CacheMode { get; set; }
 
@@ -126,10 +111,7 @@ public partial class V1beta1ComputeBackendBucketSpecCdnPolicy
     [JsonPropertyName("clientTtl")]
     public int? ClientTtl { get; set; }
 
-    /// <summary>
-    /// Specifies the default TTL for cached content served by this origin for responses
-    /// that do not have an existing valid TTL (max-age or s-max-age).
-    /// </summary>
+    /// <summary>Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage).</summary>
     [JsonPropertyName("defaultTtl")]
     public int? DefaultTtl { get; set; }
 
@@ -141,10 +123,7 @@ public partial class V1beta1ComputeBackendBucketSpecCdnPolicy
     [JsonPropertyName("negativeCaching")]
     public bool? NegativeCaching { get; set; }
 
-    /// <summary>
-    /// Sets a cache TTL for the specified HTTP status code. negativeCaching must be enabled to configure negativeCachingPolicy.
-    /// Omitting the policy and leaving negativeCaching enabled will use Cloud CDN&apos;s default cache TTLs.
-    /// </summary>
+    /// <summary>Sets a cache TTL for the specified HTTP status code. negativeCaching must be enabled to configure negativeCachingPolicy.</summary>
     [JsonPropertyName("negativeCachingPolicy")]
     public IList<V1beta1ComputeBackendBucketSpecCdnPolicyNegativeCachingPolicy>? NegativeCachingPolicy { get; set; }
 
@@ -156,20 +135,12 @@ public partial class V1beta1ComputeBackendBucketSpecCdnPolicy
     [JsonPropertyName("serveWhileStale")]
     public int? ServeWhileStale { get; set; }
 
-    /// <summary>
-    /// Maximum number of seconds the response to a signed URL request will
-    /// be considered fresh. After this time period,
-    /// the response will be revalidated before being served.
-    /// When serving responses to signed URL requests,
-    /// Cloud CDN will internally behave as though
-    /// all responses from this backend had a &quot;Cache-Control: public,
-    /// max-age=[TTL]&quot; header, regardless of any existing Cache-Control
-    /// header. The actual headers served in responses will not be altered.
-    /// </summary>
+    /// <summary>Maximum number of seconds the response to a signed URL request will be considered fresh.</summary>
     [JsonPropertyName("signedUrlCacheMaxAgeSec")]
-    public int? SignedUrlCacheMaxAgeSec { get; set; }
+    public long? SignedUrlCacheMaxAgeSec { get; set; }
 }
 
+/// <summary>ComputeBackendBucketSpec defines the desired state of ComputeBackendBucket</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeBackendBucketSpec
@@ -190,10 +161,7 @@ public partial class V1beta1ComputeBackendBucketSpec
     [JsonPropertyName("customResponseHeaders")]
     public IList<string>? CustomResponseHeaders { get; set; }
 
-    /// <summary>
-    /// An optional textual description of the resource; provided by the
-    /// client when the resource is created.
-    /// </summary>
+    /// <summary>An optional textual description of the resource; provided by the client when the resource is created.</summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
@@ -235,11 +203,12 @@ public partial class V1beta1ComputeBackendBucketStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeBackendBucketStatus defines the config connector machine state of ComputeBackendBucket</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1beta1ComputeBackendBucketStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the object&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1beta1ComputeBackendBucketStatusConditions>? Conditions { get; set; }
 
@@ -249,12 +218,14 @@ public partial class V1beta1ComputeBackendBucketStatus
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
+    /// <summary>Server-defined URL for the resource.</summary>
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeBackendBucket is the Schema for the ComputeBackendBucket API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -276,9 +247,11 @@ public partial class V1beta1ComputeBackendBucket : IKubernetesObject<V1ObjectMet
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeBackendBucketSpec defines the desired state of ComputeBackendBucket</summary>
     [JsonPropertyName("spec")]
     public required V1beta1ComputeBackendBucketSpec Spec { get; set; }
 
+    /// <summary>ComputeBackendBucketStatus defines the config connector machine state of ComputeBackendBucket</summary>
     [JsonPropertyName("status")]
     public V1beta1ComputeBackendBucketStatus? Status { get; set; }
 }
