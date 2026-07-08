@@ -96,6 +96,10 @@ public partial class V1beta1IAMServiceAccountStatus
     [JsonPropertyName("email")]
     public string? Email { get; set; }
 
+    /// <summary>A unique specifier for the IAMServiceAccount resource in GCP.</summary>
+    [JsonPropertyName("externalRef")]
+    public string? ExternalRef { get; set; }
+
     /// <summary>The Identity of the service account in the form &apos;serviceAccount:{email}&apos;. This value is often used to refer to the service account in order to grant IAM permissions.</summary>
     [JsonPropertyName("member")]
     public string? Member { get; set; }
