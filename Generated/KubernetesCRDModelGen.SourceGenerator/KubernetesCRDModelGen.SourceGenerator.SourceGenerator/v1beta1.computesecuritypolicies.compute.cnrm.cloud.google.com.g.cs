@@ -463,6 +463,10 @@ public partial class V1beta1ComputeSecurityPolicySpec
     [JsonPropertyName("recaptchaOptionsConfig")]
     public V1beta1ComputeSecurityPolicySpecRecaptchaOptionsConfig? RecaptchaOptionsConfig { get; set; }
 
+    /// <summary>Region represents the geographical location of the ComputeSecurityPolicy. Specify a region name or &quot;global&quot; for global resources.</summary>
+    [JsonPropertyName("region")]
+    public string? Region { get; set; }
+
     /// <summary>The ComputeSecurityPolicy name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
