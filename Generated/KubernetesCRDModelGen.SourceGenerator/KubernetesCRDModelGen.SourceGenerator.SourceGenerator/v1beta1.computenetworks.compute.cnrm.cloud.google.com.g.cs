@@ -76,6 +76,10 @@ public partial class V1beta1ComputeNetworkSpec
     [JsonPropertyName("networkFirewallPolicyEnforcementOrder")]
     public string? NetworkFirewallPolicyEnforcementOrder { get; set; }
 
+    /// <summary>Immutable. A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time.</summary>
+    [JsonPropertyName("networkProfile")]
+    public string? NetworkProfile { get; set; }
+
     /// <summary>The ComputeNetwork name. If not given, the metadata.name will be used.</summary>
     [JsonPropertyName("resourceID")]
     public string? ResourceID { get; set; }
