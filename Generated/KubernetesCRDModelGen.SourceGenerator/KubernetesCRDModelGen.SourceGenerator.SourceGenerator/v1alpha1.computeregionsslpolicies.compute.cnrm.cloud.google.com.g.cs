@@ -9,6 +9,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace KubernetesCRDModelGen.Models.compute.cnrm.cloud.google.com;
+/// <summary>ComputeRegionSSLPolicy is the Schema for the ComputeRegionSSLPolicy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -40,19 +41,20 @@ public partial class V1alpha1ComputeRegionSSLPolicyList : IKubernetesObject<V1Li
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeRegionSSLPolicySpecProjectRef
 {
-    /// <summary>Allowed value: The `name` field of a `Project` resource.</summary>
+    /// <summary>The `projectID` field of a project, when not managed by Config Connector.</summary>
     [JsonPropertyName("external")]
     public string? External { get; set; }
 
-    /// <summary>Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names</summary>
+    /// <summary>The `name` field of a `Project` resource.</summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    /// <summary>Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</summary>
+    /// <summary>The `namespace` field of a `Project` resource.</summary>
     [JsonPropertyName("namespace")]
     public string? Namespace { get; set; }
 }
 
+/// <summary>ComputeRegionSSLPolicySpec defines the desired state of ComputeRegionSSLPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeRegionSSLPolicySpec
@@ -74,10 +76,7 @@ public partial class V1alpha1ComputeRegionSSLPolicySpec
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
-    /// <summary>
-    /// The minimum version of SSL protocol that can be used by the clients
-    /// to establish a connection with the load balancer. Default value: &quot;TLS_1_0&quot; Possible values: [&quot;TLS_1_0&quot;, &quot;TLS_1_1&quot;, &quot;TLS_1_2&quot;].
-    /// </summary>
+    /// <summary>The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. Default value: &quot;TLS_1_0&quot; Possible values: [&quot;TLS_1_0&quot;, &quot;TLS_1_1&quot;, &quot;TLS_1_2&quot;].</summary>
     [JsonPropertyName("minTlsVersion")]
     public string? MinTlsVersion { get; set; }
 
@@ -132,11 +131,12 @@ public partial class V1alpha1ComputeRegionSSLPolicyStatusConditions
     public string? Type { get; set; }
 }
 
+/// <summary>ComputeRegionSSLPolicyStatus defines the config connector machine state of ComputeRegionSSLPolicy</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 public partial class V1alpha1ComputeRegionSSLPolicyStatus
 {
-    /// <summary>Conditions represent the latest available observation of the resource&apos;s current state.</summary>
+    /// <summary>Conditions represent the latest available observations of the ComputeRegionSSLPolicy&apos;s current state.</summary>
     [JsonPropertyName("conditions")]
     public IList<V1alpha1ComputeRegionSSLPolicyStatusConditions>? Conditions { get; set; }
 
@@ -148,21 +148,19 @@ public partial class V1alpha1ComputeRegionSSLPolicyStatus
     [JsonPropertyName("enabledFeatures")]
     public IList<string>? EnabledFeatures { get; set; }
 
-    /// <summary>
-    /// Fingerprint of this resource. A hash of the contents stored in this
-    /// object. This field is used in optimistic locking.
-    /// </summary>
+    /// <summary>Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking.</summary>
     [JsonPropertyName("fingerprint")]
     public string? Fingerprint { get; set; }
 
     /// <summary>ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.</summary>
     [JsonPropertyName("observedGeneration")]
-    public int? ObservedGeneration { get; set; }
+    public long? ObservedGeneration { get; set; }
 
     [JsonPropertyName("selfLink")]
     public string? SelfLink { get; set; }
 }
 
+/// <summary>ComputeRegionSSLPolicy is the Schema for the ComputeRegionSSLPolicy API</summary>
 [global::System.CodeDom.Compiler.GeneratedCode("KubernetesCRDModelGen", "1.6.0+0fbafdb9fc339df17b265ba23ecc4a7be2359877")]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
 [KubernetesEntity(Group = KubeGroup, Kind = KubeKind, ApiVersion = KubeApiVersion, PluralName = KubePluralName)]
@@ -184,9 +182,11 @@ public partial class V1alpha1ComputeRegionSSLPolicy : IKubernetesObject<V1Object
     [JsonPropertyName("metadata")]
     public V1ObjectMeta Metadata { get; set; }
 
+    /// <summary>ComputeRegionSSLPolicySpec defines the desired state of ComputeRegionSSLPolicy</summary>
     [JsonPropertyName("spec")]
     public required V1alpha1ComputeRegionSSLPolicySpec Spec { get; set; }
 
+    /// <summary>ComputeRegionSSLPolicyStatus defines the config connector machine state of ComputeRegionSSLPolicy</summary>
     [JsonPropertyName("status")]
     public V1alpha1ComputeRegionSSLPolicyStatus? Status { get; set; }
 }
