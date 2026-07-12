@@ -15,6 +15,7 @@ spec:
     kind: ComputeServiceAttachment
     categories:
     - gcp
+    listKind: ComputeServiceAttachmentList
     plural: computeserviceattachments
     shortNames:
     - gcpcomputeserviceattachment
@@ -42,16 +43,18 @@ spec:
     name: v1beta1
     schema:
       openAPIV3Schema:
+        description: ComputeServiceAttachment is the Schema for the ComputeServiceAttachment API
         properties:
           apiVersion:
-            description: 'apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
           spec:
+            description: ComputeServiceAttachmentSpec defines the desired state of ComputeServiceAttachment
             properties:
               connectionPreference:
                 description: 'The connection preference of service attachment. The value can be set to `ACCEPT_AUTOMATIC`. An `ACCEPT_AUTOMATIC` service attachment is one that always accepts the connection from consumer forwarding rules. Possible values: CONNECTION_PREFERENCE_UNSPECIFIED, ACCEPT_AUTOMATIC, ACCEPT_MANUAL'
@@ -65,6 +68,7 @@ spec:
                       format: int64
                       type: integer
                     projectRef:
+                      description: ProjectRef is a reference to a GCP Project.
                       oneOf:
                       - not:
                           required:
@@ -81,16 +85,13 @@ spec:
                         - external
                       properties:
                         external:
-                          description: |-
-                            The project id or number for the project to set the limit for.
-
-                            Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).
+                          description: The `projectID` field of a project, when not managed by Config Connector.
                           type: string
                         name:
-                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          description: The `name` field of a `Project` resource.
                           type: string
                         namespace:
-                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          description: The `namespace` field of a `Project` resource.
                           type: string
                       type: object
                   required:
@@ -99,6 +100,7 @@ spec:
                 type: array
               consumerRejectLists:
                 items:
+                  description: ProjectRef is a reference to a GCP Project.
                   oneOf:
                   - not:
                       required:
@@ -115,13 +117,13 @@ spec:
                     - external
                   properties:
                     external:
-                      description: 'Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).'
+                      description: The `projectID` field of a project, when not managed by Config Connector.
                       type: string
                     name:
-                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                      description: The `name` field of a `Project` resource.
                       type: string
                     namespace:
-                      description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                      description: The `namespace` field of a `Project` resource.
                       type: string
                   type: object
                 type: array
@@ -136,6 +138,7 @@ spec:
                 type: string
               natSubnets:
                 items:
+                  description: ComputeSubnetworkRef is a reference to a GCP ComputeSubnetwork.
                   oneOf:
                   - not:
                       required:
@@ -152,13 +155,13 @@ spec:
                     - external
                   properties:
                     external:
-                      description: 'Allowed value: The `selfLink` field of a `ComputeSubnetwork` resource.'
+                      description: A reference to an externally managed ComputeSubnetwork resource. Should be in the format "projects/{{projectID}}/regions/{{region}}/subnetworks/{{subnetworkID}}".
                       type: string
                     name:
-                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                      description: The name of a ComputeSubnetwork resource.
                       type: string
                     namespace:
-                      description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                      description: The namespace of a ComputeSubnetwork resource.
                       type: string
                   type: object
                 type: array
@@ -180,16 +183,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: |-
-                      The project for the resource
-
-                      Allowed value: The Google Cloud resource name of a `Project` resource (format: `projects/{{name}}`).
+                    description: The `projectID` field of a project, when not managed by Config Connector.
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The `name` field of a `Project` resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The `namespace` field of a `Project` resource.
                     type: string
                 type: object
               resourceID:
@@ -213,16 +213,13 @@ spec:
                   - external
                 properties:
                   external:
-                    description: |-
-                      The URL of a service serving the endpoint identified by this service attachment.
-
-                      Allowed value: The `selfLink` field of a `ComputeForwardingRule` resource.
+                    description: The ComputeForwardingRule selflink in the form "projects/{{project}}/regions/{{region}}/forwardingRules/{{name}}" when not managed by Config Connector.
                     type: string
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name field of a ComputeForwardingRule resource.
                     type: string
                   namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    description: The namespace field of a ComputeForwardingRule resource.
                     type: string
                 type: object
             required:
@@ -233,9 +230,10 @@ spec:
             - targetServiceRef
             type: object
           status:
+            description: ComputeServiceAttachmentStatus defines the config connector machine state of ComputeServiceAttachment
             properties:
               conditions:
-                description: Conditions represent the latest available observation of the resource's current state.
+                description: Conditions represent the latest available observations of the ComputeServiceAttachment's current state.
                 items:
                   properties:
                     lastTransitionTime:
@@ -280,6 +278,7 @@ spec:
                 type: integer
               observedGeneration:
                 description: ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                format: int64
                 type: integer
               pscServiceAttachmentId:
                 description: An 128-bit global unique ID of the PSC service attachment.
@@ -305,9 +304,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
